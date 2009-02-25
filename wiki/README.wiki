@@ -93,6 +93,7 @@ using a default built-in configuration.
 
 Now let's try to set a key to a given value:
 
+{{{
 $ telnet localhost 6379
 Trying 127.0.0.1...
 Connected to localhost.
@@ -100,6 +101,7 @@ Escape character is '^]'.
 SET foo 3  
 bar
 +OK
+}}}
 
 The first line we sent to the server is "set foo 3". This means "set the key
 foo with the following three bytes I'll send you". The following line is
@@ -122,9 +124,11 @@ the command was actually executed.
 
 Let's try to get the key content now:
 
+{{{
 GET foo
 3
 bar
+}}}
 
 Ok that's very similar to 'set', just the other way around. We sent "get foo",
 the server replied with a first line that is just a number of bytes the value
@@ -133,16 +137,20 @@ both to the bytes count and the actual data.
 
 What about requesting a non existing key?
 
+{{{
 GET blabla
 nil
+}}}
 
 When the key does not exist instead of the length just the "nil" string is sent.
 Another way to check if a given key exists or not is indeed the EXISTS command:
 
+{{{
 EXISTS nokey
 0
 EXISTS foo
 1
+}}}
 
 As you can see the server replied '0' the first time since 'nokey' does not
 exist, and '1' for 'foo', a key that actually exists.
@@ -157,12 +165,14 @@ for a language missing a decent client implementation.
 
 == Connection handling ==
 
-
+{{{
 QUIT
     Ask the server to silently close the connection.
+}}}
 
 == Commands operating on string values ==
 
+{{{
 SET <key> <value>
 Time complexity: O(1)
     Set the string <value> as value of the key.
@@ -202,9 +212,11 @@ Time complexity: O(1)
 
     DECRBY works just like DECR but instead to decrement by 1 the
     decrement is <value>.
+}}}
 
 == Commands operating on every value ==
 
+{{{
 EXISTS <key>
 Time complexity: O(1)
     Test of the specified key exists. The command returns
@@ -249,9 +261,11 @@ RENAME <oldkey> <newkey>
 RENAMENX <oldkey> <newkey>
     Just like RENAME but fails if the destination key <newkey>
     already exists.
+}}}
 
 == Commands operating on lists ==
 
+{{{
 RPUSH <key> <string>
 Time complexity: O(1)
     Add the given string to the head of the list contained at key.
@@ -346,6 +360,7 @@ Time complexity: O(1)
 RPOP <key>
     This command works exactly like LPOP, but the last element instead
     of the first element of the list is returned/deleted.
+}}}
 
 == Commands operating on sets ==
 
@@ -353,6 +368,7 @@ RPOP <key>
 
 == Multiple DB commands ==
 
+{{{
 SELECT <index>
     Select the DB with having the specified zero-based numeric index.
     For default every new client connection is automatically selected
@@ -362,9 +378,11 @@ MOVE <key> <index>
     Move the specified key from the currently selected DB to the specified
     destination DB. If a key with the same name exists in the destination
     DB an error is returned.
+}}}
 
 == Persistence control commands ==
 
+{{{
 SAVE
     Save the DB on disk. The server hangs while the saving is not
     completed, no connection is served in the meanwhile. An OK code
@@ -388,6 +406,7 @@ SHUTDOWN
     This is not guaranteed if the client uses simply "SAVE" and then
     "QUIT" because other clients may alter the DB data between the two
     commands.
+}}}
 
 = Protocol Specification =
 
@@ -407,8 +426,10 @@ terminated by "\r\n" (CRLF).
 The simplest commands are the inline commands. This is an example of a
 server/client chat (the server chat starts with S:, the client chat with C:)
 
+{{{
 C: PING
 S: +PONG
+}}}
 
 An inline command is a CRLF-terminated string sent to the client. The server
 usually replies to inline commands with a single line that can be a number
@@ -420,8 +441,10 @@ part of the string is an error.
 
 The following is another example of an INLINE command returning an integer:
 
+{{{
 C: EXISTS somekey
 S: 0
+}}}
 
 Since 'somekey' does not exist the server returned '0'.
 
@@ -434,9 +457,11 @@ A bulk command is exactly like an inline command, but the last argument
 of the command must be a stream of bytes in order to send data to the server.
 the "SET" command is a bulk command, see the following example:
 
+{{{
 C: SET mykey 6
 C: foobar
 S: +OK
+}}}
 
 The last argument of the commnad is '6'. This specify the number of DATA
 bytes that will follow (note that even this bytes are terminated by two
@@ -454,9 +479,11 @@ sent by the client in the above sample:
 The server may reply to an inline or bulk command with a bulk reply. See
 the following example:
 
+{{{
 C: GET mykey
 S: 6
 S: foobar
+}}}
 
 A bulk reply is very similar to the last argument of a bulk command. The
 server sends as the first line the number of bytes of the actual reply
@@ -469,8 +496,10 @@ If the requested value does not exist the bulk reply will use the special
 value 'nil' instead to send the line containing the number of bytes to read.
 This is an example:
 
+{{{
 C: GET nonexistingkey
 S: nil
+}}}
 
 The client library API should not return an empty string, but a nil object.
 For example a Ruby library should return 'nil' while a C library should return
@@ -483,9 +512,11 @@ value is not permitted. Bulk replies use a negative bytes count in order to
 signal an error. An error string of ABS(bytes_count) bytes will follow. See
 the following example:
 
+{{{
 S: GET alistkey
 S: -38
 S: -ERR Requested element is not a string
+}}}
 
 -38 means: sorry your operation resulted in an error, but a 38 bytes string
 that explains this error will follow. Client APIs should abort on this kind
@@ -499,6 +530,7 @@ more than a single element). This is accomplished using multiple bulk writes,
 prefixed by an initial line indicating how many bulk writes will follow.
 Example:
 
+{{{
 C: LRANGE mylist 0 3
 S: 4
 S: 3
@@ -509,6 +541,7 @@ S: 5
 S: Hello
 S: 5
 S: World
+}}}
 
 The first line the server sent is "4\r\n" in order to specify that four bulk
 write will follow. Then every bulk write is transmitted.
@@ -516,8 +549,10 @@ write will follow. Then every bulk write is transmitted.
 If the specified key does not exist instead of the number of elements in the
 list, the special value 'nil' is sent. Example:
 
+{{{
 C: LRANGE nokey 0 1
 S: nil
+}}}
 
 A client library API should return a nil object and not an empty list when this
 happens.
@@ -527,9 +562,11 @@ happens.
 Like bulk reply errors Multi-bulk reply errors are reported using a negative
 count. Example:
 
+{{{
 C: LRANGE stringkey 0 1
 S: -38
 S: -ERR Requested element is not a string
+}}}
 
 Check the Bulk replies errors section for more information.
 
