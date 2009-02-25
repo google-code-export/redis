@@ -26,6 +26,7 @@ Replication is under development in order to make Redis an highly available DB.
 Maily in two ways:
 
 * Memcached is not persistent, it just holds everything in memory without saving since its main goal is to be used as a cache. Redis instead can be used as the main DB for the application.
+
 * Like memcached Redis uses a key-value model, but while keys can just be strings, values in Redis can be lists and sets, and complex operations like intersections, set/get n-th element of lists, pop/push of elements, can be performed against sets and lists. It is possible to use lists as message queues.
 
 = Does Redis support locking? =
