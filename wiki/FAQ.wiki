@@ -2,7 +2,7 @@
 
 Memcachedb is basically memcached done persistent. Redis is a different evolution
 path in the key-value DBs, the idea is that the main advantages of key-value DBs
-are retained even without a so server loss of comfort of plain key-value DBs.
+are retained even without a so severe loss of comfort of plain key-value DBs.
 So Redis offers more features:
 
  * Keys can store different data types, not just strings. Notably Lists and Sets. For example if you want to use Redis as a log storage system for different computers every computer can just `RPUSH data to the computer_ID key`. Don't want to save more than 1000 log lines per computer? Just issue a `LTRIM computer_ID 0 999` command to trim the list after every push.
