@@ -233,8 +233,8 @@ _Time complexity: O(1)_
 === TYPE _key_ ===
 _Time complexity: O(1)_
  Return the type of the value stored at _key_ in form of a
- string. The type can be one of "NONE","STRING","LIST","SET".
- NONE is returned if the key does not exist.
+ string. The type can be one of "none", "string", "list", "set".
+ "none" is returned if the key does not exist.
 
 === KEYS _pattern_ ===
 _Time complexity: O(n) (with n being the number of keys in the DB)_
