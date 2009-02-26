@@ -165,202 +165,209 @@ for a language missing a decent client implementation.
 
 == Connection handling ==
 
-{{{
-QUIT
-    Ask the server to silently close the connection.
-}}}
+=== QUIT ===
+Ask the server to silently close the connection.
 
 == Commands operating on string values ==
 
-{{{
-SET <key> <value>
-Time complexity: O(1)
-    Set the string <value> as value of the key.
-    The string can't be longer than 1073741824 bytes (1 GB).
+=== SET _key_ _value_ ===
+_Time complexity: O(1)_
 
-GET <key>
-Time complexity: O(1)
-    Get the value of the specified key. If the key
-    does not exist the special value 'nil' is returned.
-    If the value stored at <key> is not a string an error
-    is returned because GET can only handle string values.
+ Set the string _value_ as value of the _key_.
+ The string can't be longer than 1073741824 bytes (1 GB).
 
-SETNX <key> <value>
-Time complexity: O(1)
-    SETNX works exactly like SET with the only difference that
-    if the key already exists no operation is performed.
-    SETNX actually means "SET if Not eXists".
+=== GET _key_ ===
+_Time complexity: O(1)_
 
-INCR <key>
-INCRBY <key> <value>
-Time complexity: O(1)
-    Increment the number stored at <key> by one. If the key does
-    not exist set the key to the value of "1" (like if the previous
-    value was zero). If the value at <key> is not a string value
-    an error is returned.
+ Get the value of the specified key. If the key
+ does not exist the special value 'nil' is returned.
+ If the value stored at _key_ is not a string an error
+ is returned because GET can only handle string values.
 
-    INCRBY works just like INCR but instead to increment by 1 the
-    increment is <value>.
+=== SETNX _key_ _value_ ===
+_Time complexity: O(1)_
 
-DECR <key>
-DECRBY <key> <value>
-Time complexity: O(1)
-    Decrement the number stored at <key> by one. If the key does
+ SETNX works exactly like SET with the only difference that
+ if the key already exists no operation is performed.
+ SETNX actually means "SET if Not eXists".
+
+=== INCR _key_ ===
+=== INCRBY _key_ _value_ ===
+_Time complexity: O(1)_
+
+ Increment the number stored at _key_ by one. If the key does
+ not exist set the key to the value of "1" (like if the previous
+ value was zero). If the value at _key_ is not a string value
+ an error is returned.
+
+ INCRBY works just like INCR but instead to increment by 1 the
+ increment is _value_.
+
+=== DECR _key_ ===
+=== DECRBY _key_ _value_ ===
+_Time complexity: O(1)_
+    Decrement the number stored at _key_ by one. If the key does
     not exist set the key to the value of "-1" (like if the previous
-    value was zero). If the value at <key> is not a string value
+    value was zero). If the value at _key_ is not a string value
     an error is returned.
 
     DECRBY works just like DECR but instead to decrement by 1 the
-    decrement is <value>.
-}}}
+    decrement is _value_.
 
 == Commands operating on every value ==
 
-{{{
-EXISTS <key>
-Time complexity: O(1)
-    Test if the specified key exists. The command returns
-    "0" if the key exists, otherwise "1" is returned.
-    Note that even keys set with an empty string as value will
-    return "1".
+=== EXISTS _key_ ===
+_Time complexity: O(1)_
 
-DEL <key>
-Time complexity: O(1)
-    Remove the specified key. If the key does not exist
-    no operation is performed. The command always returns success.
+ Test if the specified key exists. The command returns
+ "0" if the key exists, otherwise "1" is returned.
+ Note that even keys set with an empty string as value will
+ return "1".
 
-TYPE <key>
-Time complexity: O(1)
-    Return the type of the value stored at <key> in form of a
-    string. The type can be one of "NONE","STRING","LIST","SET".
-    NONE is returned if the key does not exist.
+=== DEL _key_ ===
+_Time complexity: O(1)_
 
-KEYS <pattern>
-Time complexity: O(n) (with n being the number of keys in the DB)
-    Returns all the keys matching the glob-style <pattern> as
-    space separated strings. For example if you have in the
-    database the keys "foo" and "foobar" the command "KEYS foo*"
-    will return "foo foobar".
+ Remove the specified key. If the key does not exist
+ no operation is performed. The command always returns success.
 
-    Note that while the time complexity for this operation is O(n)
-    the constant times are pretty low. For example Redis running
-    on an entry level laptop can scan a 1 million keys database
-    in 40 milliseconds. Still it's better to consider this one of
-    the slow commands that may ruin the DB performance if not used
-    with care.
+=== TYPE _key_ ===
+_Time complexity: O(1)_
+ Return the type of the value stored at _key_ in form of a
+ string. The type can be one of "NONE","STRING","LIST","SET".
+ NONE is returned if the key does not exist.
 
-RANDOMKEY
-Time complexity: O(1)
-    Returns a random key from the currently seleted DB.
+=== KEYS _pattern_ ===
+_Time complexity: O(n) (with n being the number of keys in the DB)_
 
-RENAME <oldkey> <newkey>
-    Atomically renames the key <oldkey> to <newkey>. If the source and
-    destination name are the same an error is returned. If <newkey>
+ Returns all the keys matching the glob-style _pattern_ as
+ space separated strings. For example if you have in the
+ database the keys "foo" and "foobar" the command "KEYS foo*"
+ will return "foo foobar".
+
+ Note that while the time complexity for this operation is O(n)
+ the constant times are pretty low. For example Redis running
+ on an entry level laptop can scan a 1 million keys database
+ in 40 milliseconds. Still it's better to consider this one of
+ the slow commands that may ruin the DB performance if not used
+ with care.
+
+=== RANDOMKEY ===
+_Time complexity: O(1)_
+
+ Returns a random key from the currently seleted DB.
+
+=== RENAME _oldkey_ _newkey_ ===
+    Atomically renames the key _oldkey_ to _newkey_. If the source and
+    destination name are the same an error is returned. If _newkey_
     already exists it is overwritten.
 
-RENAMENX <oldkey> <newkey>
-    Just like RENAME but fails if the destination key <newkey>
+=== RENAMENX _oldkey_ _newkey_ ===
+    Just like RENAME but fails if the destination key _newkey_
     already exists.
-}}}
 
 == Commands operating on lists ==
 
+=== RPUSH _key_ _string_ ===
+_Time complexity: O(1)_
+
+ Add the given string to the head of the list contained at key.
+ If the key does not exist an empty list is created just before
+ the append operation. If the key exists but is not a List an error
+ is returned.
+
+=== LPUSH _key_ _string_ ===
+_Time complexity: O(1)_
+
+ Add the given string to the tail of the list contained at key.
+ If the key does not exist an empty list is created just before
+ the append operation. If the key exists but is not a List an error
+ is returned.
+
+=== LLEN _key_ ===
+_Time complexity: O(1)_
+
+ Return the length of the list stored at the specified key. If the
+ key does not exist zero is returned (the same behaviour as for
+ empty lists). If the value stored at key is not a list an error
+ is returned.
+
+=== LRANGE _key_ _start_ _end_ ===
+_Time complexity: O(n) (with n being the length of the range)_
+
+ Return the specified elements of the list stored at the specified
+ key. Start and end are zero-based indexes. 0 is the first element
+ of the list (the list head), 1 the next element and so on.
+
+ For example LRANGE foobar 0 2 will return the first three elements
+ of the list.
+
+ _start_ and _end_ can also be negative numbers indicating offsets
+ from the end of the list. For example -1 is the last element of
+ the list, -2 the penultimate element and so on.
+
+ Indexes out of range will not produce an error: if start is over
+ the end of the list, or start `>` end, an empty list is returned.
+ If end is over the end of the list Redis will threat it just like
+ the last element of the list.
+
+=== LTRIM _key_ _start_ _end_ ===
+_Time complexity: O(n) (with n being len of list - len of range)_
+
+ Trim an existing list so that it will contain only the specified
+ range of elements specified. Start and end are zero-based indexes.
+ 0 is the first element of the list (the list head), 1 the next element
+ and so on.
+
+ For example LTRIM foobar 0 2 will modify the list stored at foobar
+ key so that only the first three elements of the list will remain.
+
+ _start_ and _end_ can also be negative numbers indicating offsets
+ from the end of the list. For example -1 is the last element of
+ the list, -2 the penultimate element and so on.
+
+ Indexes out of range will not produce an error: if start is over
+ the end of the list, or start > end, an empty list is left as value.
+ If end over the end of the list Redis will threat it just like
+ the last element of the list.
+
+ Hint: the obvious use of LTRIM is together with LPUSH/RPUSH. For example:
 {{{
-RPUSH <key> <string>
-Time complexity: O(1)
-    Add the given string to the head of the list contained at key.
-    If the key does not exist an empty list is created just before
-    the append operation. If the key exists but is not a List an error
-    is returned.
-
-LPUSH <key> <string>
-Time complexity: O(1)
-    Add the given string to the tail of the list contained at key.
-    If the key does not exist an empty list is created just before
-    the append operation. If the key exists but is not a List an error
-    is returned.
-
-LLEN <key>
-Time complexity: O(1)
-    Return the length of the list stored at the specified key. If the
-    key does not exist zero is returned (the same behaviour as for
-    empty lists). If the value stored at key is not a list an error
-    is returned.
-
-LRANGE <key> <start> <end>
-Time complexity: O(n) (with n being the length of the range)
-    Return the specified elements of the list stored at the specified
-    key. Start and end are zero-based indexes. 0 is the first element
-    of the list (the list head), 1 the next element and so on.
-
-    For example LRANGE foobar 0 2 will return the first three elements
-    of the list.
-
-    <start> and <end> can also be negative numbers indicating offsets
-    from the end of the list. For example -1 is the last element of
-    the list, -2 the penultimate element and so on.
-
-    Indexes out of range will not produce an error: if start is over
-    the end of the list, or start > end, an empty list is returned.
-    If end over the end of the list Redis will threat it just like
-    the last element of the list.
-
-LTRIM <key> <start> <end>
-Time complexity: O(n) (with n being len of list - len of range)
-    Trim an existing list so that it will contain only the specified
-    range of elements specified. Start and end are zero-based indexes.
-    0 is the first element of the list (the list head), 1 the next element
-    and so on.
-
-    For example LTRIM foobar 0 2 will modify the list stored at foobar
-    key so that only the first three elements of the list will remain.
-
-    <start> and <end> can also be negative numbers indicating offsets
-    from the end of the list. For example -1 is the last element of
-    the list, -2 the penultimate element and so on.
-
-    Indexes out of range will not produce an error: if start is over
-    the end of the list, or start > end, an empty list is left as value.
-    If end over the end of the list Redis will threat it just like
-    the last element of the list.
-
-    Hint: the obvious use of LTRIM is together with LPUSH/RPUSH. For example:
-
         LPUSH mylist <someelement>
         LTRIM mylist 0 99
+}}}
+ The above two commands will push elements in the list taking care that
+ the list will not grow without limits. This is very useful when using
+ Redis to store logs for example. It is important to note that when used
+ in this way LTRIM is an O(1) operation because in the average case
+ just one element is removed from the tail of the list.
 
-    The above two commands will push elements in the list taking care that
-    the list will not grow without limits. This is very useful when using
-    Redis to store logs for example. It is important to note that when used
-    in this way LTRIM is an O(1) operation because in the average case
-    just one element is removed from the tail of the list.
+=== LINDEX _key_ _index_ ===
+_Time complexity: O(n) (with n being the length of the list)_
 
-LINDEX <key> <index>
-Time complexity: O(n) (with n being the length of the list)
-    Return the specified element of the list stored at the specified
-    key. 0 is the first element, 1 the second and so on. Negative indexes
-    are supported, for example -1 is the last element, -2 the penultimate
-    and so on.
+ Return the specified element of the list stored at the specified
+ key. 0 is the first element, 1 the second and so on. Negative indexes
+ are supported, for example -1 is the last element, -2 the penultimate
+ and so on.
 
-    If the value stored at key is not of list type an error is returned.
-    If the index is out of range an empty string is returned.
+ If the value stored at key is not of list type an error is returned.
+ If the index is out of range an empty string is returned.
 
-    Note that even if the average time complexity is O(n) asking for
-    the first or the last element of the list is O(1).
+ Note that even if the average time complexity is O(n) asking for
+ the first or the last element of the list is O(1).
 
-LPOP <key>
-Time complexity: O(1)
-    Atomically return and remove the first element of the list.
-    For example if the list contains the elements "a","b","c" LPOP
-    will return "a" and the list will become "b","c".
+=== LPOP _key_ ===
+_Time complexity: O(1)_
 
-    If the <key> does not exist or the list is already empty the special
-    value 'nil' is returned.
+ Atomically return and remove the first element of the list.
+ For example if the list contains the elements "a","b","c" LPOP
+ will return "a" and the list will become "b","c".
 
-RPOP <key>
+ If the _key_ does not exist or the list is already empty the special
+ value 'nil' is returned.
+
+=== RPOP _key_ ===
     This command works exactly like LPOP, but the last element instead
     of the first element of the list is returned/deleted.
-}}}
 
 == Commands operating on sets ==
 
