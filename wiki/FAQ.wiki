@@ -11,4 +11,4 @@ So Redis offers more features:
 
 = Can I backup a Redis DB while the server is working? =
 
-Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command.
+Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command. Btw we are working on transparent replication.
