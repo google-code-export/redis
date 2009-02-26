@@ -1,4 +1,4 @@
-= Why Redis if there is already memcachedb? =
+= Why you developed Redis if there is already memcachedb? =
 
 Memcachedb is basically memcached done persistent. Redis is a different evolution
 path in the key-value DBs, the idea is that the main advantages of key-value DBs
