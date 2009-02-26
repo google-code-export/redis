@@ -1,0 +1,17 @@
+= Why Redis if there is already memcachedb? =
+
+Memcachedb is basically memcached done persistent. Redis is a different evolution
+path in the key-value DBs, the idea is that the main advantages of key-value DBs
+are retained even without a so server loss of comfort of plain key-value DBs.
+So Redis offers more features:
+
+ * Keys can store different data types, not just strings. Notably Lists and Sets. For example if you want to use Redis as a log storage system for different computers every computer can just `RPUSH data to the computer_ID key`. Don't want to save more than 1000 log lines per computer? Just issue a `LTRIM computer_ID 0 999` command to trim the list
+after every push.
+
+ * Another example is about Sets. Imagine to build a social news site like [http://reddit.com Reddit]. Every time a user upvote a given news you can just add
+to the news_ID_upmods key holding a value of type SET the id of the user that did
+the upmodding. Sets can also be used to index things. Every key can be a tag holding a SET with the IDs of all the objects associated to this tag. Using Redis set intersection you obtain the list of IDs having all this tags at the same time.
+
+= Can I backup a Redis DB while the server is working? =
+
+Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command.
