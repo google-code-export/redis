@@ -9,6 +9,8 @@ So Redis offers more features:
 
  * Another example is about Sets. Imagine to build a social news site like [http://reddit.com Reddit]. Every time a user upvote a given news you can just add to the news_ID_upmods key holding a value of type SET the id of the user that did the upmodding. Sets can also be used to index things. Every key can be a tag holding a SET with the IDs of all the objects associated to this tag. Using Redis set intersection you obtain the list of IDs having all this tags at the same time.
 
+ * Multiple DBs. Using the SELECT command the client can select different datasets. This is useful because Redis provides a MOVE atomic primitive that moves a key form a DB to another one, if the target DB already contains such a key it returns an error: this basically means a way to perform locking in distributed processing.
+
 = Can I backup a Redis DB while the server is working? =
 
 Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command. Btw we are working on transparent replication.
