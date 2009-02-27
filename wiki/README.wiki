@@ -288,8 +288,8 @@ _Time complexity: O(1)_
 
  Return the length of the list stored at the specified key. If the
  key does not exist zero is returned (the same behaviour as for
- empty lists). If the value stored at key is not a list an error
- is returned.
+ empty lists). If the value stored at key is not a list the special
+ value -1 is returned.
 
 === LRANGE _key_ _start_ _end_ ===
 _Time complexity: O(n) (with n being the length of the range)_
