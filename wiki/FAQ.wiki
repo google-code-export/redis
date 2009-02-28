@@ -14,3 +14,7 @@ So Redis offers more features:
 = Can I backup a Redis DB while the server is working? =
 
 Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command. Btw we are working on transparent replication.
+
+= What's the Redis memory footprint? =
+
+1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). I don't have numbers to compare the memory usage with other systems like memcached, I'll be glad if someone can provide this numbers.
