@@ -168,6 +168,8 @@ for a language missing a decent client implementation.
 === QUIT ===
 Ask the server to silently close the connection.
 
+*Return value: none*
+
 == Commands operating on string values ==
 
 === SET _key_ _value_ ===
@@ -175,6 +177,8 @@ _Time complexity: O(1)_
 
  Set the string _value_ as value of the _key_.
  The string can't be longer than 1073741824 bytes (1 GB).
+
+*Return value: status code reply*
 
 === GET _key_ ===
 _Time complexity: O(1)_
@@ -184,6 +188,8 @@ _Time complexity: O(1)_
  If the value stored at _key_ is not a string an error
  is returned because GET can only handle string values.
 
+*Return value: bluk reply*
+
 === SETNX _key_ _value_ ===
 _Time complexity: O(1)_
 
@@ -191,28 +197,30 @@ _Time complexity: O(1)_
  if the key already exists no operation is performed.
  SETNX actually means "SET if Not eXists".
 
+*Return value: integer reply, specifically:
+{{{
+1 if the key was set
+0 if the key was not set
+}}}
+*
+
 === INCR _key_ ===
 === INCRBY _key_ _value_ ===
 _Time complexity: O(1)_
 
  Increment the number stored at _key_ by one. If the key does
- not exist set the key to the value of "1" (like if the previous
- value was zero). If the value at _key_ is not a string value
- an error is returned.
+ not exist or contains a value of a wrong type, set the key to the
+ value of "1" (like if the previous value was zero).
 
  INCRBY works just like INCR but instead to increment by 1 the
  increment is _value_.
 
+*Return value: integer reply*
+
 === DECR _key_ ===
 === DECRBY _key_ _value_ ===
 _Time complexity: O(1)_
-    Decrement the number stored at _key_ by one. If the key does
-    not exist set the key to the value of "-1" (like if the previous
-    value was zero). If the value at _key_ is not a string value
-    an error is returned.
-
-    DECRBY works just like DECR but instead to decrement by 1 the
-    decrement is _value_.
+ Like INCR/INCRBY but decrementing instead of incrementing.
 
 == Commands operating on every value ==
 
@@ -224,17 +232,33 @@ _Time complexity: O(1)_
  Note that even keys set with an empty string as value will
  return "1".
 
+*Return value: integer reply, specifically:
+{{{
+1 if the key exists
+0 if the key does not exist
+}}}
+*
+
 === DEL _key_ ===
 _Time complexity: O(1)_
 
  Remove the specified key. If the key does not exist
  no operation is performed. The command always returns success.
 
+*Return value: integer reply, specifically:
+{{{
+1 if the key was removed
+0 if the key does not exist
+}}}
+*
+
 === TYPE _key_ ===
 _Time complexity: O(1)_
  Return the type of the value stored at _key_ in form of a
  string. The type can be one of "none", "string", "list", "set".
  "none" is returned if the key does not exist.
+
+*Return value: single line reply*
 
 === KEYS _pattern_ ===
 _Time complexity: O(n) (with n being the number of keys in the DB)_
@@ -251,19 +275,34 @@ _Time complexity: O(n) (with n being the number of keys in the DB)_
  the slow commands that may ruin the DB performance if not used
  with care.
 
+*Return value: bulk reply*
+
 === RANDOMKEY ===
 _Time complexity: O(1)_
 
  Returns a random key from the currently seleted DB.
+
+*Return value: single line reply*
 
 === RENAME _oldkey_ _newkey_ ===
     Atomically renames the key _oldkey_ to _newkey_. If the source and
     destination name are the same an error is returned. If _newkey_
     already exists it is overwritten.
 
+*Return value: status code reply*
+
 === RENAMENX _oldkey_ _newkey_ ===
     Just like RENAME but fails if the destination key _newkey_
     already exists.
+
+*Return value: integer reply, specifically:
+{{{
+1 if the key was renamed
+0 if the target key already exist
+-1 if the source key does not exist
+-3 if source and destination keys are the same
+}}}
+*
 
 == Commands operating on lists ==
 
@@ -275,6 +314,8 @@ _Time complexity: O(1)_
  the append operation. If the key exists but is not a List an error
  is returned.
 
+*Return value: status code reply*
+
 === LPUSH _key_ _string_ ===
 _Time complexity: O(1)_
 
@@ -282,6 +323,8 @@ _Time complexity: O(1)_
  If the key does not exist an empty list is created just before
  the append operation. If the key exists but is not a List an error
  is returned.
+
+*Return value: status code reply*
 
 === LLEN _key_ ===
 _Time complexity: O(1)_
@@ -292,6 +335,13 @@ _Time complexity: O(1)_
  value -1 is returned. Note: client library should raise an exception
  when -1 is returned instead to pass the value back to the caller
  like a normal list length value.
+
+*Return value: integer reply, specifically:
+{{{
+the length of the list as an integer `>=` 0 if the operation succeeded
+-2 if the specified key does not hold a list value
+}}}
+*
 
 === LRANGE _key_ _start_ _end_ ===
 _Time complexity: O(n) (with n being the length of the range)_
@@ -311,6 +361,8 @@ _Time complexity: O(n) (with n being the length of the range)_
  the end of the list, or start `>` end, an empty list is returned.
  If end is over the end of the list Redis will threat it just like
  the last element of the list.
+
+*Return value: multi bulk reply*
 
 === LTRIM _key_ _start_ _end_ ===
 _Time complexity: O(n) (with n being len of list - len of range)_
@@ -343,6 +395,8 @@ _Time complexity: O(n) (with n being len of list - len of range)_
  in this way LTRIM is an O(1) operation because in the average case
  just one element is removed from the tail of the list.
 
+*Return value: status code reply*
+
 === LINDEX _key_ _index_ ===
 _Time complexity: O(n) (with n being the length of the list)_
 
@@ -357,6 +411,18 @@ _Time complexity: O(n) (with n being the length of the list)_
  Note that even if the average time complexity is O(n) asking for
  the first or the last element of the list is O(1).
 
+*Return value: bulk reply*
+
+=== LSET _key_ _index_ _value_ ===
+_Time complexity: O(N) (with N being the length of the list)_
+
+ Set the list element at _index_ (see LINDEX for information about the
+ _index_ argument) with the new _value_. Out of range indexes will
+ generate an error. Note that setting the first or last elements of
+ the list is O(1).
+
+*Return value: status code reply*
+
 === LPOP _key_ ===
 _Time complexity: O(1)_
 
@@ -366,6 +432,8 @@ _Time complexity: O(1)_
 
  If the _key_ does not exist or the list is already empty the special
  value 'nil' is returned.
+
+*Return value: bulk reply*
 
 === RPOP _key_ ===
     This command works exactly like LPOP, but the last element instead
@@ -382,12 +450,28 @@ _Time complexity O(1)_
  crated. If the key exists but does not hold a set value an error is
  returned.
 
+*Return value: integer reply, specifically:
+{{{
+1 if the new element was added
+0 if the new element was already a member of the set
+-2 if the key contains a non set value
+}}}
+*
+
 === SREM _key_ _member_ ===
 _Time complexity O(1)_
 
  Remove the specified _member_ from the set value stored at _key_. If
  _member_ was not a member of the set no operation is performed. If _key_
  does not exist or does not hold a set value an error is returned.
+
+*Return value: integer reply, specifically:
+{{{
+1 if the new element was removed
+0 if the new element was not a member of the set
+-2 if the key does not hold a set value
+}}}
+*
 
 === SCARD _key_ ===
 _Time complexity O(1)_
@@ -397,15 +481,30 @@ _Time complexity O(1)_
  a set value -1 is returned. Client libraries should raise an error
  when -1 is returned instead to pass the value to the caller.
 
+*Return value: integer reply, specifically:
+{{{
+the cardinality (number of elements) of the set as an integer `>=` 0 if the operation succeeded
+-2 if the specified key does not hold a set value
+}}}
+*
+
 === SISMEMBER _key_ _member_ ===
 _Time complexity O(1)_
 
  Return 1 if _member_ is a member of the set stored at _key_, otherwise
- 0 is returned. If the key does not exist or does not hold a set value
- the special value -1 is returned. Client libraries should raise an error
- when -1 is returned instead to pass the value to the caller.
+ 0 is returned. On error a negative value is returned. Client libraries
+ should raise an error when a negative value is returned instead to pass
+ the value to the caller.
 
-=== SINTERSECT _key1_ _key2_ ... _keyN_ ===
+*Return value: integer reply, specifically:
+{{{
+1 if the element is a member of the set
+0 if the element is not a member of the set OR if the key does not exist
+-2 if the key does not hold a set value
+}}}
+*
+
+=== SINTER _key1_ _key2_ ... _keyN_ ===
 _Time complexity O(N*M) worst case where N is the cardinality of the smallest set and M the number of sets_
 
  Return the members of a set resulting from the intersection of all the
@@ -417,6 +516,8 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
 
  If at least one of the specified keys does not exist or does not hold
  a set value an error is returned.
+
+*Return value: multi bulk reply*
 
 === SMEMBERS _key_ ===
 _Time complexity O(N)_
@@ -431,10 +532,23 @@ _Time complexity O(N)_
  For default every new client connection is automatically selected
  to DB 0.
 
+*Return value: status code reply*
+
 === MOVE _key_ _dbindex_ ===
  Move the specified key from the currently selected DB to the specified
- destination DB. If a key with the same name exists in the destination
- DB an error is returned.
+ destination DB. Note that this command returns 1 only if the key was
+ successfully moved, and 0 if the target key was already there or if the
+ source key was not found at all, so it is possible to use MOVE as a locking
+ primitive.
+
+*Return value: integer reply, specifically:
+{{{
+1 if the key was moved
+0 if the key was not moved because already present on the target DB or was not found in the current DB.
+-3 if the destination DB is the same as the source DB
+-4 if the database index if out of range
+}}}
+*
 
 == Persistence control commands ==
 
@@ -443,11 +557,15 @@ _Time complexity O(N)_
     completed, no connection is served in the meanwhile. An OK code
     is returned when the DB was fully stored in disk.
 
+*Return value: status code reply*
+
 === BGSAVE ===
     Save the DB in background. The OK code is immediately returned.
     Redis forks, the parent continues to server the clients, the child
     saves the DB on disk then exit. A client my be able to check if the
     operation succeeded using the LASTSAVE command.
+
+*Return value: status code reply*
 
 === LASTSAVE ===
     Return the UNIX TIME of the last DB save executed with success.
@@ -455,12 +573,16 @@ _Time complexity O(N)_
     value, then issuing a BGSAVE command and checking at regular intervals
     every N seconds if LASTSAVE changed.
 
+*Return value: integer reply (UNIX timestamp)*
+
 === SHUTDOWN ===
     Stop all the clients, save the DB, then quit the server. This commands
     makes sure that the DB is switched off without the lost of any data.
     This is not guaranteed if the client uses simply "SAVE" and then
     "QUIT" because other clients may alter the DB data between the two
     commands.
+
+*Return value: status code reply on error, on success the server quits and the connection is closed*
 
 = Protocol Specification =
 
@@ -489,7 +611,7 @@ An inline command is a CRLF-terminated string sent to the client. The server
 usually replies to inline commands with a single line that can be a number
 or a return code.
 
-When the server replies with a return code, if the first character of the
+When the server replies with a status code (that is a one line reply just indicating if the operation succeeded or not), if the first character of the
 reply is a "+" then the command succeeded, if it is a "-" then the following
 part of the string is an error.
 
@@ -576,6 +698,8 @@ S: -ERR Requested element is not a string
 that explains this error will follow. Client APIs should abort on this kind
 of errors, for example a PHP client should call the die() function.
 
+The following commands reply with a bulk reply: GET, KEYS, LINDEX, LPOP, RPOP
+
 == Multi-Bulk replies ==
 
 In the specific case of the LRANGE command the server needs to return multiple
@@ -608,8 +732,8 @@ C: LRANGE nokey 0 1
 S: nil
 }}}
 
-A client library API should return a nil object and not an empty list when this
-happens.
+A client library API SHOULD return a nil object and not an empty list when this
+happens. This makes possible to distinguish between empty list and non existing ones.
 
 == Multi-Bulk replies errors ==
 
@@ -622,7 +746,54 @@ S: -38
 S: -ERR Requested element is not a string
 }}}
 
+The following commands reply with a multi-bulk reply: LRANGE, LINTER
+
 Check the Bulk replies errors section for more information.
+
+== Status code reply ==
+
+As already seen a status code reply is in the form of a single line string
+terminated by "\r\n". For example:
+
+{{
++OK
+}}
+
+and
+
+{{
+-ERR no suck key
+}}
+
+are two examples of status code replies. The first character of a status code reply is always "+" or "-".
+
+The following commands reply with a status code reply:
+PING, SET, SELECT, SAVE, BGSAVE, SHUTDOWN, RENAME, LPUSH, RPUSH, LSET, LTRIM
+
+== Integer reply ==
+
+This type of reply is just a CRLF terminated string representing an integer. For example "0\r\n", or "1000\r\n" are integer replies.
+
+With commands like INCR or LASTSAVE using the integer reply to actually return a value there is no special meaning for the returned integer. It is just an incremental number for INCR, a UNIX time for LASTSAVE and so on.
+
+Some commands like EXISTS will return 1 for true and 0 for false.
+
+Other commands like SADD, SREM and SETNX will return 1 if the operation was actually done, 0 otherwise, and *a negative value* if the operation is invalid (for example SADD against a non-set value), accordingly to this table:
+{{
+-1 no such key
+-2 operation against the a key holding a value of the wrong type
+-3 source and destiantion objects/dbs are the same
+-4 argument out of range
+}}
+In all this cases it is mandatory that the client raises an error instead to pass the negative value to the caller. Please check the commands documentation for the exact behaviour.
+
+The following commands will reply with an integer reply: SETNX, DEL, EXISTS, INCR, INCRBY, DECR, DECRBY, DBSIZE, LASTSAVE, RENAMENX, MOVE, LLEN, SADD, SREM, SISMEMBER, SCARD
+
+The commands that will never return a negative integer (commands that can't fail) are: INCR, DECR, INCRBY, DECRBY, LASTSAVE, EXISTS, SETNX, DEL, DBSIZE.
+
+== Single line reply ==
+
+This replies are just single line strings terminated by CRLF. Only two commands reply in this way currently, RANDOMKEY and TYPE.
 
 == Multiple commands and pipelining ==
 
