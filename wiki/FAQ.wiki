@@ -22,5 +22,5 @@ Yes you can. When Redis saves the DB it actually creates a temp file, then renam
 = What Redis means actually? =
 
 Redis means two things:
- * it's a joke on the word Redis_tribute_ (instead to use just a Relational DB redistribute your workload among Redis and a Relational DB)
+ * it's a joke on the word Redistribute (instead to use just a Relational DB redistribute your workload among Redis and a Relational DB)
  * it means REmote DIctionary Server
