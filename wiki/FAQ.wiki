@@ -18,3 +18,9 @@ Yes you can. When Redis saves the DB it actually creates a temp file, then renam
 = What's the Redis memory footprint? =
 
 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). I don't have numbers to compare the memory usage with other systems like memcached, I'll be glad if someone can provide this numbers.
+
+= What Redis means actually? =
+
+Redis means two things:
+ * it's a joke on the word Redis_tribute_ (instead to use just a Relational DB redistribute your workload among Redis and a Relational DB)
+ * it means REmote DIctionary Server
