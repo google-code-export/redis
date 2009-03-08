@@ -12,7 +12,7 @@ Redis includes the `redis-benchmark` utility that simulates SETs/GETs done by N 
 *** SET TEST ***
 == 100002 requests completed in 0.91 seconds
 == 50 parallel clients
-== 3 bytes payload
+== 256 bytes payload
 == keep alive: 1
 
 58.89% <= 0 milliseconds
@@ -30,7 +30,7 @@ Redis includes the `redis-benchmark` utility that simulates SETs/GETs done by N 
 *** GET TEST ***
 == 100001 requests completed in 1.84 seconds
 == 50 parallel clients
-== 3 bytes payload
+== 256 bytes payload
 == keep alive: 1
 
 20.79% <= 0 milliseconds
