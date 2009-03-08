@@ -1,7 +1,13 @@
 = How Fast is Redis? =
 
-Redis includes the `redis-benchmark` utility that simulates SETs/GETs done by N clients at the same time sending M total queries (it is similar to the Apache's `ab` utility). Below you'll find the full output of the benchmark executed against different systems, but this is the short story (all the tests are relative to 50 simultaneous clients performing 100000 requests. The value SET/GET is a 256 bytes string):
- * *Linux 2.6, Xeon X3320 2.5Ghz*: about 100000 SETs per second, about 54000 GETs per second.
+Redis includes the `redis-benchmark` utility that simulates SETs/GETs done by N clients at the same time sending M total queries (it is similar to the Apache's `ab` utility). Below you'll find the full output of the benchmark executed against a Linux box.
+
+ * The test was done with 50 simultaneous clients performing 100000 requests.
+ * The value SET and GET is a 256 bytes string.
+ * The Linux box is running *Linux 2.6*, it's *Xeon X3320 2.5Ghz*.
+ * Text executed using the loopback interface (127.0.0.1).
+
+Results: *about 100000 SETs per second, about 54000 GETs per second.*
 
 = Latency percentiles =
 
