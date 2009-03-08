@@ -50,3 +50,5 @@ Results: *about 100000 SETs per second, about 54000 GETs per second.*
 
 == 54318.85 requests per second
 }}}
+
+Notes: changing the payload from 256 to 1024 or 4096 bytes does not change the numbers significantly. The same for the number of clients, from 50 to 256 clients I got the same numbers. With only 10 clients it starts to get slower, something like 70000 writes/sec, and 50000 reads/sec.
