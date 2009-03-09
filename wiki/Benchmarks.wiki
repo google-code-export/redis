@@ -14,41 +14,79 @@ Results: *about 100000 SETs per second, about 54000 GETs per second.*
 {{{
 ./redis-benchmark -n 100000
 
+====== SET ======
+  100007 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
 
-*** SET TEST ***
-== 100002 requests completed in 0.91 seconds
-== 50 parallel clients
-== 256 bytes payload
-== keep alive: 1
-
-58.89% <= 0 milliseconds
-97.43% <= 1 milliseconds
-99.06% <= 2 milliseconds
+58.50% <= 0 milliseconds
+99.17% <= 1 milliseconds
+99.58% <= 2 milliseconds
 99.85% <= 3 milliseconds
-99.88% <= 4 milliseconds
-99.90% <= 5 milliseconds
-99.96% <= 8 milliseconds
+99.90% <= 6 milliseconds
 100.00% <= 9 milliseconds
+114293.71 requests per second
 
-== 109771.68 requests per second
+====== GET ======
+  100000 requests completed in 1.23 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
 
+43.12% <= 0 milliseconds
+96.82% <= 1 milliseconds
+98.62% <= 2 milliseconds
+100.00% <= 3 milliseconds
+81234.77 requests per second
 
-*** GET TEST ***
-== 100001 requests completed in 1.84 seconds
-== 50 parallel clients
-== 256 bytes payload
-== keep alive: 1
+====== INCR ======
+  100018 requests completed in 1.46 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
 
-20.79% <= 0 milliseconds
-90.22% <= 1 milliseconds
-98.14% <= 2 milliseconds
-99.77% <= 3 milliseconds
-99.85% <= 4 milliseconds
-99.86% <= 8 milliseconds
-99.98% <= 9 milliseconds
-100.00% <= 10 milliseconds
+32.32% <= 0 milliseconds
+96.67% <= 1 milliseconds
+99.14% <= 2 milliseconds
+99.83% <= 3 milliseconds
+99.88% <= 4 milliseconds
+99.89% <= 5 milliseconds
+99.96% <= 9 milliseconds
+100.00% <= 18 milliseconds
+68458.59 requests per second
 
-== 54318.85 requests per second
+====== LPUSH ======
+  100004 requests completed in 1.14 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+62.27% <= 0 milliseconds
+99.74% <= 1 milliseconds
+99.85% <= 2 milliseconds
+99.86% <= 3 milliseconds
+99.89% <= 5 milliseconds
+99.93% <= 7 milliseconds
+99.96% <= 9 milliseconds
+100.00% <= 22 milliseconds
+100.00% <= 208 milliseconds
+88109.25 requests per second
+
+====== LPOP ======
+  100001 requests completed in 1.39 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+54.83% <= 0 milliseconds
+97.34% <= 1 milliseconds
+99.95% <= 2 milliseconds
+99.96% <= 3 milliseconds
+99.96% <= 4 milliseconds
+100.00% <= 9 milliseconds
+100.00% <= 208 milliseconds
+71994.96 requests per second
 }}}
 
 Notes: changing the payload from 256 to 1024 or 4096 bytes does not change the numbers significantly. The same for the number of clients, from 50 to 256 clients I got the same numbers. With only 10 clients it starts to get slower, something like 70000 writes/sec, and 50000 reads/sec.
