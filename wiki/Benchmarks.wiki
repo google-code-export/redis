@@ -7,7 +7,7 @@ Redis includes the `redis-benchmark` utility that simulates SETs/GETs done by N 
  * The Linux box is running *Linux 2.6*, it's *Xeon X3320 2.5Ghz*.
  * Text executed using the loopback interface (127.0.0.1).
 
-Results: *about 100000 SETs per second, about 54000 GETs per second.*
+Results: *about 110000 SETs per second, about 81000 GETs per second.*
 
 = Latency percentiles =
 
