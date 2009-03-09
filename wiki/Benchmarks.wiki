@@ -90,3 +90,13 @@ Results: *about 110000 SETs per second, about 81000 GETs per second.*
 }}}
 
 Notes: changing the payload from 256 to 1024 or 4096 bytes does not change the numbers significantly (but reply packets are glued together up to 1024 bytes so GETs may be slower with big payloads). The same for the number of clients, from 50 to 256 clients I got the same numbers. With only 10 clients it starts to get a bit slower.
+
+You can expect different results from different boxes. For example a low profile box like *Intel core duo T5500 clocked at 1.66Ghz running Linux 2.6* will output the following:
+{{{
+ ./redis-benchmark -q -n 100000
+SET: 53684.38 requests per second
+GET: 45497.73 requests per second
+INCR: 39370.47 requests per second
+LPUSH: 34803.41 requests per second
+LPOP: 37367.20 requests per second
+}}}
