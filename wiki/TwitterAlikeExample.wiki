@@ -1,0 +1,3 @@
+=Retwis, a very simple Twitter clone using Redis as the only DB=
+
+... article explaining the internals coming son, you can find the source code in [http://code.google.com/p/redis/downloads/list the download section].
