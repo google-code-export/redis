@@ -1,3 +1,7 @@
 =Retwis, a very simple Twitter clone using Redis as the only DB=
 
-... article explaining the internals coming son, you can find the source code in [http://code.google.com/p/redis/downloads/list the download section].
+Retwis is a very simple Twitter clone. It uses only Redis as DB as a case study. Actually waht Retwis really is is the *Hello world of the Redis applications*. It was written using PHP in order to make the source code readable by everybody. Even the coding style is BASIC, no abstractions, just a plain web application, very fast, very raw, and easy to understand.
+
+We run a [http://retwis.antirez.com Live demo of Retwis] so you can test it only. It's monkey asses fast! 6 milliseconds to generate a page in a very slow and loaded server, without any kind of caching, actually the implementation is to dump to reissue some query multiple times even if unneeded.
+
+... article explaining the internals coming son, you can find the *source code* in [http://code.google.com/p/redis/downloads/list the download section].
