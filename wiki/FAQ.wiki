@@ -13,7 +13,7 @@ So Redis offers more features:
 
  * Multiple DBs. Using the SELECT command the client can select different datasets. This is useful because Redis provides a MOVE atomic primitive that moves a key form a DB to another one, if the target DB already contains such a key it returns an error: this basically means a way to perform locking in distributed processing.
 
- * *So what is Redis really about?* The User interface with the programmer. Redis aims to export to the programmer the right tools to model a wide range of problems. *Sets, Lists with O(1) push operation, lrange and ltrim, server-side fast intersection between sets, are primitives that allows to model complex problems with a key value database*.
+ * *So what is Redis really about?* The User interface with the programmer. Redis aims to export to the programmer the right tools to model a wide range of problems. *Sets, Lists with O(1) push operation, lrange and ltrim, server-side fast intersection between sets, are primitives that allow to model complex problems with a key value database*.
 
 = Can I backup a Redis DB while the server is working? =
 
