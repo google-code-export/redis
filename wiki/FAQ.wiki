@@ -9,7 +9,11 @@ So Redis offers more features:
 
  * Another example is about Sets. Imagine to build a social news site like [http://reddit.com Reddit]. Every time a user upvote a given news you can just add to the news_ID_upmods key holding a value of type SET the id of the user that did the upmodding. Sets can also be used to index things. Every key can be a tag holding a SET with the IDs of all the objects associated to this tag. Using Redis set intersection you obtain the list of IDs having all this tags at the same time.
 
+ * We wrote a [http://retwis.antirez.com simple Twitter Clone] using just Redis as database. Download the source code from the download section and imagine to write it with a plain key-value DB without support for lists and sets... it's *much* harder.
+
  * Multiple DBs. Using the SELECT command the client can select different datasets. This is useful because Redis provides a MOVE atomic primitive that moves a key form a DB to another one, if the target DB already contains such a key it returns an error: this basically means a way to perform locking in distributed processing.
+
+ * *So what is Redis really about?* The User interface with the programmer. Redis aims to export to the programmer the right tools to model a wide range of problems. *Sets, Lists with O(1) push operation, lrange and ltrim, server-side fast intersection between sets, are primitives that allows to model complex problems with a key value database*.
 
 = Can I backup a Redis DB while the server is working? =
 
