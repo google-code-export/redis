@@ -332,8 +332,8 @@ _Time complexity: O(1)_
  Return the length of the list stored at the specified key. If the
  key does not exist zero is returned (the same behaviour as for
  empty lists). If the value stored at key is not a list the special
- value -1 is returned. Note: client library should raise an exception
- when -1 is returned instead to pass the value back to the caller
+ value -2 is returned. Note: client library should raise an exception
+ when -2 is returned instead to pass the value back to the caller
  like a normal list length value.
 
 *Return value: integer reply, specifically:
@@ -755,15 +755,15 @@ Check the Bulk replies errors section for more information.
 As already seen a status code reply is in the form of a single line string
 terminated by "\r\n". For example:
 
-{{
+{{{
 +OK
-}}
+}}}
 
 and
 
-{{
+{{{
 -ERR no suck key
-}}
+}}}
 
 are two examples of status code replies. The first character of a status code reply is always "+" or "-".
 
@@ -779,12 +779,12 @@ With commands like INCR or LASTSAVE using the integer reply to actually return a
 Some commands like EXISTS will return 1 for true and 0 for false.
 
 Other commands like SADD, SREM and SETNX will return 1 if the operation was actually done, 0 otherwise, and *a negative value* if the operation is invalid (for example SADD against a non-set value), accordingly to this table:
-{{
+{{{
 -1 no such key
 -2 operation against the a key holding a value of the wrong type
 -3 source and destiantion objects/dbs are the same
 -4 argument out of range
-}}
+}}}
 In all this cases it is mandatory that the client raises an error instead to pass the negative value to the caller. Please check the commands documentation for the exact behaviour.
 
 The following commands will reply with an integer reply: SETNX, DEL, EXISTS, INCR, INCRBY, DECR, DECRBY, DBSIZE, LASTSAVE, RENAMENX, MOVE, LLEN, SADD, SREM, SISMEMBER, SCARD
