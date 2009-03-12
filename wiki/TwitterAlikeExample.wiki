@@ -124,7 +124,7 @@ SET username:antirez:uid 1000
 }}}
 
 This may appear strange at first, but remember that we are only able to access data by key! It's not possible to tell Redis to return the key that holds a specific value. This is also *our strength*, this new paradigm is forcing us to organize the data so that everything is accessible by _primary key_, speaking with relational DBs language.
-==following, followers and updates==
+==Following, followers and updates==
 There is another central need in our system. Every user has followers users and following users. We have a perfect data structure for this work! That is... Sets. So let's add this two new fields to our schema:
 
 {{{
@@ -137,7 +137,7 @@ Another important thing we need is a place were we can add the updates to displa
 {{{
 uid:1000:posts => a List of post ids, every new post is LPUSHed here.
 }}}
-==authentication==
+==Authentication==
 Ok we have more or less everything about the user, but authentication. We'll handle authentication in a simple but robust way: we don't want to use PHP sessions or other things like this, our system must be ready in order to be distributed among different servers, so we'll take the whole state in our Redis database. So all we need is a random string to set as the cookie of an authenticated user, and a key that will tell us what is the user ID of the client holding such a random string. We need two keys in order to make this thing working in a robust way:
 
 {{{
