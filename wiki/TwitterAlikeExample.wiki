@@ -334,7 +334,7 @@ You can find the code that sets or removes a following/follower relation at foll
 =Making it horizontally scalable=
 Gentle reader, if you reached this point you are already an hero, thank you. Before to talk about scaling horizontally it is worth to check the performances on a single server. Retwis is *amazingly fast*, without any kind of cache. On a very slow and loaded server, apache benchmark with 100 parallel clients issuing 100000 requests measured the average pageview to take 5 milliseconds. This means you can serve millions of users every day with just a single Linux box, and this one was monkey asses slow! Go figure with more recent hardware.
 
-So, first of all, probably you will not need more than one server for a lot of applications, even with you have a lot of users. But let's assume we *are* Twitter and need to handle a huge amount of traffic. What to do?
+So, first of all, probably you will not need more than one server for a lot of applications, even when you have a lot of users. But let's assume we *are* Twitter and need to handle a huge amount of traffic. What to do?
 ===Hasing the key===
 The first thing to do is to hash the key and issue the request on different servers based on the key hash. There are a lot of well known algorithms to do so, for example check the Redis Ruby library client that implements _consistent hashing_, but the general idea is that you can turn your key into a number, and than take the reminder of the division of this number by the number of servers you have:
 
