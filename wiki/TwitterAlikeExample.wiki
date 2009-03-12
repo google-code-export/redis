@@ -150,7 +150,7 @@ In order to authenticate an user we'll do this simple work (login.php):
  * Check if the username:`<username>`:uid key actually exists
  * If it exists we have the user id, (i.e. 1000)
  * Check if uid:1000:password matches, if not, error message
- * Ok authenticated! Set "fea5e81ac8ca77622bed1c2132a021f9" (the value of uid:1000:auth as "auth" cookie
+ * Ok authenticated! Set "fea5e81ac8ca77622bed1c2132a021f9" (the value of uid:1000:auth) as "auth" cookie
 
 This is the actual code:
 
