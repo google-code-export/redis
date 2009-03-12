@@ -344,7 +344,7 @@ This has a lot of problems since if you add one server you need to move too much
 
 Ok, are key accesses distributed among the key space? Well, all the user data will be partitioned among different servers. There are no inter-keys operations used (like SINTER, otherwise you need to care that things you want to intersect will end in the same server. *This is why Redis unlike memcached does not force a specific hashing scheme, it's application specific*). Btw there are keys that are accessed more frequently.
 
-==Special keys==
+===Special keys===
 
 For example every time we post a new message, we *need* to increment the `global:nextPostId` key. How to fix this problem? A Single server will get a lot if increments. The simplest way to handle this is to have a dedicated server just for increments. This is probably an overkill btw unless you have really a lot of traffic. There is another trick. The ID does not really need to be an incremental number, but just *it needs to be unique*. So you can get a random string long enough to be unlikely (almost impossible, if it's md5-size) to collide, and you are done. We successfully eliminated our main problem to make it really horizontally scalable!
 
