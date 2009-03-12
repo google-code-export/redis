@@ -71,7 +71,7 @@ LRANGE uses zero-based indexes, that is the first element is 0, the second 1, an
 LRANGE mylist 0 -1 => c,b,a
 }}}
 
-Other important operations are LLEN that returns the length of the list, and LTRIM that is like LRANGE but instead to return the specified range *trims* the list, so it is like _Get range from mylist, Set this range as new value_ but atomic. We will use only this List operations, but make sure to check the [http://code.google.com/p/redis/wiki/README Redis documentation] to discover all the List operations supported by Redis.
+Other important operations are LLEN that returns the length of the list, and LTRIM that is like LRANGE but instead of returning the specified range *trims* the list, so it is like _Get range from mylist, Set this range as new value_ but atomic. We will use only this List operations, but make sure to check the [http://code.google.com/p/redis/wiki/README Redis documentation] to discover all the List operations supported by Redis.
 ===The set data type===
 There is more than Lists, Redis also supports Sets, that are unsorted collection of elements. It is possible to add, remove, and test for existence of members, and perform intersection between different sets. Of course it is possible to ask for the list or the number of elements of a Set. Some example will make it more clear. Take in mind that SADD is the _add to set_ operation, SREM is the _remove from set_ operation, _sismember_ is the _test if it is a member_ operation, and SINTER is _perform intersection_ operation. Other operations are SCARD that is used to get the cardinality (the number of elements) of a Set, and SMEMBERS taht will return all the members of a Set.
 
