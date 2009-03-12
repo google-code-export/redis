@@ -145,7 +145,7 @@ SET auth:fea5e81ac8ca77622bed1c2132a021f9 1000
 
 In order to authenticate an user we'll do this simple work (login.php):
  * Get the username and password via the login form
- * Check if the username:<username>:uid key actually exists
+ * Check if the username:`<username>`:uid key actually exists
  * If it exists we have the user id, (i.e. 1000)
  * Check if uid:1000:password matches, if not, error message
  * Ok authenticated! Set "fea5e81ac8ca77622bed1c2132a021f9" (the value of uid:1000:auth as "auth" cookie
@@ -177,8 +177,8 @@ header("Location: index.php");
 }}}
 
 This happens every time the users logs in, but we also need a function isLoggedIn in order to check if a given user is already authenticated or not. This are the logical steps preformed by the `isLoggedIn` function:
- * Get the "auth" cookie from the user. If there is no cookie, the user is not logged in of course. Let's call the value of this cookie <authcookie>
- * Check if auth:<authcookie> exists, and what the value (the user id) is (1000 in the exmple).
+ * Get the "auth" cookie from the user. If there is no cookie, the user is not logged in of course. Let's call the value of this cookie `<authcookie>`
+ * Check if auth:`<authcookie>` exists, and what the value (the user id) is (1000 in the exmple).
  * In order to be sure check that uid:1000:auth matches.
  * Ok the user is authenticated, and we loaded a bit of information in the $User global variable.
 
@@ -212,9 +212,9 @@ function loadUserInfo($userid) {
 }
 }}}
 
-`loadUserInfo` as separated function is an overkill for our application, but it's a good template for a complex application. The only thing it's missing from all the authentication is the logout. What we do on logout? That's simple, we'll just change the random string in uid:1000:auth, remove the old auth:<oldauthstring> and add a new auth:<newauthstring>.
+`loadUserInfo` as separated function is an overkill for our application, but it's a good template for a complex application. The only thing it's missing from all the authentication is the logout. What we do on logout? That's simple, we'll just change the random string in uid:1000:auth, remove the old auth:`<oldauthstring>` and add a new auth:`<newauthstring>`.
 
-*Important:* the logout procedure explains why we don't just authenticate the user after the lookup of auth:<randomstring>, but double check it against uid:1000:auth. The true authentication string is the latter, the auth:<randomstring> is just an authentication key that may even be volatile, or if there are bugs in the program or a script gets interrupted we may even end with multiple auth:<something> keys pointing to the same user id. The logout code is the following (logout.php):
+*Important:* the logout procedure explains why we don't just authenticate the user after the lookup of auth:`<randomstring>`, but double check it against uid:1000:auth. The true authentication string is the latter, the auth:`<randomstring>` is just an authentication key that may even be volatile, or if there are bugs in the program or a script gets interrupted we may even end with multiple auth:`<something>` keys pointing to the same user id. The logout code is the following (logout.php):
 
 {{{
 include("retwis.php");
@@ -277,7 +277,7 @@ $r->ltrim("global:timeline",0,1000);
 header("Location: index.php");
 }}}
 
-The core of the function is the `foreach`. We get using SMEMBERS all the followers of the current user, then the loop will LPUSH the post against the uid:<userid>:posts of every follower.
+The core of the function is the `foreach`. We get using SMEMBERS all the followers of the current user, then the loop will LPUSH the post against the uid:`<userid>`:posts of every follower.
 
 Note that we also maintain a timeline with all the posts. In order to do so what is needed is just to LPUSH the post against global:timeline. Let's face it, does you start thinking it was a bit strange to have to sort things added in chronological order using SORT BY with SQL? I think so indeed.
 == Paginating updates ==
