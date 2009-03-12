@@ -65,7 +65,7 @@ This is very useful for our Twitter clone. Updates of users can be stored into a
 LRANGE mylist 0 1 => c,b
 }}}
 
-LRANGE uses zero-based indexes, that is the first element is 0, the second 1, and so on. The command aguments are `LRANGE key first-index last-index`. The _last index_ argument can be negative, with a special meaning: -1 is the last element of the list, -2 the penultimate, and so on. So th get the whole list:
+LRANGE uses zero-based indexes, that is the first element is 0, the second 1, and so on. The command aguments are `LRANGE key first-index last-index`. The _last index_ argument can be negative, with a special meaning: -1 is the last element of the list, -2 the penultimate, and so on. So in order to get the whole list we can use:
 
 {{{
 LRANGE mylist 0 -1 => c,b,a
