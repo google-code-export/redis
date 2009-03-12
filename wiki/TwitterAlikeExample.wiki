@@ -1,6 +1,6 @@
 =A case study: Design and implementation of a simple Twitter clone using only the Redis key-value store as database and PHP=
 
-In this article I'll explain the design and the implementation of a [http://retwis.antirez.com simple clone of Twitter] written using PHP and [http://code.google.com/p/redis/ Redis] as only database. The programming community uses to think to key-value stores like special databases that can't be used as drop in replacement for a relational database for the development of web applications. This article will try to prove the contrary.
+In this article I'll explain the design and the implementation of a [http://retwis.antirez.com simple clone of Twitter] written using PHP and [http://code.google.com/p/redis/ Redis] as only database. The programming community uses to look at key-value stores like special databases that can't be used as drop in replacement for a relational database for the development of web applications. This article will try to prove the contrary.
 
 Our Twitter clone, [http://retwis.antirez.com called Retwis], is structurally simple, has very good performances, and can be distributed among N web servers and M Redis servers with very little efforts. You can find the source code [http://code.google.com/p/redis/downloads/list here].
 
@@ -49,7 +49,7 @@ SET foo y (foo is now 11)
 
 Something is wrong with that! We incremented the value two times, but instead to go from 10 to 12 our key holds 11. This is because the INCR operation done with `GET / increment / SET` *is not an atomic operation*. Instead the INCR provided by Redis, Memcached, ..., are atomic implementations, the server will take care to protect the get-increment-set for all the time needed to complete in order to prevent simultaneous accesses.
 
-What makes Redis different from other key-value stores is that it provides more operation similar to INCR that can be used together to model complex problems. This is why you can use Redis to write whole web applications without using an SQL database and without to get mad.
+What makes Redis different from other key-value stores is that it provides more operations similar to INCR that can be used together to model complex problems. This is why you can use Redis to write whole web applications without using an SQL database and without to get mad.
 ==Beyond key-value stores==
 In this section we will see what Redis features we need to build our Twitter clone. The first thing to know is that Redis values can be more than strings. Redis supports Lists and Sets as values, and there are atomic operations to operate against this more advanced values so we are safe even with multiple accesses against the same key. Let's start from Lists:
 
@@ -75,7 +75,7 @@ LRANGE mylist 0 -1 => c,b,a
 
 Other important operations are LLEN that returns the length of the list, and LTRIM that is like LRANGE but instead of returning the specified range *trims* the list, so it is like _Get range from mylist, Set this range as new value_ but atomic. We will use only this List operations, but make sure to check the [http://code.google.com/p/redis/wiki/README Redis documentation] to discover all the List operations supported by Redis.
 ===The set data type===
-There is more than Lists, Redis also supports Sets, that are unsorted collection of elements. It is possible to add, remove, and test for existence of members, and perform intersection between different Sets. Of course it is possible to ask for the list or the number of elements of a Set. Some example will make it more clear. Take in mind that SADD is the _add to set_ operation, SREM is the _remove from set_ operation, _sismember_ is the _test if it is a member_ operation, and SINTER is _perform intersection_ operation. Other operations are SCARD that is used to get the cardinality (the number of elements) of a Set, and SMEMBERS that will return all the members of a Set.
+There is more than Lists, Redis also supports Sets, that are unsorted collection of elements. It is possible to add, remove, and test for existence of members, and perform intersection between different Sets. Of course it is possible to ask for the list or the number of elements of a Set. Some example will make it more clear. Keep in mind that SADD is the _add to set_ operation, SREM is the _remove from set_ operation, _sismember_ is the _test if it is a member_ operation, and SINTER is _perform intersection_ operation. Other operations are SCARD that is used to get the cardinality (the number of elements) of a Set, and SMEMBERS that will return all the members of a Set.
 
 {{{
 SADD myset a
@@ -104,11 +104,11 @@ SISMEMBER myset notamember => 0
 
 Ok I think we are ready to start coding!
 ==Prerequisites==
-If you didn't downloaded it already please [http://code.google.com/p/redis/wiki/README grab the source code of Retwis]. It's a simple tar.gz file with a few of .php files inside. The implementation is very simple. You will find the PHP library client inside (redis.php) that is used to talk with the Redis server from PHP. This library was written by [http://qix.it Ludovico Magnocavallo] and you are free to reuse this in your own projects, but for updated version of the library please download the Redis distribution.
+If you didn't download it already please [http://code.google.com/p/redis/wiki/README grab the source code of Retwis]. It's a simple tar.gz file with a few of .php files inside. The implementation is very simple. You will find the PHP library client inside (redis.php) that is used to talk with the Redis server from PHP. This library was written by [http://qix.it Ludovico Magnocavallo] and you are free to reuse this in your own projects, but for updated version of the library please download the Redis distribution.
 
 Another thing you probably want is a working Redis server. Just get the source, compile with make, and run with ./redis-server and you are done. No configuration is required at all in order to play with it or to run Retwis in your computer.
 ==Data layout==
-Working with a relational database this is the stage were the database layout should be produced in form of tables, indexes, and so on. We don't have tables, so what should be design? We need to identify what keys are needed to represent our objects and what kind of values this keys need to hold.
+Working with a relational database this is the stage were the database layout should be produced in form of tables, indexes, and so on. We don't have tables, so what should be designed? We need to identify what keys are needed to represent our objects and what kind of values this keys need to hold.
 
 Let's start from Users. We need to represent this users of course, with the username, userid, password, followers and following users, and so on. The first question is, what should identify an user inside our system? The username can be a good idea since it is unique, but it is also too big, and we want to stay low on memory. So like if our DB was a relational one we can associate an unique ID to every user. Every other reference to this user will be done by id. That's very simple to do, because we have our atomic INCR operation! When we create a new user we can do something like this, assuming the user is callled "antirez":
 
@@ -118,7 +118,7 @@ SET uid:1000:username antirez
 SET uid:1000:password p1pp0
 }}}
 
-We use the _global:nextUserId_ key in order to always get an unique ID for every new user. Then we use this unique ID to populate all the other keys holding our user data. *This is a Design Pattern* with key-values stores! Take it in mind.
+We use the _global:nextUserId_ key in order to always get an unique ID for every new user. Then we use this unique ID to populate all the other keys holding our user data. *This is a Design Pattern* with key-values stores! Keep it in mind.
 Besides the fields already defined, we need some more stuff in order to fully define an User. For example sometimes it can be useful to be able to get the user ID from the username, so we set this key too:
 
 {{{
@@ -180,8 +180,8 @@ setcookie("auth",$authsecret,time()+3600*24*365);
 header("Location: index.php");
 }}}
 
-This happens every time the users logs in, but we also need a function isLoggedIn in order to check if a given user is already authenticated or not. This are the logical steps preformed by the `isLoggedIn` function:
- * Get the "auth" cookie from the user. If there is no cookie, the user is not logged in of course. Let's call the value of this cookie `<authcookie>`
+This happens every time the users log in, but we also need a function isLoggedIn in order to check if a given user is already authenticated or not. These are the logical steps preformed by the `isLoggedIn` function:
+ * Get the "auth" cookie from the user. If there is no cookie, the user is not logged in, of course. Let's call the value of this cookie `<authcookie>`
  * Check if auth:`<authcookie>` exists, and what the value (the user id) is (1000 in the exmple).
  * In order to be sure check that uid:1000:auth matches.
  * Ok the user is authenticated, and we loaded a bit of information in the $User global variable.
@@ -337,7 +337,7 @@ You can find the code that sets or removes a following/follower relation at foll
 Gentle reader, if you reached this point you are already an hero, thank you. Before to talk about scaling horizontally it is worth to check the performances on a single server. Retwis is *amazingly fast*, without any kind of cache. On a very slow and loaded server, apache benchmark with 100 parallel clients issuing 100000 requests measured the average pageview to take 5 milliseconds. This means you can serve millions of users every day with just a single Linux box, and this one was monkey asses slow! Go figure with more recent hardware.
 
 So, first of all, probably you will not need more than one server for a lot of applications, even when you have a lot of users. But let's assume we *are* Twitter and need to handle a huge amount of traffic. What to do?
-===Hasing the key===
+===Hashing the key===
 The first thing to do is to hash the key and issue the request on different servers based on the key hash. There are a lot of well known algorithms to do so, for example check the Redis Ruby library client that implements _consistent hashing_, but the general idea is that you can turn your key into a number, and than take the reminder of the division of this number by the number of servers you have:
 
 {{{
@@ -352,6 +352,6 @@ Ok, are key accesses distributed among the key space? Well, all the user data wi
 
 For example every time we post a new message, we *need* to increment the `global:nextPostId` key. How to fix this problem? A Single server will get a lot if increments. The simplest way to handle this is to have a dedicated server just for increments. This is probably an overkill btw unless you have really a lot of traffic. There is another trick. The ID does not really need to be an incremental number, but just *it needs to be unique*. So you can get a random string long enough to be unlikely (almost impossible, if it's md5-size) to collide, and you are done. We successfully eliminated our main problem to make it really horizontally scalable!
 
-There is another one: global:timeline. There is no fix for this, if you need to take something in order you can split among different servers and *then merge* when you need to get the data back, or take it ordered and use a single key. Again if you really have so much posts for second, you can use a single server just for this. Remember that Redis in commodity hardware is able to handle 100000 writes for second, that's enough even for Twitter, I guess.
+There is another one: global:timeline. There is no fix for this, if you need to take something in order you can split among different servers and *then merge* when you need to get the data back, or take it ordered and use a single key. Again if you really have so much posts per second, you can use a single server just for this. Remember that with commodity hardware Redis is able to handle 100000 writes for second, that's enough even for Twitter, I guess.
 
 Please feel free to use the comments below for questions and feedbacks.
