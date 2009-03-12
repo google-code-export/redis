@@ -119,7 +119,9 @@ SET uid:1000:password p1pp0
 We use the _global:nextUserId_ key in order to always get an unique ID for every new user. Then we use this unique ID to populate all the other keys holding our user data. *This is a Design Pattern* with key-values stores! Take it in mind.
 Besides the fields already defined, we need some more stuff in order to fully define an User. For example sometimes it can be useful to be able to get the user ID from the username, so we set this key too:
 
+{{{
 SET username:antirez:uid 1000
+}}}
 
 This may appear strange at first, but remember that we are only able to access data by key! We it's not possible to tell Redis to return the key that holds a specific value. This is also *our stength*, this new paradigm is forcing us to organized data that can be accessed by _primary key_, speaking with relational DBs language.
 ==following, followers and updates==
