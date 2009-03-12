@@ -123,7 +123,7 @@ Besides the fields already defined, we need some more stuff in order to fully de
 SET username:antirez:uid 1000
 }}}
 
-This may appear strange at first, but remember that we are only able to access data by key! We it's not possible to tell Redis to return the key that holds a specific value. This is also *our stength*, this new paradigm is forcing us to organized data that can be accessed by _primary key_, speaking with relational DBs language.
+This may appear strange at first, but remember that we are only able to access data by key! It's not possible to tell Redis to return the key that holds a specific value. This is also *our stength*, this new paradigm is forcing us to organized data that can be accessed by _primary key_, speaking with relational DBs language.
 ==following, followers and updates==
 There is another central need in our system. Every user has followers users and following users. We have a perfect data structure for this work! That is... Sets. So let's add this two new fields to our schema:
 
