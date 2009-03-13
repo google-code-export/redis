@@ -15,6 +15,14 @@ So Redis offers more features:
 
  * *So what is Redis really about?* The User interface with the programmer. Redis aims to export to the programmer the right tools to model a wide range of problems. *Sets, Lists with O(1) push operation, lrange and ltrim, server-side fast intersection between sets, are primitives that allow to model complex problems with a key value database*.
 
+= Isn't this key-value thing just hype? =
+
+I imagine key-value DBs, in the short term future, to be used like you use memory in a program, with lists, hashes, and so on. With Redis it's like this, but this special kind of memory containing your data structures is shared, atomic, persistent.
+
+When we write code it is obvious, when we take data in memory, to use the most sensible data structure for the work, right? Incredibly when data is put inside a relational DB this is no longer true, and we create an absurd data model even if our need is to put data and get this data back in the same order we put it inside (an ORDER BY is required when the data should be already sorted. Strange, dont' you think?).
+
+Key-value DBs bring this back at home, to create sensible data models and use the right data structures for the problem we are trying to solve.
+
 = Can I backup a Redis DB while the server is working? =
 
 Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command. Btw we are working on transparent replication.
