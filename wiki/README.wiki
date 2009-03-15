@@ -519,6 +519,13 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
 
 *Return value: multi bulk reply*
 
+=== SINTERSTORE _dstkey_ _key1_ _key2_ ... _keyN_ ===
+_Time complexity O(N*M) worst case where N is the cardinality of the smallest set and M the number of sets_
+
+ This commnad works exactly like SINTER but instead of being returned the resulting set is sotred as _dstkey_.
+
+*Return value: status code reply*
+
 === SMEMBERS _key_ ===
 _Time complexity O(N)_
 
@@ -549,6 +556,85 @@ _Time complexity O(N)_
 -4 if the database index if out of range
 }}}
 *
+
+=== FLUSHDB ===
+ Delete all the keys of the currently selected DB. This command never fails.
+
+*Return value: status code reply*
+
+=== FLUSHALL ===
+ Delete all the keys of all the existing databases, not just the currently selected one. This command never fails.
+
+*Return value: status code reply*
+
+== Sorting ==
+
+=== SORT _key_ BY _pattern_ LIMIT _start_ _end_ GET _pattern_ ASC|DESC ALPHA ===
+    Sort the elements contained in the List or Set value at _key_. By default
+    sorting is numeric with elements being compared as double precision
+    floating point numbers. This is the simplest form of SORT.
+
+{{{
+SORT mylist
+}}}
+
+    Assuming mylist contains a list of numbers, the return value will be
+    the list of numbers ordered from the smallest to the bigger number.
+    In order to get the sorting in reverse order use DESC:
+
+{{{
+SORT mylist DESC
+}}}
+
+    ASC is also supported but it's the default so you don't really need it.
+    If you want to sort lexicographically use ALPHA. Note that Redis is
+    utf-8 aware assuming you set the right value for the LC_COLLATE
+    environment variable.
+
+    Sort is able to limit the number of results using the LIMIT option:
+
+{{{
+SORT mylist LIMIT 0 10
+}}}
+
+    In the above example SORT will return only 10 elements, starting from
+    the first one (star is zero-based). Almost all the sort options can
+    be mixed together. For example:
+
+{{{
+SORT mylist LIMIT 0 10 ALPHA DESC
+}}}
+
+    Will sort _mylist_ lexicographically, in descending order, returning only
+    the first 10 elements.
+
+    Sometimes you want to sort elements using external keys as weights to
+    compare instead to compare the actual List or Set elements. For example
+    the list _mylist_ may contain the elements 1, 2, 3, 4, that are just
+    the unique IDs of objects stored at object_1, object_2, object_3
+    and object_4, while the keys weight_1, weight_2, weight_3 and weight_4
+    can contain weights we want to use to sort the list of objects
+    identifiers. We can use the following command:
+
+{{{
+SORT mylist BY weight_*
+}}}
+
+    the BY option takes a pattern (`weight_*` in our example) that is used
+    in order to generate the key names of the weights used for sorting.
+    Weight key names are obtained substituting the first occurrence of `*`
+    with the actual value of the elements on the list (1,2,3,4 in our example).
+
+    Still our previous example will return just the sorted IDs. Often it is
+    needed to get the actual objects sorted (object_1, ..., object_4 in the
+    example). We can do it with the following command:
+
+{{{
+SORT mylist BY weight_* GET object_*
+}}}
+
+    Note that GET can be used multiple times in order to get more key for
+    every element of the original List or Set sorted.
 
 == Persistence control commands ==
 
@@ -809,8 +895,7 @@ time to use pipelining can be much faster.
 
 = License =
 
-Redis is released under the GPL license, version 2. See the COPYING file for
-more information.
+Redis is released under the BSD license. See the COPYING file for more information.
 
 = Credits =
 
