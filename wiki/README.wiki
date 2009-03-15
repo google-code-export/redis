@@ -636,6 +636,8 @@ SORT mylist BY weight_* GET object_*
     Note that GET can be used multiple times in order to get more keys for
     every element of the original List or Set sorted.
 
+*Return value: multi bulk reply*
+
 == Persistence control commands ==
 
 === SAVE ===
