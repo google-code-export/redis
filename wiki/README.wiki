@@ -633,7 +633,7 @@ SORT mylist BY weight_*
 SORT mylist BY weight_* GET object_*
 }}}
 
-    Note that GET can be used multiple times in order to get more key for
+    Note that GET can be used multiple times in order to get more keys for
     every element of the original List or Set sorted.
 
 == Persistence control commands ==
