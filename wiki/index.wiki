@@ -2,7 +2,8 @@
 
 Hello! The followings are pointers to different parts of the Redis Documentation. This documentation is going to be split in more parts soon:
 
- * [README The README] is the best starting point, with a description of Redis features and commands. Also the Protocol Specification is included in the README file. This file will be separated in different files in the near future.
+ * [README The README] is the best starting point, with a description of Redis features and commands.
+ * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
