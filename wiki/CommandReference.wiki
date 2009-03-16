@@ -1,0 +1,68 @@
+= Redis Command Reference =
+
+Every command name links to a specific wiki page describing the behavior of the command.
+
+== Connection handling ==
+
+ * [QuitCommand QUIT] `close the connection`
+
+== Commands operating on string values ==
+
+ * [SetCommand SET] _key_ _value_ `set a key to a string value`
+ * [GetCommand GET] _key_ `return the string value of the key`
+ * [SetnxCommand SETNX] _key_ _value_ `set a key to a string value if the key does not exist`
+ * [IncrCommand INCR] _key_ `increment the integer value of key`
+ * [IncrCommand INCRBY] _key_ _integer_` increment the integer value of key by integer`
+ * [DecrCommand INCR] _key_ `decrement the integer value of key`
+ * [DecrCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
+ * [ExistsCommand EXISTS] _key_ `test if a key exists`
+ * [DelCommand DEL] _key_ `delete a key`
+ * [TypeCommand TYPE] _key_ `return the type of the value stored at key`
+
+== Commands operating on the key space ==
+
+ * [KeysCommand KEYS] _pattern_ `return all the keys matching a given pattern`
+ * [RandomkeyCommand RANDOMKEY] `return a random key from the key space`
+ * [RenameCommand RENAME] _oldname_ _newname_ `rename the old key in the new one, destroing the newname key if it already exists`
+ * [RenameCommand RENAMENX] _oldname_ _newname_ `rename the old key in the new one, if the newname key does not already exist`
+
+== Commands operating on lists ==
+
+ * [RpushCommand RPUSH] _key_ _value_ `Append an element to the tail of the List value at key`
+ * [RpushCommand LPUSH] _key_ _value_ `Append an element to the head of the List value at key`
+ * [LlenCommand LLEN] _key_ `Return the length of the List value at key`
+ * [LrangeCommand LRANGE] _key_ _start_ _end_ `Return a range of elements from the List at key`
+ * [LtrimCommand LTRIM] _key_ _start_ _end_ `Trim the list at key to the specified range of elements`
+ * [LindexCommand LINDEX] _key_ _index_ `Return the element at index position from the List at key`
+ * [LsetCommand LSET] _key_ _index_ _value_ `Set a new value as the element at index position of the List at key`
+ * [LremCommand LREM] _key_ _count_ _value_ `Remove the first-N, last-N, or all the elements matching value from the List at key`
+ * [LpopCommand LPOP] _key_ `Return and remove (atomically) the first element of the List at key`
+ * [LpopCommand RPOP] _key_ `Return and remove (atomically) the last element of the List at key`
+
+== Commands operating on sets ==
+
+ * [SaddCommand SADD] _key_ _member_ `Add the specified member to the Set value at key`
+ * [SremCommand SREM] _key_ _member_ `Remove the specified member from the Set value at key`
+ * [ScardCommand SCARD] _key_ `Return the number of elements (the cardinality) of the Set at key`
+ * [SismemberCommand SISMEMBER] _key_ _member_ `Test if the specified value is a member of the Set at key`
+ * [SinterCommand SINTER] _key1_ _key2_ ... _keyN_ `Return the intersection between the Sets stored at key1, key2, ..., keyN`
+ * [SinterCommand SINTERSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
+ * [SmembersCommand SMEMBERS] _key_ `Return all the members of the Set value at key`
+
+== Multiple databases handling commands ==
+
+ * [SelectCommand SELECT] _index_ `Select the DB having the specified index`
+ * [MoveCommand MOVE] _key_ _dbindex_ `Move the key from the currently selected DB to the DB having as index dbindex`
+ * [FlushdbCommand FLUSHDB] `Remove all the keys of the currently selected DB`
+ * [FlushallCommand FLUSHALL] `Remove all the keys from all the databases`
+
+== Sorting ==
+
+ * [SortCommand SORT] _key_ BY _pattern_ LIMIT _start_ _end_ GET _pattern_ ASC|DESC ALPHA `Sort a Set or a List accordingly to the specified parameters`
+
+== Persistence control commands ==
+
+ * [SaveCommand SAVE] `Synchronously save the DB on disk`
+ * [SaveCommand BGSAVE] `Asynchronously save the DB on disk`
+ * [LastsaveCommand LASTSAVE] `Return the UNIX time stamp of the last successfully saving of the dataset on disk`
+ * [ShotdownCommand SHOTDOWN] `Synchronously save the DB on disk, then shutdown the server`
