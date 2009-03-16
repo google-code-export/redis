@@ -1,6 +1,6 @@
 = Redis Documentation =
 
-Hello! The following are pointers to different parts of the Redis Documentation. This documentation is going to be split in more parts soon:
+Hello! The followings are pointers to different parts of the Redis Documentation. This documentation is going to be split in more parts soon:
 
  * [README The README] is the best starting point, with a description of Redis features and commands. Also the Protocol Specification is included in the README file. This file will be separated in different files in the near future.
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
