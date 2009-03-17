@@ -116,9 +116,8 @@ The following commands reply with a bulk reply: GET, KEYS, LINDEX, LPOP, RPOP
 
 == Multi-Bulk replies ==
 
-In the specific case of the LRANGE command the server needs to return multiple
-values (every element of the list is a value, and LRANGE needs to return
-more than a single element). This is accomplished using multiple bulk writes,
+Commands similar to LRANGE needs to return multiple values (every element
+of the list is a value, and LRANGE needs to return more than a single element). This is accomplished using multiple bulk writes,
 prefixed by an initial line indicating how many bulk writes will follow.
 Example:
 
@@ -148,6 +147,23 @@ S: nil
 
 A client library API SHOULD return a nil object and not an empty list when this
 happens. This makes possible to distinguish between empty list and non existing ones.
+
+== Nil elements in Multi-Bulk replies =
+
+Single elements of a multi bulk reply may have -1 length, in order to signal that this elements are missing and not empty strings. This can happen with the SORT command when used with the GET _pattern_ option when the specified key is missing. Example of a multi bulk reply containing an empty element:
+
+S: 3
+S: 3
+S: foo
+S: -1
+S: 3
+S: bar
+
+The second element is nul. The client library should return something like this:
+
+{{{
+["foo",nil,"bar"]
+}}}
 
 == Multi-Bulk replies errors ==
 
