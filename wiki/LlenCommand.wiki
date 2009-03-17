@@ -1,0 +1,25 @@
+= LLEN _key_ =
+_Time complexity: O(1)_
+
+ Return the length of the list stored at the specified key. If the
+ key does not exist zero is returned (the same behaviour as for
+ empty lists). If the value stored at _key_ is not a list an error is returned.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+The length of the list as an integer `>=` 0 if the operation succeeded
+-2 if the specified key does not hold a list value
+}}}
+
+Note that library clients should raise an error if -2 is returned by the Redis server instead to pass the negative value back to the caller.
+
+== See also ==
+ * [LlenCommand LLEN]
+ * [LrangeCommand LRANGE]
+ * [LtrimCommand LTRIM]
+ * [LdelCommand LDEL]
+ * [LindexCommand LINDEX]
+ * [LsetCommand LSET]

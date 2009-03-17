@@ -13,8 +13,8 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [SetnxCommand SETNX] _key_ _value_ `set a key to a string value if the key does not exist`
  * [IncrCommand INCR] _key_ `increment the integer value of key`
  * [IncrCommand INCRBY] _key_ _integer_` increment the integer value of key by integer`
- * [DecrCommand INCR] _key_ `decrement the integer value of key`
- * [DecrCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
+ * [IncrCommand INCR] _key_ `decrement the integer value of key`
+ * [IncrCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
  * [ExistsCommand EXISTS] _key_ `test if a key exists`
  * [DelCommand DEL] _key_ `delete a key`
  * [TypeCommand TYPE] _key_ `return the type of the value stored at key`
@@ -24,7 +24,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [KeysCommand KEYS] _pattern_ `return all the keys matching a given pattern`
  * [RandomkeyCommand RANDOMKEY] `return a random key from the key space`
  * [RenameCommand RENAME] _oldname_ _newname_ `rename the old key in the new one, destroing the newname key if it already exists`
- * [RenameCommand RENAMENX] _oldname_ _newname_ `rename the old key in the new one, if the newname key does not already exist`
+ * [RenamenxCommand RENAMENX] _oldname_ _newname_ `rename the old key in the new one, if the newname key does not already exist`
 
 == Commands operating on lists ==
 

@@ -1,0 +1,18 @@
+= SETNX _key_ _value_ =
+_Time complexity: O(1)_
+
+ SETNX works exactly like [SetCommand SET] with the only difference that
+ if the key already exists no operation is performed.
+ SETNX actually means "SET if Not eXists".
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+1 if the key was set
+0 if the key was not set
+}}}
+
+== See also ==
+ * [SetCommand SET]

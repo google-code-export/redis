@@ -1,0 +1,20 @@
+=== RPUSH _key_ _string_ ===
+=== LPUSH _key_ _string_ ===
+_Time complexity: O(1)_
+
+ Add the _string_ value to the head (RPUSH) or tail (LPUSH) of the list
+ stored at _key_. If the key does not exist an empty list is created just before
+ the append operation. If the key exists but is not a List an error
+ is returned.
+
+== Return value ==
+
+[ReplyTypes Status code reply]
+
+== See also ==
+ * [LlenCommand LLEN]
+ * [LrangeCommand LRANGE]
+ * [LtrimCommand LTRIM]
+ * [LdelCommand LDEL]
+ * [LindexCommand LINDEX]
+ * [LsetCommand LSET]

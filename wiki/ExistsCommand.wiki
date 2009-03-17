@@ -1,0 +1,20 @@
+= EXISTS _key_ =
+_Time complexity: O(1)_
+
+ Test if the specified key exists. The command returns
+ "0" if the key exists, otherwise "1" is returned.
+ Note that even keys set with an empty string as value will
+ return "1".
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+1 if the key exists.
+0 if the key does not exist.
+}}}
+
+== See also ==
+ * [SetnxCommand SETNX] is a `SET if not EXISTS` atomic operation.
+ * [SismemberCommand SISMEMBER] test if an element is a member of a Set.

@@ -1,0 +1,20 @@
+= DEL _key_ =
+_Time complexity: O(1)_
+
+ Remove the specified key. If the key does not exist
+ no operation is performed. The command always returns success.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+1 if the key was removed
+0 if the key does not exist
+}}}
+
+== See also ==
+ * [SetCommand SET]
+ * [GetCommand GET]
+ * [ExistsCommand EXISTS]
+ * [LdelCommand LDEL]
