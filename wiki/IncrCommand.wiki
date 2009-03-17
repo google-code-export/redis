@@ -1,0 +1,18 @@
+= INCR _key_ =
+= INCRBY _key_ _integer_ =
+= DECR _key_ _integer_ =
+= DECRBY _key_ _integer_ =
+_Time complexity: O(1)_
+
+Increment or decrement the number stored at _key_ by one. If the key does
+not exist or contains a value of a wrong type, set the key to the
+value of "0" before to perform the increment or decrement operation.
+
+INCRBY and DECRBY work just like INCR and DECR but instead to increment/decrement by 1 the increment/decrement is _integer_.
+
+== Return value ==
+
+[ReplyTypes Integer reply], this commands will reply with the new value of _key_ after the increment or decrement.
+
+== See also ==
+ * [GetCommand GET]
