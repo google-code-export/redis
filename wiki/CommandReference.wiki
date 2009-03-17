@@ -65,4 +65,4 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [SaveCommand SAVE] `Synchronously save the DB on disk`
  * [BgsaveCommand BGSAVE] `Asynchronously save the DB on disk`
  * [LastsaveCommand LASTSAVE] `Return the UNIX time stamp of the last successfully saving of the dataset on disk`
- * [ShotdownCommand SHOTDOWN] `Synchronously save the DB on disk, then shutdown the server`
+ * [ShutdownCommand SHUTDOWN] `Synchronously save the DB on disk, then shutdown the server`
