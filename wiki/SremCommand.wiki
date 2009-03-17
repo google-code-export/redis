@@ -1,0 +1,24 @@
+= SREM _key_ _member_ =
+_Time complexity O(1)_
+
+ Remove the specified _member_ from the set value stored at _key_. If
+ _member_ was not a member of the set no operation is performed. If _key_
+ does not exist or does not hold a set value an error is returned.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+1 if the new element was removed
+0 if the new element was not a member of the set
+-2 if the key does not hold a set value
+}}}
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]

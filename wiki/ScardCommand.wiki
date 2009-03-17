@@ -1,0 +1,24 @@
+= SCARD _key_ =
+_Time complexity O(1)_
+
+ Return the set cardinality (number of elements). If the _key_ does not
+ exist 0 is returned, like for empty sets. If the _key_ does not hold
+ a set value -1 is returned. Client libraries should raise an error
+ when -1 is returned instead to pass the value to the caller.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+the cardinality (number of elements) of the set as an integer `>=` 0 if the operation succeeded
+-2 if the specified key does not hold a set value
+}}}
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]

@@ -1,0 +1,25 @@
+= SISMEMBER _key_ _member_ =
+_Time complexity O(1)_
+
+ Return 1 if _member_ is a member of the set stored at _key_, otherwise
+ 0 is returned. On error a negative value is returned. Client libraries
+ should raise an error when a negative value is returned instead to pass
+ the value to the caller.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically:
+
+{{{
+1 if the element is a member of the set
+0 if the element is not a member of the set OR if the key does not exist
+-2 if the key does not hold a set value
+}}}
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]
