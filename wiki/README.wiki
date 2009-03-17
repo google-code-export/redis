@@ -157,7 +157,7 @@ EXISTS foo
 As you can see the server replied '0' the first time since 'nokey' does not
 exist, and '1' for 'foo', a key that actually exists.
 
-Ok... now you know the basics, read the [CommandReference REDIS COMMANDS REFERENCE] section to
+Ok... now you know the basics, read the [CommandReference REDIS COMMAND REFERENCE] section to
 learn all the commands supported by Redis and the [ProtocolSpecification PROTOCOL SPECIFICATION]
 section for more details about the protocol used if you plan to implement one
 for a language missing a decent client implementation.
