@@ -1,6 +1,6 @@
 = Redis Documentation =
 
-Hello! The followings are pointers to different parts of the Redis Documentation. This documentation is going to be split in more parts soon:
+Hello! The followings are pointers to different parts of the Redis Documentation.
 
  * [README The README] is the best starting point to know more about the project.
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages.
