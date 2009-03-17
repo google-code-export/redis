@@ -1,0 +1,16 @@
+= SINTERSTORE _dstkey_ _key1_ _key2_ ... _keyN_ =
+_Time complexity O(N*M) worst case where N is the cardinality of the smallest set and M the number of sets_
+
+ This commnad works exactly like SINTER but instead of being returned the resulting set is sotred as _dstkey_.
+
+== Return value ==
+
+[ReplyTypes Status code reply]
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]

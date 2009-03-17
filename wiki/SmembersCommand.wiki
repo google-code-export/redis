@@ -1,0 +1,17 @@
+= SMEMBERS _key_ =
+_Time complexity O(N)_
+
+ Return all the members (elements) of the set value stored at _key_. This
+ is just syntax glue for [SintersectCommand SINTERSECT].
+
+== Return value ==
+
+[ReplyTypes Multi bulk reply]
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]
