@@ -1,0 +1,23 @@
+= Redis Reply Types =
+
+Redis commands can reply to the client with four different kind of replies, you can find the protocol level specification of this replies in the [ProtocolSpecificaiton Redis Protocol Specification]. This page is instead an higher level description of the four types of replies from the point of view of the final user.
+
+= Status code reply =
+Status code replies are in the form of a *+OK* from the server, or a *-ERR* followed by an error string. At the protocol level this replies are sent as a single line. Client libraries should return _true_ on *OK*, and should raise an exception in form of an error that stops the execution of the program on *ERR* replies from server, because this kind of replies are used by operations that usually fails because of a programming error, an inconsistent DB, and so on.
+
+= Integer reply =
+At protocol level integer replies are single line replies in form of a decimal singed number. Redis commands returning _true_ or _false_ will use an integer reply and "1" and "0" as replies. A negative value in an integer reply is used to signal an error by all the commands, with the exception of [IncrCommand INCR]/[IncrCommand INCRBY]/[IncrCommand DECR]/[IncrCommand DECRBY] where negative return values are allowed (this command never fails).
+
+All the integer replies using negative values to return errors will use the same values to signal the same errors:
+* -1 key not found
+* -2 key contains a value of the wrong type
+* -3 source object and destination object are the same
+* -4 out of range argument
+
+Integer replies are usually passed by client libraries as integer values. On negative integer reply an exception should be raised (excluding the INCR family commands).
+
+= Bulk reply =
+A bulk reply is a binary-safe reply that is used to return a single string value (string is not limited to alphanumerical strings, it may contain binary data of any kind). Client libraries will usually return a string as return value of Redis commands returning bulk replies. There is a special bulk reply that signal that the element does not exist. When this happens the client library should return 'nil', 'false', or some other special element that can be distinguished by an empty string.
+
+= Multi bulk reply =
+While a bulk reply returns a single string value, multi bulk replies are used to return multiple values: lists, sets, and so on. Elements of a bulk reply can be missing (-1 length count at protocol level). Client libraries should return 'nil' or 'false' in order to make this elements distinguishable from empty strings. Client libraries should return multi bulk replies that are about ordered elements like list ranges as lists, and bulk replies about sets as hashes.
