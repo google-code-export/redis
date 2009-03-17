@@ -152,12 +152,14 @@ happens. This makes possible to distinguish between empty list and non existing 
 
 Single elements of a multi bulk reply may have -1 length, in order to signal that this elements are missing and not empty strings. This can happen with the SORT command when used with the GET _pattern_ option when the specified key is missing. Example of a multi bulk reply containing an empty element:
 
+{{{
 S: 3
 S: 3
 S: foo
 S: -1
 S: 3
 S: bar
+}}}
 
 The second element is nul. The client library should return something like this:
 
