@@ -15,7 +15,7 @@ For example you can append elements to a list stored at the key "mylist" using t
 
 All this features, the support for sorting Lists and Sets, allow to use Redis as the sole DB for your scalable application without the need of any relational database. [TwitterAlikeExample We wrote a simple Twitter clone in PHP + Redis] to show a real world example, the link points to an article explaining the design and internals in very simple words.
 
-= How Redis differs from Memcached? =
+= What are the differences between Redis and Memcached? =
 
 In the following ways:
 
@@ -23,7 +23,7 @@ In the following ways:
 
  * Like memcached Redis uses a key-value model, but while keys can just be strings, values in Redis can be lists and sets, and complex operations like intersections, set/get n-th element of lists, pop/push of elements, can be performed against sets and lists. It is possible to use lists as message queues.
 
-= How Redis differs from Tokyo Cabinet / Tyrant =
+= What are the differences between Redis and Tokyo Cabinet / Tyrant? =
 
 Redis and Tokyo can be used for the same applications, but actually they are *ery* different beasts:
 
