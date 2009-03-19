@@ -48,5 +48,5 @@ However it is planned to add a configuration directive to tell Redis to stop acc
 = What Redis means actually? =
 
 Redis means two things:
- * it's a joke on the word Redistribute (instead to use just a Relational DB redistribute your workload among Redis and a Relational DB)
+ * it's a joke on the word Redistribute (instead to use just a Relational DB redistribute your workload among Redis servers)
  * it means REmote DIctionary Server
