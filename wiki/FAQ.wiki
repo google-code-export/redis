@@ -31,6 +31,20 @@ Yes you can. When Redis saves the DB it actually creates a temp file, then renam
 
 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). I don't have numbers to compare the memory usage with other systems like memcached, I'll be glad if someone can provide this numbers.
 
+= I like Redis high level operations and features, but I don't like it takes everything in memory and I can't have a dataset larger the memory. Plans to change this? =
+
+The whole key-value hype started for a reason: performances. Redis takes the whole dataset in memory and writes asynchronously on disk in order to be very fast, you have the best of both words: hyper-speed and persistence of data, but the price to pay is exactly this, that the dataset must fit on your computers RAM.
+
+If the data is larger then memory, and this data is stored on disk, what happens is that the bottleneck of the disk I/O speed will start to ruin the performances. Maybe not in benchmarks, but once you have real load with distributed key accesses the data must come from disk, and the disk is damn slow. Not only, but Redis supports higher level data structures than the plain values. To implement this things on disk is even slower.
+
+Redis will always continue to hold the whole dataset in memory because this days scalability requires to use RAM as storage media, and RAM is getting cheaper and cheaper. Today it is common for an entry level server to have 16 GB of RAM! And in the 64-bit era there are no longer limits to the amount of RAM you can have in theory.
+
+= What happens if Redis runs out of memory? =
+
+With modern operating systems malloc() returning NULL is not common, usually the server will start swapping and Redis performances will be disastrous so you'll now it's time to use more Redis servers or get more RAM.
+
+However it is planned to add a configuration directive to tell Redis to stop accepting queries but instead to SAVE the latest data and quit if it is using more than a given amount of memory. Also the new INFO command (work in progress in this days) will report the amount of memory Redis is using so you can write scripts that monitor your Redis servers checking for critical conditions.
+
 = What Redis means actually? =
 
 Redis means two things:
