@@ -42,7 +42,7 @@ Redis will always continue to hold the whole dataset in memory because this days
 
 = What happens if Redis runs out of memory? =
 
-With modern operating systems malloc() returning NULL is not common, usually the server will start swapping and Redis performances will be disastrous so you'll now it's time to use more Redis servers or get more RAM.
+With modern operating systems malloc() returning NULL is not common, usually the server will start swapping and Redis performances will be disastrous so you'll know it's time to use more Redis servers or get more RAM.
 
 However it is planned to add a configuration directive to tell Redis to stop accepting queries but instead to SAVE the latest data and quit if it is using more than a given amount of memory. Also the new INFO command (work in progress in this days) will report the amount of memory Redis is using so you can write scripts that monitor your Redis servers checking for critical conditions.
 
