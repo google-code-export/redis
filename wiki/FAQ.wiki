@@ -27,7 +27,6 @@ Key-value DBs bring this back at home, to create sensible data models and use th
 
 Yes you can. When Redis saves the DB it actually creates a temp file, then rename(2) that temp file name to the destination file name. So even while the server is working it is safe to save the database file just with the _cp_ unix command. Note that you can use master-slave replication in order to have redundancy of data, but if all you need is backups, cp or scp will do the work pretty well.
 
-
 = What's the Redis memory footprint? =
 
 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). I don't have numbers to compare the memory usage with other systems like memcached, I'll be glad if someone can provide this numbers. (Update: reported to be very similar to memcached in the comments of this page).
@@ -39,6 +38,10 @@ The whole key-value hype started for a reason: performances. Redis takes the who
 If the data is larger then memory, and this data is stored on disk, what happens is that the bottleneck of the disk I/O speed will start to ruin the performances. Maybe not in benchmarks, but once you have real load with distributed key accesses the data must come from disk, and the disk is damn slow. Not only, but Redis supports higher level data structures than the plain values. To implement this things on disk is even slower.
 
 Redis will always continue to hold the whole dataset in memory because this days scalability requires to use RAM as storage media, and RAM is getting cheaper and cheaper. Today it is common for an entry level server to have 16 GB of RAM! And in the 64-bit era there are no longer limits to the amount of RAM you can have in theory.
+
+= Ok but I absolutely need to have a DB larger than memory, still I need the Redis features =
+
+One possible solution is to use both MySQL and Redis at the same time, basically take the state on Redis, and all the things that gets accessed very frequently: user auth tokens, Redis Lists with chronologically ordered IDs of the last N-comments, N-posts, and so on. Then use MySQL as a simple storage engine for large data, that is just create a table with an auto-incrementing unique-id and a large BLOB field. Access MySQL data only by primary key (the ID). The application will run the high traffic queries against Redis but when there is to take the big data will ask MySQL for specific resources IDs.
 
 = What happens if Redis runs out of memory? =
 
