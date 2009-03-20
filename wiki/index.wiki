@@ -8,3 +8,4 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
+ * *New!* video: [http://mwrc2009.confreaks.com/13-mar-2009-19-24-redis-key-value-nirvana-ezra-zygmuntowicz.html watch the Ezra Zygmuntowicz talk about Redis] to know the most important Redis ideas in few minutes.
