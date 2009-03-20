@@ -41,7 +41,7 @@ Redis will always continue to hold the whole dataset in memory because this days
 
 = Ok but I absolutely need to have a DB larger than memory, still I need the Redis features =
 
-One possible solution is to use both MySQL and Redis at the same time, basically take the state on Redis, and all the things that gets accessed very frequently: user auth tokens, Redis Lists with chronologically ordered IDs of the last N-comments, N-posts, and so on. Then use MySQL as a simple storage engine for large data, that is just create a table with an auto-incrementing unique-id and a large BLOB field. Access MySQL data only by primary key (the ID). The application will run the high traffic queries against Redis but when there is to take the big data will ask MySQL for specific resources IDs.
+One possible solution is to use both MySQL and Redis at the same time, basically take the state on Redis, and all the things that get accessed very frequently: user auth tokens, Redis Lists with chronologically ordered IDs of the last N-comments, N-posts, and so on. Then use MySQL as a simple storage engine for larger data, that is just create a table with an auto-incrementing ID as primary key and a large BLOB field as data field. Access MySQL data only by primary key (the ID). The application will run the high traffic queries against Redis but when there is to take the big data will ask MySQL for specific resources IDs.
 
 = What happens if Redis runs out of memory? =
 
