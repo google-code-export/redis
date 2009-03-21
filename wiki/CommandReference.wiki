@@ -69,4 +69,4 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Remote server control commands ==
 
- * [InfoCommand INFO] return information and statistics.
+ * [InfoCommand INFO] `provide information and statistics about the server`
