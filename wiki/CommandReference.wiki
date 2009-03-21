@@ -69,4 +69,4 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Remote server control commands ==
 
- * [VersionCommand VERSION] return the version of the server.
+ * [InfoCommand INFO] return information and statistics.
