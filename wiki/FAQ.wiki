@@ -60,3 +60,7 @@ Update: redis SVN is able to know how much memory it is using and report it via 
 Redis means two things:
  * it's a joke on the word Redistribute (instead to use just a Relational DB redistribute your workload among Redis servers)
  * it means REmote DIctionary Server
+
+= Why did you started the Redis project? =
+
+In order to scale [http://lloogg.com LLOOGG]. But after I got the basic server working I liked to idea to share the work with other guys, and Redis was turned into an open source project.
