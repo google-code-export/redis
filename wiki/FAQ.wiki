@@ -63,4 +63,4 @@ Redis means two things:
 
 = Why did you started the Redis project? =
 
-In order to scale [http://lloogg.com LLOOGG]. But after I got the basic server working I liked to idea to share the work with other guys, and Redis was turned into an open source project.
+In order to scale [http://lloogg.com LLOOGG]. But after I got the basic server working I liked the idea to share the work with other guys, and Redis was turned into an open source project.
