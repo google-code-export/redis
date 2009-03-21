@@ -49,7 +49,7 @@ One possible solution is to use both MySQL and Redis at the same time, basically
 
 = I have an empty Redis server but INFO and logs are reporting megabytes of memory in use! =
 
-This may happen and it's prefectly ok. Redis objects are 12 bytes structures allocated and freed a lot of times. This costs a lot of CPU so instead of being freed released objects are taken into a free list and reused when needed. This memory is taken exactly by this free objects ready to be reused.
+This may happen and it's prefectly ok. Redis objects are small C structures allocated and freed a lot of times. This costs a lot of CPU so instead of being freed released objects are taken into a free list and reused when needed. This memory is taken exactly by this free objects ready to be reused.
 
 = What happens if Redis runs out of memory? =
 
