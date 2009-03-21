@@ -29,7 +29,7 @@ Yes you can. When Redis saves the DB it actually creates a temp file, then renam
 
 = What's the Redis memory footprint? =
 
-Worst case scenario: 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). Note that the same data stored linearly in an unique string takes something like 16MB, this is normal because with small keys and values there is a lot of overhead. Memcached will perform similarly.
+Worst case scenario: 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). Note that the same data stored linearly in an unique string takes something like 16MB, this is the norm because with small keys and values there is a lot of overhead. Memcached will perform similarly.
 
 With large keys/values the ratio is much better of course.
 
