@@ -47,6 +47,10 @@ Redis will always continue to hold the whole dataset in memory because this days
 
 One possible solution is to use both MySQL and Redis at the same time, basically take the state on Redis, and all the things that get accessed very frequently: user auth tokens, Redis Lists with chronologically ordered IDs of the last N-comments, N-posts, and so on. Then use MySQL as a simple storage engine for larger data, that is just create a table with an auto-incrementing ID as primary key and a large BLOB field as data field. Access MySQL data only by primary key (the ID). The application will run the high traffic queries against Redis but when there is to take the big data will ask MySQL for specific resources IDs.
 
+= I have an empty Redis server but INFO and logs are reporting megabytes of memory in use! =
+
+This may happen and it's prefectly ok. Redis objects are 12 bytes structures allocated and freed a lot of times. This costs a lot of CPU so instead of being freed released objects are taken into a free list and reused when needed. This memory is taken exactly by this free objects ready to be reused.
+
 = What happens if Redis runs out of memory? =
 
 With modern operating systems malloc() returning NULL is not common, usually the server will start swapping and Redis performances will be disastrous so you'll know it's time to use more Redis servers or get more RAM.
