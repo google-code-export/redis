@@ -1,0 +1,11 @@
+= DBSIZE =
+
+ Return the number of keys in the currently selected database.
+
+== Return value ==
+
+[ReplyTypes Integer reply]
+
+== See also ==
+ * [SelectCommand SELECT]
+ * [InfoCommand INFO]
