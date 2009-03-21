@@ -29,7 +29,11 @@ Yes you can. When Redis saves the DB it actually creates a temp file, then renam
 
 = What's the Redis memory footprint? =
 
-1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). I don't have numbers to compare the memory usage with other systems like memcached, I'll be glad if someone can provide this numbers. (Update: reported to be very similar to memcached in the comments of this page).
+Worst case scenario: 1 Million keys with the key being the natural numbers from 0 to 999999 and the string "Hello World" as value use 100MB on my Intel macbook (32bit). Note that the same data stored linearly in an unique string takes something like 16MB, this is normal because with small keys and values there is a lot of overhead. Memcached will perform similarly.
+
+With large keys/values the ratio is much better of course.
+
+64 bit systems will use much more memory than 32 bit systems to store the same keys, especially if the keys and values are small, this is because pointers takes 8 bytes in 64 bit systems. But of course the advantage is that you can have a lot of memory in 64 bit systems, so to run large Redis servers a 64 bit system is more or less required.
 
 = I like Redis high level operations and features, but I don't like it takes everything in memory and I can't have a dataset larger the memory. Plans to change this? =
 
@@ -48,6 +52,8 @@ One possible solution is to use both MySQL and Redis at the same time, basically
 With modern operating systems malloc() returning NULL is not common, usually the server will start swapping and Redis performances will be disastrous so you'll know it's time to use more Redis servers or get more RAM.
 
 However it is planned to add a configuration directive to tell Redis to stop accepting queries but instead to SAVE the latest data and quit if it is using more than a given amount of memory. Also the new INFO command (work in progress in this days) will report the amount of memory Redis is using so you can write scripts that monitor your Redis servers checking for critical conditions.
+
+Update: redis SVN is able to know how much memory it is using and report it via the [InfoCommand INFO] command.
 
 = What Redis means actually? =
 
