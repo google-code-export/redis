@@ -1,5 +1,7 @@
 = Get the latest Redis source code =
 
-The development version of Redis is [http://github.com/antirez/redis/tree/master hosted here at Github], have fun cloning the source code with Git.
+== Unstable code ==
+The development version of Redis is [http://github.com/antirez/redis/tree/master hosted here at Github], have fun cloning the source code with Git. If you are not familar with Git just use the *download* button to get a tarball.
 
+== Stable code ==
 *Warning:* the development source code is only intended for people that want to develop Redis or absolutely need the latest features still not available on the stable releases. You may have a better experience with the [http://code.google.com/p/redis/downloads/list latest stable tarball].
