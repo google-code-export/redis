@@ -1,7 +1,14 @@
 = Credits =
 
  * The Redis server was designed and written by [http://invece.org Salvatore Sanfilippo (aka antirez)]
- * The Ruby client library was written by [http://brainspl.at/ Ezra Zygmuntowicz (aka ezmobius)]
- * The Python and PHP client libraries were written by [http://qix.it Ludovico Magnocavallo (aka ludo)]
- * The Erlang client library was written by [http://www.adroll.com/ Valentino Volonghi of Adroll]
- * *brettbender* found and fixed a but in sds.c that caused the server to crash at least on 64 bit systems, and anyway to be buggy since we used the same vararg thing against vsprintf without to call va_start and va_end every time.
+ * [http://brainspl.at/ Ezra Zygmuntowicz (aka ezmobius)] - Ruby client lib initial version and hacking
+ * [http://qix.it Ludovico Magnocavallo (aka ludo)] - Python clinet lib
+ * [http://www.adroll.com/ Valentino Volonghi of Adroll] - Erlang client lib
+ * *brettbender* - found and fixed a but in sds.c that caused the server to crash at least on 64 bit systems, and anyway to be buggy since we used the same vararg thing against vsprintf without to call va_start and va_end every time.
+ * [http://www.rot13.org/~dpavlin Dobrica Pavlinusic] - Perl client lib
+ * Brian Hammond - AUTH command implementation
+ * [http://www.clorophilla.net/ Daniele Alessandri] - Lua client lib
+ * Corey Stup - C99 cleanups
+ * Taylor Weibley - Ruby client hacking 
+
+p.s. sorry to take this file in sync is hard in this early days. Please drop me an email if I forgot to add your name here!
