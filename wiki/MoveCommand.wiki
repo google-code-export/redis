@@ -9,10 +9,10 @@
 
 [ReplyTypes Integer reply], specifically:
 
+{{{
 1 if the key was moved
 0 if the key was not moved because already present on the target DB or was not found in the current DB.
--3 if the destination DB is the same as the source DB
--4 if the database index if out of range
+}}}
 
 == See also ==
  * [SelectCommand SELECT]

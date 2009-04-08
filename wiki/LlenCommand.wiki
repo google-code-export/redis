@@ -10,11 +10,8 @@ _Time complexity: O(1)_
 [ReplyTypes Integer reply], specifically:
 
 {{{
-The length of the list as an integer `>=` 0 if the operation succeeded
--2 if the specified key does not hold a list value
+The length of the list.
 }}}
-
-Note that library clients should raise an error if -2 is returned by the Redis server instead to pass the negative value back to the caller.
 
 == See also ==
  * [LlenCommand LLEN]

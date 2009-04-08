@@ -14,7 +14,6 @@ _Time complexity O(1)_
 {{{
 1 if the new element was added
 0 if the new element was already a member of the set
--2 if the key contains a non set value
 }}}
 
 == See also ==

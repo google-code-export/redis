@@ -12,7 +12,6 @@ _Time complexity O(1)_
 {{{
 1 if the new element was removed
 0 if the new element was not a member of the set
--2 if the key does not hold a set value
 }}}
 
 == See also ==

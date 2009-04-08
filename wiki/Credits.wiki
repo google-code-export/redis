@@ -10,5 +10,6 @@
  * [http://www.clorophilla.net/ Daniele Alessandri] - Lua client lib
  * Corey Stup - C99 cleanups
  * Taylor Weibley - Ruby client hacking 
+ * Bob Potter - Rearrange redisObject struct to reduce memory usage in 64bit environments
 
 p.s. sorry to take this file in sync is hard in this early days. Please drop me an email if I forgot to add your name here!

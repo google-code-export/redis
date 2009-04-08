@@ -7,7 +7,7 @@ _Time complexity: O(1)_
 
 == Return value ==
 
-[ReplyTypes Single line reply], specifically:
+[ReplyTypes Status code reply], specifically:
 
 {{{
 "none" if the key does not exist
