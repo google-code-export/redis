@@ -72,4 +72,5 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Remote server control commands ==
 
- * [InfoCommand INFO] `provide information and statistics about the server`
+ * [InfoCommand INFO] `Provide information and statistics about the server`
+ * [MonitorCommand MONITOR] `Dump all the received requests in real time`
