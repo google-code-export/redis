@@ -1,6 +1,6 @@
 = AUTH _password_ =
 
- Requests for authentication in a password protected Redis server.
+ Request for authentication in a password protected Redis server.
  A Redis server can be instructed to require a password before to allow clients
  to issue commands. This is done using the _requirepass_ directive in the
  Redis configuration file.
