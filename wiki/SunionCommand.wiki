@@ -1,0 +1,23 @@
+= SUNION _key1_ _key2_ ... _keyN_ =
+_Time complexity O(N) where N is the total number of elements in all the provided sets_
+
+ Return the members of a set resulting from the union of all the
+ sets hold at the specified keys. Like in LRANGE the result is sent to
+ the client as a multi-bulk reply (see the protocol specification for
+ more information). If just a single key is specified, then this command
+ produces the same result as SELEMENTS.
+
+ Non existing keys are considered like empty sets.
+
+== Return value ==
+
+[ReplyTypes Multi bulk reply], specifically the list of common elements.
+
+== See also ==
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]
+ * [SunionstoreCommand SUNIONSTORE]

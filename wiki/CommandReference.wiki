@@ -5,6 +5,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 == Connection handling ==
 
  * [QuitCommand QUIT] `close the connection`
+ * [AuthCommand AUTH] `simple password authentication if enabled`
 
 == Commands operating on string values ==
 
@@ -49,7 +50,9 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [ScardCommand SCARD] _key_ `Return the number of elements (the cardinality) of the Set at key`
  * [SismemberCommand SISMEMBER] _key_ _member_ `Test if the specified value is a member of the Set at key`
  * [SinterCommand SINTER] _key1_ _key2_ ... _keyN_ `Return the intersection between the Sets stored at key1, key2, ..., keyN`
- * [SinterCommand SINTERSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
+ * [SinterstoreCommand SINTERSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
+ * [SunionCommand SUNION] _key1_ _key2_ ... _keyN_ `Return the union between the Sets stored at key1, key2, ..., keyN`
+ * [SunionstoreCommand SUNIONSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the union between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
  * [SmembersCommand SMEMBERS] _key_ `Return all the members of the Set value at key`
 
 == Multiple databases handling commands ==
