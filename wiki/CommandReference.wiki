@@ -15,8 +15,8 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [SetnxCommand SETNX] _key_ _value_ `set a key to a string value if the key does not exist`
  * [IncrCommand INCR] _key_ `increment the integer value of key`
  * [IncrCommand INCRBY] _key_ _integer_` increment the integer value of key by integer`
- * [DecrCommand DECR] _key_ `decrement the integer value of key`
- * [DecrbyCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
+ * [IncrCommand DECR] _key_ `decrement the integer value of key`
+ * [IncrCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
  * [ExistsCommand EXISTS] _key_ `test if a key exists`
  * [DelCommand DEL] _key_ `delete a key`
  * [TypeCommand TYPE] _key_ `return the type of the value stored at key`
