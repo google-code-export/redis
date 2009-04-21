@@ -61,6 +61,10 @@ However it is planned to add a configuration directive to tell Redis to stop acc
 
 Update: redis SVN is able to know how much memory it is using and report it via the [InfoCommand INFO] command.
 
+= How much time it takes to load a big database at server startup? =
+
+Just an example on normal hardware: It takes about 45 seconds to restore a 2 GB database on a fairly standard system, no RAID. This can give you some kind of feeling about the order of magnitude of the time needed to load data when you restart the server.
+
 = What Redis means actually? =
 
 Redis means two things:
