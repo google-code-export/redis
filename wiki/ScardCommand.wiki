@@ -13,9 +13,11 @@ the cardinality (number of elements) of the set as an integer.
 }}}
 
 == See also ==
+ * [SaddCommand SADD]
  * [SremCommand SREM]
  * [SismemberCommand SISMEMBER]
  * [ScardCommand SCARD]
  * [SmembersCommand SMEMBERS]
  * [SinterCommand SINTER]
  * [SinterstoreCommand SINTERSTORE]
+ * [SmoveCommand SMOVE]

@@ -8,9 +8,11 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
 [ReplyTypes Status code reply]
 
 == See also ==
+ * [SaddCommand SADD]
  * [SremCommand SREM]
  * [SismemberCommand SISMEMBER]
  * [ScardCommand SCARD]
  * [SmembersCommand SMEMBERS]
  * [SinterCommand SINTER]
  * [SinterstoreCommand SINTERSTORE]
+ * [SmoveCommand SMOVE]

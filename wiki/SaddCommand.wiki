@@ -23,3 +23,4 @@ _Time complexity O(1)_
  * [SmembersCommand SMEMBERS]
  * [SinterCommand SINTER]
  * [SinterstoreCommand SINTERSTORE]
+ * [SmoveCommand SMOVE]

@@ -17,6 +17,7 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
 [ReplyTypes Multi bulk reply], specifically the list of common elements.
 
 == See also ==
+ * [SaddCommand SADD]
  * [SremCommand SREM]
  * [SismemberCommand SISMEMBER]
  * [ScardCommand SCARD]
@@ -24,3 +25,4 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
  * [SinterstoreCommand SINTERSTORE]
  * [SunionCommand SUNION]
  * [SunionstoreCommand SUNIONSTORE]
+ * [SmoveCommand SMOVE]

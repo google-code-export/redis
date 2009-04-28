@@ -15,3 +15,4 @@ _Time complexity O(N) where N is the total number of elements in all the provide
  * [SinterCommand SINTER]
  * [SinterstoreCommand SINTERSTORE]
  * [SunionCommand SUNION]
+ * [SmoveCommand SMOVE]
