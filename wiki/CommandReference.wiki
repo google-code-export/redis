@@ -11,6 +11,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 
  * [SetCommand SET] _key_ _value_ `set a key to a string value`
  * [GetCommand GET] _key_ `return the string value of the key`
+ * [GetsetCommand GETSET] _key_ _value_ `set a key to a string returning the old value of the key`
  * [MgetCommand MGET] _key1_ _key2_ ... _keyN_ `multi-get, return the strings values of the keys`
  * [SetnxCommand SETNX] _key_ _value_ `set a key to a string value if the key does not exist`
  * [IncrCommand INCR] _key_ `increment the integer value of key`
