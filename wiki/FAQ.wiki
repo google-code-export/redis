@@ -65,6 +65,24 @@ Update: redis SVN is able to know how much memory it is using and report it via 
 
 Just an example on normal hardware: It takes about 45 seconds to restore a 2 GB database on a fairly standard system, no RAID. This can give you some kind of feeling about the order of magnitude of the time needed to load data when you restart the server.
 
+= Redis is single threaded, how can I exploit multiple CPU / cores? =
+
+Simply start multiple instances of Redis in different ports in the same box and threat them as different servers! Given that Redis is a distributed database anyway in order to scale you need to think in terms of multiple computational units. At some point a single box may not be enough anyway.
+
+In general key-value databases are very scalable because of the property that different keys can stay on different servers independently.
+
+In Redis there are client libraries such Redis-rb (the Ruby client) that are able to handle multiple servers automatically using _consistent hashing_. We are going to implement consistent hashing in all the other major client libraries. If you use a different language you can implement it yourself otherwise just hash the key before to SET / GET it from a given server. For example imagine to have N Redis servers, server-0, server-1, ..., server-N. You want to store the key "foo", what's the right server where to put "foo" in order to distribute keys evenly among different servers? Just perform the _crc_ = CRC32("foo"), then _servernum_ = _crc_ % N (the rest of the division for N). This will give a number between 0 and N-1 for every key. Connect to this server and store the key. The same for gets.
+
+This is a basic way of performing key partitioning, consistent hashing is much better and this is why after Redis 1.0 will be released we'll try to implement this in every widely used client library starting from Python and PHP (Ruby already implements this support).
+
+= I'm using some form of key hashing for partitioning, but what about SORT BY? =
+
+With [SortCommand SORT] BY you need that all the _weight keys_ are in the same Redis instance of the list/set you are trying to sort. In order to make this possible we developed a concept called _key tags_. A key tag is a special pattern inside a key that, if preset, is the only part of the key hashed in order to select the server for this key. For example in order to hash the key "foo" I simply perform the CRC32 checksum of the whole string, but if this key has a pattern in the form of the characters {...} I only hash this substring. So for example for the key "foo{bared}" the key hashing code will simply perform the CRC32 of "bared". This way using key tags you can ensure that related keys will be stored on the same Redis instance just using the same key tag for all this keys. Redis-rb already implements key tags.
+
+= What is the maximum number of keys a single Redis instance can hold? =
+
+The latest versions of Redis in the Git repository are able to handle at least 150 million of keys per instance. We are working in order to experiment with larger values.
+
 = What Redis means actually? =
 
 Redis means two things:
