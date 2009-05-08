@@ -64,4 +64,4 @@ OK
 }}}
 
 == See also ==
- * []
+ * [TypeCommand TYPE]
