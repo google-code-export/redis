@@ -31,15 +31,15 @@ In the following ways:
 
 Redis and Tokyo Cabinet can be used for the same applications, but actually they are *very* different beasts. If you read twitter messages of people involved in scalable things both products are reported to work well, but surely there are times where one or the other can be the best choice. Some differences are the followings (I may be biased, make sure to check yourself both the products).
 
- * Tokyo Cabinet writes synchronously on disk, Redis takes the whole dataset on memory and writes on disk asynchronously. Tokyo Cabinet is safer, Redis faster (but note that Redis supports master-slave replication that is trivial to setup, so you are safe anyway if you want a setup where data can't be lost even after a disaster).
+ * Tokyo Cabinet writes synchronously on disk, Redis takes the whole dataset on memory and writes on disk asynchronously. Tokyo Cabinet is safer and probably a better idea if your dataset is going to be bigger than RAM, but Redis is faster (note that Redis supports master-slave replication that is trivial to setup, so you are safe anyway if you want a setup where data can't be lost even after a disaster).
 
  * Redis supports higher level operations and data structures. Tokyo Cabinet supports a kind of database that is able to organize data into rows with named fields (in a way very similar to Berkeley DB) but can't do things like server side List and Set operations Redis is able to do: pushing or popping from Lists in an atomic way, in O(1) time complexity, server side Set intersections, [SORT SortCommand] ing of schema free data in complex ways (Btw TC supports sorting in the table-based database format). Redis on the other hand does not support the abstraction of tables with fields, the idea is that you can build this stuff in software easily if you really need a table-alike approach.
 
  * Tokyo Cabinet does not implement a networking layer. You have to use a networking layer called Tokyo Tyrant that interfaces to Tokyo Cabinet so you can talk to Tokyo Cabinet in a client-server fashion. In Redis the networking support is built-in inside the server, and is basically the only interface between the external world and the dataset.
 
- * Redis is reported to be faster, especially if you plan to access Tokyo Cabinet via Tokyo Tyrant. Here I can only say that with Redis you can expect 100,000 operations/seconds with a normal Linux box and 50 concurrent clients. You should test Redis, Tokyo, and the other alternatives with your specific work load to get a feeling about performances for your application.
+ * Redis is reported to be much faster, especially if you plan to access Tokyo Cabinet via Tokyo Tyrant. Here I can only say that with Redis you can expect 100,000 operations/seconds with a normal Linux box and 50 concurrent clients. You should test Redis, Tokyo, and the other alternatives with your specific work load to get a feeling about performances for your application.
 
- * Redis is generally an higher level beast in the operations supported, and it is much simpler to get started. [Check the command reference CommandReference] to get a feeling. You can even start playing with Redis by telnet after reading the five minutes tutorial at the end of this README file. To implement new client libraries is trivial. [Check the protocol specification ProtocolSpecification] for more information.
+ * Redis is (IMHO) generally an higher level and simpler to use beast in the operations supported, and to get started. [Check the command reference CommandReference] to get a feeling. You can even start playing with Redis by telnet after reading the five minutes tutorial at the end of this README file. To implement new client libraries is trivial. [Check the protocol specification ProtocolSpecification] for more information.
  
  * Redis is not an on-disk DB engine like Tokyo: the latter can be used as a fast DB engine in your C project without the networking overhead just linking to the library. Still in many scalable applications you need multiple servers talking with multiple clients, so the client-server model is almost always needed, this is why in Redis this is built-in.
 
@@ -47,7 +47,7 @@ Redis and Tokyo Cabinet can be used for the same applications, but actually they
 
 No, the idea is to provide atomic primitives in order to make the programmer
 able to use redis with locking free algorithms. For example imagine you have
-10 computers and 1 redis server. You want to count words in a very large text.
+10 computers and one Redis server. You want to count words in a very large text.
 This large text is split among the 10 computers, every computer will process
 its part and use Redis's INCR command to atomically increment a counter
 for every occurrence of the word found.
