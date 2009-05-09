@@ -6,7 +6,7 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages.
  * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
- * [ReplicationHowto The Redis Replication HOWTO] is what you need to read to understand how Redis master `<->` slave replication works.
+ * [ReplicationHowto The Redis Replication HOWTO] is what you need to read in order to understand how Redis master `<->` slave replication works.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
  * *New!* video: [http://mwrc2009.confreaks.com/13-mar-2009-19-24-redis-key-value-nirvana-ezra-zygmuntowicz.html watch the Ezra Zygmuntowicz talk about Redis] to know the most important Redis ideas in few minutes.
