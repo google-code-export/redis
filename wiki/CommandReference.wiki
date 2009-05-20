@@ -55,6 +55,8 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [SinterstoreCommand SINTERSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
  * [SunionCommand SUNION] _key1_ _key2_ ... _keyN_ `Return the union between the Sets stored at key1, key2, ..., keyN`
  * [SunionstoreCommand SUNIONSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the union between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey`
+ * [SdiffCommand SDIFF] _key1_ _key2_ ... _keyN_ `Return the difference between the Set stored at key1 and all the Sets key2, ..., keyN`
+ * [SdiffstoreCommand SDIFFSTORE] _dstkey_ _key1_ _key2_ ... _keyN_ `Compute the difference between the Set key1 and all the Sets key2, ..., keyN, and store the resulting Set at dstkey`
  * [SmembersCommand SMEMBERS] _key_ `Return all the members of the Set value at key`
 
 == Multiple databases handling commands ==
