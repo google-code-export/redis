@@ -1,0 +1,19 @@
+= SDIFFSTORE _dstkey_ _key1_ _key2_ ... _keyN_ =
+_Time complexity O(N) where N is the total number of elements in all the provided sets_
+
+ This commnad works exactly like SDIFF but instead of being returned the resulting set is sotred in _dstkey_.
+
+== Return value ==
+
+[ReplyTypes Status code reply]
+
+== See also ==
+ * [SdiffCommand SDIFF]
+ * [SremCommand SREM]
+ * [SismemberCommand SISMEMBER]
+ * [ScardCommand SCARD]
+ * [SmembersCommand SMEMBERS]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]
+ * [SunionCommand SUNION]
+ * [SmoveCommand SMOVE]
