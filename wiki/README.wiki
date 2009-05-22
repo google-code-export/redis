@@ -142,34 +142,33 @@ Let's try to get the key content now:
 
 {{{
 GET foo
-3
+$3
 bar
 }}}
 
 Ok that's very similar to 'set', just the other way around. We sent "get foo",
-the server replied with a first line that is just a number of bytes the value
-stored at key contained, followed by the actual bytes. Again "\r\n" are appended
-both to the bytes count and the actual data.
+the server replied with a first line that is just the $ character follwed by
+the number of bytes the value stored at key contained, followed by the actual
+bytes. Again "\r\n" are appended both to the bytes count and the actual data. In Redis slang this is called a bulk reply.
 
 What about requesting a non existing key?
 
 {{{
 GET blabla
-nil
+$-1
 }}}
 
-When the key does not exist instead of the length just the "nil" string is sent.
-Another way to check if a given key exists or not is indeed the EXISTS command:
+When the key does not exist instead of the length, just the "$-1" string is sent. Since a -1 length of a bulk reply has no meaning it is used in order to specifiy a 'nil' value and distinguish it from a zero length value. Another way to check if a given key exists or not is indeed the EXISTS command:
 
 {{{
 EXISTS nokey
-0
+:0
 EXISTS foo
-1
+:1
 }}}
 
-As you can see the server replied '0' the first time since 'nokey' does not
-exist, and '1' for 'foo', a key that actually exists.
+As you can see the server replied ':0' the first time since 'nokey' does not
+exist, and ':1' for 'foo', a key that actually exists. Replies starting with the colon character are integer reply.
 
 Ok... now you know the basics, read the [CommandReference REDIS COMMAND REFERENCE] section to
 learn all the commands supported by Redis and the [ProtocolSpecification PROTOCOL SPECIFICATION]
