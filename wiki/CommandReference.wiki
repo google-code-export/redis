@@ -30,6 +30,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [RenamenxCommand RENAMENX] _oldname_ _newname_ `rename the old key in the new one, if the newname key does not already exist`
  * [DbsizeCommand DBSIZE] `return the number of keys in the current db`
  * [ExpireCommand EXPIRE] `set a time to live in seconds on a key`
+ * [TtlCommand TTL] `get the time to live in seconds of a key`
 
 == Commands operating on lists ==
 
