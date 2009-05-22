@@ -64,4 +64,5 @@ OK
 }}}
 
 == See also ==
+ * [InfoCommand EXPIRE]
  * [TypeCommand TYPE]
