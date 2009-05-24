@@ -6,7 +6,7 @@ Our Twitter clone, [http://retwis.antirez.com called Retwis], is structurally si
 
 We use PHP for the example since it can be read by everybody. The same (or... much better) results can be obtained using Ruby, Python, Erlang, and so on.
 
-*News!*  * [http://retwisrb.danlucraft.com/ Retwis-rb] is a port of Retwis to Ruby and Sinatra written by Daniel Lucraft! With full source code included of course, the git repository is linked at the end of the Retwis-RB page. The rest of this article targets PHP, but Ruby programmers can also check the other source code, it conceptually very similar.
+*News! [http://retwisrb.danlucraft.com/ Retwis-rb] is a port of Retwis to Ruby and Sinatra written by Daniel Lucraft!* With full source code included of course, the git repository is linked at the end of the Retwis-RB page. The rest of this article targets PHP, but Ruby programmers can also check the other source code, it conceptually very similar.
 
 =Key-value stores basics=
 The essence of a key-value store is the ability to store some data, called _value_, inside a key. This data can later be retrieved only if we know the exact key used to store it. There is no way to search something by value. So for example I can use the command SET to store the value *bar* at key *foo*:
