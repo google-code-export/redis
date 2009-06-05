@@ -7,7 +7,9 @@ _Time complexity: O(N) (with N being the length of the list)_
  that is the normal behaviour. So for example LREM with count -2 and
  _hello_ as value to remove against the list (a,b,c,hello,x,hello,hello) will
  lave the list (a,b,c,hello,x). The number of removed elements is returned
- as an integer, see below for more information aboht the returned value.
+ as an integer, see below for more information about the returned value.
+ Note that non existing keys are considered like empty lists by LREM, so LREM
+ against non existing keys will always return 0.
 
 == Return value ==
 
