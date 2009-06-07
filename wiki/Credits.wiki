@@ -13,5 +13,6 @@
  * Bob Potter - Rearrange redisObject struct to reduce memory usage in 64bit environments
  * Luca Guidi and Brian McKinney - Ruby client improvements
  * Aman Gupta - SDIFF / SDIFFSTORE, other Set operations improvements, ability to disable clients timeout.
+ * Diego Rosario Brogna - Code and ideas about dumping backtrace on sigsegv and similar error conditions.
 
 p.s. sorry to take this file in sync is hard in this early days. Please drop me an email if I forgot to add your name here!
