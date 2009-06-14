@@ -49,6 +49,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 
  * [SaddCommand SADD] _key_ _member_ `Add the specified member to the Set value at key`
  * [SremCommand SREM] _key_ _member_ `Remove the specified member from the Set value at key`
+ * [SpopCommand SPOP] _key_ `Remove and return (pop) a random element from the Set value at key`
  * [SmoveCommand SMOVE] _srckey_ _dstkey_ _member_ `Move the specified member from one Set to another atomically`
  * [ScardCommand SCARD] _key_ `Return the number of elements (the cardinality) of the Set at key`
  * [SismemberCommand SISMEMBER] _key_ _member_ `Test if the specified value is a member of the Set at key`
