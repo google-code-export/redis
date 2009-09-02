@@ -1,0 +1,56 @@
+= Quick Start =
+
+This quickstart is a five minutes howto on how to get started with Redis. For more information on Redis check [http://code.google.com/p/redis/wiki/index Redis Documentation Index].
+
+== Obtaining the latest version of Redis ==
+
+The latest stable source distribution of Redis can be obtained [http://code.google.com/p/redis/downloads/list at this location as a tarball]. The unstable source code, with more features but not ready for production, can be downloaded using git:
+
+{{{
+git clone git://github.com/antirez/redis.git
+}}}
+
+== Compiling Redis ==
+
+Redis can be compiled in most POSIX systems, but the development targets mainly Linux, Mac OS X, FreeBSD and OpenBSD. Solaris is currently not supported and there are no short-term plans to support it.
+
+To compile Redis just untar the tar.gz, enter the directly and type 'make'.
+
+{{{
+tar xvzf redis-1.0.0.tar.gz
+cd redis-1.0.0
+make
+}}}
+
+In order to test if the Redis server is working well in your computer make sure to run `make test`and check that all the tests are passed.
+
+== Running Redis ==
+
+Redis can run just fine without a configuration file (when executed without a config file a standard configuration is used). To run Redis just type the following command:
+
+{{{
+./redis-server
+}}}
+
+With the default configuration Redis will log to the standard output so you can check what happens. Later, when you'll ready to install Redis in production, you may want to use a configuration file. The `redis.conf` file included in the source code distribution is a starting point, you should be able to modify it in order do adapt it to your needs without troubles reading the comments inside the file. In order to start Redis using a configuration file just pass the file name as the sole argument when starting the server:
+
+{{{
+./redis-server redis.conf
+}}}
+
+== Testing Redis ==
+
+To check if the server is working correctly you can use the `redis-cli` utility included in the source distribution (and automatically compiled when you compile Redis). For instance to set a key and read back the value use the following:
+
+{{{
+./redis-cli set mykey somevalue
+OK
+./redis-cli get mykey
+somevalue
+}}}
+
+== Further reading ==
+
+* To know more about Redis check the [README Readme] file.
+* Read the full list of available commands in the [CommandReference Command Reference].
+* To get started with the Redis replication read the [ReplicationHowto Replication Howto].
