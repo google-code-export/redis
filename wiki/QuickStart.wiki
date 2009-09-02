@@ -51,6 +51,6 @@ somevalue
 
 == Further reading ==
 
-* To know more about Redis check the [README Readme] file.
-* Read the full list of available commands in the [CommandReference Command Reference].
-* To get started with the Redis replication read the [ReplicationHowto Replication Howto].
+ * To know more about Redis check the [README Readme] file.
+ * Read the full list of available commands in the [CommandReference Command Reference].
+ * To get started with the Redis replication read the [ReplicationHowto Replication Howto].
