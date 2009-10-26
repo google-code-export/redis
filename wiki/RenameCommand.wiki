@@ -10,4 +10,4 @@ _Time complexity: O(1)_
 [ReplyTypes Status code repy]
 
 == See also ==
- * [RenamenxCommand RENAMENX] if you don't want overwrite the destionation key if it exists.
+ * [RenamenxCommand RENAMENX] if you don't want overwrite the destination key if it exists.
