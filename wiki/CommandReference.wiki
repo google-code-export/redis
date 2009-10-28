@@ -62,6 +62,16 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [SmembersCommand SMEMBERS] _key_ `Return all the members of the Set value at key`
  * [SrandmemberCommand SRANDMEMBER] _key_ `Return a random member of the Set value at key`
 
+== Commands operating on sorted sets (zsets, Redis version >= 1.1) ==
+
+ * [ZaddCommand ZADD] _key_ _score_ _member_ `Add the specified member to the Set value at key or update the score if it already exist`
+ * [ZremCommand ZREM] _key_ _member_ `Remove the specified member from the Set value at key`
+ * [ZrangeCommand ZRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key`
+ * [ZrangeCommand ZREVRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key, exactly like ZRANGE, but the sorted set is ordered in traversed in reverse order, from the greatest to the smallest score`
+ * [ZrangebyscoreCommand ZRANGEBYSCORE] _key_ _min_ _max_ `Return all the elements with score >= min and score <= max (a range query) from the sorted set`
+ * [ZcardCommand ZCARD] _key_ `Return the cardinality (numero of elements) of the sorted set at key`
+ * [ZscoreCommand ZSCORE] _key_ _element_ `Return the score associated with the specified element of the sorted set at key`
+
 == Multiple databases handling commands ==
 
  * [SelectCommand SELECT] _index_ `Select the DB having the specified index`

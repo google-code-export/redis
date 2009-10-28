@@ -1,0 +1,22 @@
+= ZRANGEBYSCORE _key_ _min_ _max_ =
+_Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements matching the min and max score_
+
+ Return the all the elements in the sorted set at key with a score between
+ _min_ and _max_ (including elements with score equal to min or max).
+
+ The elements having the same score are returned sorted lexicographically as
+ ASCII strings (this follows from a property of Redis sorted sets and does not
+ involve further computation).
+
+== Return value ==
+
+[ReplyTypes Multi bulk reply], specifically a list of elements in the specified score range.
+
+== See also ==
+
+ * [ZaddCommand ZADD]
+ * [ZremCommand ZREM]
+ * [ZrangeCommand ZRANGE]
+ * [ZrangeCommand ZREVRANGE]
+ * [ZcardCommand ZCARD]
+ * [ZscoreCommand ZSCORE]

@@ -13,7 +13,7 @@ _Time complexity O(1)_
 
 {{{
 1 if the new element was added
-0 if the new element was already a member of the set
+0 if the element was already a member of the set
 }}}
 
 == See also ==
