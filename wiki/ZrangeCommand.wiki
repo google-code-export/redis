@@ -1,5 +1,5 @@
-= ZRANGE _key_ _start_ _end_ =
-= ZREVRANGE _key_ _start_ _end_ =
+= ZRANGE _key_ _start_ _end_ (Redis >= 1.1) =
+= ZREVRANGE _key_ _start_ _end_ (Redis >= 1.1) =
 _Time complexity: O(log(N))+O(M) (with N being the number of elements in the sorted set and M the number of elements requested)_
 
  Return the specified elements of the sorted set at the specified

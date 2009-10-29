@@ -1,4 +1,4 @@
-= ZRANGEBYSCORE _key_ _min_ _max_ =
+= ZRANGEBYSCORE _key_ _min_ _max_ (Redis >= 1.1) =
 _Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements matching the min and max score_
 
  Return the all the elements in the sorted set at key with a score between

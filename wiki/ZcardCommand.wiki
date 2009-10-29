@@ -1,4 +1,4 @@
-= ZCARD _key_ =
+= ZCARD _key_ (Redis >= 1.1) =
 _Time complexity O(1)_
 
  Return the sorted set cardinality (number of elements). If the _key_ does not

@@ -1,4 +1,5 @@
-=Expire _key_ _seconds_=
+=EXPIRE _key_ _seconds_=
+=EXPIREAT _key_ _unixtime_ (Redis >= 1.1)=
 _Time complexity: O(1)_
 
  Set a timeout on the specified key. After the timeout the key will be
@@ -10,6 +11,17 @@ _Time complexity: O(1)_
  the dataset and stopping the server does not stop the flow of time as Redis
  registers on disk when the key will no longer be available as Unix time, and
  not the remaining seconds.
+
+ EXPIREAT works exctly like EXPIRE but instead to get the number of seconds
+ representing the Time To Live of the key as a second argument (that is a
+ relative way of specifing the TTL), it takes an absolute one in the form of
+ a UNIX timestamp (Number of seconds elapsed since 1 Gen 1970).
+
+ EXPIREAT was introduced in order to implement append only saving mode so that
+ EXPIRE commands are automatically translated into EXPIREAT commands for the
+ append only file. Of course EXPIREAT can also used by programmers that need
+ a way to simply specify that a given key should expire at a given time
+ in the future.
 
 == How the expire is removed from a key ==
 

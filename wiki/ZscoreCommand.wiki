@@ -1,4 +1,4 @@
-= ZSCORE _key_ _element_=
+= ZSCORE _key_ _element_ (Redis >= 1.1) =
 _Time complexity O(1)_
 
  Return the score of the specified element of the sorted set at key.
