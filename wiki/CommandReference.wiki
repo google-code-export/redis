@@ -69,7 +69,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [ZrangeCommand ZRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key`
  * [ZrangeCommand ZREVRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key, exactly like ZRANGE, but the sorted set is ordered in traversed in reverse order, from the greatest to the smallest score`
  * [ZrangebyscoreCommand ZRANGEBYSCORE] _key_ _min_ _max_ `Return all the elements with score >= min and score <= max (a range query) from the sorted set`
- * [ZcardCommand ZCARD] _key_ `Return the cardinality (numero of elements) of the sorted set at key`
+ * [ZcardCommand ZCARD] _key_ `Return the cardinality (number of elements) of the sorted set at key`
  * [ZscoreCommand ZSCORE] _key_ _element_ `Return the score associated with the specified element of the sorted set at key`
 
 == Multiple databases handling commands ==
