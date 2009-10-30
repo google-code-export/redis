@@ -13,11 +13,11 @@ Please refer to the [CommandReference Command Reference] to see the full list of
 
 In other words, a Redis user is provided with an interface suitable to implement [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
-Redis loads and mantains the whole dataset into memory, but the dataset is persistent since from time to time Redis writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
+Redis loads and mantains the whole dataset into memory, but the dataset is persistent, since from time to time Redis writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
 
-Redis can be told to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
+Redis can be configured to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
 
-Because data is written asynchronously, when a system crash occurs the last few queries can get lost (that is acceptable in many applications).  Anyway it is possible to make this a non issue, since Redis supports master-slave replication from its early days and help also where even a few records lost are not acceptable.
+Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications).  Anyway it is possible to make this a non issue, since Redis supports master-slave replication from its early days and help also where even a few records lost are not acceptable.
 
 = Beyond key-value databases =
 
