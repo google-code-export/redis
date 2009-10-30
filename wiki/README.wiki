@@ -1,6 +1,6 @@
 = Introduction =
 
-Redis is a database. To be specific, Redis is a very simple database implementing a dictionary, where any key is associated with a value. For example I can set the key "surname_1992" to the string "Smith".
+Redis is a database. To be specific, Redis is a very simple database implementing a dictionary, where each key is associated with a value. For example I can set the key "surname_1992" to the string "Smith".
 What makes Redis different from many other key-value stores, is that any value has a type. The following types are supported:
 
   * String
