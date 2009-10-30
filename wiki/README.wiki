@@ -8,24 +8,21 @@ What makes Redis different from many other key-value stores, is that every singl
   * Set
   * Sorted Set (since version 1.1)
 
-The type of a value determines what operations (called commands) are available for the value itself. Namely, for a list value --that is a value of type list, you can call a command to prepend an element to its head, whereas you can check if an item is contained into a set value. Each command is performed through server-side atomic operations.
+The type of a value determines what operations (called commands) are available for the value itself. 
+For example you can append elements to a list stored at the key "mylist" using the LPUSH or RPUSH command in O(1). Later you'll be able to get a range of elements with LRANGE or trim the list with LTRIM. Sets are very flexible too, it is possible to add and remove elements from Sets (unsorted collections of strings), and then ask for server-side intersection, union, difference of Sets. Each command is performed through server-side atomic operations.
 Please refer to the [CommandReference Command Reference] to see the full list of operations associated to these data types.
 
-In other words, a Redis user is provided with an interface suitable to implement [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
+In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
 Redis loads and mantains the whole dataset into memory, but the dataset is persistent, since from time to time Redis writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
 
 Redis can be configured to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
 
-Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications).  Anyway it is possible to make this a non issue, since Redis supports master-slave replication from its early days and help also where even a few records lost are not acceptable.
+Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications).  Anyway it is possible to make this a non issue, since Redis supports master-slave replication from its early days, being effective even in the case where a few records lost are not acceptable.
 
 = Beyond key-value databases =
 
-In most key-value databases keys and values are simple strings. In Redis keys are just strings too, but the associated values can be Strings, Lists and Sets, and there are commands to perform complex atomic operations against this data types, so you can think at Redis as a data structures server.
-
-For example you can append elements to a list stored at the key "mylist" using the LPUSH or RPUSH operation in O(1). Later you'll be able to get a range of elements with LRANGE or trim the list with LTRIM. Sets are very flexible too, it is possible to add and remove elements from Sets (unsorted collections of strings), and then ask for server-side intersection, union, difference of Sets.
-
-All this features, the support for sorting Lists and Sets, allow to use Redis as the sole DB for your scalable application without the need of any relational database. [TwitterAlikeExample We wrote a simple Twitter clone in PHP + Redis] to show a real world example, the link points to an article explaining the design and internals in very simple words.
+All these features allow to use Redis as the sole DB for your scalable application without the need of any relational database. [TwitterAlikeExample We wrote a simple Twitter clone in PHP + Redis] to show a real world example, the link points to an article explaining the design and internals in very simple words.
 
 = What are the differences between Redis and Memcached? =
 
