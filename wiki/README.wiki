@@ -2,12 +2,11 @@
 
 Redis is a database. To be more specific redis is a very simple database
 implementing a dictionary where keys are associated with values. For example
-I can set the key "surname_1992" to the string "Smith". The interesting thing about Redis is that values associated to keys are not limited to simple strings, they can also be lists and sets, with a [CommandReference number of server-side atomic operations] associated to this data types.
+I can set the key "surname_1992" to the string "Smith". The interesting thing about Redis is that values associated to keys are not limited to simple strings, they can also be lists and sets, with a [CommandReference number of server-side atomic operations] associated to these data types.
 
-Redis takes the whole dataset in memory, but the dataset is persistent
-since from time to time Redis writes a dump of the dataset on disk asynchronously. The dump is loaded every time the server is restarted.
+Redis takes the whole dataset in memory, but the dataset is persistent since from time to time Redis writes a dump of the dataset on disk asynchronously. The dump is loaded every time the server is restarted.
 
-Redis can be configured to save the dataset after a given number of seconds elapzed and changes to the data set. For example you can tell Redis to save after 1000 changes and at least 60 seconds sinde the same save. You can specify a number of this combinatins.
+Redis can be configured to save the dataset after a given number of seconds elapzed and changes to the data set. For example you can tell Redis to save after 1000 changes and at least 60 seconds since the same save. You can specify a number of this combinatins.
 
 Because data is written asynchronously, If a system crash occurs the last few queries can get lost (that is acceptable in many applications). Redis supports master-slave replication from the early days in order to make this a non issue if your application is of the kind where even few lost records are not acceptable.
 
