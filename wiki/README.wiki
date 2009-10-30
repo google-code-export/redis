@@ -11,7 +11,7 @@ What makes Redis different from many other key-value stores, is that any value h
 The type of a value determines what operations (called commands) are available for the value itself. Namely, for a list value --that is a value of type list, you can call a command to prepend an element to its head, whereas you can check if an item is contained into a set value. Each command is performed through server-side atomic operations.
 Please refer to the [CommandReference Command Reference] to see the full list of operations associated to these data types.
 
-In other words, a Redis user is provided with an interface suitable to implement [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types] saving him from the responsibility to choose and/or implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
+In other words, a Redis user is provided with an interface suitable to implement [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types] saving her from the responsibility to choose and/or implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
 Redis takes the whole dataset in memory, but the dataset is persistent since from time to time Redis writes a dump of the dataset on disk asynchronously. The dump is loaded every time the server is restarted.
 
