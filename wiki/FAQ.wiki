@@ -57,8 +57,7 @@ Another possible solution is to use both MySQL and Redis at the same time, basic
 
 Update: it could be interesting to test how Redis performs with datasets larger than memory if the OS swap partition is in one of this very fast Intel SSD disks.
 
-=Do you plan to implement Virtual Memory in Redis? Why don't just let 
-the Operating System handle it with?=
+=Do you plan to implement Virtual Memory in Redis? Why don't just let the Operating System handle it with?=
 
 Yes, in order to support datasets bigger than RAM there is the plan to 
 implement transparent Virtual Memory in Redis, that is, the ability to 
