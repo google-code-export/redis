@@ -7,9 +7,9 @@ Redis is written in ANSI C, with the the whole dataset taken in memory so it is 
 
 == Persistence ==
 
-While all the data lives is taken into memory, changes are _asynchronously_ on disk based based on time elapsed and/or number of updates.
+While all the data lives is taken into memory, changes are _asynchronously_ on disk based based on time elapsed and/or number of updates. 
 
-Also starting on version 1.1 Redis will support an append-only file persistence mode, that is an alternative to snapshotting for users that want to make sure no data is lost. The append-only log supports different kinds of fsync() policies.
+If you can't afford losing some data, starting on version 1.1 Redis will support an append-only file persistence mode, that is an alternative to snapshotting for users that want to make sure no data is lost. The append-only log supports different kinds of fsync() policies.
 
 == Support for Data Structures ==
 
@@ -32,6 +32,7 @@ Redis supports a very simple and fast Master/Slave replication. Is so simple it 
 
 == Simple to Setup and Manage ==
 
+Installing Redis requires little more than downloading, uncompressing and running make. Management is near zero, so you can start using Redis in a matter of minutes.
 
 == Portable ==
 
