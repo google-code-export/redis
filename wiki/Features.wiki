@@ -16,6 +16,10 @@ Values in Redis can be [Strings] as in a conventional key-value store, but also 
 
 You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems. Read [DataTypes Data Types] to learn more about the way Redis handle [Strings], and the [Commands] supported by [Lists], [Sets] and [OrderedSets]
 
+== Atomic Operations ==
+
+TODO
+
 == Variety of Supported Languages  ==
 
 Ruby, Python, Twisted Python, PHP, Erlang, Tcl, Perl, Lua, Java, Scala, Clojure, choose your poison. Check the list of [SupportedLanguages Supported Languages] for all the details.
@@ -33,6 +37,10 @@ Read more about Master/Slave [Replication].
 Distributing the dataset across multiple Redis instances is easy in Redis, as in any other key-value store. And this depends basically on the [Supported Languages] client libraries being able to do so. 
 
 Read more about [Sharding] if you want to know more abour distributing data and workload in Redis.
+
+== Hot Backups ==
+
+TODO
 
 == Simple to Install, Setup and Manage ==
 
