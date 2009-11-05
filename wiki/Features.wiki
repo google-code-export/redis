@@ -9,7 +9,7 @@ Redis is written in ANSI C, with the the whole dataset taken in memory so it is 
 
 While all the data lives is taken into memory, changes are _asynchronously_ on disk based based on time elapsed and/or number of updates. 
 
-If you can't afford losing some data, starting on version 1.1 Redis will support an append-only file persistence mode, that is an alternative to snapshotting for users that want to make sure no data is lost. The append-only log supports different kinds of fsync() policies.
+If you can't afford losing some data, starting on version 1.1 Redis will support an append-only file persistence mode, that is an alternative to snapshotting for users that want to make sure no data is lost.
 
 == Support for Data Structures ==
 
@@ -29,6 +29,11 @@ Redis supports a very simple and fast Master/Slave replication. Is so simple it 
 
 == Sharding ==
 
+Distributing the dataset across multiple servers is easy in Redis, as in any other key-value store.
+
+For example the Ruby client supports consistent hashing out of the box, where you can specify multiple servers and the library will take care of hashing the key and put different keys into different Redis servers.
+
+With client libraries not supporting consistent hashing you can do different things, like hashing the keys yourself, splitig different keys ranges into different servers, or define whatever policy is useful to you.
 
 == Simple to Setup and Manage ==
 
