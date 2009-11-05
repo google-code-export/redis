@@ -1,6 +1,10 @@
 #summary Features [DRAFT]
-#labels features,speed,ansic,memory
+#labels features,speed,ansic,memory,datatypes
 
 == Speed ==
 
-Redis is written in ANSI C, and the the whole dataset is taken in memory so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
+Redis is written in ANSI C, the the whole dataset is taken in memory, and changes are _asynchronously_ on disk so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
+
+=== Data Structures ==
+
+Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets]. All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
