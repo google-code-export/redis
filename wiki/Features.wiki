@@ -19,8 +19,20 @@ You can think in Redis as a *Data Structures Server*, that allows you to model n
 
 == Variety of Supported Languages  ==
 
-Ruby, Python, Twisted Python, PHP, Erlang, Tcl, Perl, Lua, Java, Scala, Clojure. Check the list of [SupportedLanguages Supported Languages] for all the details. If your favorite language is not supported, you can write your own, the Protocol is pretty simple.
+Ruby, Python, Twisted Python, PHP, Erlang, Tcl, Perl, Lua, Java, Scala, Clojure, choose your poison. Check the list of [SupportedLanguages Supported Languages] for all the details.
+
+If your favorite language is not supported, you can write your own client library, as the Protocol is pretty simple.
+
+== Master/Slave Replication ==
+
+Redis supports a very simple and fast Master/Slave replication. Is so simple it takes only one line in the cofiguration file to sett it up, and 21 seconds for a Slave to complete the initial sync of 10 MM keyset.  
+
+== Sharding ==
+
+
+== Simple to Setup and Manage ==
+
 
 == Portable ==
 
-Redis is written in ANSI C and works in most POSIX systems like Linux, *BSD, Mac OS X, Solaris, and so on. Redis is free software released under the very liberal BSD license. Redis is reported to compile and work under WIN32 if compiled with Cygwin, but there is no official support for Windows currently. 
+Redis is written in ANSI C and works in most POSIX systems like Linux, BSD, Mac OS X, Solaris, and so on. Redis is free software released under the very liberal BSD license. Redis is reported to compile and work under WIN32 if compiled with Cygwin, but there is no official support for Windows currently.
