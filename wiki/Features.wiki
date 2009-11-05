@@ -3,8 +3,20 @@
 
 == Speed ==
 
-Redis is written in ANSI C, the the whole dataset is taken in memory, and changes are _asynchronously_ on disk so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
+Redis is written in ANSI C, the the whole dataset is taken in memory so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
 
-=== Data Structures ==
+== Persistence ==
 
-Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets]. All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
+While all the data lives is taken into memory, changes are _asynchronously_ on disk based based on time elapsed and/or number of updates.
+
+Also starting on version 1.1 Redis will support an append-only file persistence mode, that is an alternative to snapshotting for users that want to make sure no data is lost. The append-only log supports different kinds of fsync() policies.
+
+== Support for Data Structures ==
+
+Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in version 1.1). All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
+
+You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems.
+
+== Portable ==
+
+Redis is written in ANSI C and works in most POSIX systems like Linux, *BSD, Mac OS X, Solaris, and so on. Redis is free software released under the very liberal BSD license. Redis is reported to compile and work under WIN32 if compiled with Cygwin, but there is no official support for Windows currently. 
