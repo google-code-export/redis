@@ -2,23 +2,23 @@
 
 == Speed ==
 
-Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box. Read more about Redis [Speed].
+Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
 
 == Persistence ==
 
-While all the data lives in memory, changes are _asynchronously_ saved on disk using flexible policies based on time elapsed and/or number of updates since last save. 
+While all the data lives in memory, changes are _asynchronously_ saved on disk using flexible policies based on elapsed time and/or number of updates since last save. 
 
 If you can't afford losing some data, starting on [RoadMap version 1.1] Redis will support an append-only file persistence mode. Check more on [Persistence]
 
 == Support for Data Structures ==
 
-Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in [RoadMap version 1.1]). All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
+Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in [RoadMap version 1.1]). All this data types allow pushin/poping elements, or adding/removing them, also perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
 
 You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems. Read [DataTypes Data Types] to learn more about the way Redis handle [Strings], and the [Commands] supported by [Lists], [Sets] and [OrderedSets]
 
 == Atomic Operations ==
 
-TODO
+Redis operations working on the different Data Types are *atomic*, so setting or increasing a key, adding and removing elements from a 
 
 == Variety of Supported Languages  ==
 
