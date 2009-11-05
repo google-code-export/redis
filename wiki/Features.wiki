@@ -1,5 +1,4 @@
 #summary Features [DRAFT]
-#labels features,speed,ansic,memory,datatypes
 
 == Speed ==
 
@@ -7,7 +6,7 @@ Redis is written in ANSI C, and the the whole dataset taken in memory so it is w
 
 == Persistence ==
 
-While all the data livesin memory, changes are _asynchronously_ saved on disk using flexible policies based on time elapsed and/or number of updates since last save. 
+While all the data lives in memory, changes are _asynchronously_ saved on disk using flexible policies based on time elapsed and/or number of updates since last save. 
 
 If you can't afford losing some data, starting on [RoadMap version 1.1] Redis will support an append-only file persistence mode. Check more on [Persistence]
 
@@ -25,20 +24,26 @@ If your favorite language is not supported yet, you can write your own client li
 
 == Master/Slave Replication ==
 
-Redis supports a very simple and fast Master/Slave replication. Is so simple it takes only one line in the cofiguration file to sett it up, and 21 seconds for a Slave to complete the initial sync of 10 MM keyset.  
+Redis supports a very simple and fast Master/Slave replication. Is so simple it takes only one line in the [ConfigurationFile configuration file] to set it up, and 21 seconds for a Slave to complete the initial sync of 10 MM key set in a Amazon EC2 instance.
+
+Read more about Master/Slave [Replication]. 
 
 == Sharding ==
 
-Distributing the dataset across multiple servers is easy in Redis, as in any other key-value store.
+Distributing the dataset across multiple Redis instances is easy in Redis, as in any other key-value store. And this depends basically on the [Supported Languages] client libraries being able to do so. 
 
-For example the Ruby client supports consistent hashing out of the box, where you can specify multiple servers and the library will take care of hashing the key and put different keys into different Redis servers.
+Read more about [Sharding] if you want to know more abour distributing data and workload in Redis.
 
-With client libraries not supporting consistent hashing you can do different things, like hashing the keys yourself, splitig different keys ranges into different servers, or define whatever policy is useful to you.
+== Simple to Install, Setup and Manage ==
 
-== Simple to Setup and Manage ==
+Installing Redis requires little more than downloading it, uncompressing it and running make. Management is near zero, so you can start using Redis in a matter of minutes.
 
-Installing Redis requires little more than downloading, uncompressing and running make. Management is near zero, so you can start using Redis in a matter of minutes.
+Go on and read about Redis [Installation installation], its [Setup] and [Management].
 
 == Portable ==
 
-Redis is written in ANSI C and works in most POSIX systems like Linux, BSD, Mac OS X, Solaris, and so on. Redis is free software released under the very liberal BSD license. Redis is reported to compile and work under WIN32 if compiled with Cygwin, but there is no official support for Windows currently.
+Redis is written in ANSI C and works in most POSIX systems like Linux, BSD, Mac OS X, Solaris, and so on. Redis is reported to compile and work under WIN32 if compiled with Cygwin, but there is no official support for Windows currently.
+
+== Liberal Licensing ==
+
+Redis is free software released under the very liberal BSD license.
