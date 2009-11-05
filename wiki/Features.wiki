@@ -3,7 +3,7 @@
 
 == Speed ==
 
-Redis is written in ANSI C, the the whole dataset is taken in memory so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
+Redis is written in ANSI C, with the the whole dataset taken in memory so it is *_fast_*! Up to 110,000 SETs/second, 81,000 GETs/second can be accomplished in an entry level Linux box, check the [Benchmarks].
 
 == Persistence ==
 
@@ -16,6 +16,10 @@ Also starting on version 1.1 Redis will support an append-only file persistence 
 Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in version 1.1). All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
 
 You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems.
+
+== Variety of Supported Languages  ==
+
+Ruby, Python, Twisted Python, PHP, Erlang, Tcl, Perl, Lua, Java, Scala, Clojure. Check the list of [SupportedLanguages Supported Languages] for all the details. If your favorite language is not supported, you can write your own, the Protocol is pretty simple.
 
 == Portable ==
 
