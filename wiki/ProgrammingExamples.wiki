@@ -6,8 +6,7 @@ Nothing speaks better than code examples, here you are:
 
 == Java ==
 
-  * JRedis Java Client and Connectors for Redis, ships with a 
-[http://github.com/alphazero/jredis/tree/master/examples/src/main/java/org/jredis/examples/ examples] folder.
+  * JRedis Java Client and Connectors for Redis, ships with a [http://github.com/alphazero/jredis/tree/master/examples/src/main/java/org/jredis/examples/ examples] folder.
 
   * Twayis showcase integration between the Play! framework and Redis [http://code.google.com/p/twayis/ Google Code Project Page]
 
