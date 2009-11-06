@@ -55,3 +55,7 @@ Redis is written in ANSI C and works in most POSIX systems like Linux, BSD, Mac 
 == Liberal Licensing ==
 
 Redis is free software released under the very liberal BSD license.
+
+== What's next? ==
+
+Check the [CodeSamples Code Samples] and find how you can use Redis with your favorite programming language.
