@@ -1,0 +1,16 @@
+#summary Programming Examples
+
+Nothing speaks better than code examples, here you are:
+
+= Java =
+
+Showcase integration between the Play! framework and Redis [http://code.google.com/p/twayis/ Google Code Project Page ]
+
+= PHP =
+
+Retwis is a PHP+Retwis twitter clone. [http://retwis.antirez.com/ Live demo], [http://code.google.com/p/redis/wiki/TwitterAlikeExample article explaining it design]. The code is in the Downloads tab.
+
+= Ruby =
+
+# Retwis-rb is a port of Retwis to Ruby and Sinatra written by Daniel Lucraft! With full source code included of course, the git repository is linked at the end of the Retwis-RB page.
+# A very simple example of Ruby+Redis app using Sinatra. It's a note taking example developed by Pieter Noordhuis 
