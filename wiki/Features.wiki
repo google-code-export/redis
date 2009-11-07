@@ -59,3 +59,5 @@ Redis is free software released under the very liberal BSD license.
 == What's next? ==
 
 Check the [CodeSamples Code Samples] and find how you can use Redis with your favorite programming language.
+
+[Comparisons Compare] Redis with other key-value stores, like Tokyo Cabinet or Memcached.
