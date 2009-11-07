@@ -1,4 +1,4 @@
-#summary Features [DRAFT]
+[DRAFT]
 
 == Speed ==
 
@@ -59,3 +59,7 @@ Redis is free software released under the very liberal BSD license.
 == What's next? ==
 
 Check the [CodeSamples Code Samples] and find how you can use Redis with your favorite programming language.
+
+=== Credits ===
+
+Speed Picture is from YtseJam (http://www.flickr.com/photos/thatguyfromcchs08/2300190277/)
