@@ -2,7 +2,7 @@
 
 == Speed ==
 
-Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
+<img src='http://farm3.static.flickr.com/2036/2300190277_360853ae0d_t.jpg'>Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
 
 == Persistence ==
 
