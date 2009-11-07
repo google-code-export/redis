@@ -2,7 +2,7 @@ DRAFT
 
 == Speed ==
 
-<img src="http://farm3.static.flickr.com/2036/2300190277_360853ae0d_t.jpg" style="vertical-align:text-top;">Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
+Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
 
 == Persistence ==
 
@@ -59,7 +59,3 @@ Redis is free software released under the very liberal BSD license.
 == What's next? ==
 
 Check the [CodeSamples Code Samples] and find how you can use Redis with your favorite programming language.
-
-=== Credits ===
-
-Speed Picture is from YtseJam (http://www.flickr.com/photos/thatguyfromcchs08/2300190277/)
