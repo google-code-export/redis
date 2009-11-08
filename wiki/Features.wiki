@@ -1,8 +1,10 @@
-DRAFT
+= Features (DRAFT) =
+
+Checking Redis for the first time? Here your will find the most important features, and pointers to a lot more information.
 
 == Speed ==
 
-Redis is written in ANSI C, and the the whole dataset taken in memory so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
+Redis is written in ANSI C, and loads the whole dataset in memory, so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
 
 == Persistence ==
 
@@ -12,13 +14,13 @@ If you can't afford losing some data, starting on [RoadMap version 1.1] Redis wi
 
 == Support for Data Structures ==
 
-Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in [RoadMap version 1.1]). All this data types allow pushin/poping elements, or adding/removing them, also perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities for [Sets] and [Lists].
+Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in [RoadMap version 1.1]). This data types allow pushing/poping elements, or adding/removing them, also perform server side union, intersection, difference between sets, and so forth depending on the types. Redis supports different kind of sorting abilities for [Sets] and [Lists].
 
 You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems. Read [DataTypes Data Types] to learn more about the way Redis handle [Strings], and the [Commands] supported by [Lists], [Sets] and [OrderedSets]
 
 == Atomic Operations ==
 
-Redis operations working on the different Data Types are *atomic*, so setting or increasing a key, adding and removing elements from a 
+Redis operations working on the different Data Types are *atomic*, so setting or increasing a key, adding and removing elements from a set, increasing a counter will all be accomplished safely.
 
 == Variety of Supported Languages  ==
 
@@ -28,7 +30,7 @@ If your favorite language is not supported yet, you can write your own client li
 
 == Master/Slave Replication ==
 
-Redis supports a very simple and fast Master/Slave replication. Is so simple it takes only one line in the [ConfigurationFile configuration file] to set it up, and 21 seconds for a Slave to complete the initial sync of 10 MM key set in a Amazon EC2 instance.
+Redis supports a very simple and fast Master/Slave replication. Is so simple it takes only one line in the [Configuration configuration file] to set it up, and 21 seconds for a Slave to complete the initial sync of 10 MM key set in a Amazon EC2 instance.
 
 Read more about Master/Slave [Replication]. 
 
@@ -57,6 +59,8 @@ Redis is written in ANSI C and works in most POSIX systems like Linux, BSD, Mac 
 Redis is free software released under the very liberal BSD license.
 
 == What's next? ==
+
+Want to get started with Redis? Try the [QuickStart Quick Start] you will be up and running in just a matter of minutes.  
 
 Check the [CodeSamples Code Samples] and find how you can use Redis with your favorite programming language.
 
