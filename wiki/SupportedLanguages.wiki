@@ -1,0 +1,14 @@
+|| *Language*         || *ZSET* || *MGET/MSET* || *Pipelining* || *Repo* || Author ||
+|| Ruby               ||        ||             ||              ||        || Ezra Zygmuntowicz (aka ezmobius) ||
+|| Python             ||        ||             ||              ||        || Ludovico Magnocavallo (aka ludo) ||
+|| Twisted Python     ||        ||             ||              ||        || Dorian Raymer ||
+|| PHP                ||        ||             ||              ||        || Ludovico Magnocavallo (aka ludo) ||
+|| PHP (C) module     ||        ||             ||              ||        || Alfonso Jimenez ||
+|| Erlang             ||        ||             ||              ||        || Valentino Volonghi of Adroll ||
+|| TCL                ||        ||             ||              ||        || Salvatore (aka antirez) ||
+|| Perl               ||        ||             ||              ||        || Dobrica Pavlinusic ||
+|| Lua                ||        ||             ||              ||        || Daniele Alessandri ||
+|| JDBC-Redis         ||        ||             ||              ||        ||  ||
+|| JRedis (JCA)       ||        ||             ||              ||        ||  ||
+|| Scala              ||        ||             ||              ||        || Alejandro Crosa ||
+|| Clojure            ||        ||             ||              ||        || Ragnar Dahlén ||
