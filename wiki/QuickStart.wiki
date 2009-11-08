@@ -81,12 +81,14 @@ $ ./redis-cli lrange mylist 0 -1
 
 And despite Redis doesn't have integers, you can do some math also:
 
+{{{
 $ ./redis-cli get mycounter
 (nil)
 $ ./redis-cli incr mycounter
 1
 ./redis-cli incr mycounter
 2
+}}}
 
 == Further reading ==
 
