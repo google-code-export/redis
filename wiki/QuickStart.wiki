@@ -38,15 +38,37 @@ $ ./redis-server
 
 With the [Configuration default configuration] Redis will log to the standard output so you can check what happens. Later, when you'll ready to install Redis in production, you may want to use a [Configuration default configuration file].
 
-== Testing Redis ==
+== Testing it ==
 
-To check if the server is working correctly you can use the `redis-cli` utility included in the source distribution (and automatically compiled when you compile Redis). For instance to set a key and read back the value use the following:
+Redis ships with a command line client that is automatically compiled when you ran `make` and it is called `redis-cli`
+
+For instance to set a key and read back the value use the following:
 
 {{{
-./redis-cli set mykey somevalue
+$ ./redis-cli set mykey somevalue
 OK
-./redis-cli get mykey
+$ ./redis-cli get mykey
 somevalue
+}}}
+
+What about adding elements to a [Lists list]:
+
+{{{
+$ ./redis-cli lpush mylist firstvalue
+OK
+$ ./redis-cli lpush mylist secondvalue
+OK
+$ ./redis-cli lpush mylist thirdvalue
+OK
+$ ./redis-cli lrange mylist 0 -1
+1. thirdvalue
+2. secondvalue
+3. firstvalue
+$ ./redis-cli rpop mylist
+firstvalue
+$ ./redis-cli lrange mylist 0 -1
+1. thirdvalue
+2. secondvalue
 }}}
 
 == Further reading ==
