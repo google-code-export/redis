@@ -91,21 +91,22 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 === Tcl ===
 
   * The official version is included in the Redis tarball since it's maintained by Salvatore. 
-  * Author: [http://invece.org/ Salvatore Sanfilippo], [[http://twitter.com/antirez @antirez]
+  * Author: [http://invece.org/ Salvatore Sanfilippo], [http://twitter.com/antirez @antirez]
 
 == Features supported ==
 
-|| *Client Library*   || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
-|| Ruby               ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
-|| Python             ||        ||             ||              ||            ||
-|| Twisted Python     ||        ||             ||              ||            ||
-|| PHP                ||        ||             ||              ||            ||
-|| PHP (C) module     ||        ||             ||              ||            ||
-|| Erlang             ||        ||             ||              ||            ||
-|| TCL                ||        ||             ||              ||            ||
-|| Perl               ||        ||             ||              ||            ||
-|| Lua                ||   ?    ||     Yes     ||      ?       ||      ?     ||
-|| JDBC-Redis         ||        ||             ||              ||            ||
-|| JRedis (JCA)       ||        ||             ||              ||            ||
-|| Scala              ||   No   ||     No      ||      No      ||     Yes    ||
-|| Clojure            || Trunk  ||   Trunk     ||      No      ||      ?     ||
+|| *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
+|| Clojure    || redis-clojure       || Trunk  ||   Trunk     ||      No      ||      ?     ||
+|| Erlang     || erldis              ||        ||             ||              ||            ||
+|| Java       || JDBC-Redis          ||        ||             ||              ||            ||
+|| java       || JRedis (JCA)        ||        ||             ||              ||            ||
+|| LUA        || redis-lua           ||   ?    ||     Yes     ||      ?       ||      ?     ||
+|| Perl       || Perl                ||        ||             ||              ||            ||
+|| PHP        || Redis PHP Bindings  ||        ||             ||              ||            ||
+|| PHP        || phpredis            ||        ||             ||              ||            ||
+|| PHP        || Predis              ||        ||             ||              ||            ||
+|| Python     || Python Client       ||        ||             ||              ||            ||
+|| Python     || txredis             ||        ||             ||              ||            ||
+|| Ruby       || redis-rb            ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
+|| Scala      || scala-redis         ||   No   ||     No      ||      No      ||     Yes    ||
+|| TCL        || TCL                 ||   ?    ||     ?       ||     ?        ||     ?      ||
