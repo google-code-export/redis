@@ -1,3 +1,4 @@
+#sidebar SideBar
 = Features (DRAFT) =
 
 Checking Redis for the first time? Here your will find the most important features, and pointers to a lot more information.
