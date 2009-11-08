@@ -2,6 +2,53 @@
 
 Wondering if you can use Redis from your favorite language? Well here is the definitive guide to the available client libraries.
 
+== Programming Languages ==
+
+== Clojure ==
+
+  * Clojure bindings for Redis: redis-clojure thanks to Ragnar Dahlén. 
+
+== Erlang ==
+
+  * Erlang main repository written by Valentino Volonghi of Adroll
+
+== Java ==
+
+  * Java has two client libraries projects: JDBC-Redis that as you can guess from the name is a client implementing the JDBC API, and JRedis that is JCA compliant. Both libs are actively developed and good quality, I suggest you to check both. Also note that JRedis plans to release support for asynchronous communication between the client and Redis.
+
+== Lua ==
+
+  * Lua bindings for Redis are available in this git repository (and as well as in the Redis git) thanks to Daniele Alessandri.
+
+== Perl ==
+
+  * Perl bindings for Redis are available in this SVN repository thanks to Dobrica Pavlinusic.
+
+== PHP ==
+
+  * Redis PHP Bindings in Redis repository. By [http://qix.it/ Ludovico Magnocavallo], aka ludo. [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/php]
+  * *phpredis*: This extension provides an API for communicating with Redis database, a persistent key-value database with built-in net interface written in ANSI-C for Posix systems. By [http://www.alfonsojimenez.com/ Alfonso Jimenez], aka th3j0ker. [http://code.google.com/p/phpredis/]
+  * *Predis*: a flexible and feature-complete PHP client library for the Redis key-value database. Predis is currently a work-in-progress and it targets PHP >= 5.3, though it is highly due to be backported to PHP >= 5.2.6 as soon as the public API and the internal design on the main branch will be considered stable enough. By [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.[http://github.com/nrk/predis/]
+
+== Python ==
+
+  * Python main repository written by [http://qix.it/ Ludovico Magnocavallo], aka ludo.
+  * Python (Twisted) pypi link, thanks to Dorian Raymer.
+
+== Ruby ==
+
+  * Ruby main repository written by Ezra Zygmuntowicz (aka ezmobius)
+
+== Scala ==
+
+  * Scala bindings for Redis are available in this Git repository, thanks to Alejandro Crosa.
+
+== Tcl ==
+
+  * Tcl (the official version is included in the Redis tarball since it's maintained by myself, now you can find it in the Git repository).
+
+== Features supported ==
+
 || *Language*         || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
 || Ruby               ||        ||             ||              ||            ||
 || Python             ||        ||             ||              ||            ||
