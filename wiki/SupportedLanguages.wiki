@@ -8,12 +8,12 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
   * A Clojure client library for the key-value storage system Redis.
   * Repository: [http://github.com/ragnard/redis-clojure]
-  * Author: Ragnar Dahlén.
+  * Author: Ragnar Dahlén, [http://twitter.com/ragge @ragge]
 
 === erldis (Erlang) ===
 
   * Client protocol for redis key-value store.
-  * Author: [http://www.adroll.com/ Valentino Volonghi].
+  * Author: [http://www.adroll.com/ Valentino Volonghi], [http://twitter.com/dialtone_ @dialtone_]
   * Repository: [http://bitbucket.org/adroll/erldis/]
 
 === Java ===
@@ -23,19 +23,18 @@ Wondering if you can use Redis from your favorite language? Well here is the def
   * JDBC-Redis is Java driver using the JDBC interface for Redis Database. This project doesn't aim for a complete implementation of the JDBC specification since Redis isn't a relational database, but should provide a familiar interface to Java developers interact with Redis.
   * Repository: [http://code.google.com/p/jdbc-redis/]
 
-==== JDBC API ====
+==== JRedis ====
 
-  * 
-  * Author: [].
-  * Repository: []
+  * Java Client and Connectors for Redis JCA compliant. Currently offers a complete functioning Synchronous connector, Asynchronous connection and pipelining support under heavy develpment.
+  * Author: [http://twitter.com/SunOf27 Joubin Houshyar].
+  * Home: [http://code.google.com/p/jredis/]
+  * Repository: [http://github.com/alphazero/jredis]
 
 === Lua ===
 
-  * Lua bindings for Redis are available in this git repository (and as well as in the Redis git) thanks to Daniele Alessandri.
-
-  * 
-  * Author: [].
-  * Repository: []
+  * A Lua client library for the redis key value storage system.
+  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.
+  * Repository: [http://github.com/nrk/redis-lua]
 
 
 === Perl ===
@@ -68,8 +67,17 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 === Python ===
 
-  * Python main repository written by [http://qix.it/ Ludovico Magnocavallo], aka ludo.
-  * Python (Twisted) pypi link, thanks to Dorian Raymer.
+==== Python Client ====
+
+  * Simple Python client in Redis main repository.
+  * Author:  [http://qix.it/ Ludovico Magnocavallo], aka ludo.
+  * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/python]
+
+=== txredis ===
+
+  * Python/Twisted client for Redis key-value store
+  * PyPI: [http://pypi.python.org/pypi/txredis/0.1.1]
+  * Author: Dorian Raymer, [http://twitter.com/dio_rian]
 
 === Ruby ===
 
@@ -94,8 +102,8 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || Erlang             ||        ||             ||              ||            ||
 || TCL                ||        ||             ||              ||            ||
 || Perl               ||        ||             ||              ||            ||
-|| Lua                ||        ||             ||              ||            ||
+|| Lua                ||   ?    ||     Yes     ||      ?       ||      ?     ||
 || JDBC-Redis         ||        ||             ||              ||            ||
 || JRedis (JCA)       ||        ||             ||              ||            ||
 || Scala              ||        ||             ||              ||            ||
-|| Clojure            ||  Yes   ||      ?      ||      No      ||      ?     ||
+|| Clojure            || Trunk  ||   Trunk     ||      No      ||      ?     ||
