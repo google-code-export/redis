@@ -36,7 +36,7 @@ Redis can run just fine without a configuration file (when executed without a co
 $ ./redis-server
 }}}
 
-With the [Configuration default configuration] Redis will log to the standard output so you can check what happens. Later, when you'll ready to install Redis in production, you may want to use a [Configuration default configuration file].
+With the [Configuration default configuration] Redis will log to the standard output so you can check what happens. Later, you can [Configuration change the default settings].
 
 == Play with the built in client ==
 
