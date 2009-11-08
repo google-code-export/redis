@@ -115,8 +115,9 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 ==== Ohm ====
 
   * Object-hash mapping library for Redis. It includes an extensible list of validations and has very good performance.
-  * Author: [http://soveran.com/ Michel Martens], [http://twitter.com/soveran @soveran].
+  * Authors: [http://soveran.com/ Michel Martens], [http://twitter.com/soveran @soveran]; and Damian Janowski [http://twitter.com/djanowski @djanowski].
   * Repository: [http://github.com/soveran/ohm]
+  * Group: [http://groups.google.com/group/ohm-ruby]
 
 === scala-redis (Scala) ===
 
