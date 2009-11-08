@@ -97,16 +97,16 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 || *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
 || Clojure    || redis-clojure       || Trunk  ||   Trunk     ||      No      ||      ?     ||
-|| Erlang     || erldis              ||        ||             ||              ||            ||
-|| Java       || JDBC-Redis          ||        ||             ||              ||            ||
-|| java       || JRedis (JCA)        ||        ||             ||              ||            ||
+|| Erlang     || erldis              ||   No   ||      No     ||      No      ||    No      ||
+|| Java       || JDBC-Redis          ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| java       || JRedis (JCA)        ||   ?    ||      ?      ||     Yes      ||      ?     ||
 || LUA        || redis-lua           ||   ?    ||     Yes     ||      ?       ||      ?     ||
-|| Perl       || Perl                ||        ||             ||              ||            ||
-|| PHP        || Redis PHP Bindings  ||        ||             ||              ||            ||
-|| PHP        || phpredis            ||        ||             ||              ||            ||
-|| PHP        || Predis              ||        ||             ||              ||            ||
-|| Python     || Python Client       ||        ||             ||              ||            ||
-|| Python     || txredis             ||        ||             ||              ||            ||
+|| Perl       || Perl                ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| PHP        || Redis PHP Bindings  ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| PHP        || phpredis            ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| PHP        || Predis              ||   No   ||     Yes     ||      Yes     ||      Yes   ||
+|| Python     || Python Client       ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| Python     || txredis             ||   ?    ||      ?      ||      ?       ||      ?     ||
 || Ruby       || redis-rb            ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
 || Scala      || scala-redis         ||   No   ||     No      ||      No      ||     Yes    ||
 || TCL        || TCL                 ||   ?    ||     ?       ||     ?        ||     ?      ||
