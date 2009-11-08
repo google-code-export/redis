@@ -95,4 +95,4 @@ $ ./redis-cli incr mycounter
  * Check all the [Features]
  * Read the full list of available commands in the [CommandReference Command Reference].
  * Start using Redis from your [SupportedLanguages favorite language].
- * Take a look at some [CodeSamples code samples]. 
+ * Take a look at some [ProgrammingExamples Programming Examples]. 
