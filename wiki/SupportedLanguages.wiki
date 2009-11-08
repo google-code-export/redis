@@ -26,9 +26,23 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 == PHP ==
 
-  * Redis PHP Bindings in Redis repository. By [http://qix.it/ Ludovico Magnocavallo], aka ludo. [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/php]
-  * *phpredis*: This extension provides an API for communicating with Redis database, a persistent key-value database with built-in net interface written in ANSI-C for Posix systems. By [http://www.alfonsojimenez.com/ Alfonso Jimenez], aka th3j0ker. [http://code.google.com/p/phpredis/]
-  * *Predis*: a flexible and feature-complete PHP client library for the Redis key-value database. Predis is currently a work-in-progress and it targets PHP >= 5.3, though it is highly due to be backported to PHP >= 5.2.6 as soon as the public API and the internal design on the main branch will be considered stable enough. By [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.[http://github.com/nrk/predis/]
+=== Redis PHP Bindings === 
+
+  * Simple default binding in Redis main repository.
+  * Author: [http://qix.it/ Ludovico Magnocavallo], aka ludo.
+  * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/php]
+
+=== phpredis ===
+
+  * This extension provides an API for communicating with Redis database, a persistent key-value database with built-in net interface written in ANSI-C for Posix systems.
+  * Author: [http://www.alfonsojimenez.com/ Alfonso Jimenez], aka th3j0ker.
+  * Repository: [http://code.google.com/p/phpredis/]
+
+=== Predis ===
+
+  * A flexible and feature-complete PHP client library for the Redis key-value database. Predis is currently a work-in-progress and it targets PHP >= 5.3, though it is highly due to be backported to PHP >= 5.2.6 as soon as the public API and the internal design on the main branch will be considered stable enough.
+  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.
+  * Repository: [http://github.com/nrk/predis/]
 
 == Python ==
 
