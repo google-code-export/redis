@@ -1,4 +1,5 @@
 #summary Programming Examples
+#sidebar SideBar
 
 = Programming Examples (DRAFT) =
 
