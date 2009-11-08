@@ -71,6 +71,23 @@ $ ./redis-cli lrange mylist 0 -1
 2. secondvalue
 }}}
 
+[Lists] (and [Sets] too) can be sorted:
+
+{{{
+./redis-cli sort mylist alpha
+1. secondvalue
+2. thirdvalue
+}}}
+
+And despite Redis doesn't have integers, you can do some math also:
+
+$ ./redis-cli get mycounter
+(nil)
+$ ./redis-cli incr mycounter
+1
+./redis-cli incr mycounter
+2
+
 == Further reading ==
 
  * To know more about Redis check the [README Readme] file.
