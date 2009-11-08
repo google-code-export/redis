@@ -1,3 +1,5 @@
+= Supported Languages (DRAFT) =
+
 || *Language*         || *ZSET* || *MGET/MSET* || *Pipelining* || *Repo* || Author ||
 || Ruby               ||        ||             ||              ||        || Ezra Zygmuntowicz (aka ezmobius) ||
 || Python             ||        ||             ||              ||        || Ludovico Magnocavallo (aka ludo) ||
