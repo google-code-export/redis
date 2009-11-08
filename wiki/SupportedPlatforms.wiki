@@ -1,0 +1,11 @@
+= Supported Platforms =
+
+Redis can be compiled in most POSIX systems, but the development targets mainly:
+
+  * Linux
+  * Mac OS X
+  * FreeBSD
+  * OpenBSD
+  * Solaris (startting with [RoadMap Version 1.1])
+
+Windows (using CygWin) is not a supported platform.
