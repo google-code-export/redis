@@ -5,7 +5,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 == Features Support Matrix ==
 
 || *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
-|| Clojure    || redis-clojure       || Yes  ||   Yes     ||      No      ||      ?     ||
+|| Clojure    || redis-clojure       ||   Yes  ||     Yes     ||      No      ||      ?     ||
 || Erlang     || erldis              ||   No   ||      No     ||      No      ||    No      ||
 || Java       || JDBC-Redis          ||   ?    ||      ?      ||      ?       ||      ?     ||
 || java       || JRedis (JCA)        ||   ?    ||      ?      ||     Yes      ||      ?     ||
@@ -17,6 +17,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || Python     || Python Client       ||   ?    ||      ?      ||      ?       ||      ?     ||
 || Python     || txredis             ||   ?    ||      ?      ||      ?       ||      ?     ||
 || Ruby       || redis-rb            ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
+|| Ruby       || Ohm                 ||  ?     ||    ?        ||     ?        ||     ?      ||
 || Scala      || scala-redis         ||   No   ||     No      ||      No      ||     Yes    ||
 || TCL        || TCL                 ||   ?    ||     ?       ||     ?        ||     ?      ||
 
@@ -94,11 +95,19 @@ Wondering if you can use Redis from your favorite language? Well here is the def
   * Author: Dorian Raymer, [http://twitter.com/dio_rian @dio_rian].
   * PyPI: [http://pypi.python.org/pypi/txredis/0.1.1]
 
-=== redis-rb (Ruby) ===
+=== Ruby ===
+
+==== redis-rb ====
 
   * A Ruby client library for the redis key value storage engine.
   * Author: [http://brainspl.at/ Ezra Zygmuntowicz], [http://twitter.com/ezmobius @ezmobius].
   * Repository: [http://github.com/ezmobius/redis-rb]
+
+==== Ohm ====
+
+  * Object-hash mapping library for Redis. It includes an extensible list of validations and has very good performance.
+  * Author: [http://soveran.com/ Michel Martens], [http://twitter.com/soveran @soveran].
+  * Repository: [http://github.com/soveran/ohm]
 
 === scala-redis (Scala) ===
 
