@@ -2,7 +2,7 @@
 
 This quickstart is a five minutes howto on how to get started with Redis. For more information on Redis check [http://code.google.com/p/redis/wiki/index Redis Documentation Index].
 
-== Obtaining the latest version ==
+== Obtain the latest version ==
 
 The latest stable source distribution of Redis can be obtained [http://code.google.com/p/redis/downloads/list at this location as a tarball].
 
@@ -16,7 +16,7 @@ The unstable source code, with more features but not ready for production, can b
 $ git clone git://github.com/antirez/redis.git
 }}}
 
-== Compiling ==
+== Compile ==
 
 Redis can be compiled in most [SupportedPlatforms POSIX systems]. To compile Redis just untar the tar.gz, enter the directly and type 'make'.
 
@@ -28,7 +28,7 @@ $ make
 
 In order to test if the Redis server is working well in your computer make sure to run `make test` and check that all the tests are passed.
 
-== Running ==
+== Run the server ==
 
 Redis can run just fine without a configuration file (when executed without a config file a standard configuration is used). To run Redis just type the following command:
 
@@ -38,7 +38,7 @@ $ ./redis-server
 
 With the [Configuration default configuration] Redis will log to the standard output so you can check what happens. Later, when you'll ready to install Redis in production, you may want to use a [Configuration default configuration file].
 
-== Testing it ==
+== Play with the built in client ==
 
 Redis ships with a command line client that is automatically compiled when you ran `make` and it is called `redis-cli`
 
@@ -90,6 +90,7 @@ $ ./redis-cli incr mycounter
 
 == Further reading ==
 
- * To know more about Redis check the [README Readme] file.
+ * Check all the [Features]
  * Read the full list of available commands in the [CommandReference Command Reference].
- * To get started with the Redis replication read the [ReplicationHowto Replication Howto].
+ * Start using Redis from your [SupportedLanguages favorite language].
+ * Take a look at some [CodeSamples code samples]. 
