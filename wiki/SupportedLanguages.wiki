@@ -8,12 +8,12 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
   * A Clojure client library for the key-value storage system Redis.
   * Repository: [http://github.com/ragnard/redis-clojure]
-  * Author: Ragnar Dahlén, [http://twitter.com/ragge @ragge]
+  * Author: Ragnar Dahlén, [http://twitter.com/ragge @ragge].
 
 === erldis (Erlang) ===
 
   * Client protocol for redis key-value store.
-  * Author: [http://www.adroll.com/ Valentino Volonghi], [http://twitter.com/dialtone_ @dialtone_]
+  * Author: [http://www.adroll.com/ Valentino Volonghi], [http://twitter.com/dialtone_ @dialtone_].
   * Repository: [http://bitbucket.org/adroll/erldis/]
 
 === Java ===
@@ -26,43 +26,40 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 ==== JRedis ====
 
   * Java Client and Connectors for Redis JCA compliant. Currently offers a complete functioning Synchronous connector, Asynchronous connection and pipelining support under heavy develpment.
-  * Author: [http://twitter.com/SunOf27 Joubin Houshyar].
+  * Author: Joubin Houshyar, [http://twitter.com/SunOf27 @SunOf27].
   * Home: [http://code.google.com/p/jredis/]
   * Repository: [http://github.com/alphazero/jredis]
 
-=== Lua ===
+=== redis-lua (Lua) ===
 
   * A Lua client library for the redis key value storage system.
-  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.
+  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], [http://twitter.com/jol1hahn @jol1hahn].
   * Repository: [http://github.com/nrk/redis-lua]
-
 
 === Perl ===
 
-  * Perl bindings for Redis are available in this SVN repository thanks to Dobrica Pavlinusic.
-
-  * 
-  * Author: [].
-  * Repository: []
+  * Perl binding for Redis database.
+  * Author: [http://blog.rot13.org/ Dobrica Pavlinusic], [http://twitter.com/dpavlin @dpavlin].
+  * Repository: [http://svn.rot13.org/index.cgi/Redis]
 
 === PHP ===
 
 ==== Redis PHP Bindings ====
 
   * Simple default binding in Redis main repository.
-  * Author: [http://qix.it/ Ludovico Magnocavallo], aka ludo.
+  * Author: [http://qix.it/ Ludovico Magnocavallo], [http://twitter.com/ludo @ludo].
   * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/php]
 
 ==== phpredis ====
 
   * This extension provides an API for communicating with Redis database, a persistent key-value database with built-in net interface written in ANSI-C for Posix systems.
-  * Author: [http://www.alfonsojimenez.com/ Alfonso Jimenez], aka th3j0ker.
+  * Author: [http://www.alfonsojimenez.com/ Alfonso Jimenez], [http://twitter.com/alfonsojimenez @alfonsojimenez].
   * Repository: [http://code.google.com/p/phpredis/]
 
 ==== Predis ====
 
   * A flexible and feature-complete PHP client library for the Redis key-value database. Predis is currently a work-in-progress and it targets PHP >= 5.3, though it is highly due to be backported to PHP >= 5.2.6 as soon as the public API and the internal design on the main branch will be considered stable enough.
-  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], aka nrk.
+  * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], [http://twitter.com/jol1hahn @jol1hahn]
   * Repository: [http://github.com/nrk/predis/]
 
 === Python ===
@@ -70,31 +67,36 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 ==== Python Client ====
 
   * Simple Python client in Redis main repository.
-  * Author:  [http://qix.it/ Ludovico Magnocavallo], aka ludo.
+  * Author: [http://qix.it/ Ludovico Magnocavallo], [http://twitter.com/ludo @ludo].
   * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/python]
 
 === txredis ===
 
   * Python/Twisted client for Redis key-value store
+  * Author: Dorian Raymer, [http://twitter.com/dio_rian @dio_rian].
   * PyPI: [http://pypi.python.org/pypi/txredis/0.1.1]
-  * Author: Dorian Raymer, [http://twitter.com/dio_rian]
 
-=== Ruby ===
+=== redis-rb (Ruby) ===
 
-  * Ruby main repository written by Ezra Zygmuntowicz (aka ezmobius)
+  * A Ruby client library for the redis key value storage engine.
+  * Author: [http://brainspl.at/ Ezra Zygmuntowicz], [http://twitter.com/ezmobius @ezmobius].
+  * Repository: [http://github.com/ezmobius/redis-rb]
 
-=== Scala ===
+=== scala-redis (Scala) ===
 
-  * Scala bindings for Redis are available in this Git repository, thanks to Alejandro Crosa.
+  * A scala library for connecting to a redis server, or a cluster of redis nodes using consistent hashing on the client side.
+  * Author: [http://www.linkedin.com/in/alejandrocrosa Alejandro Crosa], [http://twitter.com/alejandrocrosa @alejandrocrosa].
+  * Repository [http://github.com/acrosa/scala-redis]
 
 === Tcl ===
 
-  * Tcl (the official version is included in the Redis tarball since it's maintained by myself, now you can find it in the Git repository).
+  * The official version is included in the Redis tarball since it's maintained by Salvatore. 
+  * Author: [http://invece.org/ Salvatore Sanfilippo], [[http://twitter.com/antirez @antirez]
 
 == Features supported ==
 
-|| *Language*         || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
-|| Ruby               ||        ||             ||              ||            ||
+|| *Client Library*   || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
+|| Ruby               ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
 || Python             ||        ||             ||              ||            ||
 || Twisted Python     ||        ||             ||              ||            ||
 || PHP                ||        ||             ||              ||            ||
@@ -105,5 +107,5 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || Lua                ||   ?    ||     Yes     ||      ?       ||      ?     ||
 || JDBC-Redis         ||        ||             ||              ||            ||
 || JRedis (JCA)       ||        ||             ||              ||            ||
-|| Scala              ||        ||             ||              ||            ||
+|| Scala              ||   No   ||     No      ||      No      ||     Yes    ||
 || Clojure            || Trunk  ||   Trunk     ||      No      ||      ?     ||
