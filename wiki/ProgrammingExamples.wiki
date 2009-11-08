@@ -1,21 +1,20 @@
 #summary Programming Examples
 
-DRAFT
+= Programming Examples (DRAFT) =
 
 Nothing speaks better than code examples, here you are:
 
 == Java ==
 
-  * JRedis Java Client and Connectors for Redis, ships with a [http://github.com/alphazero/jredis/tree/master/examples/src/main/java/org/jredis/examples/ examples] folder.
-
-  * Twayis showcase integration between the Play! framework and Redis [http://code.google.com/p/twayis/ Google Code Project Page]
+  * *Twayis* is a Java clone of *Retwis* showcase integration between the [http://www.playframework.org/ Play! framework] and Redis [http://code.google.com/p/twayis/ Google Code Project Page]
 
 == PHP ==
 
-  * Retwis is a PHP+Retwis twitter clone, the original example of Redis capabilities. [http://retwis.antirez.com/ Live demo], [http://code.google.com/p/redis/wiki/TwitterAlikeExample article explaining it design]. The code is in the Downloads tab.
+  * Retwis is a PHP+Retwis twitter clone, the original example of Redis capabilities. With a [http://retwis.antirez.com/ live demo], and a [http://code.google.com/p/redis/wiki/TwitterAlikeExample article explaining it design]. The code is in the Downloads tab.
 
 == Ruby ==
 
-  * Retwis-rb is a port of Retwis to Ruby and Sinatra written by Daniel Lucraft! With full source code included of course, the git repository is linked at the end of the Retwis-RB page.
-  * A very simple example of Ruby+Redis app using Sinatra. It's a note taking example developed by Pieter Noordhuis.
-  * Resque is the "simple" Redis-based queue behind Github background jobs.[http://github.com/defunkt/resque]
+  * *twatcher-lite* is a simplied version of the application running [http://twatcher.com/] from Mirko Froehlich ([http://twitter.com/digitalhobbit @digitalhobbit]) with a full blog post explaining its development at [http://www.digitalhobbit.com/2009/11/08/building-a-twitter-filter-with-sinatra-redis-and-tweetstream/  Building a Twitter Filter With Sinatra, Redis, and TweetStream]
+  * *Resque* is the "simple" Redis-based queue behind Github background jobs. Developed by Chris Wanstrath ([http://twitter.com/defunkt @defunkt]) the code is at [http://github.com/defunkt/resque]
+  * *Retwis-rb* is a port of *Retwis* to Ruby and [http://www.sinatrarb.com/ Sinatra] written by Daniel Lucraft ([http://twitter.com/DanLucraft @DanLucraft]) Full source code is available at [http://github.com/danlucraft/retwis-rb]
+  * A _very simple_ note taking example of Ruby and Redis application using [http://www.sinatrarb.com/ Sinatra]. Developed by Pieter Noordhuis [http://twitter.com/pnoordhuis @pnoordhuis], you can check the code at [http://gist.github.com/86714]
