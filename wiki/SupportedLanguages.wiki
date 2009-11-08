@@ -1,3 +1,4 @@
+#sidebar SideBar
 = Supported Languages (DRAFT) =
 
 Wondering if you can use Redis from your favorite language? Well here is the definitive guide to the available client libraries.
