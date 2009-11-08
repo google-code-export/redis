@@ -10,7 +10,8 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || Java       || JDBC-Redis          ||   ?    ||      ?      ||      ?       ||      ?     ||
 || java       || JRedis (JCA)        ||   ?    ||      ?      ||     Yes      ||      ?     ||
 || LUA        || redis-lua           ||   ?    ||     Yes     ||      ?       ||      ?     ||
-|| Perl       || Perl                ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| Perl       || Redis Client        ||   ?    ||      ?      ||      ?       ||      ?     ||
+|| Perl       || AnyEvent::Redis     ||   ?    ||      ?      ||      ?       ||      ?     ||
 || PHP        || Redis PHP Bindings  ||   ?    ||      ?      ||      ?       ||      ?     ||
 || PHP        || phpredis            ||   ?    ||      ?      ||      ?       ||      ?     ||
 || PHP        || Predis              ||   No   ||     Yes     ||      Yes     ||      Yes   ||
@@ -57,9 +58,17 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 === Perl ===
 
+==== Perl Client ====
+
   * Perl binding for Redis database.
   * Author: [http://blog.rot13.org/ Dobrica Pavlinusic], [http://twitter.com/dpavlin @dpavlin].
   * Repository: [http://svn.rot13.org/index.cgi/Redis]
+
+==== AnyEvent::Redis ====
+
+  * Non-blocking Redis client.
+  * Author: [http://bulknews.typepad.com/ Tatsuhiko Miyagawa], [http://twitter.com/miyagawa @miyagawa].
+  * Repository: [http://github.com/miyagawa/AnyEvent-Redis/]
 
 === PHP ===
 
