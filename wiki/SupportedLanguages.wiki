@@ -5,7 +5,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 == Features Support Matrix ==
 
 || *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
-|| Clojure    || redis-clojure       || Trunk  ||   Trunk     ||      No      ||      ?     ||
+|| Clojure    || redis-clojure       || Yes  ||   Yes     ||      No      ||      ?     ||
 || Erlang     || erldis              ||   No   ||      No     ||      No      ||    No      ||
 || Java       || JDBC-Redis          ||   ?    ||      ?      ||      ?       ||      ?     ||
 || java       || JRedis (JCA)        ||   ?    ||      ?      ||     Yes      ||      ?     ||
