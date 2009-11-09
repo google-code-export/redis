@@ -16,6 +16,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || PHP        || Redis PHP Bindings  ||   ?    ||      ?      ||      ?       ||      ?     ||
 || PHP        || phpredis            ||   ?    ||      ?      ||      ?       ||      ?     ||
 || PHP        || Predis              ||   No   ||     Yes     ||      Yes     ||      Yes   ||
+|| PHP        || Redisent            ||   ?    ||     ?       ||      ?       ||      Yes   ||
 || Python     || Python Client       ||   ?    ||      ?      ||      ?       ||      ?     ||
 || Python     || txredis             ||   ?    ||      ?      ||      ?       ||      ?     ||
 || Ruby       || redis-rb            ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
@@ -91,6 +92,12 @@ Wondering if you can use Redis from your favorite language? Well here is the def
   * A flexible and feature-complete PHP client library for the Redis key-value database. Predis is currently a work-in-progress and it targets PHP >= 5.3, though it is highly due to be backported to PHP >= 5.2.6 as soon as the public API and the internal design on the main branch will be considered stable enough.
   * Author: [http://www.clorophilla.net/blog/ Daniele Alessandri], [http://twitter.com/jol1hahn @jol1hahn]
   * Repository: [http://github.com/nrk/predis/]
+
+==== Redisent ====
+
+  * Redisent is a simple, no-nonsense interface to the Redis key-value store for modest developers. Due to the way it is implemented, it is flexible and tolerant of changes to the Redis protocol.
+  * Author: [http://blog.justinpoliey.com/ Justin Poliey], [http://twitter.com/justinpoliey @justinpoliey]
+  * Repository: [http://github.com/jdp/redisent]
 
 === Python ===
 
