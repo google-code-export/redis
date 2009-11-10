@@ -3,6 +3,14 @@
 
 Wondering if you can use Redis from your favorite language? Well here is the definitive guide to the available client libraries.
 
+== TODO IN THIS PAGE ==
+
+  * Add http://github.com/voloko/redis-model
+  * http://github.com/madsimian/em-redis
+  * http://github.com/besquared/redis-datastructures
+
+  I think we are going to need a separate 'ORM + Others' Wiki page...
+
 == Features Support Matrix ==
 
 || *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
