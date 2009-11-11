@@ -6,10 +6,12 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 == TODO IN THIS PAGE ==
 
   * Add http://github.com/voloko/redis-model
-  * http://github.com/madsimian/em-redis
-  * http://github.com/besquared/redis-datastructures
+  * Add http://github.com/madsimian/em-redis
+  * Add http://github.com/besquared/redis-datastructures
+  * Update http://github.com/andymccurdy/redis-py
+  * Update JRedis entry
 
-  I think we are going to need a separate 'ORM + Others' Wiki page...
+I think we are going to need a separate 'ORM + Others' Wiki page...
 
 == Features Support Matrix ==
 
