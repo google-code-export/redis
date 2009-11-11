@@ -1,6 +1,12 @@
 #sidebar SideBar
 
 = Road Map (ROUGH DRAFT)
+
+== TODO ==
+
+Add this information:
+
+[http://groups.google.com/group/redis-db/browse_thread/thread/95329fcbf7825169/70214fc6cfe01856?lnk=gst&q=roadmap#70214fc6cfe01856]
  
 == 1.1 ==
 
