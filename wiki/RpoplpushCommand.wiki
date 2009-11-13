@@ -20,7 +20,7 @@ _Time complexity: O(1)_
  (that we call Consumer) can process the messages performing an [LpopCommand RPOP] command
  in order to start reading the messages from the oldest.
 
- Unfortunately if a Consumer crashes just after an [RpopCommand RPOP] operation the message
+ Unfortunately if a Consumer crashes just after an [LpopCommand RPOP] operation the message
  gets lost. RPOPLPUSH solves this problem since the returned message is
  added to another "backup" list. The Consumer can later remove the message
  from the backup list using the [LremCommand LREM] command when the message was correctly
