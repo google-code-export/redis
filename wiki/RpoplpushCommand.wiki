@@ -42,9 +42,14 @@ _Time complexity: O(1)_
 [ReplyTypes Bulk reply]
 
 == See also ==
+ * [RpushCommand RPUSH]
+ * [RpushCommand LPUSH]
  * [LlenCommand LLEN]
  * [LrangeCommand LRANGE]
  * [LtrimCommand LTRIM]
- * [LremCommand LREM]
  * [LindexCommand LINDEX]
  * [LsetCommand LSET]
+ * [LremCommand LREM]
+ * [LpopCommand LPOP]
+ * [LpopCommand RPOP]
+ * [RpoplpushCommand RPOPLPUSH]

@@ -20,6 +20,7 @@ _Time complexity: O(n) (with n being the length of the list)_
  * [LlenCommand LLEN]
  * [LrangeCommand LRANGE]
  * [LtrimCommand LTRIM]
- * [LdelCommand LDEL]
+ * [LremCommand LREM]
  * [LindexCommand LINDEX]
  * [LsetCommand LSET]
+ * [RpoplpushCommand RPOPLPUSH]

@@ -12,9 +12,14 @@ _Time complexity: O(1)_
 [ReplyTypes Status code reply]
 
 == See also ==
+ * [RpushCommand RPUSH]
+ * [RpushCommand LPUSH]
  * [LlenCommand LLEN]
  * [LrangeCommand LRANGE]
  * [LtrimCommand LTRIM]
- * [LdelCommand LDEL]
  * [LindexCommand LINDEX]
  * [LsetCommand LSET]
+ * [LremCommand LREM]
+ * [LpopCommand LPOP]
+ * [LpopCommand RPOP]
+ * [RpoplpushCommand RPOPLPUSH]

@@ -22,9 +22,14 @@ _Time complexity: O(n) (with n being the length of the range)_
 [ReplyTypes Multi bulk reply], specifically a list of elements in the specified range.
 
 == See also ==
+ * [RpushCommand RPUSH]
+ * [RpushCommand LPUSH]
  * [LlenCommand LLEN]
  * [LrangeCommand LRANGE]
  * [LtrimCommand LTRIM]
- * [LdelCommand LDEL]
  * [LindexCommand LINDEX]
  * [LsetCommand LSET]
+ * [LremCommand LREM]
+ * [LpopCommand LPOP]
+ * [LpopCommand RPOP]
+ * [RpoplpushCommand RPOPLPUSH]

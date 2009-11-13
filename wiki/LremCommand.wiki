@@ -20,9 +20,14 @@ The number of removed elements if the operation succeeded
 }}}
 
 == See also ==
+ * [RpushCommand RPUSH]
+ * [RpushCommand LPUSH]
  * [LlenCommand LLEN]
  * [LrangeCommand LRANGE]
  * [LtrimCommand LTRIM]
- * [LdelCommand LDEL]
  * [LindexCommand LINDEX]
  * [LsetCommand LSET]
+ * [LremCommand LREM]
+ * [LpopCommand LPOP]
+ * [LpopCommand RPOP]
+ * [RpoplpushCommand RPOPLPUSH]
