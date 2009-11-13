@@ -44,6 +44,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [LremCommand LREM] _key_ _count_ _value_ `Remove the first-N, last-N, or all the elements matching value from the List at key`
  * [LpopCommand LPOP] _key_ `Return and remove (atomically) the first element of the List at key`
  * [LpopCommand RPOP] _key_ `Return and remove (atomically) the last element of the List at key`
+ * [RpoplpushCommand RPOPLPUSH] _srckey_ _dstkey_ `Return and remove (atomically) the last element of the source List stored at _srckey_ and push the same element to the destination List stored at _dstkey_`
 
 == Commands operating on sets ==
 
