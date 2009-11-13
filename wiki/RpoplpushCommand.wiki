@@ -5,7 +5,7 @@ _Time complexity: O(1)_
  and push the element as the first (head) element of the _dstkey_ list. For
  example if the source list contains the elements "a","b","c" and the
  destination list contains the elements "foo","bar" after an RPOPLPUSH command
- the content of the two lists will be "a","b" and "a","foo","bar".
+ the content of the two lists will be "a","b" and "c","foo","bar".
 
  If the _key_ does not exist or the list is already empty the special
  value 'nil' is returned. If the _srckey_ and _dstkey_ are the same the
