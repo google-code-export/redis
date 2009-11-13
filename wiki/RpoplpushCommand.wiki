@@ -35,7 +35,7 @@ _Time complexity: O(1)_
  visit all the elements of an N-elements List in O(N) without to transfer
  the full list from the server to the client in a single [LrangeCommand LRANGE] operation.
  Note that a process can traverse the list even while other processes
- are actively PUSHing against the list, and still no element will be skipped.
+ are actively RPUSHing against the list, and still no element will be skipped.
 
 == Return value ==
 
