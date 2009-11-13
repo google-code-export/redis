@@ -15,9 +15,9 @@ _Time complexity: O(1)_
 == Programming patterns: safe queues ==
 
  Redis lists are often used as queues in order to exchange messages between
- different programs. A program can add a message performing an [LpushCommand LPUSH] operation
+ different programs. A program can add a message performing an [RpushCommand LPUSH] operation
  against a Redis list (we call this program a Producer), while another program
- (that we call Consumer) can process the messages performing an [RpopCommand RPOP] command
+ (that we call Consumer) can process the messages performing an [LpopCommand RPOP] command
  in order to start reading the messages from the oldest.
 
  Unfortunately if a Consumer crashes just after an [RpopCommand RPOP] operation the message
