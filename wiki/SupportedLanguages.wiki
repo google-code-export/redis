@@ -41,9 +41,9 @@ I think we are going to need a separate 'ORM + Others' Wiki page...
 
 === as3 (ActionScript 3) ===
 
-  * An Actionscript 3 (Flash) library for Redis.
+  * An ActionScript 3 (Flash) library for Redis.
   * Repository: [http://github.com/claus/as3redis]
-  * Author: Claus Wahlers, [http://twitter.com/cwahlers	 @cwahlers	].
+  * Author: Claus Wahlers, [http://twitter.com/cwahlers	 @cwahles].
 
 === redis-clojure (Clojure) ===
 
