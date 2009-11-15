@@ -13,29 +13,37 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 I think we are going to need a separate 'ORM + Others' Wiki page...
 
-== Features Support Matrix ==
+== Features Support Matrix ==	
 
-|| *Language* || *Client Library*    || *ZSET* || *MGET/MSET* || *Pipelining* || *Sharding* ||
-|| Clojure    || redis-clojure       ||   Yes  ||     Yes     ||      No      ||      ?     ||
-|| Erlang     || erldis              ||   No   ||      No     ||      No      ||    No      ||
-|| Java       || JDBC-Redis          ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| java       || JRedis (JCA)        ||   ?    ||      ?      ||     Yes      ||      ?     ||
-|| LUA        || redis-lua           ||   ?    ||     Yes     ||      ?       ||      ?     ||
-|| Perl       || Redis Client        ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| Perl       || AnyEvent::Redis     ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| PHP        || Redis PHP Bindings  ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| PHP        || phpredis            ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| PHP        || Predis              ||   No   ||     Yes     ||      Yes     ||      Yes   ||
-|| PHP        || Redisent            ||   ?    ||     ?       ||      ?       ||      Yes   ||
-|| Python     || Python Client       ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| Python     || txredis             ||   ?    ||      ?      ||      ?       ||      ?     ||
-|| Ruby       || redis-rb            ||  Yes   ||    Yes      ||     Yes      ||     Yes    ||
-|| Ruby       || Ohm                 ||  ?     ||    ?        ||     ?        ||     ?      ||
-|| Ruby       || dm-redis-adapter    ||  ?     ||    ?        ||     ?        ||     ?      ||
-|| Scala      || scala-redis         ||   No   ||     No      ||      No      ||     Yes    ||
-|| TCL        || TCL                 ||   ?    ||     ?       ||     ?        ||     ?      ||
+|| *Language*    || *Client Library*    || *RPOPLPUSH* || *ZSET* || *Multi GET/SET* || *Pipelining* || *Sharding* || 1.0  ||
+|| ActionScrip 3 || as3redis            || Yes         || ?      || ?               || No           || ?          ||  ?   ||
+|| Clojure       || redis-clojure       || ?           || Yes    || Yes             || No           || ?          ||  ?   ||
+|| Erlang        || erldis              || ?           || No     || No              || No           || No         ||  ?   ||
+|| Go            || Go-Redis            || Yes         || Yes    || Partial         || No           || No         ||  ?   ||
+|| Java          || JDBC-Redis          || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| Java          || JRedis              || ?           || ?      || ?               || Yes          || ?          ||  ?   ||
+|| LUA           || redis-lua           || ?           || ?      || Yes             || ?            || ?          ||  ?   ||
+|| Perl          || Redis Client        || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| Perl          || AnyEvent::Redis     || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| PHP           || Redis PHP Bindings  || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| PHP           || phpredis            || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| PHP           || Predis              || ?           || No     || Yes             || Yes          || Yes        ||  ?   ||
+|| PHP           || Redisent            || ?           || ?      || ?               || ?            || Yes        ||  ?   ||
+|| Python        || Python Client       || Yes         || Yes    || Partial         || ?            || ?          ||  ?   ||
+|| Python        || txredis             || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| Ruby          || redis-rb            || Yes         || Yes    || Yes             || Yes          || Yes        ||  Yes ||
+|| Ruby          || Ohm                 || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| Ruby          || dm-redis-adapter    || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| Scala         || scala-redis         || ?           || No     || No              || No           || Yes        ||  ?   ||
+|| TCL           || TCL                 || ?           || ?      || ?               || ?            || ?          ||  ?   ||
 
 == Client Libraries ==
+
+=== as3 (ActionScript 3) ===
+
+  * An Actionscript 3 (Flash) library for Redis.
+  * Repository: [http://github.com/claus/as3redis]
+  * Author: Claus Wahlers, [http://twitter.com/cwahlers	 @cwahlers	].
 
 === redis-clojure (Clojure) ===
 
@@ -48,6 +56,12 @@ I think we are going to need a separate 'ORM + Others' Wiki page...
   * Client protocol for redis key-value store.
   * Author: [http://www.adroll.com/ Valentino Volonghi], [http://twitter.com/dialtone_ @dialtone_].
   * Repository: [http://bitbucket.org/adroll/erldis/]
+
+=== Go-Redis (Go) ===
+
+  * Client protocol for redis key-value store.
+  * Author: Joubin Houshyar, [http://twitter.com/SunOf27 @SunOf27].
+  * Repository: [http://github.com/alphazero/Go-Redis]
 
 === Java ===
 
