@@ -5,7 +5,9 @@ Checking Redis for the first time? Here your will find the most important featur
 
 == Speed ==
 
-Redis is written in ANSI C, and loads the whole dataset in memory, so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed].
+Redis is written in ANSI C, and loads the whole dataset in memory, so it is wicked _*fast*!_ Up to 110,000 SETs/second, 81,000 GETs/second can be achieved in an entry level Linux box. Read more about Redis [Speed]. 
+
+Also Redis supports [Pipelining] of commands and [MultipleGetSet Múltiple Get/Set] in a single command to speed up communication with the client libraries. 
 
 == Persistence ==
 
