@@ -10,6 +10,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
   * Add http://github.com/besquared/redis-datastructures
   * Update http://github.com/andymccurdy/redis-py
   * Update JRedis entry
+  * Add http://github.com/sma/redis-node-client
 
 I think we are going to need a separate 'ORM + Others' Wiki page...
 
