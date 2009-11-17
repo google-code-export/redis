@@ -90,9 +90,9 @@ OK
 
  Each time Redis:
 
- a) Tests 100 random keys from expired keys set.
- b) Deletes all the keys found expired.
- c) If more than 25 keys were expired, it start again from a)
+  # Tests 100 random keys from expired keys set.
+  # Deletes all the keys found expired.
+  # If more than 25 keys were expired, it start again from 1.
 
  This is a trivial probabilistic algorithm, basically the assumption is
  that our sample is representative of the whole key space,
