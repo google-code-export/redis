@@ -66,6 +66,43 @@ OK
  the key does not have a timeout associated the timeout will be set and EXPIRE
  will return 1.
 
+== Enhanced Lazy Expiration algorithm ==
+
+ Redis does not constantly monitor keys that are going to be expired.
+ Keys are expired simply when some client tries to access a key, and
+ the key is found to be timed out.
+
+ Of course this is not enough as there are expired keys that will never
+ be accessed again. This keys should be expired anyway, so once every
+ second Redis test a few keys at random among keys with an  expire set.
+ All the keys that are already expired are deleted from the keyspace. 
+
+=== Version 1.0 ===
+
+ Each time a fixed number of keys where tested (100 by default). So if
+ you had a client setting keys with a very short expire faster than 100
+ for second the memory continued to grow. When you stopped to insert
+ new keys the memory started to be freed, 100 keys every second in the
+ best conditions. Under a peak Redis continues to use more and more RAM
+ even if most keys are expired in each sweep.
+
+=== Version 1.1 ===
+
+ Each time Redis:
+
+ a) Tests 100 random keys from expired keys set.
+ b) Deletes all the keys found expired.
+ c) If more than 25 keys were expired, it start again from a)
+
+ This is a trivial probabilistic algorithm, basically the assumption is
+ that our sample is representative of the whole key space,
+ and we continue to expire until the percentage of keys that are likely
+ to be expired is under 25%
+
+ This means that at any given moment the maximum amount of keys already
+ expired that are using memory is at max equal to max setting operations 
+ per second divided by 4.
+
 == Return value ==
 
 [ReplyTypes Integer reply], specifically:
