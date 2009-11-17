@@ -6,11 +6,11 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 == TODO IN THIS PAGE ==
 
   * Update JRedis entry
+  * Update http://github.com/andymccurdy/redis-py
 
   * Add http://github.com/voloko/redis-model
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
-  * Update http://github.com/andymccurdy/redis-py
   * Add http://github.com/sma/redis-node-client
   * Add http://bitbucket.org/videlalvaro/redis-haskell/wiki/Home
   * Add http://www.cliki.net/cl-redis
