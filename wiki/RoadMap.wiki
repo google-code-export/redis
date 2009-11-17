@@ -16,8 +16,7 @@ Add this information:
 
   * [DataTypes Ordered Set (ZSET)]
   * [MultiBulkCommands Multibulk Commands]
-  * In memory integer encoding of [DataTypes integers]. Memory saving of
-20% or more with datasets using high number of integer IDs. 
+  * In memory integer encoding of [DataTypes integers]. Memory saving of 20% or more with datasets using high number of integer IDs. 
   * Enhanced [ExpireCommand EXPIRE] algorithm.
 
 == 1.0 ==
