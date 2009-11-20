@@ -30,7 +30,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 || Perl          || Redis Client        || ?           || ?      || ?               || ?            || ?          ||  ?   ||
 || Perl          || AnyEvent::Redis     || ?           || ?      || ?               || ?            || ?          ||  ?   ||
 || PHP           || Redis PHP Bindings  || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| PHP           || phpredis (C module)            || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| PHP           || phpredis (C module)            || No           || No      || MGET only    || No            || No          ||  Mostly   ||
 || PHP           || Predis              || ?           || No     || Yes             || Yes          || Yes        ||  ?   ||
 || PHP           || Redisent            || ?           || ?      || ?               || ?            || Yes        ||  ?   ||
 || Python        || Python Client       || Yes         || Yes    || Partial         || ?            || ?          ||  ?   ||
