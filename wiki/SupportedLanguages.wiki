@@ -21,23 +21,32 @@ This libraries are intended to expose Redis commands, but you also have the opti
 
 == Features Support Matrix ==	
 
-  * *Version 1.1* compatible client libraries are expected to implement the command sets specified for version 1.0 plus:
-    * *String*: MSET, MSETNX.
-    * *List*:RPOPLPUSH.
-    * *Sorted Set (ZSET)*: ZADD, ZREM, ZRANGE, ZREVRANGE, ZRANGEBYSCORE, ZCARD, ZSCORE.
-  * *Version 1.0* compatible client libraries are expected to implement the following command sets:
-    * *String*: GET, SET, SETNX, DEL, EXISTS, INCR, DECR, MGET, INCRBY, DECRBY, GETSET, TYPE.
-    * *List*: RPUSH, LPUSH, RPOP, LPOP, LLEN, LINDEX, LSET, LRANGE, LTRIM, LREM.
-    * *Set*: SADD, SREM, SMOVE, SISMEMBER, SCARD, SPOP, SINTER, SINTERSTORE, SUNION, SUNIONSTORE, SDIFF, SDIFFSTORE, SMEMBERS.
-    * *Keyspace*: KEYS, RANDOMKEY, RENAME, RENAMENX, DBSIZE, EXPIRE, TTL.
-    * *Databases*: SELECT, MOVE, FLUSHDB, FLUSHALL.
-    * *Sort*: SORT
-    * *Connection*: AUTH, QUIT?. ???
-    * *Persistence*: SAVE, BGSAVE, LASTSAVE, SHUTDOWN?. ???
-    * *Server*: INFO, MONITOR? SLAVEOF? ???
-  * *Sharding*
-  * *Pipelining*
+The following matrix should give you a quick overviwe of the state of the different client libraries existing for each supported language.
 
+The core command set is the one of Version 1.0, while [Sharding] and [Pipelining] are convenient client side features not tied to any Redis server version.
+
+=== Version 1.1 ===
+
+Compatible client libraries are expected to implement the command sets specified in *Version 1.0* plus:
+
+  * *String*: MSET, MSETNX.
+  * *List*:RPOPLPUSH.
+  * *Sorted Set (ZSET)*: ZADD, ZREM, ZRANGE, ZREVRANGE, ZRANGEBYSCORE, ZCARD, ZSCORE.
+
+=== Version 1.0 === 
+
+Compatible client libraries are expected to implement the following command sets:
+
+  * *String*: GET, SET, SETNX, DEL, EXISTS, INCR, DECR, MGET, INCRBY, DECRBY, GETSET, TYPE.
+  * *List*: RPUSH, LPUSH, RPOP, LPOP, LLEN, LINDEX, LSET, LRANGE, LTRIM, LREM.
+  * *Set*: SADD, SREM, SMOVE, SISMEMBER, SCARD, SPOP, SINTER, SINTERSTORE, SUNION, SUNIONSTORE, SDIFF, SDIFFSTORE, SMEMBERS.
+  * *Keyspace*: KEYS, RANDOMKEY, RENAME, RENAMENX, DBSIZE, EXPIRE, TTL.
+  * *Databases*: SELECT, MOVE, FLUSHDB, FLUSHALL.
+  * *Sort*: SORT
+  * *Connection*: AUTH, QUIT?. ???
+  * *Persistence*: SAVE, BGSAVE, LASTSAVE, SHUTDOWN?. ???
+  * *Server*: INFO, MONITOR? SLAVEOF? ???
+  
 || *Language*    || *Client Library*    || *RPOPLPUSH* || *ZSET* || *Multi GET/SET* || *Pipelining* || *Sharding* || 1.0  ||
 || ActionScrip 3 || as3redis            || Yes         || ?      || ?               || No           || ?          ||  ?   ||
 || Clojure       || redis-clojure       || ?           || Yes    || Yes             || No           || ?          ||  ?   ||
