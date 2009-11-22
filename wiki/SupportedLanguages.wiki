@@ -19,6 +19,17 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 == Features Support Matrix ==	
 
+  * Version 1.1
+    * RPOPLPUSH
+    * ZSET:
+    * [MultiBulk Multibulk setter commands]: MSET, MSETNX.
+  * Version 1.0
+    * LISTs:
+    * SETs:
+    * etc.
+  * Sharding
+  * Pipelining
+
 || *Language*    || *Client Library*    || *RPOPLPUSH* || *ZSET* || *Multi GET/SET* || *Pipelining* || *Sharding* || 1.0  ||
 || ActionScrip 3 || as3redis            || Yes         || ?      || ?               || No           || ?          ||  ?   ||
 || Clojure       || redis-clojure       || ?           || Yes    || Yes             || No           || ?          ||  ?   ||
