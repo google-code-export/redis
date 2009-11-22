@@ -7,9 +7,6 @@ This libraries are intended to expose Redis commands, but you also have the opti
 
 == TODO IN THIS PAGE ==
 
-  * Update JRedis entry
-  * Update http://github.com/andymccurdy/redis-py
-
   * Add http://github.com/voloko/redis-model
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
@@ -17,7 +14,7 @@ This libraries are intended to expose Redis commands, but you also have the opti
   * Add http://bitbucket.org/videlalvaro/redis-haskell/wiki/Home
   * Add http://www.cliki.net/cl-redis
 
-  * Separate ORMs to their won page
+  * Separate ORMs to their own page
 
 == Features Support Matrix ==	
 
@@ -47,29 +44,28 @@ Compatible client libraries are expected to implement the following command sets
   * *Persistence*: SAVE, BGSAVE, LASTSAVE, SHUTDOWN?. ???
   * *Server*: INFO, MONITOR? SLAVEOF? ???
   
-|| *Language*    || *Client Library*    || *RPOPLPUSH* || *ZSET* || *Multi GET/SET* || *Pipelining* || *Sharding* || 1.0  ||
-|| ActionScrip 3 || as3redis            || Yes         || ?      || ?               || No           || ?          ||  ?   ||
-|| Clojure       || redis-clojure       || ?           || Yes    || Yes             || No           || ?          ||  ?   ||
-|| Erlang        || erldis              || ?           || No     || No              || No           || No         ||  ?   ||
-|| Go            || Go-Redis            || Yes         || Yes    || Partial         || No           || No         ||  ?   ||
-|| Java          || JDBC-Redis          || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| Java          || JRedis              || ?           || ?      || ?               || Yes          || ?          ||  ?   ||
-|| LUA           || redis-lua           || ?           || ?      || Yes             || ?            || ?          ||  ?   ||
-|| Perl          || Redis Client        || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| Perl          || AnyEvent::Redis     || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| PHP           || Redis PHP Bindings  || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| PHP           || phpredis (C module)            || No           || No      || MGET only    || No            || No          ||  Mostly   ||
-|| PHP           || Predis              || ?           || No     || Yes             || Yes          || Yes        ||  ?   ||
-|| PHP           || Redisent            || ?           || ?      || ?               || ?            || Yes        ||  ?   ||
-|| Python        || Python Client       || Yes         || Yes    || Partial         || ?            || ?          ||  ?   ||
-|| Python        || txredis             || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| Ruby          || redis-rb            || Yes         || Yes    || Yes             || Yes          || Yes        ||  Yes ||
-|| Ruby          || Ohm                 || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| Ruby          || dm-redis-adapter    || ?           || ?      || ?               || ?            || ?          ||  ?   ||
-|| Scala         || scala-redis         || ?           || No     || No              || No           || Yes        ||  ?   ||
-|| TCL           || TCL                 || ?           || ?      || ?               || ?            || ?          ||  ?   ||
+|| *Language*    || *Name*              || *Sharding* || *Pipelining* || *1.1*   || *1.0*      ||
+|| ActionScrip 3 || as3redis            || No         || No           || Partial || Yes        ||
+|| Clojure       || redis-clojure       || No         || No           || Partial || Yes        ||
+|| Erlang        || erldis              || No         || Looks like   || No      || Looks like ||
+|| Go            || Go-Redis            || No         || Yes          || Yes     || Yes        ||
+|| Java          || JDBC-Redis          || No         || No           || No      || Yes        ||
+|| Java          || JRedis              || No         || Yes          || Yes     || Yes        ||
+|| LUA           || redis-lua           || No         || No           || Yes     || Yes        ||
+|| Perl          || Redis Client        || No         || No           || No      || Yes        ||
+|| Perl          || AnyEvent::Redis     || No         || No           || No      || Yes        ||
+|| PHP           || Redis PHP Bindings  || No         || No           || No      || Yes        ||
+|| PHP           || phpredis (C)        || No         || No           || No      || Yes        ||
+|| PHP           || Predis              || Yes        || Yes          || Yes     || Yes        ||
+|| PHP           || Redisent            || Yes        || No           || No      || Yes        ||
+|| Python        || Python Client       || No         || No           || No      || Yes        ||
+|| Python        || py-redis            || No         || No           || Partial || Yes        ||
+|| Python        || txredis             || No         || No           || No      || Yes        ||
+|| Ruby          || redis-rb            || Yes        || Yes          || Yes     || Yes        ||
+|| Scala         || scala-redis         || Yes        || No           || No      || Yes        ||
+|| TCL           || TCL                 || No         || No           || Yes     || Yes        ||
 
-== Client Libraries ==
+== Client Libraries Reference ==
 
 === as3 (ActionScript 3) ===
 
@@ -133,7 +129,7 @@ Compatible client libraries are expected to implement the following command sets
 
 ==== Redis PHP Bindings ====
 
-  * Simple default binding in Redis main repository.
+  * Simple default binding in Redis main repository. No longer under active development.
   * Author: [http://qix.it/ Ludovico Magnocavallo], [http://twitter.com/ludo @ludo].
   * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/php]
 
@@ -159,9 +155,15 @@ Compatible client libraries are expected to implement the following command sets
 
 ==== Python Client ====
 
-  * Simple Python client in Redis main repository.
+  * Simple Python client in Redis main repository. No longer under active development.
   * Author: [http://qix.it/ Ludovico Magnocavallo], [http://twitter.com/ludo @ludo].
   * Repository: [http://code.google.com/p/redis/source/browse/#svn/trunk/client-libraries/python]
+
+==== py-redis ====
+
+  * Redis Python Client.
+  * Author: [Andy McCurdy], [http://twitter.com/andymccurdy @andymccurdy].
+  * Repository: [http://github.com/andymccurdy/redis-py]
 
 === txredis ===
 
@@ -194,9 +196,10 @@ Compatible client libraries are expected to implement the following command sets
 
   * A scala library for connecting to a redis server, or a cluster of redis nodes using consistent hashing on the client side.
   * Author: [http://www.linkedin.com/in/alejandrocrosa Alejandro Crosa], [http://twitter.com/alejandrocrosa @alejandrocrosa].
-  * Repository [http://github.com/acrosa/scala-redis]
+  * Repository: [http://github.com/acrosa/scala-redis]
 
 === Tcl ===
 
   * The official version is included in the Redis tarball since it's maintained by Salvatore. 
   * Author: [http://invece.org/ Salvatore Sanfilippo], [http://twitter.com/antirez @antirez]
+  * Repository: [http://github.com/antirez/redis/blob/master/redis.tcl]
