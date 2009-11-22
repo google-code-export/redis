@@ -2,7 +2,7 @@
 
 = Road Map (ROUGH DRAFT) =
 
-The up to date, raw Road Map for Redis is part of the source code, you can find it [http://github.com/antirez/redis/raw/master/TODO]
+The up to date, raw Road Map for Redis is part of the source code, you can find it here: [http://github.com/antirez/redis/raw/master/TODO]
 
 == TODO ==
 
