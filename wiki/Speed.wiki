@@ -16,5 +16,4 @@ Can we use connection pool in Redis (Google Group)?])
 
 On most commodity hardware it takes about 45 seconds to restore a 2 GB database, without fancy RAID. This can give you some kind of feeling about the order of magnitude of the time needed to load data when you restart the server, so restarting a server is fast too.
 
-Also [Replication] is fast, benchamarks will give you the the same order of magnitude a restart does ([http://groups.google.com/group/redis-db/browse_thread/thread/3ab1c8b2126f1b8/29bdb6c5973f0388?lnk=gst&q=replication+#29bdb6c5973f0388 
-Replication speed benchmak (Google Group)])
+Also [Replication] is fast, benchamarks will give you the the same order of magnitude a restart does ([http://groups.google.com/group/redis-db/browse_thread/thread/3ab1c8b2126f1b8/29bdb6c5973f0388?lnk=gst&q=replication+#29bdb6c5973f0388 Google Group: Replication speed benchmak])
