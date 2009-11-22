@@ -4,6 +4,7 @@ DRAFT
   * [QuickStart Quick Start]
   * [DataTypes Data Types]
   * [SupportedLanguages Supported Languages]
+  * [ObjectHashMappers Object Hash Mappers]
   * [ProgrammingExamples Programming Examples]
   * [RoadMap Road Map]
   * [Speed]
