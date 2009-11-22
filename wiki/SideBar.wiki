@@ -6,4 +6,6 @@ DRAFT
   * [SupportedLanguages Supported Languages]
   * [ProgrammingExamples Programming Examples]
   * [RoadMap Road Map]
+  * [Speed]
+  * [FromSqlToDataStructures]
   
