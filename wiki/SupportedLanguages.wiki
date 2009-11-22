@@ -22,19 +22,19 @@ This libraries are intended to expose Redis commands, but you also have the opti
 == Features Support Matrix ==	
 
   * *Version 1.1* compatible client libraries are expected to implement the command sets specified for version 1.0 plus:
-    * RPOPLPUSH.
-    * ZSET: ZADD, ZREM, ZRANGE, ZREVRANGE, ZRANGEBYSCORE, ZCARD, ZSCORE.
-    * MSET, MSETNX.
+    * *String*: MSET, MSETNX.
+    * *List*:RPOPLPUSH.
+    * *Sorted Set (ZSET)*: ZADD, ZREM, ZRANGE, ZREVRANGE, ZRANGEBYSCORE, ZCARD, ZSCORE.
   * *Version 1.0* compatible client libraries are expected to implement the following command sets:
-    * String: GET, SET, SETNX, DEL, EXISTS, INCR, DECR, MGET, INCRBY, DECRBY, GETSET, TYPE.
-    * List: RPUSH, LPUSH, RPOP, LPOP, LLEN, LINDEX, LSET, LRANGE, LTRIM, LREM.
-    * Set: SADD, SREM, SMOVE, SISMEMBER, SCARD, SPOP, SINTER, SINTERSTORE, SUNION, SUNIONSTORE, SDIFF, SDIFFSTORE, SMEMBERS.
-    * Keyspace: KEYS, RANDOMKEY, RENAME, RENAMENX, DBSIZE, EXPIRE, TTL.
-    * Databases: SELECT, MOVE, FLUSHDB, FLUSHALL.
-    * Sort: SORT
-    * Connection: AUTH, QUIT?. ???
-    * Persistence: SAVE, BGSAVE, LASTSAVE, SHUTDOWN?. ???
-    * Server: INFO, MONITOR? SLAVEOF? ???
+    * *String*: GET, SET, SETNX, DEL, EXISTS, INCR, DECR, MGET, INCRBY, DECRBY, GETSET, TYPE.
+    * *List*: RPUSH, LPUSH, RPOP, LPOP, LLEN, LINDEX, LSET, LRANGE, LTRIM, LREM.
+    * *Set*: SADD, SREM, SMOVE, SISMEMBER, SCARD, SPOP, SINTER, SINTERSTORE, SUNION, SUNIONSTORE, SDIFF, SDIFFSTORE, SMEMBERS.
+    * *Keyspace*: KEYS, RANDOMKEY, RENAME, RENAMENX, DBSIZE, EXPIRE, TTL.
+    * *Databases*: SELECT, MOVE, FLUSHDB, FLUSHALL.
+    * *Sort*: SORT
+    * *Connection*: AUTH, QUIT?. ???
+    * *Persistence*: SAVE, BGSAVE, LASTSAVE, SHUTDOWN?. ???
+    * *Server*: INFO, MONITOR? SLAVEOF? ???
   * *Sharding*
   * *Pipelining*
 
