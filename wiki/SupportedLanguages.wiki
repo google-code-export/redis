@@ -3,7 +3,7 @@
 
 Wondering if you can use Redis from your favorite language? Well here is the definitive guide to the available client libraries.
 
-This libraries are intended to expose Redis commands, but you also have the option to use some higher level libraries that provide a *[ObjectHashMappings Object Hash Mappings]* pretty much the same idea implemented by a classic *ORM*.
+This libraries are intended to expose Redis commands, but you also have the option to use some higher level libraries that provide a *[ObjectHashMappers Object Hash Mappings]* pretty much the same idea implemented by a classic *ORM*.
 
 == TODO IN THIS PAGE ==
 
@@ -178,19 +178,6 @@ Compatible client libraries are expected to implement the following command sets
   * A Ruby client library for the redis key value storage engine.
   * Author: [http://brainspl.at/ Ezra Zygmuntowicz], [http://twitter.com/ezmobius @ezmobius].
   * Repository: [http://github.com/ezmobius/redis-rb]
-
-==== Ohm (ORM) ====
-
-  * Object-hash mapping library for Redis. It includes an extensible list of validations and has very good performance.
-  * Authors: [http://soveran.com/ Michel Martens], [http://twitter.com/soveran @soveran]; and Damian Janowski [http://twitter.com/djanowski @djanowski].
-  * Repository: [http://github.com/soveran/ohm]
-  * Group: [http://groups.google.com/group/ohm-ruby]
-
-==== dm-redis-adapter (ORM) ====
-
-  * This is a DataMapper (ORM that is based on the IdentityMap pattern) adapter for the Redis key-value database.
-  * Author: [http://whoahbot.com/ Whoahbot], [http://twitter.com/whoahbot @whoahbot].
-  * Repository: [http://github.com/whoahbot/dm-redis-adapter/]
 
 === scala-redis (Scala) ===
 
