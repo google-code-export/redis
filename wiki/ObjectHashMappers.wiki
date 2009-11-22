@@ -8,14 +8,14 @@ There is not need to stick to the [SupportedLanguages client libraries] exposing
 
 == Ruby ==
 
-== Ohm (ORM) ==
+=== Ohm ===
 
   * Object-hash mapping library for Redis. It includes an extensible list of validations and has very good performance.
   * Authors: [http://soveran.com/ Michel Martens], [http://twitter.com/soveran @soveran]; and Damian Janowski [http://twitter.com/djanowski @djanowski].
   * Repository: [http://github.com/soveran/ohm]
   * Group: [http://groups.google.com/group/ohm-ruby]
 
-== dm-redis-adapter (ORM) ==
+=== dm-redis-adapter ===
 
   * This is a DataMapper (ORM that is based on the IdentityMap pattern) adapter for the Redis key-value database.
   * Author: [http://whoahbot.com/ Whoahbot], [http://twitter.com/whoahbot @whoahbot].
