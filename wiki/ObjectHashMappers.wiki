@@ -20,3 +20,8 @@ There is not need to stick to the [SupportedLanguages client libraries] exposing
   * This is a DataMapper (ORM that is based on the IdentityMap pattern) adapter for the Redis key-value database.
   * Author: [http://whoahbot.com/ Whoahbot], [http://twitter.com/whoahbot @whoahbot].
   * Repository: [http://github.com/whoahbot/dm-redis-adapter/]
+
+=== redis-models ===
+
+  * Minimal model support for Redis. Directly maps Ruby properties to model_name:id:field_name keys in redis. Scalar, List and Set properties are supported. Values can be marshaled to/from Integer, Float, DateTime, JSON. 
+  * Repository: [http://github.com/voloko/redis-model]
