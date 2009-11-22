@@ -1,0 +1,14 @@
+#sidebar SideBar
+
+= Speed (ROUGH DRAFT)=
+
+== TODO ==
+
+* Written in ANSI C
+* Pipelining
+* MultiBulkCommands
+* Benchmarks
+
+
+Establishing a new connection to a Redis Server is _simple_ and _fast_ nothing more that a TCP three way handshake. There is no authentication or other handshake involved ([http://groups.google.com/group/redis-db/browse_thread/thread/1adb93f0b6a1460a 
+Can we use connection pool in Redis (Google Group)?])
