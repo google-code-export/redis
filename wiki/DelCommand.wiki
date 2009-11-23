@@ -1,16 +1,17 @@
-= DEL _key_ =
+﻿= DEL _key1_ _key2_ ... _keyN_ =
 _Time complexity: O(1)_
 
- Remove the specified key. If the key does not exist
- no operation is performed. The command always returns success.
+ Remove the specified keys. If a given key does not exist
+ no operation is performed for this key. The commnad returns the number of
+ keys removed.
 
 == Return value ==
 
 [ReplyTypes Integer reply], specifically:
 
 {{{
-1 if the key was removed
-0 if the key does not exist
+an integer greater than 0 if one or more keys were removed
+0 if none of the specified key existed
 }}}
 
 == See also ==
