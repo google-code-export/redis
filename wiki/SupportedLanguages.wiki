@@ -5,7 +5,7 @@ Wondering if you can use Redis from your favorite language? Well here is the def
 
 This libraries are intended to expose Redis commands, but you also have the option to use some higher level libraries that provide a *[ObjectHashMappers Object Hash Mappings]* pretty much the same idea implemented by a classic *ORM*.
 
-== TODO IN THIS PAGE ==
+== TODO ==
 
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
