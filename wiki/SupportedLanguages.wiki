@@ -180,9 +180,7 @@ Compatible client libraries are expected to implement the following command sets
   * Author: Dorian Raymer, [http://twitter.com/dio_rian @dio_rian].
   * PyPI: [http://pypi.python.org/pypi/txredis/0.1.1]
 
-=== Ruby ===
-
-==== redis-rb ====
+=== redis-rb (Ruby) ===
 
   * A Ruby client library for the redis key value storage engine.
   * Author: [http://brainspl.at/ Ezra Zygmuntowicz], [http://twitter.com/ezmobius @ezmobius].
