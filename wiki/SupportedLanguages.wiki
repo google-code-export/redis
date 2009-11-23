@@ -7,7 +7,6 @@ This libraries are intended to expose Redis commands, but you also have the opti
 
 == TODO IN THIS PAGE ==
 
-  * Add http://github.com/voloko/redis-model
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
   * Add http://github.com/sma/redis-node-client
