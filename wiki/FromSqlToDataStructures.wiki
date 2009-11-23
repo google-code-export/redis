@@ -10,6 +10,10 @@ When I was young, happy and single ;) I studied *Data Structures* at the univers
 
 Redis can be seen as a *Data Structures Server*, a very simple interface to a extremly fast and efficient 
 
+== Dude where is my SELECT statement?  ==
+
+
+
 == LISTs ==
 
 In SQL there is no such thing as a "natural" order, a SELECT statement without a ORDER BY clause will return data in a undefined order. In Redis LISTs address the problem of natural ordering, ...
