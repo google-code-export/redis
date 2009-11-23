@@ -12,8 +12,6 @@ This libraries are intended to expose Redis commands, but you also have the opti
   * Add http://github.com/sma/redis-node-client
   * Add http://www.cliki.net/cl-redis
 
-  * Separate ORMs to their own page
-
 == Features Support Matrix ==	
 
 The following matrix should give you a quick overviwe of the state of the different client libraries existing for each supported language.
