@@ -10,7 +10,6 @@ This libraries are intended to expose Redis commands, but you also have the opti
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
   * Add http://github.com/sma/redis-node-client
-  * Add http://www.cliki.net/cl-redis
 
 == Features Support Matrix ==	
 
@@ -23,7 +22,7 @@ The core command set is the one of Version 1.0, while [Sharding] and [Pipelining
 Compatible client libraries are expected to implement the command sets specified in *Version 1.0* plus:
 
   * *String*: MSET, MSETNX.
-  * *List*:RPOPLPUSH.
+  * *List*: RPOPLPUSH.
   * *Sorted Set (ZSET)*: ZADD, ZREM, ZRANGE, ZREVRANGE, ZRANGEBYSCORE, ZCARD, ZSCORE.
 
 === Version 1.0 === 
@@ -43,6 +42,7 @@ Compatible client libraries are expected to implement the following command sets
 || *Language*    || *Name*              || *Sharding* || *Pipelining* || *1.1*   || *1.0*      ||
 || ActionScrip 3 || as3redis            || No         || No           || Partial || Yes        ||
 || Clojure       || redis-clojure       || No         || No           || Partial || Yes        ||
+|| Common Lisp	 || CL-Redis            || No         || No           || No      || Yes        ||
 || Erlang        || erldis              || No         || Looks like   || No      || Looks like ||
 || Go            || Go-Redis            || No         || Yes          || Yes     || Yes        ||
 || Haskell       || haskell-redis       || No         || No           || No      || Yes        ||
@@ -75,6 +75,12 @@ Compatible client libraries are expected to implement the following command sets
   * A Clojure client library for the key-value storage system Redis.
   * Repository: [http://github.com/ragnard/redis-clojure]
   * Author: Ragnar Dahlén, [http://twitter.com/ragge @ragge].
+
+=== CL-Redis (Common Lisp) ===
+
+  * Common Lisp client library for Redis, an advanced key/value store.
+  * Home Page: [http://www.cliki.net/cl-redis]
+  * Author: Mahmud, [http://twitter.com/BigThingist @BigThingist].
 
 === erldis (Erlang) ===
 
