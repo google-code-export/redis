@@ -10,7 +10,6 @@ This libraries are intended to expose Redis commands, but you also have the opti
   * Add http://github.com/madsimian/em-redis
   * Add http://github.com/besquared/redis-datastructures
   * Add http://github.com/sma/redis-node-client
-  * Add http://bitbucket.org/videlalvaro/redis-haskell/wiki/Home
   * Add http://www.cliki.net/cl-redis
 
   * Separate ORMs to their own page
@@ -48,6 +47,7 @@ Compatible client libraries are expected to implement the following command sets
 || Clojure       || redis-clojure       || No         || No           || Partial || Yes        ||
 || Erlang        || erldis              || No         || Looks like   || No      || Looks like ||
 || Go            || Go-Redis            || No         || Yes          || Yes     || Yes        ||
+|| Haskell       || haskell-redis       || No         || No           || No      || Yes        ||
 || Java          || JDBC-Redis          || No         || No           || No      || Yes        ||
 || Java          || JRedis              || No         || Yes          || Yes     || Yes        ||
 || LUA           || redis-lua           || No         || No           || Yes     || Yes        ||
@@ -89,6 +89,12 @@ Compatible client libraries are expected to implement the following command sets
   * Client protocol for redis key-value store.
   * Author: Joubin Houshyar, [http://twitter.com/SunOf27 @SunOf27].
   * Repository: [http://github.com/alphazero/Go-Redis]
+
+=== haskell-redis (Haskell) ===
+
+  * A Haskell binding for the Redis database.
+  * Author: [http://obvioushints.blogspot.com/ Alvaro Videla], [http://twitter.com/old_sound @old_sound].
+  * Repository: [http://bitbucket.org/videlalvaro/redis-haskell/wiki/Home	]
 
 === Java ===
 
