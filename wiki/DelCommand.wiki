@@ -18,4 +18,4 @@ an integer greater than 0 if one or more keys were removed
  * [SetCommand SET]
  * [GetCommand GET]
  * [ExistsCommand EXISTS]
- * [LdelCommand LDEL]
+ * [LremCommand LREM]
