@@ -7,6 +7,7 @@
   * Written in ANSI C
   * Pipelining
   * MultiBulkCommands
+  * epoll >= 1.1
   * Benchmarks
 
 Redis takes the whole dataset in memory and [Persistence writes asynchronously to disk] in order to be very fast, you have the best of both worlds: hyper-speed and [Persistence persistence] for your data.
