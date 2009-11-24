@@ -30,3 +30,4 @@ _Time complexity: O(1) to set every key_
 == See also ==
 
  * [MgetCommand MGET]
+ * [DelCommand DEL] (DEL supports deleting multiple keys in a single operation)
