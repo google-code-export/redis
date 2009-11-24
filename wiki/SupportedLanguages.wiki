@@ -40,7 +40,7 @@ Compatible client libraries are expected to implement the following command sets
   * *Server*: INFO, MONITOR? SLAVEOF? ???
   
 || *Language*    || *Name*              || *Sharding* || *Pipelining* || *1.1*   || *1.0*      ||
-|| ActionScrip 3 || as3redis            || No         || No           || Yes     || Yes        ||
+|| ActionScript 3|| as3redis            || No         || Yes          || Yes     || Yes        ||
 || Clojure       || redis-clojure       || No         || No           || Partial || Yes        ||
 || Common Lisp	 || CL-Redis            || No         || No           || No      || Yes        ||
 || Erlang        || erldis              || No         || Looks like   || No      || Looks like ||
@@ -68,7 +68,7 @@ Compatible client libraries are expected to implement the following command sets
 
   * An ActionScript 3 (Flash) library for Redis.
   * Repository: [http://github.com/claus/as3redis]
-  * Author: Claus Wahlers, [http://twitter.com/cwahlers	 @cwahles].
+  * Author: Claus Wahlers, [http://twitter.com/cwahlers	 @cwahlers].
 
 === redis-clojure (Clojure) ===
 
