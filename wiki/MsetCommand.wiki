@@ -1,0 +1,13 @@
+= SET _key1_ _value1_  _key2_ _value2_ ... _keyn_ _valuen_ (Redis >= 1.1) DRAFT =
+_Time complexity: O(1)_ for each _key_
+
+ Set the string _ nth value_ as value of the _ nth key_.
+ Each string can't be longer than 1073741824 bytes (1 GB).
+
+== Return value ==
+
+[ReplyTypes Status code reply]
+
+== See also ==
+ * [SetCommand MSETNX] is like SET but it only take one key value pair.
+ * [MsetnxCommand MSETNX] is like MSET but doesn't perform the operation if the _any_ target key already exists.
