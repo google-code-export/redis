@@ -1,4 +1,4 @@
-= Protocol Specification =
+﻿= Protocol Specification =
 
 The Redis protocol is a compromise between being easy to parse by a computer
 and being easy to parse by an human. Before reading this section you are
@@ -172,6 +172,47 @@ Some commands like EXISTS will return 1 for true and 0 for false.
 Other commands like SADD, SREM and SETNX will return 1 if the operation was actually done, 0 otherwise.
 
 The following commands will reply with an integer reply: SETNX, DEL, EXISTS, INCR, INCRBY, DECR, DECRBY, DBSIZE, LASTSAVE, RENAMENX, MOVE, LLEN, SADD, SREM, SISMEMBER, SCARD
+
+== Multi bulk commands ==
+
+As you can see with the protocol described so far there is no way to
+send multiple binary-safe arguments to a command. With bulk commands the
+last argument is binary safe, but there are commands where multiple binary-safe
+commands are needed, like the MSET command that is able to SET multiple keys
+in a single operation.
+
+In order to address this problem Redis 1.1 introduced a new way of seding
+commands to a Redis server, that uses exactly the same protocol of the
+multi bulk replies. For instance the following is a SET command using the
+normal bulk protocol:
+
+{{{
+SET mykey 8
+myvalue
+}}}
+
+While the following uses the multi bulk command protocol:
+
+{{{
+*3
+$3
+SET
+$5
+mykey
+$8
+myvalue
+}}}
+
+Commands sent in this format are longer, so currently they are used only in
+order to transmit commands containing multiple binary-safe arguments, but
+actually this protocol can be used to send every kind of command, without to
+know if it's an inline, bulk or multi-bulk command.
+
+It is possible that in the future Redis will support only this format.
+
+A good client library may implement unknown commands using this
+command format in order to support new commands out of the box without
+modifications.
 
 == Multiple commands and pipelining ==
 
