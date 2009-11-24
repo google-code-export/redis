@@ -23,8 +23,6 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [ExistsCommand EXISTS] _key_ `test if a key exists`
  * [DelCommand DEL] _key_ `delete a key`
  * [TypeCommand TYPE] _key_ `return the type of the value stored at key`
- * [MsetCommand MSET] _key1_ _value1_ _key2_ _value2_ ... _keyn_ _valuen_ `set a series of key to a series of string value`
- * [MsetnxCommand MSETNX] _key1_ _value1_ _key2_ _value2_ ...  _keyn_ _valuen_ `set a series of key to a series of string value if none of the is already set`
 
 == Commands operating on the key space ==
 
