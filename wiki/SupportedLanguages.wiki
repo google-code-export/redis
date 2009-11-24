@@ -40,7 +40,7 @@ Compatible client libraries are expected to implement the following command sets
   * *Server*: INFO, MONITOR? SLAVEOF? ???
   
 || *Language*    || *Name*              || *Sharding* || *Pipelining* || *1.1*   || *1.0*      ||
-|| ActionScrip 3 || as3redis            || No         || No           || Partial || Yes        ||
+|| ActionScrip 3 || as3redis            || No         || No           || Yes     || Yes        ||
 || Clojure       || redis-clojure       || No         || No           || Partial || Yes        ||
 || Common Lisp	 || CL-Redis            || No         || No           || No      || Yes        ||
 || Erlang        || erldis              || No         || Looks like   || No      || Looks like ||
