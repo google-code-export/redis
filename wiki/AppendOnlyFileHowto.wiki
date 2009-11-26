@@ -36,7 +36,7 @@ Basically it uses the same fork() copy-on-write trick that snapshotting already 
 Check redis.conf, you can configure how many times Redis will fsync() data on disk. There are three options:
 
  * Fsync() every time a new command is appended to the append log file. Very very slow, very safe.
- * Fsync() one time very second. Fast enough, and you can lost 1 second of data if there is a disaster.
+ * Fsync() one time every second. Fast enough, and you can lost 1 second of data if there is a disaster.
  * Never fsync(), just put your data in the hands of the Operating System. The faster and unsafer method.
 
 Warning: by default Redis will fsync() after *every command*! This is because the Redis authors want to ship a default configuration that is the safest pick. But the best compromise for most datasets is to fsync() one time every second.
