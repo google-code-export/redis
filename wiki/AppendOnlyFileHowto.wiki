@@ -2,7 +2,7 @@
 
 == General Information ==
 
-Append only file is an alternative durability option for Redis. What this mean? Let's start with a some fact:
+Append only file is an alternative durability option for Redis. What this mean? Let's start with some fact:
 
  * For default Redis saves snapshots of the dataset on disk, in a binary file called dump.rdb (by default at least). For instance you can configure Redis to save the dataset every 60 seconds if there are at least 100 changes in the dataset, or every 1000 seconds if there is at least a single change in the dataset. This is known as "Snapshotting".
  * Snapshotting is not very durable. If your computer running Redis stops, your power line fails, or you write killall -9 redis-server for a mistake, the latest data written on Redis will get lost. There are applications where this is not a big deal. There are applications where this is not acceptable and Redis *was* not an option for this applications.
