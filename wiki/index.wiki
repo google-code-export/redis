@@ -5,12 +5,18 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [README The README] is the best starting point to know more about the project.
  * [QuickStart This short Quick Start] provides a five minutes step-by-step istructions on how to download, compile, run and test the basic workings of a Redis server.
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages.
- * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
+ * [Features The features page] (currently in draft) is a good start to understand the strength and limitations of Redis.
+ * [Benchmarks The benchmark page] is about the speed performances of Redis.
+ * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
+
+= HOWTOs about selected features =
+
  * [ReplicationHowto The Redis Replication HOWTO] is what you need to read in order to understand how Redis master `<->` slave replication works.
  * [AppendOnlyFileHowto The Append Only File HOWTO] explains how the alternative Redis durability mode works. AOF is an alternative to snapshotting on disk from time to time (the default).
- * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
- * [Benchmarks The benchmark page] is about the speed performances of Redis.
+
+= Hacking =
+ * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
 
 = Videos =
 
