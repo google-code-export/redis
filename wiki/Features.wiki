@@ -13,7 +13,7 @@ Also Redis  supports [Pipelining] of commands and [MultiBulkCommands getting and
 
 While all the data lives in memory, changes are _asynchronously_ saved on disk using flexible policies based on elapsed time and/or number of updates since last save. 
 
-If you can't afford losing some data, starting on [RoadMap version 1.1] Redis will support an append-only file persistence mode. Check more on [Persistence]
+If you can't afford losing some data, starting on version 1.1 (currently in beta but you can download it from the Git repository) Redis supports an append-only file persistence mode. Check more on [Persistence], or read the [AppendOnlyFileHowto] for more information.
 
 == Support for Data Structures ==
 
