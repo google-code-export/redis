@@ -1,4 +1,4 @@
-= SORT _key_ [BY _pattern_] [LIMIT _start_ _count_] [GET _pattern_] [ASC|DESC] [ALPHA] =
+= SORT _key_ \[BY _pattern_\] \[LIMIT _start_ _count_\] \[GET _pattern_\] \[ASC|DESC\] [ALPHA] =
     Sort the elements contained in the List or Set value at _key_. By default
     sorting is numeric with elements being compared as double precision
     floating point numbers. This is the simplest form of SORT.
