@@ -7,7 +7,7 @@ As you already probably know Redis is not a plain key-value store, actually it i
  * Sets of binary-safe strings, that are collection of unique unsorted elements. You can think at this as a Ruby hash where all the keys are set to the 'true' value.
  * Sorted sets, similar to Sets but where every element is associated to a floating number score. The elements are taken sorted by score. You can think at this as Ruby hashes where the key is the element and the value is the score, but where elements are always taken in order without requiring a sorting operation.
 
-It's not always trivial to gasp how this data types work and what to use in order to solve a given problem from the [CommandReference Redis command reference], so this document is a crash course to Redis data types and their most used patterns.
+It's not always trivial to grasp how this data types work and what to use in order to solve a given problem from the [CommandReference Redis command reference], so this document is a crash course to Redis data types and their most used patterns.
 
 For all the examples we'll use the *redis-cli* utility, that's a simple but handy command line utility to issue commands against the Redis server.
 
