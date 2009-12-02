@@ -21,7 +21,7 @@ A few other rules about keys:
 
  * Too long keys are not a good idea, for instance a key of 1024 bytes is not a good idea not only memory-wise, but also because the lookup of the key in the dataset may require several costly key-comparisons.
  * Too short keys are not a good idea. There is no point in writing "u:1000:pwd" as key if you can write instead "user:1000:password", the latter is more readable and the added space is very little compared to the space used by the key object itself.
- * Try to stick with a schema. For instance "object-type:<id>:field" can be a nice idea, like in "user:1000:password". I like to use dots for multi-words fields, like in "comment:1234:reply.to".
+ * Try to stick with a schema. For instance "object-type:id:field" can be a nice idea, like in "user:1000:password". I like to use dots for multi-words fields, like in "comment:1234:reply.to".
 
 == The string type ==
 
