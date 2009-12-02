@@ -195,20 +195,20 @@ Redis 1.4 will add the Hash type. With it it will be trivial to associate string
 
 Our first attempt (that is broken) can be the following. Let's suppose we want to get an unique ID for the tag "redis":
 
-* In order to make this algorithm binary safe (they are just tags but think to utf8, spaces and so forth) we start performing the SHA1 sum of the tag. SHA1(redis) = b840fc02d524045429941cc15f59e41cb7be6c52.
-* Let's check if this tag is already associated with an unique ID with the command *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id*.
-* If the above GET returns an ID, return it back to the user. We already have the unique ID.
-* Otherwise... create a new unique ID with *INCR next.tag.id* (assume it returned 123456).
-* Finally associate this new ID to our tag with *SET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id 123456* and return the new ID to the caller.
+ * In order to make this algorithm binary safe (they are just tags but think to utf8, spaces and so forth) we start performing the SHA1 sum of the tag. SHA1(redis) = b840fc02d524045429941cc15f59e41cb7be6c52.
+ * Let's check if this tag is already associated with an unique ID with the command *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id*.
+ * If the above GET returns an ID, return it back to the user. We already have the unique ID.
+ * Otherwise... create a new unique ID with *INCR next.tag.id* (assume it returned 123456).
+ * Finally associate this new ID to our tag with *SET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id 123456* and return the new ID to the caller.
 
 Nice. Or better.. broken! What about if two clients perform this commands at the same time trying to get the unique ID for the tag "redis"? If the timing is right they'll both get *nil* from the GET operation, will both increment the *next.tag.id* key and will set two times the key. One of the two clients will return the wrong ID to the caller. To fix the algorithm is not hard fortunately, and this is the sane version:
 
-* In order to make this algorithm binary safe (they are just tags but think to utf8, spaces and so forth) we start performing the SHA1 sum of the tag. SHA1(redis) = b840fc02d524045429941cc15f59e41cb7be6c52.
-* Let's check if this tag is already associated with an unique ID with the command *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id*.
-* If the above GET returns an ID, return it back to the user. We already have the unique ID.
-* Otherwise... create a new unique ID with *INCR next.tag.id* (assume it returned 123456).
-* Finally associate this new ID to our tag with *SETNX tag:b840fc02d524045429941cc15f59e41cb7be6c52:id 123456*. By using SETNX if a different client was faster than this one the key wil not be setted. Not only, SETNX returns 1 if the key is set, 0 otherwise. So... let's add a final step to our computation.
-* If SETNX returned 1 (We set the key) return 123456 to the caller, it's our tag ID, otherwise perform *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id* and return the value to the caller.
+ * In order to make this algorithm binary safe (they are just tags but think to utf8, spaces and so forth) we start performing the SHA1 sum of the tag. SHA1(redis) = b840fc02d524045429941cc15f59e41cb7be6c52.
+ * Let's check if this tag is already associated with an unique ID with the command *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id*.
+ * If the above GET returns an ID, return it back to the user. We already have the unique ID.
+ * Otherwise... create a new unique ID with *INCR next.tag.id* (assume it returned 123456).
+ * Finally associate this new ID to our tag with *SETNX tag:b840fc02d524045429941cc15f59e41cb7be6c52:id 123456*. By using SETNX if a different client was faster than this one the key wil not be setted. Not only, SETNX returns 1 if the key is set, 0 otherwise. So... let's add a final step to our computation.
+ * If SETNX returned 1 (We set the key) return 123456 to the caller, it's our tag ID, otherwise perform *GET tag:b840fc02d524045429941cc15f59e41cb7be6c52:id* and return the value to the caller.
 
 == Sorted sets ==
 
