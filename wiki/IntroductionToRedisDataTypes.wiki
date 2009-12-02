@@ -217,7 +217,7 @@ Sets are a very handy data type, but... they are a bit too unsorted in order to 
 Basically Sorted Sets are in some way the Redis equivalent of Indexes in the SQL world. For instance in our reddit.com example above there was no mention about how to generate the actual home page with news raked by user votes and time. We'll see how sorted sets can fix this problem, but it's better to start with something simpler, illustrating the basic working of this advanced data type. Let's add a few selected hackers with their year of birth as "score".
 
 {{{
-$ ./redis-cli zadd hackers 1940 "Anal Kay"
+$ ./redis-cli zadd hackers 1940 "Alan Kay"
 (integer) 1
 $ ./redis-cli zadd hackers 1953 "Richard Stallman"
 (integer) 1
@@ -237,7 +237,7 @@ For sorted sets it's a joke to return this hackers sorted by their birth day bec
 $ ./redis-cli zrange hackers 0 -1
 1. Alan Turing
 2. Claude Shannon
-3. Anal Kay
+3. Alan Kay
 4. Richard Stallman
 5. Yukihiro Matsumoto
 6. Linus Torvalds
@@ -252,7 +252,7 @@ $ ./redis-cli zrevrange hackers 0 -1
 1. Linus Torvalds
 2. Yukihiro Matsumoto
 3. Richard Stallman
-4. Anal Kay
+4. Alan Kay
 5. Claude Shannon
 6. Alan Turing
 }}}
@@ -267,7 +267,7 @@ Sorted sets are more powerful than this. They can operate on ranges. For instanc
 $ ./redis-cli zrangebyscore hackers -inf 1950
 1. Alan Turing
 2. Claude Shannon
-3. Anal Kay
+3. Alan Kay
 }}}
 
 We asked Redis to return all the elements with a score between negative infinite and 1950 (both extremes are included).
