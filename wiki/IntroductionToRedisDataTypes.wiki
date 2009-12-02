@@ -245,7 +245,7 @@ $ ./redis-cli zrange hackers 0 -1
 
 Didn't know that Linus was younger than Yukihiro btw ;)
 
-Btw I want to order this elements the other way around, using [ZREVRANGE ZrangeCommand] instead of [ZRANGE ZrangeCommand] this time:
+Anyway I want to order this elements the other way around, using [ZREVRANGE ZrangeCommand] instead of [ZRANGE ZrangeCommand] this time:
 
 {{{
 $ ./redis-cli zrevrange hackers 0 -1
