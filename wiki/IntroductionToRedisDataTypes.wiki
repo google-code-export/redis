@@ -231,7 +231,7 @@ $ ./redis-cli zadd hackers 1912 "Alan Turing"
 (integer) 1
 }}}
 
-For sorted sets it's a joke to return this hackers sorted by their birth day because actually *they are already sorted*. Sorted sets are implemented via a dual-ported data structure containing both a skip list and an hash table, so every time we add an element Redis performs an O(log(N)) operation, that's good, but when we ask for sorted elements Redis does not have to do any work at all, it's already all sorted:
+For sorted sets it's a joke to return this hackers sorted by their birth year because actually *they are already sorted*. Sorted sets are implemented via a dual-ported data structure containing both a skip list and an hash table, so every time we add an element Redis performs an O(log(N)) operation, that's good, but when we ask for sorted elements Redis does not have to do any work at all, it's already all sorted:
 
 {{{
 $ ./redis-cli zrange hackers 0 -1
