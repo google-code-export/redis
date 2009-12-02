@@ -6,7 +6,7 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [QuickStart This short Quick Start] provides a five minutes step-by-step istructions on how to download, compile, run and test the basic workings of a Redis server.
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages.
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
- * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] will explain how Redis data types work and the basic patterns of working with Redis.
+ * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] explains how Redis data types work and the basic patterns of working with Redis.
  * [Features The features page] (currently in draft) is a good start to understand the strength and limitations of Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
