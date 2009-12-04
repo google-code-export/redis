@@ -1,0 +1,18 @@
+﻿= ZREMRANGEBYSCORE _key_ _min_ _max_ (Redis >= 1.1) =
+_Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements removed by the operation_
+
+ Remove all the elements in the sorted set at key with a score between
+ _min_ and _max_ (including elements with score equal to min or max).
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically the number of elements removed.
+
+== See also ==
+
+ * [ZaddCommand ZADD]
+ * [ZremCommand ZREM]
+ * [ZrangeCommand ZRANGE]
+ * [ZrangeCommand ZREVRANGE]
+ * [ZcardCommand ZCARD]
+ * [ZscoreCommand ZSCORE]
