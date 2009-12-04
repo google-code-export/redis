@@ -4,23 +4,15 @@
 
 The up to date, raw Road Map for Redis is part of the source code, you can find it here: [http://github.com/antirez/redis/raw/master/TODO]
 
-== TODO ==
+== Features added in past versions ==
 
-Add this information:
-
-[http://groups.google.com/group/redis-db/browse_thread/thread/95329fcbf7825169/70214fc6cfe01856?lnk=gst&q=roadmap#70214fc6cfe01856]
-
-== 1.2 == 
-
-  * [DataTypes Hash data type].
- 
-== 1.1 ==
+== 1.1 / 1.2 ==
 
   * [DataTypes Ordered Set (ZSET)]
   * [MultiBulkCommands Multibulk Commands]
   * In memory integer encoding of [DataTypes integers]. Memory saving of 20% or more with datasets using high number of integer IDs. 
   * Enhanced [ExpireCommand EXPIRE] algorithm.
 
-== 1.0 ==
+== 0.x / 1.0 ==
 
-  * TODO: Add 1.0 Features. This is important for clarity in SupportedLanguages 
+  * TODO: Add 1.0 Features. This is important for clarity in SupportedLanguages
