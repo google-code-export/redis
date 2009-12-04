@@ -1,4 +1,6 @@
-﻿= SRANDMEMBER _key_ =
+﻿#sidebar SetCommandsSidebar
+
+= SRANDMEMBER _key_ =
 _Time complexity O(1)_
 
  Return a random element from a Set, without removing the element. 
@@ -10,14 +12,3 @@ _Time complexity O(1)_
 == Return value ==
 
 [ReplyTypes Bulk reply]
-
-== See also ==
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SmoveCommand SMOVE]
- * [SpopCommand SPOP]

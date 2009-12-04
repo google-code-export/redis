@@ -1,3 +1,5 @@
+﻿#sidebar SortedSetCommandsSidebar
+
 = ZREM _key_ _member_ (Redis >= 1.1) =
 _Time complexity O(log(N)) with N being the number of elements in the sorted set_
 
@@ -13,12 +15,3 @@ _Time complexity O(log(N)) with N being the number of elements in the sorted set
 1 if the new element was removed
 0 if the new element was not a member of the set
 }}}
-
-== See also ==
-
- * [ZaddCommand ZADD]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZrangebyscoreCommand ZRANGEBYSCORE]
- * [ZcardCommand ZCARD]
- * [ZscoreCommand ZSCORE]

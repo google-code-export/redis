@@ -1,3 +1,5 @@
+﻿#sidebar GenericCommandsSidebar
+
 = RENAME _oldkey_ _newkey_ =
 _Time complexity: O(1)_
 
@@ -8,6 +10,3 @@ _Time complexity: O(1)_
 == Return value ==
 
 [ReplyTypes Status code repy]
-
-== See also ==
- * [RenamenxCommand RENAMENX] if you don't want overwrite the destination key if it exists.

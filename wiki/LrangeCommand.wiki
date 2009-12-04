@@ -1,3 +1,5 @@
+﻿#sidebar ListCommandsSidebar
+
 = LRANGE _key_ _start_ _end_ =
 _Time complexity: O(n) (with n being the length of the range)_
 
@@ -20,16 +22,3 @@ _Time complexity: O(n) (with n being the length of the range)_
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically a list of elements in the specified range.
-
-== See also ==
- * [RpushCommand RPUSH]
- * [RpushCommand LPUSH]
- * [LlenCommand LLEN]
- * [LrangeCommand LRANGE]
- * [LtrimCommand LTRIM]
- * [LindexCommand LINDEX]
- * [LsetCommand LSET]
- * [LremCommand LREM]
- * [LpopCommand LPOP]
- * [LpopCommand RPOP]
- * [RpoplpushCommand RPOPLPUSH]

@@ -1,3 +1,5 @@
+﻿#sidebar ListCommandsSidebar
+
 = LREM _key_ _count_ _value_ =
 _Time complexity: O(N) (with N being the length of the list)_
 
@@ -18,16 +20,3 @@ _Time complexity: O(N) (with N being the length of the list)_
 {{{
 The number of removed elements if the operation succeeded
 }}}
-
-== See also ==
- * [RpushCommand RPUSH]
- * [RpushCommand LPUSH]
- * [LlenCommand LLEN]
- * [LrangeCommand LRANGE]
- * [LtrimCommand LTRIM]
- * [LindexCommand LINDEX]
- * [LsetCommand LSET]
- * [LremCommand LREM]
- * [LpopCommand LPOP]
- * [LpopCommand RPOP]
- * [RpoplpushCommand RPOPLPUSH]

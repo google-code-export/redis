@@ -1,3 +1,5 @@
+﻿#sidebar ConnectionHandlingSidebar
+
 = Quit =
 
  Ask the server to silently close the connection.

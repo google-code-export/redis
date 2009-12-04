@@ -1,3 +1,5 @@
+﻿#sidebar StringCommandsSidebar
+
 = SETNX _key_ _value_ =
 _Time complexity: O(1)_
 
@@ -13,6 +15,3 @@ _Time complexity: O(1)_
 1 if the key was set
 0 if the key was not set
 }}}
-
-== See also ==
- * [SetCommand SET]

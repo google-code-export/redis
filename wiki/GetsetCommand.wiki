@@ -1,3 +1,5 @@
+﻿#sidebar StringCommandsSidebar
+
 = GETSET _key_ _value_ =
 _Time complexity: O(1)_
 
@@ -16,8 +18,3 @@ _Time complexity: O(1)_
  key _mycounter_ every time some event occurred, but from time to
  time we need to get the value of the counter and reset it to zero atomically
  using `GETSET mycounter 0`.
-
-== See also ==
- * [GetCommand GET]
- * [SetCommand SET]
- * [SetnxCommand SETNX]

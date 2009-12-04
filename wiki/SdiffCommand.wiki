@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SDIFF _key1_ _key2_ ... _keyN_ =
 _Time complexity O(N) with N being the total number of elements of all the sets_
 
@@ -16,15 +18,3 @@ SDIFF key1,key2,key3 => x,b
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically the list of common elements.
-
-== See also ==
- * [SdiffstoreCommand SDIFFSTORE]
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterstoreCommand SINTERSTORE]
- * [SunionCommand SUNION]
- * [SunionstoreCommand SUNIONSTORE]
- * [SmoveCommand SMOVE]

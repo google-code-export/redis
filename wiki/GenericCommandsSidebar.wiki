@@ -1,0 +1,16 @@
+﻿== Generic Commands ==
+
+ * [ExistsCommand EXISTS]
+ * [DelCommand DEL]
+ * [TypeCommand TYPE]
+ * [KeysCommand KEYS]
+ * [RandomkeyCommand RANDOMKEY]
+ * [RenameCommand RENAME]
+ * [RenamenxCommand RENAMENX]
+ * [DbsizeCommand DBSIZE]
+ * [ExpireCommand EXPIRE]
+ * [TtlCommand TTL]
+ * [SelectCommand SELECT]
+ * [MoveCommand MOVE]
+ * [FlushdbCommand FLUSHDB]
+ * [FlushallCommand FLUSHALL]

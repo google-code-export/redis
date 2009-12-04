@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SISMEMBER _key_ _member_ =
 _Time complexity O(1)_
 
@@ -12,13 +14,3 @@ _Time complexity O(1)_
 1 if the element is a member of the set
 0 if the element is not a member of the set OR if the key does not exist
 }}}
-
-== See also ==
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SmoveCommand SMOVE]

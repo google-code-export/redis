@@ -1,4 +1,6 @@
-﻿= ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` (Redis >= 1.1) =
+﻿#sidebar SortedSetCommandsSidebar
+
+= ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` (Redis >= 1.1) =
 _Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements returned by the command, so if M is constant (for instance you always ask for the first ten elements with LIMIT) you can consider it O(log(N))_
 
  Return the all the elements in the sorted set at key with a score between
@@ -16,12 +18,3 @@ _Time complexity: O(log(N))+O(M) with N being the number of elements in the sort
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically a list of elements in the specified score range.
-
-== See also ==
-
- * [ZaddCommand ZADD]
- * [ZremCommand ZREM]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZcardCommand ZCARD]
- * [ZscoreCommand ZSCORE]

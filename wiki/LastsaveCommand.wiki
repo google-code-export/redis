@@ -1,3 +1,5 @@
+﻿#sidebar ControlCommandsSidebar
+
 = LASTSAVE =
  Return the UNIX TIME of the last DB save executed with success.
  A client may check if a [BgsaveCommand BGSAVE] command succeeded reading the LASTSAVE
@@ -7,6 +9,3 @@
 == Return value ==
 
 [ReplyTypes Integer reply], specifically an UNIX time stamp.
-
-== See also ==
- * [BgsaveCommand BGSAVE]

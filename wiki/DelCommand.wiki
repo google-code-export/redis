@@ -1,4 +1,6 @@
-﻿= DEL _key1_ _key2_ ... _keyN_ =
+﻿#sidebar GenericCommandsSidebar
+
+= DEL _key1_ _key2_ ... _keyN_ =
 _Time complexity: O(1)_
 
  Remove the specified keys. If a given key does not exist
@@ -13,9 +15,3 @@ _Time complexity: O(1)_
 an integer greater than 0 if one or more keys were removed
 0 if none of the specified key existed
 }}}
-
-== See also ==
- * [SetCommand SET]
- * [GetCommand GET]
- * [ExistsCommand EXISTS]
- * [LremCommand LREM]

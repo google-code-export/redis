@@ -1,3 +1,5 @@
+﻿#sidebar GenericCommandsSidebar
+
 = MOVE _key_ _dbindex_ =
  Move the specified key from the currently selected DB to the specified
  destination DB. Note that this command returns 1 only if the key was
@@ -13,7 +15,3 @@
 1 if the key was moved
 0 if the key was not moved because already present on the target DB or was not found in the current DB.
 }}}
-
-== See also ==
- * [SelectCommand SELECT]
- * [RenameCommand RENAME]

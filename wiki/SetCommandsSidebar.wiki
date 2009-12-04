@@ -1,0 +1,17 @@
+﻿== Set Commands ==
+
+ * [SaddCommand SADD]
+ * [SremCommand SREM]
+ * [SpopCommand SPOP]
+ * [SmoveCommand SMOVE]
+ * [ScardCommand SCARD]
+ * [SismemberCommand SISMEMBER]
+ * [SinterCommand SINTER]
+ * [SinterstoreCommand SINTERSTORE]
+ * [SunionCommand SUNION]
+ * [SunionstoreCommand SUNIONSTORE]
+ * [SdiffCommand SDIFF]
+ * [SdiffstoreCommand SDIFFSTORE]
+ * [SmembersCommand SMEMBERS]
+ * [SrandmemberCommand SRANDMEMBER]
+ * [SortCommand SORT]

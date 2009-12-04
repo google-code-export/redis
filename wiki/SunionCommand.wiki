@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SUNION _key1_ _key2_ ... _keyN_ =
 _Time complexity O(N) where N is the total number of elements in all the provided sets_
 
@@ -12,13 +14,3 @@ _Time complexity O(N) where N is the total number of elements in all the provide
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically the list of common elements.
-
-== See also ==
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SunionstoreCommand SUNIONSTORE]
- * [SmoveCommand SMOVE]

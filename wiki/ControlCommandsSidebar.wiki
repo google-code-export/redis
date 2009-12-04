@@ -1,0 +1,9 @@
+﻿== Control Commands ==
+
+ * [SaveCommand SAVE]
+ * [BgsaveCommand BGSAVE]
+ * [LastsaveCommand LASTSAVE]
+ * [ShutdownCommand SHUTDOWN]
+ * [InfoCommand INFO]
+ * [MonitorCommand MONITOR]
+ * [SlaveofCommand SLAVEOF]

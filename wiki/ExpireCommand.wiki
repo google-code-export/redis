@@ -1,3 +1,5 @@
+﻿#sidebar GenericCommandsSidebar
+
 =EXPIRE _key_ _seconds_=
 =EXPIREAT _key_ _unixtime_ (Redis >= 1.1)=
 _Time complexity: O(1)_
@@ -111,7 +113,3 @@ OK
 1: the timeout was set.
 0: the timeout was not set since the key already has an associated timeout, or the key does not exist.
 }}}
-
-== See also ==
- * [InfoCommand INFO]
- * [TypeCommand TYPE]

@@ -1,4 +1,4 @@
-if your are asking yourself how is Redis different fom other key-value stores here you will find it compared to some of the most popular contendors (all great software) in this category. 
+﻿if your are asking yourself how is Redis different fom other key-value stores here you will find it compared to some of the most popular contendors (all great software) in this category. 
 
 == Memcached ==
 

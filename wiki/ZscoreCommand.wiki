@@ -1,3 +1,5 @@
+﻿#sidebar SortedSetCommandsSidebar
+
 = ZSCORE _key_ _element_ (Redis >= 1.1) =
 _Time complexity O(1)_
 
@@ -12,11 +14,3 @@ _Time complexity O(1)_
 {{{
 the score (a double precision floating point number) represented as string.
 }}}
-
-== See also ==
- * [ZaddCommand ZADD]
- * [ZremCommand ZREM]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZrangebyscoreCommand ZRANGEBYSCORE]
- * [ZcardCommand ZCARD]

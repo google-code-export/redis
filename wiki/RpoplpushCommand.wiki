@@ -1,3 +1,5 @@
+﻿#sidebar ListCommandsSidebar
+
 = RPOPLPUSH _srckey_ _dstkey_ (Redis >= 1.1) =
 _Time complexity: O(1)_
 
@@ -40,16 +42,3 @@ _Time complexity: O(1)_
 == Return value ==
 
 [ReplyTypes Bulk reply]
-
-== See also ==
- * [RpushCommand RPUSH]
- * [RpushCommand LPUSH]
- * [LlenCommand LLEN]
- * [LrangeCommand LRANGE]
- * [LtrimCommand LTRIM]
- * [LindexCommand LINDEX]
- * [LsetCommand LSET]
- * [LremCommand LREM]
- * [LpopCommand LPOP]
- * [LpopCommand RPOP]
- * [RpoplpushCommand RPOPLPUSH]

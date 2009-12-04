@@ -1,3 +1,5 @@
+﻿#sidebar ControlCommandsSidebar
+
 =MONITOR=
 
  MONITOR is a debugging command that outputs the whole sequence of commands
@@ -39,6 +41,3 @@ hello
 == Return value ==
 
 *Non standard return value*, just dumps the received commands in an infinite flow.
-
-== See also ==
- * [InfoCommand INFO]

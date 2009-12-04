@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SINTERSTORE _dstkey_ _key1_ _key2_ ... _keyN_ =
 _Time complexity O(N*M) worst case where N is the cardinality of the smallest set and M the number of sets_
 
@@ -6,13 +8,3 @@ _Time complexity O(N*M) worst case where N is the cardinality of the smallest se
 == Return value ==
 
 [ReplyTypes Status code reply]
-
-== See also ==
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SmoveCommand SMOVE]

@@ -1,3 +1,5 @@
+﻿#sidebar GenericCommandsSidebar
+
 = EXISTS _key_ =
 _Time complexity: O(1)_
 
@@ -14,7 +16,3 @@ _Time complexity: O(1)_
 1 if the key exists.
 0 if the key does not exist.
 }}}
-
-== See also ==
- * [SetnxCommand SETNX] is a `SET if not EXISTS` atomic operation.
- * [SismemberCommand SISMEMBER] test if an element is a member of a Set.

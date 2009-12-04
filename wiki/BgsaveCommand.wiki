@@ -1,3 +1,5 @@
+﻿#sidebar ControlCommandsSidebar
+
 = BGSAVE =
  Save the DB in background. The OK code is immediately returned.
  Redis forks, the parent continues to server the clients, the child
@@ -7,7 +9,3 @@
 == Return value ==
 
 [ReplyTypes Status code reply]
-
-== See also ==
- * [SaveCommand SAVE]
- * [ShutdownCommand SHUTDOWN]

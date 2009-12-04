@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SMOVE _srckey_ _dstkey_ _member_ =
 _Time complexity O(1)_
 
@@ -21,12 +23,3 @@ _Time complexity O(1)_
 1 if the element was moved
 0 if the element was not found on the first set and no operation was performed
 }}}
-
-== See also ==
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]

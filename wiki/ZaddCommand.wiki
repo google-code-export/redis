@@ -1,3 +1,5 @@
+﻿#sidebar SortedSetCommandsSidebar
+
 = ZADD _key_ _score_ _member_ (Redis >= 1.1) =
 _Time complexity O(log(N)) with N being the number of elements in the sorted set_
 
@@ -21,11 +23,3 @@ _Time complexity O(log(N)) with N being the number of elements in the sorted set
 1 if the new element was added
 0 if the element was already a member of the sorted set and the score was updated
 }}}
-
-== See also ==
- * [ZremCommand ZREM]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZrangebyscoreCommand ZRANGEBYSCORE]
- * [ZcardCommand ZCARD]
- * [ZscoreCommand ZSCORE]

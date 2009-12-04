@@ -1,3 +1,5 @@
+﻿#sidebar SetCommandsSidebar
+
 = SADD _key_ _member_ =
 _Time complexity O(1)_
 
@@ -15,12 +17,3 @@ _Time complexity O(1)_
 1 if the new element was added
 0 if the element was already a member of the set
 }}}
-
-== See also ==
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SmoveCommand SMOVE]

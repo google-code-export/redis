@@ -1,0 +1,4 @@
+﻿== Connection handling ==
+
+ * [QuitCommand QUIT]
+ * [AuthCommand AUTH]

@@ -1,3 +1,5 @@
+﻿#sidebar GenericCommandsSidebar
+
 = KEYS _pattern_ =
 _Time complexity: O(n) (with n being the number of keys in the DB, and assuming keys and pattern of limited length)_
 
@@ -22,6 +24,3 @@ Use \ to escape special chars if you want to match them verbatim.
 == Return value ==
 
 [ReplyTypes Bulk reply], specifically a string in the form of space separated list of keys. Note that most client libraries will return an Array of keys and not a single string with space separated keys (that is, split by " " is performed in the client library usually).
-
-== See also ==
- * [RandomkeyCommand RANDOMKEY] to get the name of a randomly selected key in O(1).

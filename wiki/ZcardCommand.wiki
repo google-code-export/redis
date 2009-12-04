@@ -1,3 +1,5 @@
+﻿#sidebar SortedSetCommandsSidebar
+
 = ZCARD _key_ (Redis >= 1.1) =
 _Time complexity O(1)_
 
@@ -11,12 +13,3 @@ _Time complexity O(1)_
 {{{
 the cardinality (number of elements) of the set as an integer.
 }}}
-
-== See also ==
- * [ZaddCommand ZADD]
- * [ZremCommand ZREM]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZrangebyscoreCommand ZRANGEBYSCORE]
- * [ZscoreCommand ZSCORE]
-

@@ -1,3 +1,5 @@
+﻿#sidebar StringCommandsSidebar
+
 = INCR _key_ =
 = INCRBY _key_ _integer_ =
 = DECR _key_ _integer_ =
@@ -14,6 +16,3 @@ _Time complexity: O(1)_
 == Return value ==
 
 [ReplyTypes Integer reply], this commands will reply with the new value of _key_ after the increment or decrement.
-
-== See also ==
- * [GetCommand GET]

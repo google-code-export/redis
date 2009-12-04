@@ -1,3 +1,5 @@
+﻿#sidebar SortedSetCommandsSidebar
+
 = ZRANGE _key_ _start_ _end_ (Redis >= 1.1) =
 = ZREVRANGE _key_ _start_ _end_ (Redis >= 1.1) =
 _Time complexity: O(log(N))+O(M) (with N being the number of elements in the sorted set and M the number of elements requested)_
@@ -21,11 +23,3 @@ _Time complexity: O(log(N))+O(M) (with N being the number of elements in the sor
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically a list of elements in the specified range.
-
-== See also ==
- * [ZaddCommand ZADD]
- * [ZremCommand ZREM]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZcardCommand ZCARD]
- * [ZscoreCommand ZSCORE]

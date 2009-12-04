@@ -1,3 +1,5 @@
+﻿#sidebar ListCommandsSidebar
+
 = LINDEX _key_ _index_ =
 _Time complexity: O(n) (with n being the length of the list)_
 
@@ -15,12 +17,3 @@ _Time complexity: O(n) (with n being the length of the list)_
 == Return value ==
 
 [ReplyTypes Bulk reply], specifically the requested element.
-
-== See also ==
- * [LlenCommand LLEN]
- * [LrangeCommand LRANGE]
- * [LtrimCommand LTRIM]
- * [LremCommand LREM]
- * [LindexCommand LINDEX]
- * [LsetCommand LSET]
- * [RpoplpushCommand RPOPLPUSH]

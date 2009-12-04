@@ -1,3 +1,5 @@
+﻿#sidebar ListCommandsSidebar
+
 = LLEN _key_ =
 _Time complexity: O(1)_
 
@@ -12,16 +14,3 @@ _Time complexity: O(1)_
 {{{
 The length of the list.
 }}}
-
-== See also ==
- * [RpushCommand RPUSH]
- * [RpushCommand LPUSH]
- * [LlenCommand LLEN]
- * [LrangeCommand LRANGE]
- * [LtrimCommand LTRIM]
- * [LindexCommand LINDEX]
- * [LsetCommand LSET]
- * [LremCommand LREM]
- * [LpopCommand LPOP]
- * [LpopCommand RPOP]
- * [RpoplpushCommand RPOPLPUSH]

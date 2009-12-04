@@ -1,4 +1,6 @@
-﻿= SPOP _key_ =
+﻿#sidebar SetCommandsSidebar
+
+= SPOP _key_ =
 _Time complexity O(1)_
 
  Remove a random element from a Set returning it as return value.
@@ -10,14 +12,3 @@ _Time complexity O(1)_
 == Return value ==
 
 [ReplyTypes Bulk reply]
-
-== See also ==
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SismemberCommand SISMEMBER]
- * [ScardCommand SCARD]
- * [SmembersCommand SMEMBERS]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SmoveCommand SMOVE]
- * [SrandmemberCommand SRANDMEMBER]
