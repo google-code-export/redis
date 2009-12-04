@@ -1,5 +1,5 @@
-= ZRANGEBYSCORE _key_ _min_ _max_ (Redis >= 1.1) =
-_Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements matching the min and max score_
+﻿= ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` (Redis >= 1.1) =
+_Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements returned by the command, so if M is constant (for instance you always ask for the first ten elements with LIMIT) you can consider it O(log(N))_
 
  Return the all the elements in the sorted set at key with a score between
  _min_ and _max_ (including elements with score equal to min or max).
@@ -7,6 +7,11 @@ _Time complexity: O(log(N))+O(M) with N being the number of elements in the sort
  The elements having the same score are returned sorted lexicographically as
  ASCII strings (this follows from a property of Redis sorted sets and does not
  involve further computation).
+
+ Using the optional LIMIT it's possible to get only a range of the matching
+ elements in an SQL-alike way. Note that if _offset_ is large the commands
+ needs to traverse the list for _offset_ elements and this adds up to the
+ O(M) figure.
 
 == Return value ==
 
