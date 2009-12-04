@@ -71,7 +71,7 @@ $ ./redis-cli lrange mylist 0 -1
 2. secondvalue
 }}}
 
-What to play more with Redis? Read [introductionToRedisDataTypes Fifteen minutes introduction to Redis data types].
+What to play more with Redis? Read [IntroductionToRedisDataTypes Fifteen minutes introduction to Redis data types].
 
 == Further reading ==
 
