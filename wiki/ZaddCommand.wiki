@@ -13,7 +13,7 @@ _Time complexity O(log(N)) with N being the number of elements in the sorted set
  The score value can be the string representation of a double precision floating
  point number.
 
- For an introduction to sorted sets check the [RedisSortedSets Redis sorted sets] page.
+ For an introduction to sorted sets check the [IntroductionToRedisDataTypes Introduction to Redis data types] page.
 
 == Return value ==
 
