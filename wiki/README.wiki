@@ -48,7 +48,7 @@ Redis supports multiple databases with commands to atomically move keys from one
 
 To really get a feeling about what Redis is and how it works please try reading [IntroductionToRedisDataTypes A fifteen minutes introduction to Redis data types].
 
-To know a bit more about how Redis works continue reading.
+To know a bit more about how Redis works _internally_ continue reading.
 
 = Redis Tutorial =
 
