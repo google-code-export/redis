@@ -2,7 +2,7 @@
 
 = Redis Sorted Set Type =
 
-Redis Sorted Sets are, similarly to [Sets], collections of [Stings Redis Strings]. The difference is that every member of a Sorted Set hash an *associated score* that is used in order to take this member in order.
+Redis Sorted Sets are, similarly to [Sets], collections of [Strings Redis Strings]. The difference is that every member of a Sorted Set hash an *associated score* that is used in order to take this member in order.
 
 The [ZADD ZaddCommand] command is used to add a new member to a Sorted Set, specifying the score of the element. Calling ZADD against a member already present in the sorted set but using a different score will update the score for the element, moving it to the right position in order to preserve ordering.
 
