@@ -22,7 +22,7 @@ SORT mylist DESC
     environment variable.
 
     Sort is able to limit the number of returned elements using the
-	*LIMIT* option:
+    *LIMIT* option:
 
 {{{
 SORT mylist LIMIT 0 10
