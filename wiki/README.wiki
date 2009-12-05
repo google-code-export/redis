@@ -34,7 +34,7 @@ Whatever will be the persistence mode you'll use Redis supports master-slave rep
 
 = It's persistent but supports expires =
 
-Redis can be used as a *memcached on steroids* because is as fast as memcached but with a number of features more. Notably Redis also supports setting timeout to keys so that this key will be automatically removed when a given amount of time passes.
+Redis can be used as a *memcached on steroids* because is as fast as memcached but with a number of features more. Like memcached, Redis also supports setting timeouts to keys so that this key will be automatically removed when a given amount of time passes.
 
 = Beyond key-value databases =
 
