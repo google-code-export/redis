@@ -2,7 +2,7 @@
 
 = Redis List Type =
 
-Redis Lists are lists of [Stings Redis Strings], sorted by insertion order. It's possible to add elements to a Redis List pushing new elements on the head (on the left) or on the tail (on the right) of the list.
+Redis Lists are lists of [Strings Redis Strings], sorted by insertion order. It's possible to add elements to a Redis List pushing new elements on the head (on the left) or on the tail (on the right) of the list.
 
 The [RpushCommand LPUSH] command inserts a new elmenet on head, while [RpushCommand RPUSH] inserts a new element on tail. A new list is created when one of this operations is performed against an empty key.
 
