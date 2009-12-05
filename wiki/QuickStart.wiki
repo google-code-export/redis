@@ -1,4 +1,4 @@
-= Quick Start =
+﻿= Quick Start =
 
 This quickstart is a five minutes howto on how to get started with Redis. For more information on Redis check [http://code.google.com/p/redis/wiki/index Redis Documentation Index].
 
@@ -71,10 +71,9 @@ $ ./redis-cli lrange mylist 0 -1
 2. secondvalue
 }}}
 
-What to play more with Redis? Read [IntroductionToRedisDataTypes Fifteen minutes introduction to Redis data types].
-
 == Further reading ==
 
+ * What to play more with Redis? Read [IntroductionToRedisDataTypes Fifteen minutes introduction to Redis data types].
  * Check all the [Features]
  * Read the full list of available commands in the [CommandReference Command Reference].
  * Start using Redis from your [SupportedLanguages favorite language].
