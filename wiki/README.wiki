@@ -22,7 +22,7 @@ There are two kind of persistence supported: the first one is called snapshottin
 
 Redis can be configured to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
 
-Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications but not in all).  In order to make this a non issue Redis supports another, safer persistence mode, called [AppendOnlyFileHowto Append Only File], where every command received affecting the dataset (so not a read-only command, but a write command) is written on an append only file ASAP. This commands are _replayed_ when the server is restarted in order to rebuild the dataset in memory.
+Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications but not in all).  In order to make this a non issue Redis supports another, safer persistence mode, called [AppendOnlyFileHowto Append Only File], where every command received altering the dataset (so not a read-only command, but a write command) is written on an append only file ASAP. This commands are _replayed_ when the server is restarted in order to rebuild the dataset in memory.
 
 Redis Append Only File supports a very handy feature: the server is able to safely rebuild the append only file in background in a non-blocking fashion when it gets too long. You can find [AppendOnlyFileHowto more details in the Append Only File HOWTO].
 
