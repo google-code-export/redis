@@ -1,4 +1,4 @@
-﻿= SORT _key_ `[`BY _pattern_`]` `[`LIMIT _start_ _count_`]` `[`GET _pattern_`]` `[`ASC|DESC`]` `[`ALPHA`]` =
+﻿= SORT _key_ `[`BY _pattern_`]` `[`LIMIT _start_ _count_`]` `[`GET _pattern_`]` `[`ASC|DESC`]` `[`ALPHA`]` `[`STORE _dstkey_`]` =
     Sort the elements contained in the List or Set value at _key_. By default
     sorting is numeric with elements being compared as double precision
     floating point numbers. This is the simplest form of SORT.
@@ -71,6 +71,27 @@ SORT mylist BY weight_* GET object_*
 {{{
 SORT mylist BY weight_* GET object_* GET #
 }}}
+
+	By default SORT returns the sorted elements as its return value.
+	Using the *STORE* option instead to return the elements SORT will
+	store this elements as a [Lists Redis List] in the specified key.
+	An example:
+
+{{{
+SORT mylist BY weight_* STORE resultkey
+}}}
+
+	An interesting pattern using SORT ... STORE consists in associating
+	an [ExpireCommand EXPIRE] timeout to the resulting key so that in
+	applications where the result of a sort operation can be cached for
+	some time other clients will use the cached list instead to call SORT
+	for every request. When the key will timeout an updated version of
+	the cache can be created using SORT ... STORE again.
+
+	Note that implementing this pattern it is important to avoid that multiple
+	clients will try to rebuild the cached version of the cache
+	at the same time, so some form of locking should be implemented
+	(for instance using [SetnxCommand SETNX]).
 
 == Return value ==
 
