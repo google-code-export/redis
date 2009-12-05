@@ -16,13 +16,14 @@ SORT mylist
 SORT mylist DESC
 }}}
 
-    *ASC* is also supported but it's the default so you don't really need it.
+    The *ASC* option is also supported but it's the default so you don't
+    really need it.
     If you want to sort lexicographically use *ALPHA*. Note that Redis is
     utf-8 aware assuming you set the right value for the LC_COLLATE
     environment variable.
 
-    Sort is able to limit the number of returned elements using the
-    *LIMIT* option:
+    Sort is able to limit the number of returned elements using the *LIMIT* 
+    option:
 
 {{{
 SORT mylist LIMIT 0 10
