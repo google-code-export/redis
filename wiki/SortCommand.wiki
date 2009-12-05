@@ -42,8 +42,8 @@ SORT mylist LIMIT 0 10 ALPHA DESC
 
     Sometimes you want to sort elements using external keys as weights to
     compare instead to compare the actual List Sets or Sorted Set elements.
-	For example the list _mylist_ may contain the elements 1, 2, 3, 4, that
-	are just unique IDs of objects stored at object_1, object_2, object_3
+    For example the list _mylist_ may contain the elements 1, 2, 3, 4, that
+    are just unique IDs of objects stored at object_1, object_2, object_3
     and object_4, while the keys weight_1, weight_2, weight_3 and weight_4
     can contain weights we want to use to sort our list of objects
     identifiers. We can use the following command:
