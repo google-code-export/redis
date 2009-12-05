@@ -30,7 +30,7 @@ Redis Append Only File supports a very handy feature: the server is able to safe
 
 Whatever will be the persistence mode you'll use Redis supports master-slave replications if you want to stay really safe or if you need to scale to huge amounts of reads.
 
-*Redis Replication is trivial to setup*. So trivial that all you need to do in order to configure a Redis server to be a slave of another one, with automatic synchronization if the link will go down and so forth, is the following config line: `slaveof 192.168.1.100 6379`. [RedisReplicationHowto We provide a Redis Replication Howto] if you want to know more about this feature.
+*Redis Replication is trivial to setup*. So trivial that all you need to do in order to configure a Redis server to be a slave of another one, with automatic synchronization if the link will go down and so forth, is the following config line: `slaveof 192.168.1.100 6379`. [ReplicationHowto We provide a Replication Howto] if you want to know more about this feature.
 
 = It's persistent but supports expires =
 
