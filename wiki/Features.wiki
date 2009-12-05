@@ -1,4 +1,4 @@
-#sidebar SideBar
+﻿#sidebar SideBar
 = Features (DRAFT) =
 
 Checking Redis for the first time? Here your will find the most important features, and pointers to a lot more information.
@@ -17,9 +17,9 @@ If you can't afford losing some data, starting on version 1.1 (currently in beta
 
 == Support for Data Structures ==
 
-Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [OrderedSets] (to be support in [RoadMap version 1.1]). This data types allow pushing/poping elements, or adding/removing them, also perform server side union, intersection, difference between sets, and so forth depending on the types. Redis supports different kind of sorting abilities for [Sets] and [Lists].
+Values in Redis can be [Strings] as in a conventional key-value store, but also [Lists], [Sets], and [SortedSets] (to be support in [RoadMap version 1.1]). This data types allow pushing/poping elements, or adding/removing them, also perform server side union, intersection, difference between sets, and so forth depending on the types. Redis supports different kind of sorting abilities for [Sets] and [Lists].
 
-You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems. Read [DataTypes Data Types] to learn more about the way Redis handle [Strings], and the [Commands] supported by [Lists], [Sets] and [OrderedSets]
+You can think in Redis as a *Data Structures Server*, that allows you to model non trivial problems. Read [DataTypes Data Types] to learn more about the way Redis handle [Strings], and the [Commands] supported by [Lists], [Sets] and [SortedSets]
 
 == Atomic Operations ==
 

@@ -13,6 +13,8 @@ _Time complexity: O(1)_
  INCRBY and DECRBY work just like INCR and DECR but instead to
  increment/decrement by 1 the increment/decrement is _integer_.
 
+ INCR commands are limited to 64 bit signed integers.
+
 == Return value ==
 
 [ReplyTypes Integer reply], this commands will reply with the new value of _key_ after the increment or decrement.

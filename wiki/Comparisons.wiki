@@ -4,7 +4,7 @@
 
   * Memcached is not persistent, it just holds everything in memory without saving since its main goal is to be used as a cache, while Redis is [Persistence persistent].
 
-  * Like memcached Redis uses a key-value model, but while keys can just be strings, values in Redis can be [Lists], [Sets] or [OrderedSets] and complex operations like intersections, set/get n-th element of lists, pop/push of elements, can be performed against sets and lists.
+  * Like memcached Redis uses a key-value model, but while keys can just be strings, values in Redis can be [Lists], [Sets] or [SortedSets] and complex operations like intersections, set/get n-th element of lists, pop/push of elements, can be performed against sets and lists.
 
 == Tokyo Cabinet / Toyo Tyrant ==
 
