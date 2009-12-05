@@ -1,6 +1,6 @@
-= Introduction =
+﻿= Introduction =
 
-Redis is a database. To be specific, Redis is a very simple database implementing a dictionary, where every key is associated with a value. For example I can set the key "surname_1992" to the string "Smith".
+Redis is a database. To be specific, Redis is a database implementing a dictionary, where every key is associated with a value. For example I can set the key "surname_1992" to the string "Smith".
 What makes Redis different from many other key-value stores, is that every single value has a type. The following types are supported:
 
   * String
@@ -14,80 +14,41 @@ Please refer to the [CommandReference Command Reference] to see the full list of
 
 In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
-Redis loads and mantains the whole dataset into memory, but the dataset is persistent, since from time to time Redis writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
+= All data in memory, but saved on disk =
+
+Redis loads and mantains the whole dataset into memory, but the dataset is persistent, since at the same time it is saved on disk, so that when the server is restarted data can be loaded back in memory.
+
+There are two kind of persistence supported: the first one is called snapshotting. In this mode Redis, from time to time, writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
 
 Redis can be configured to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
 
-Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications).  Anyway it is possible to make this a non issue, since Redis supports master-slave replication from its early days, being effective even in the case where a few records lost are not acceptable.
+Because data is written asynchronously, when a system crash occurs, the last few queries can get lost (that is acceptable in many applications but not in all).  In order to make this a non issue Redis supports another, safer persistence mode, called [AppendOnlyFileHowto Append Only File], where every command received affecting the dataset (so not a read-only command, but a write command) is written on an append only file ASAP. This commands are _replayed_ when the server is restarted in order to rebuild the dataset in memory.
+
+Redis Append Only File supports a very handy feature: the server is able to safely rebuild the append only file in background in a non-blocking fashion when it gets too long. You can find [AppendOnlyFileHowto more details in the Append Only File HOWTO].
+
+= Master-Slave replication made trivial =
+
+Whatever will be the persistence mode you'll use Redis supports master-slave replications if you want to stay really safe or if you need to scale to huge amounts of reads.
+
+*Redis Replication is trivial to setup*. So trivial that all you need to do in order to configure a Redis server to be a slave of another one, with automatic synchronization if the link will go down and so forth, is the following config line: `slaveof 192.168.1.100 6379`. [RedisReplicationHowto We provide a Redis Replication Howto] if you want to know more about this feature.
+
+= It's persistent but supports expires =
+
+Redis can be used as a *memcached on steroids* because is as fast as memcached but with a number of features more. Notably Redis also supports setting timeout to keys so that this key will be automatically removed when a given amount of time passes.
 
 = Beyond key-value databases =
 
 All these features allow to use Redis as the sole DB for your scalable application without the need of any relational database. [TwitterAlikeExample We wrote a simple Twitter clone in PHP + Redis] to show a real world example, the link points to an article explaining the design and internals in very simple words.
 
-= What are the differences between Redis and Memcached? =
-
-In the following ways:
-
- * Memcached is not persistent, it just holds everything in memory without saving since its main goal is to be used as a cache. Redis instead can be used as the main DB for the application. We [TwitterAlikeExample wrote a simple Twitter clone] using only Redis as database.
-
- * Like memcached Redis uses a key-value model, but while keys can just be strings, values in Redis can be lists and sets, and complex operations like intersections, set/get n-th element of lists, pop/push of elements, can be performed against sets and lists. It is possible to use lists as message queues.
-
-= What are the differences between Redis and Tokyo Cabinet / Tyrant? =
-
-Redis and Tokyo Cabinet can be used for the same applications, but actually they are *very* different beasts. If you read twitter messages of people involved in scalable things both products are reported to work well, but surely there are times where one or the other can be the best choice. Some differences are the followings (I may be biased, make sure to check yourself both the products).
-
- * Tokyo Cabinet writes synchronously on disk, Redis takes the whole dataset on memory and writes on disk asynchronously. Tokyo Cabinet is safer and probably a better idea if your dataset is going to be bigger than RAM, but Redis is faster (note that Redis supports master-slave replication that is trivial to setup, so you are safe anyway if you want a setup where data can't be lost even after a disaster).
-
- * Redis supports higher level operations and data structures. Tokyo Cabinet supports a kind of database that is able to organize data into rows with named fields (in a way very similar to Berkeley DB) but can't do things like server side List and Set operations Redis is able to do: pushing or popping from Lists in an atomic way, in O(1) time complexity, server side Set intersections, [SORT SortCommand] ing of schema free data in complex ways (Btw TC supports sorting in the table-based database format). Redis on the other hand does not support the abstraction of tables with fields, the idea is that you can build this stuff in software easily if you really need a table-alike approach.
-
- * Tokyo Cabinet does not implement a networking layer. You have to use a networking layer called Tokyo Tyrant that interfaces to Tokyo Cabinet so you can talk to Tokyo Cabinet in a client-server fashion. In Redis the networking support is built-in inside the server, and is basically the only interface between the external world and the dataset.
-
- * Redis is reported to be much faster, especially if you plan to access Tokyo Cabinet via Tokyo Tyrant. Here I can only say that with Redis you can expect 100,000 operations/seconds with a normal Linux box and 50 concurrent clients. You should test Redis, Tokyo, and the other alternatives with your specific work load to get a feeling about performances for your application.
-
- * Redis is (IMHO) generally an higher level and simpler to use beast in the operations supported, and to get started. [Check the command reference CommandReference] to get a feeling. You can even start playing with Redis by telnet after reading the five minutes tutorial at the end of this README file. To implement new client libraries is trivial. [Check the protocol specification ProtocolSpecification] for more information.
- 
- * Redis is not an on-disk DB engine like Tokyo: the latter can be used as a fast DB engine in your C project without the networking overhead just linking to the library. Still in many scalable applications you need multiple servers talking with multiple clients, so the client-server model is almost always needed, this is why in Redis this is built-in.
-
-= Does Redis support locking? =
-
-No, the idea is to provide atomic primitives in order to make the programmer
-able to use redis with locking free algorithms. For example imagine you have
-10 computers and one Redis server. You want to count words in a very large text.
-This large text is split among the 10 computers, every computer will process
-its part and use Redis's INCR command to atomically increment a counter
-for every occurrence of the word found.
-
-INCR/DECR are not the only atomic primitives, there are others like PUSH/POP
-on lists, POP RANDOM KEY operations, UPDATE and so on. For example you can
-use Redis like a Tuple Space (http://en.wikipedia.org/wiki/Tuple_space) in
-order to implement distributed algorithms.
-
-(News: locking with key-granularity is now planned)
-
 = Multiple databases support =
 
-Another synchronization primitive is the support for multiple DBs. By default DB 0 is selected for every new connection, but using the SELECT command it is possible to select a different database. The MOVE operation can move an item from one DB to another atomically. This can be used as a base for locking free algorithms together with the 'RANDOMKEY' commands.
+Redis supports multiple databases with commands to atomically move keys from one database to the other. By default DB 0 is selected for every new connection, but using the SELECT command it is possible to select a different database. The MOVE operation can move an item from one DB to another atomically. This can be used as a base for locking free algorithms together with the 'RANDOMKEY' commands.
 
-= Redis Data Types =
+= Know more about Redis! =
 
-Redis supports the following three data types as values:
+To really get a feeling about what Redis is and how it works please try reading [IntroductionToRedisDataTypes A fifteen minutes introduction to Redis data types].
 
- * Strings: just any sequence of bytes. Redis strings are binary safe so they can not just hold text, but images, compressed data and everything else.
- * Lists: lists of strings, with support for operations like append a new string on head, on tail, list length, obtain a range of elements, truncate the list to a given length, sort the list, and so on.
- * Sets: an unsorted set of strings. It is possible to add or delete elements from a set, to perform set intersection, union, subtraction, and so on.
-
-Values can be Strings, Lists or Sets. Keys can be a subset of strings not containing newlines ("\n") and spaces (" ").
-
-Note that sometimes strings may hold numeric vaules that must be parsed by
-Redis. An example is the INCR command that atomically increments the number
-stored at the specified key. In this case Redis is able to handle integers
-that can be stored inside a 'long long' type, that is a 64-bit signed integer.
-
-== Implementation Details ==
-
-Strings are implemented as dynamically allocated strings of characters.
-Lists are implemented as doubly linked lists with cached length.
-Sets are implemented using hash tables that use chaining to resolve collisions.
+To know a bit more about how Redis works continue reading.
 
 = Redis Tutorial =
 
@@ -187,6 +148,3 @@ Redis is released under the BSD license. See the COPYING file for more informati
 = Credits =
 
 Redis is written and maintained by Salvatore Sanfilippo, Aka 'antirez'.
-
-Enjoy,
-antirez
