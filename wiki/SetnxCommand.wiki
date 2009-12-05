@@ -62,3 +62,5 @@ SETNX lock.foo <current UNIX time + lock timeout + 1>
  * If instead the lock is expired because the UNIX time at lock.foo is older than the current UNIX time, C4 tries to perform GETSET lock.foo <current unix timestamp + lock timeout + 1>
  * Thanks to the [GetsetCommand GETSET] command semantic C4 can check if the old value stored at key is still an expired timestamp. If so we acquired the lock!
  * Otherwise if another client, for instance C5, was faster than C4 and acquired the lock with the GETSET operation, C4 GETSET operation will return a non expired timestamp. C4 will simply restart from the first step. Note that even if C4 set the key a bit a few seconds in the future this is not a problem.
+
+IMPORTANT NOTE: In order to make this locking algorithm more robust, a client holding a lock should always check the timeout didn't expired before to unlock the key with DEL because client failures can be complex, not just crashing but also blocking a lot of time against some operation and trying to issue DEL after a lot of time (when the LOCK is already hold by some other client).
