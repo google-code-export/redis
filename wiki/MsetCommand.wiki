@@ -4,7 +4,7 @@
 = MSETNX _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_ (Redis >= 1.1) =
 _Time complexity: O(1) to set every key_
 
- Set the the rispective keys to the rispective values. MSET will replace old
+ Set the the respective keys to the respective values. MSET will replace old
  values with new values, while MSETNX will not perform any operation at all
  even if just a single key already exists.
 
