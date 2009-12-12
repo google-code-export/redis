@@ -1,5 +1,5 @@
 = Redis Sponsorship History =
 
-This is a list of companies that sponsorship Redis developments. Thanks for helping the project! If your company is considering a sponsorship please the [SposorshipHowto How to Sponsor] page.
+This is a list of companies that sponsorship Redis developments. Thanks for helping the project! If your company is considering a sponsorship please the [SponsorshipHowto How to Sponsor] page.
 
  * [http://engineyard.com http://redis.googlecode.com/files/engine_yard_logo.jpg] 13 Dec 2009, for blocking POP (BLPOP) and part of the Virtual Memory implementation.
