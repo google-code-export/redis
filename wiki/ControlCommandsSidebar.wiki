@@ -2,6 +2,7 @@
 
  * [SaveCommand SAVE]
  * [BgsaveCommand BGSAVE]
+ * [BgrewriteaofCommand BGREWRITEAOF]
  * [LastsaveCommand LASTSAVE]
  * [ShutdownCommand SHUTDOWN]
  * [InfoCommand INFO]
