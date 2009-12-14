@@ -15,3 +15,7 @@ So, if you are considering a donation, thank you! This is a set of simple rules 
  * 7. To sponsor a specific feature is not a must, a company can just donate to the project as a whole.
 
 If you want to get in touch with me about this issues please drop me an email to my gmail account (username is antirez) or direct-message me @antirez on Twitter. Thanks in advance for the help!
+
+= Other donations =
+
+If you just feel like donating a small amount to Redis the simplest way is to use paypal, my paypal address is *antirez@invece.org*. Please specify in the donation if you don't like to have your name / company name published in the donations history (the amount will not be published anyway).
