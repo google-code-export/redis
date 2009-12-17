@@ -9,3 +9,4 @@ If your company is considering a sponsorship please read the [SponsorshipHowto H
 
 *Also thaks to the following people or organizations that donated to the Project:*
  * Emil Vladev
+ * Brad Jasper
