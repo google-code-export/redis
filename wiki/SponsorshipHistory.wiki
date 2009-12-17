@@ -4,6 +4,7 @@ This is a list of companies that sponsorship Redis developments, with details ab
 
 If your company is considering a sponsorship please read the [SponsorshipHowto How to Sponsor] page.
 
+ * [[http://citrusbyte.com http://redis.googlecode.com/files/citrusbyte_logo.png] 18 Dec 2009, part of Virtual Memory.
  * [http://www.hitmeister.de/ http://redis.googlecode.com/files/logo_hitmeister_2.png] 15 Dec 2009, part of Redis Cluster.
  * [http://engineyard.com http://redis.googlecode.com/files/engine_yard_logo.jpg] 13 Dec 2009, for blocking POP (BLPOP) and part of the Virtual Memory implementation.
 
