@@ -22,7 +22,7 @@ _Time complexity: O(n) (with n being the number of keys in the DB, and assuming 
 Glob style patterns examples:
  * h?llo will match hello hallo hhllo
  * h*llo will match hllo heeeello
- * h[ae]llo will match hello and hallo, but not hillo
+ * h`[`ae`]`llo will match hello and hallo, but not hillo
 Use \ to escape special chars if you want to match them verbatim.
 
 == Return value ==
