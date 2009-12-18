@@ -11,9 +11,11 @@ _Time complexity: O(n) (with n being the number of keys in the DB, and assuming 
  Note that while the time complexity for this operation is O(n)
  the constant times are pretty low. For example Redis running
  on an entry level laptop can scan a 1 million keys database
- in 40 milliseconds. Still it's better to consider this one of
+ in 40 milliseconds. *Still it's better to consider this one of
  the slow commands that may ruin the DB performance if not used
- with care.
+ with care*.
+
+In other words this command is indented only for debugging and *special* operations like creating a script to change the DB schema. Don't use it in your normal code. Use Redis [Sets] in order to group together a subset of objects.
 
 Glob style patterns examples:
  * h?llo will match hello hallo hhllo
