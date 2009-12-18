@@ -15,7 +15,9 @@ _Time complexity: O(n) (with n being the number of keys in the DB, and assuming 
  the slow commands that may ruin the DB performance if not used
  with care*.
 
-In other words this command is indented only for debugging and *special* operations like creating a script to change the DB schema. Don't use it in your normal code. Use Redis [Sets] in order to group together a subset of objects.
+ In other words this command is indented only for debugging and *special* operations like  
+ creating a script to change the DB schema. Don't use it in your normal code. Use Redis 
+ [Sets] in order to group together a subset of objects.
 
 Glob style patterns examples:
  * h?llo will match hello hallo hhllo
