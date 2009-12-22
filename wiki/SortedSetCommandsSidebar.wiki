@@ -2,6 +2,7 @@
 
  * [ZaddCommand ZADD]
  * [ZremCommand ZREM]
+ * [ZincrbyCommand ZINCRBY]
  * [ZrangeCommand ZRANGE]
  * [ZrangeCommand ZREVRANGE]
  * [ZrangebyscoreCommand ZRANGEBYSCORE]

@@ -71,8 +71,9 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Commands operating on sorted sets (zsets, Redis version >= 1.1) ==
 
- * [ZaddCommand ZADD] _key_ _score_ _member_ `Add the specified member to the Set value at key or update the score if it already exist`
- * [ZremCommand ZREM] _key_ _member_ `Remove the specified member from the Set value at key`
+ * [ZaddCommand ZADD] _key_ _score_ _member_ `Add the specified member to the Sorted Set value at key or update the score if it already exist`
+ * [ZremCommand ZREM] _key_ _member_ `Remove the specified member from the Sorted Set value at key`
+ * [ZincrbyCommand ZINCRBY] _key_ _increment_ _member_ `If the member already exists increment its score by _increment_, otherwise add the member setting _increment_ as score`
  * [ZrangeCommand ZRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key`
  * [ZrangeCommand ZREVRANGE] _key_ _start_ _end_ `Return a range of elements from the sorted set at key, exactly like ZRANGE, but the sorted set is ordered in traversed in reverse order, from the greatest to the smallest score`
  * [ZrangebyscoreCommand ZRANGEBYSCORE] _key_ _min_ _max_ `Return all the elements with score >= min and score <= max (a range query) from the sorted set`
