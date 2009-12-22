@@ -4,7 +4,7 @@
 _Time complexity O(log(N)) with N being the number of elements in the sorted set_
 
  If _member_ already exists in the sorted set adds the _increment_ to its score
- and update the position of the element in the sorted set accordingly.
+ and updates the position of the element in the sorted set accordingly.
  If _member_ does not already exist in the sorted set it is added with
  _increment_ as score (that is, like if the previous score was virtually zero).
  If _key_ does not exist a new sorted set with the specified
