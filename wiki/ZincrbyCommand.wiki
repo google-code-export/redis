@@ -21,5 +21,5 @@ _Time complexity O(log(N)) with N being the number of elements in the sorted set
 [ReplyTypes Integer reply], specifically:
 
 {{{
-The score of _member_ after the increment is performed.
+The score of the member after the increment is performed.
 }}}
