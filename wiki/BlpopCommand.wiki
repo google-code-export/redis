@@ -42,7 +42,7 @@ _Time complexity: O(1)_
 
 = Multiple clients blocking for the same keys =
 
- Multiple clients can block for the same key. Redis put the clients in
+ Multiple clients can block for the same key. They are put into
  a queue, so the first to be served will be the one that started to wait
  earlier, in a first-blpopping first-served fashion.
 
