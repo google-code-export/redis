@@ -21,7 +21,7 @@ _Time complexity: O(1)_
 
  Keys are scanned from left to right, so for instance if you
  issue *BLPOP list1 list2 list3 0* against a dataset where *list1* does not
- exists but *list2* and *list3* contain non empty lists, BLPOP guarantees
+ exist but *list2* and *list3* contain non empty lists, BLPOP guarantees
  to return an element from the list stored at *list2* (since it is the first
  non empty list starting from the left).
 
