@@ -12,7 +12,7 @@ _Time complexity: O(1)_
  the two commands are identical, the only difference is that BLPOP pops the
  element from the left (head) of the list, and BRPOP pops from the right (tail).
 
-= Non blocking behavior =
+== Non blocking behavior ==
 
  When BLPOP is called, if at least one of the specified keys contain a non
  empty list, an element is popped from the head of the list and returned to
@@ -25,7 +25,7 @@ _Time complexity: O(1)_
  to return an element from the list stored at *list2* (since it is the first
  non empty list starting from the left).
 
-= Blocking behavior =
+== Blocking behavior ==
 
  If none of the specified keys exist or contain non empty lists, BLPOP
  blocks until some other client performs a [RpushCommand LPUSH] or
@@ -40,7 +40,7 @@ _Time complexity: O(1)_
 
  A timeout of zero means instead to block forever.
 
-= Multiple clients blocking for the same keys =
+== Multiple clients blocking for the same keys ==
 
  Multiple clients can block for the same key. They are put into
  a queue, so the first to be served will be the one that started to wait
