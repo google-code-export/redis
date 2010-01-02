@@ -10,5 +10,7 @@
  * [LremCommand LREM]
  * [LpopCommand LPOP]
  * [LpopCommand RPOP]
+ * [BlpopCommand BLPOP]
+ * [BlpopCommand BRPOP]
  * [RpoplpushCommand RPOPLPUSH]
  * [SortCommand SORT]
