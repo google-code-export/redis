@@ -33,9 +33,9 @@ Redis will now compile and work on Solaris without problems. Warning: the Solari
 
 == A few new commands about already supported data types ==
 
- * [SrandmemberCommnad SRANDMEMBER]
+ * [SrandmemberCommand SRANDMEMBER]
  * The [SortCommand] is now supprots the *STORE* and *GET #* forms, the first can be used to save sorted lists, sets or sorted sets into keys for caching. Check the manual page for more information about the *GET #* form.
- * The new [Rpoplpush RPOPLPUSH command] can do many interesting magics, and a few of this are documented in the wiki page of the command.
+ * The new [RpoplpushCommand RPOPLPUSH command] can do many interesting magics, and a few of this are documented in the wiki page of the command.
 
 == Bug fixing ==
 
