@@ -2,7 +2,7 @@
 
 == New persistence mode: Append Only File ==
 
- * The Append Only File is an alternative way to save your data in Redis that is fully durable! Unlike the snapshotting (default) persistence mode, where the database is saved asynchronously from time to time, the Append Only File saves every change ASAP in a text-only file that works like a journal. Redis will play back this file again at startup reloading the whole dataset back in memory. Redis Append Only File supports background Log compaction. For more info read the [AppendOnlyFileHOWTO Append Only File HOWTO].
+ * The Append Only File is an alternative way to save your data in Redis that is fully durable! Unlike the snapshotting (default) persistence mode, where the database is saved asynchronously from time to time, the Append Only File saves every change ASAP in a text-only file that works like a journal. Redis will play back this file again at startup reloading the whole dataset back in memory. Redis Append Only File supports background Log compaction. For more info read the [AppendOnlyFileHowto Append Only File HOWTO].
 
 == New data type: sorted sets ==
 
