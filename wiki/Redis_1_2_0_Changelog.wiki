@@ -6,6 +6,8 @@
 
 == New data type: sorted sets ==
 
+Sorted sets are collections of elements (like Sets) with an associated score (in the form of a double precision floating point number). Elements in a sorted set are taken in order, so for instance to take the greatest element is an O(1) operation. Insertion and deletion is O(log(N)). Sorted sets are implemented using a dual ported data structure consisting of an hash table and a skip list. For more information please read the [IntroductionToRedisDataTypes Introduction To Redis Data Types].
+
 == Specialized integer objects encoding ==
 
 == MSET and MSETNX ==
