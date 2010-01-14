@@ -14,7 +14,7 @@ Redis 1.2 will use less memory than Redis 1.0 for values in Strings, Lists or Se
 
 == MSET and MSETNX ==
 
-That is, mass SET / SETNX commands. For more information see the [MsetCommand MSET command] wiki page.
+That is, setting multiple keys in one command, atomically. For more information see the [MsetCommand MSET command] wiki page.
 
 == Better Performances ==
 
@@ -25,15 +25,24 @@ That is, mass SET / SETNX commands. For more information see the [MsetCommand MS
 
 == Solaris Support ==
 
+Redis will now compile and work on Solaris without problems. Warning: the Solaris user base is very little, so Redis running on Solaris may not be as tested and stable as it is on  Linux and Mac OS X.
+
 == Support for the new generation protocol ==
 
- * Redis is now able to 
+ * Redis is now able to accept commands in a new fully binary safe way: with the new protocol keys are binary safe, not only values, and there is no distinction between bulk commands and inline commands. This new protocol is currently used only for MSET and MSETNX but at some point it will hopefully replace the old one. See the Multi Bulk Commands section in the [ProtocolSpecification Redis Protocol Specification] for more information.
 
 == A few new commands about already supported data types ==
 
- * SRANDMEMBER
- * SORT ... STORE / SORT .. GET #
- * RPUSHLPOP
+ * [SrandmemberCommnad SRANDMEMBER]
+ * The [SortCommand] is now supprots the *STORE* and *GET #* forms, the first can be used to save sorted lists, sets or sorted sets into keys for caching. Check the manual page for more information about the *GET #* form.
+ * The new [Rpushlpop RPUSHLPOP command] can do many interesting magics, and a few of this are documented in the wiki page of the command.
+
+== Bug fixing ==
+
+Of course, many bugs are now fixed, and I bet, a few others introduced: this is how software works after all, so make sure to report issues in the Redis mailing list or in the Google Code issues tracker.
+
+Enjoy!
+antirez
 
 = CHANGELOG for Redis 1.1.90 =
 
