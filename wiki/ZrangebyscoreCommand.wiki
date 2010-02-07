@@ -1,7 +1,7 @@
 ﻿#sidebar SortedSetCommandsSidebar
 
 = ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` (Redis >= 1.1) =
-= ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` [`WITHSCORES`]` (Redis >= 1.3.4) =
+= ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` `[`WITHSCORES`]` (Redis >= 1.3.4) =
 _Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements returned by the command, so if M is constant (for instance you always ask for the first ten elements with LIMIT) you can consider it O(log(N))_
 
  Return the all the elements in the sorted set at key with a score between
