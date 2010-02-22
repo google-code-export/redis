@@ -103,6 +103,14 @@ The INFO command (work in progress in this days) will report the amount of memor
 
 You can also use the "maxmemory" option in the config file to put a limit to the memory Redis can use. If this limit is reached Redis will start to reply with an error to write commands (but will continue to accept read-only commands).
 
+= Does Redis use more memory running in 64 bit boxes? Can I use 32 bit Redis in 64 bit systems? =
+
+Redis uses a lot more memory when compiled for 64 bit target, especially if the dataset is composed of many small keys and values. Such a database will, for instance, consume 50 MB of RAM when compiled for the 32 bit target, and 80 MB for 64 bit! That's a big difference.
+
+You can run 32 bit Redis binaries in a 64 bit Linux and Mac OS X system without problems. For OS X just use *make 32bit*. For Linux instead, make sure you have *libc6-dev-i386* installed, then use *make 32bit* if you are using the latest Git version. Instead for Redis <= 1.2.2 you have to edit the Makefile and replace "-arch i386" with "-m32".
+
+If your application is already able to perform application-level sharding, it is very advisable to run N instances of Redis 32bit against a big 64 bit Redis box (with more than 4GB of RAM) instead than a single 64 bit instance, as this is much more memory efficient. 
+
 = How much time it takes to load a big database at server startup? =
 
 Just an example on normal hardware: It takes about 45 seconds to restore a 2 GB database on a fairly standard system, no RAID. This can give you some kind of feeling about the order of magnitude of the time needed to load data when you restart the server.
