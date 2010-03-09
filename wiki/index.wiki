@@ -1,5 +1,7 @@
 = Redis Documentation =
 
+[http://pyha.ru/wiki/index.php?title=Redis:index Russian Translation]
+
 Hello! The followings are pointers to different parts of the Redis Documentation.
 
  * [README The README] is the best starting point to know more about the project.
