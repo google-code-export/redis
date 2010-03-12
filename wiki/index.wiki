@@ -4,6 +4,7 @@
 
 Hello! The followings are pointers to different parts of the Redis Documentation.
 
+ * New! You can now [http://try.redis-db.com Try Redis directly in your browser!].
  * [README The README] is the best starting point to know more about the project.
  * [QuickStart This short Quick Start] provides a five minutes step-by-step istructions on how to download, compile, run and test the basic workings of a Redis server.
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages.
