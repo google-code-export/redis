@@ -8,6 +8,7 @@
  * [ZrangeCommand ZRANGE]
  * [ZrangeCommand ZREVRANGE]
  * [ZrangebyscoreCommand ZRANGEBYSCORE]
+ * [ZremrangebyrankCommand ZREMRANGEBYRANK]
  * [ZremrangebyscoreCommand ZREMRANGEBYSCORE] 
  * [ZcardCommand ZCARD]
  * [ZscoreCommand ZSCORE]
