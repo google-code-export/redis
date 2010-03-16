@@ -83,6 +83,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [ZrangebyscoreCommand ZRANGEBYSCORE] _key_ _min_ _max_ `Return all the elements with score >= min and score <= max (a range query) from the sorted set`
  * [ZcardCommand ZCARD] _key_ `Return the cardinality (number of elements) of the sorted set at key`
  * [ZscoreCommand ZSCORE] _key_ _element_ `Return the score associated with the specified element of the sorted set at key`
+ * [ZremrangebyrankCommand ZREMRANGEBYRANK] _key_ _min_ _max_ `Remove all the elements with rank >= min and rank <= max from the sorted set`
  * [ZremrangebyscoreCommand ZREMRANGEBYSCORE] _key_ _min_ _max_ `Remove all the elements with score >= min and score <= max from the sorted set`
 
 == Sorting ==
