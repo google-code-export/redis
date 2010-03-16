@@ -14,4 +14,4 @@ All Redis keys are strings and its also the simplest value type.
 Lists, sets, sorted sets and hashes are other more complex value types and even
 these are composed of strings.
 
-Hacking Strings documents the Redis String implementation details.
+[HackingStrings Hacking Strings] documents the Redis String implementation details.
