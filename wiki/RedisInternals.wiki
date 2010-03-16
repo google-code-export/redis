@@ -1,0 +1,13 @@
+= Redis Internals =
+
+This is a source code level documentation of Redis.
+
+
+== Redis STRINGS ==
+
+String is the basic building block of Redis types. Redis is a key-value store.
+All Redis keys are strings and its also the simplest value type. 
+Lists, sets, sorted sets and hashes are other more complex value types and even
+these are composed of strings.
+
+Hacking Strings documents the Redis String implementation details.
