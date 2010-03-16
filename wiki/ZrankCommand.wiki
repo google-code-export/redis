@@ -11,5 +11,5 @@ _Time complexity: O(log(N))_
 [ReplyTypes Bulk reply], specifically:
 
 {{{
-the rank (integer) represented as an string.
+the rank (an integer number) represented as an string.
 }}}
