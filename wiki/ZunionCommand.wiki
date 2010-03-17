@@ -1,6 +1,6 @@
 #sidebar SortedSetCommandsSidebar
 
-= ZUNION / ZINTER _dstkey_ _N_ _k1_ ... _kN_ `[`WEIGHTS _w1_ ... _wN_`]` `[`AGGREGATE SUM|MIN|MAX`]`  (Redis >= 1.3.4) =
+== ZUNION / ZINTER _dstkey_ _N_ _k1_ ... _kN_ `[`WEIGHTS _w1_ ... _wN_`]` `[`AGGREGATE SUM|MIN|MAX`]`  (Redis >= 1.3.4) ==
 
 _Time complexity: O(N) + O(M log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set_
 
