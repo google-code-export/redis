@@ -1,0 +1,10 @@
+﻿== Hash Commands ==
+
+ * [HsetCommand HSET]
+ * [HgetCommand HGET]
+ * [HdelCommand HDEL]
+ * [HexistsCommand HEXISTS]
+ * [HlenCommand HLEN]
+ * [HkeysCommand HKEYS]
+ * [HvalsCommand HVALS]
+ * [HgetallCommand HGETALL]
