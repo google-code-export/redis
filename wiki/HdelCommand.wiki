@@ -1,0 +1,12 @@
+﻿#sidebar HashCommandsSidebar
+
+= HDEL _key_ _field_ =
+_Time complexity: O(1)_
+
+ Remove the specified _field_ from an hash stored at _key_.
+
+ If the _field_ was present in the hash it is returned and 1 is returned, otherwise 0 is returned and no operation is performed.
+
+== Return value ==
+
+[ReplyTypes Integer reply]

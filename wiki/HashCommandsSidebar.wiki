@@ -5,6 +5,6 @@
  * [HdelCommand HDEL]
  * [HexistsCommand HEXISTS]
  * [HlenCommand HLEN]
- * [HkeysCommand HKEYS]
- * [HvalsCommand HVALS]
+ * [HgetallCommand HKEYS]
+ * [HgetallCommand HVALS]
  * [HgetallCommand HGETALL]
