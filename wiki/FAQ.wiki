@@ -91,6 +91,14 @@ to this malloc fragmentation and need to return word-aligned chunks of
 memory and you have a clear picture of what happens. So this means to 
 have 10 times the I/O between memory and disk than otherwise needed.
 
+= Is there something I can do to lower the Redis memory usage? =
+
+Yes, try to compile it with 32 bit target if you are using a 64 bit box.
+
+If you are using Redis >= 1.3, try using the Hash data type, it can save a lot of memory.
+
+If you are using hashes or any other type with values bigger than 128 bytes try also this to lower the RSS usage (Resident Set Size): EXPORT MMAP_THRESHOLD=4096
+
 = I have an empty Redis server but INFO and logs are reporting megabytes of memory in use! =
 
 This may happen and it's prefectly ok. Redis objects are small C structures allocated and freed a lot of times. This costs a lot of CPU so instead of being freed, released objects are taken into a free list and reused when needed. This memory is taken exactly by this free objects ready to be reused.
