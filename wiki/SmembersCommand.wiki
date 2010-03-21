@@ -4,7 +4,7 @@
 _Time complexity O(N)_
 
  Return all the members (elements) of the set value stored at _key_. This
- is just syntax glue for [SintersectCommand SINTERSECT].
+ is just syntax glue for [SintersectCommand SINTER].
 
 == Return value ==
 
