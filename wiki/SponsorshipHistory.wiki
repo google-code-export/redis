@@ -4,8 +4,6 @@
 
 This is a list of companies that sponsorship Redis developments, with details about the sponsored features. *Thanks for helping the project!*.
 
-If your company is considering a sponsorship please read the [SponsorshipHowto How to Sponsor] page.
-
  * [http://www.linode.com/?r=5cf1759a154c981368394fca9918970f60b6a2b3 http://www.linode.com/images/linode_logo10.gif] 15 January 2010, provided Virtual Machines for Redis testing in a virtualized environment.
  * [https://manage.slicehost.com/customers/new?referrer=d6272cc9e5f38cd2513e760e4d22bd9d http://wiki.slicehost.com/lib/exe/fetch.php?w=&h=&cache=cache&media=slicehost.gif] 14 January 2010, provided Virtual Machines for Redis testing in a virtualized environment.
  * [http://citrusbyte.com http://redis.googlecode.com/files/citrusbyte_logo.png] 18 Dec 2009, part of Virtual Memory.
