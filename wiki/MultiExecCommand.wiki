@@ -10,8 +10,8 @@
  A Redis Transaction allows to execute a group of Redis commands in a single
  step, with two important guarantees:
 
-* All the commands in a transaction are serialized and executed sequentially. It can never happen that a request issued by another client is served *in the middle* if the execution of a Redis transaction. This guarantees that the commands are executed as a single atomic operation.
-* Either all of the commands or none are processed. The EXEC command triggers the execution of all the commands in the transaction, so if a client lose the connection to the server in the context of a transaction before calling the MULTI command none of the operations are performed, instead if the MULTI command is called, all the operations are performed. An exception to this rule is when the Append Only File is enabled: every command that is part of a Redis transaction will log in the AOF as long as the operation is completed, so if the Redis server crashes or is killed by the system administrator in some hard way it is possible that only a partial number of operations are registered.
+ * All the commands in a transaction are serialized and executed sequentially. It can never happen that a request issued by another client is served *in the middle* if the execution of a Redis transaction. This guarantees that the commands are executed as a single atomic operation.
+ * Either all of the commands or none are processed. The EXEC command triggers the execution of all the commands in the transaction, so if a client lose the connection to the server in the context of a transaction before calling the MULTI command none of the operations are performed, instead if the MULTI command is called, all the operations are performed. An exception to this rule is when the Append Only File is enabled: every command that is part of a Redis transaction will log in the AOF as long as the operation is completed, so if the Redis server crashes or is killed by the system administrator in some hard way it is possible that only a partial number of operations are registered.
 
 == Usage ==
 
