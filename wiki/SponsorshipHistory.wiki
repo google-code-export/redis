@@ -1,5 +1,7 @@
 = Redis Sponsorship History =
 
+** Important notice: since 15 March 2010 I Joined VMware that is sponsoring all my work on Redis.** Thank you to all the companies and people donating in the past. No further donations are accepted.
+
 This is a list of companies that sponsorship Redis developments, with details about the sponsored features. *Thanks for helping the project!*.
 
 If your company is considering a sponsorship please read the [SponsorshipHowto How to Sponsor] page.
