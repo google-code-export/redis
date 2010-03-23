@@ -1,9 +1,9 @@
 ﻿#sidebar GenericCommandsSidebar
 
 = MULTI =
-= COMMAND1 ... =
-= COMMAND2 ... =
-= COMMANDN ... =
+= COMMAND_1 ... =
+= COMMAND_2 ... =
+= COMMAND_N ... =
 = EXEC or DISCARD =
 
  MULTI, EXEC and DISCARD commands are the fundation of Redis Transactions.
