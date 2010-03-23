@@ -102,6 +102,10 @@ Every command name links to a specific wiki page describing the behavior of the 
 
  * [SortCommand SORT] _key_ BY _pattern_ LIMIT _start_ _end_ GET _pattern_ ASC|DESC ALPHA `Sort a Set or a List accordingly to the specified parameters`
 
+== Transactions ==
+
+ * [MultiExecCommand MULTI/EXEC/DISCARD] `Redis atomic transactions`
+
 == Persistence control commands ==
 
  * [SaveCommand SAVE] `Synchronously save the DB on disk`
