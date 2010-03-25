@@ -15,3 +15,7 @@ Lists, sets, sorted sets and hashes are other more complex value types and even
 these are composed of strings.
 
 [HackingStrings Hacking Strings] documents the Redis String implementation details.
+
+== Redis Virtual Memory ==
+
+A technical specification full of details about the [VirtualMemorySpecification Redis Virtual Memory subsystem]
