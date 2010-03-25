@@ -48,12 +48,12 @@ If an object is swapped on disk (REDIS_VM_SWAPPED or REDIS_VM_LOADING), how do w
 {{{
 /* The VM object structure */
 struct redisObjectVM {
-    off_t page;         /* the page at witch the object is stored on disk */
+    off_t page;         /* the page at which the object is stored on disk */
     off_t usedpages;    /* number of pages used on disk */
     time_t atime;       /* Last access time */
 } vm;
 }}}
-As you can see the structure contains the page at witch the object is located in the swap file, the number of pages used, and the last access time of the object (this is very useful for the algorithm that select what object is a good candidate for swapping, as we want to transfer on disk objects that are rarely accessed).
+As you can see the structure contains the page at which the object is located in the swap file, the number of pages used, and the last access time of the object (this is very useful for the algorithm that select what object is a good candidate for swapping, as we want to transfer on disk objects that are rarely accessed).
 
 As you can see, while all the other fields are using unused bytes in the old Redis Object structure (we had some free bit due to natural memory alignment concerns), the _vm_ field is new, and indeed uses additional memory. Should we pay such a memory cost even when VM is disabled? No! This is the code to create a new Redis Object:
 {{{
