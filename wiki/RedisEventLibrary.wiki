@@ -1,0 +1,65 @@
+= Redis Event Library =
+
+Redis implements its own event library. The event library is implemented in *ae.c*.
+
+The best way to understand how the Redis event library works is to understand how Redis uses it.
+
+== Event Loop Initialization ==
+`initServer` function defined in *redis.c* initializes the numerous fields of the `redisServer` structure variable. One such field is the event loop `el`:
+
+{{{ 
+aeEventLoop *el 
+}}}
+
+`initServer` initializes `server.el` field by calling `aeCreateEventLoop` defined in *ae.c*. The definition of `aeEventLoop` is below:
+{{{
+typedef struct aeEventLoop 
+{
+    int maxfd;
+    long long timeEventNextId;
+    aeFileEvent events[AE_SETSIZE]; /* Registered events */
+    aeFiredEvent fired[AE_SETSIZE]; /* Fired events */
+    aeTimeEvent *timeEventHead;
+    int stop;
+    void *apidata; /* This is used for polling API specific data */
+    aeBeforeSleepProc *beforesleep;
+} aeEventLoop;
+}}}
+
+=== aeCreateEventLoop ===
+
+`aeCreateEventLoop` first mallocs aeEventLoop structure then calls ae_epoll.c:aeApiCreate`.
+
+`aeApiCreate` mallocs `aeApiState` that has two fields - `epfd` that holds the epoll file descriptor returned by a call from [http://man.cx/epoll_create%282%29 epoll_create] and `events` that is of type `struct epoll_event` define by the Linux epoll library. The use of the `events` field will be  described later.
+
+Next is 'ae.c:aeCreateTimeEvent`.
+
+=== aeCreateTimeEvent ===
+
+`aeCreateTimeEvent` accepts the following as parameters:
+
+  * eventLoop: This is `server.el` in *redis.c*
+  * milliseconds: The number of milliseconds from the curent time after which the timer expires.
+  * proc: Function pointer. Stores the address of the function that has to be called after the timer expires.
+  * clientData: Mostly NULL.
+  * finalizerProc: Pointer to the function that has to be called before the timed event is removed from the list of timed events.
+
+`aeCreateTimeEvent` adds a timed event to `timeEventHead` field of `server.el`. `timeEventHead` is a pointer to a list of such timed events. The call to `aeCreateTimeEvent` from `redis.c:initServer` function is given below:
+
+{{{
+aeCreateTimeEvent(server.el /*eventLoop*/, 1 /*milliseconds*/, serverCron /*proc*/, NULL /*clientData*/, NULL /*finalizerProc*/);
+}}}
+
+`redis.c:serverCron` performs many operations that helps keep Redis running properly.
+
+=== aeCreateFileEvent ===
+
+The essence of `aeCrateFileEvent` function is to execute [http://man.cx/epoll_ctl epoll_ctl] system call. 
+
+Following is an explanation of what precisely `aeCreateFileEvent` does when called from `redis.c:initServer`.
+
+`initServer` passes the following arguments to `aeCreateFileEvent`:
+  * server.el: The event loop created by `ae.caeCreateEventLoop`.
+  * server.fd: The listening socket descriptor create by `anet.c:anetTcpServer`
+  * AE_READABLE: Signifies that server.fd has to be watched for EPOLLIN event.
+  * acceptHandler: The function that has to be executed when the event being watched for is ready. This function pointer is stored in `eventLoop->events[server.fd]->rfileProc`.
