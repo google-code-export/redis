@@ -59,7 +59,7 @@ The essence of `aeCrateFileEvent` function is to execute [http://man.cx/epoll_ct
 Following is an explanation of what precisely `aeCreateFileEvent` does when called from `redis.c:initServer`.
 
 `initServer` passes the following arguments to `aeCreateFileEvent`:
-  * server.el: The event loop created by `ae.caeCreateEventLoop`.
+  * server.el: The event loop created by `aeCreateEventLoop`.
   * server.fd: The listening socket descriptor create by `anet.c:anetTcpServer`
   * AE_READABLE: Signifies that server.fd has to be watched for EPOLLIN event.
   * acceptHandler: The function that has to be executed when the event being watched for is ready. This function pointer is stored in `eventLoop->events[server.fd]->rfileProc`.
