@@ -146,4 +146,5 @@ Swapping out keys should happen in background. Similarly when a client is access
 
 All this limitations called for a non-blocking VM implementation.
 ==Threaded VM==
-==The key is the ability to abort I/O jobs==
+==I/O Jobs=
+==Aborting I/O jobs==
