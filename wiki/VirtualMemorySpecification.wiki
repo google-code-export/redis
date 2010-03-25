@@ -211,4 +211,6 @@ The function able to kill an I/O job is `vmCancelThreadedIOJob`, and this is wha
  * If the job is in the processed queue, we just mark it as _canceled_ marking setting the `canceled` field to 1 in the iojob structure. The function processing completed jobs will just ignored and free the job instead of really processing it.
 
 ==Questions?==
+This document is in no way complete, the only way to get the whole picture is reading the source code, but it should be a good introduction in order to make the code review / understanding a lot simpler.
+
 Something is not clear about this page? Please leave a comment and I'll try to address the issue possibly integrating the answer in this document.
