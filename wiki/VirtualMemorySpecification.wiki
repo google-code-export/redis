@@ -146,5 +146,69 @@ Swapping out keys should happen in background. Similarly when a client is access
 
 All this limitations called for a non-blocking VM implementation.
 ==Threaded VM==
-==I/O Jobs=
+There are basically three main ways to turn the blocking VM into a non blocking one.
+ * 1: One way is obvious, and in my opionion, not a good idea at all, that is, turning Redis itself into a theaded server: if every request is served by a different thread automatically other clients don't need to wait for blocked ones. Redis is fast, exports atomic operations, has no locks, and is just 10k lines of code, *because* it is single threaded, so this was not an option for me.
+ * 2: Using non-blocking I/O against the swap file. After all you can think Redis already event-loop based, why don't just handle disk I/O in a non-blocking fashion? I also discarded this possiblity because of two main reasons. One is that non blocking file operations, unlike sockets, are an incompatibility nightmare. It's not just like calling select, you need to use OS-specific things. The other problem is that the I/O is just one part of the time consumed to handle VM, another big part is the CPU used in order to encode/decode data to/from the swap file. This is I picked option three, that is...
+ * 3: Using I/O threads, that is, a pool of threads handling the swap I/O operations. This is what the Redis VM is using, so let's detail how this works.
+==I/O Threads==
+The threaded VM design goals where the following, in order of importance:
+ * Simple implementation, little room for race condtions, simple locking, VM system more or less completeley decoupled from the rest of Redis code.
+ * Good performances, no locks for clients accessing values in memory.
+ * Ability to decode/encode objects in the I/O threads.
+The above goals resulted in an implementation where the Redis main thread (the one serving actual clients) and the I/O threads communicate using a queue of jobs, with a single mutex.
+Basically when main thread requires some work done in the background by some I/O thread, it pushes an I/O job structure in the `server.io_newjobs` queue (that is, just a linked list). If there are no active I/O threads, one is started. At this point some I/O thread will process the I/O job, and the result of the processing is pushed in the `server.io_processed` queue. The I/O thread will send a byte using an UNIX pipe to the main thread in order to signal that a new job was processed and the result is ready to be processed.
+
+This is how the `iojob` structure looks like:
+{{{
+typedef struct iojob {
+    int type;   /* Request type, REDIS_IOJOB_* */
+    redisDb *db;/* Redis database */
+    robj *key;  /* This I/O request is about swapping this key */
+    robj *val;  /* the value to swap for REDIS_IOREQ_*_SWAP, otherwise this
+                 * field is populated by the I/O thread for REDIS_IOREQ_LOAD. */
+    off_t page; /* Swap page where to read/write the object */
+    off_t pages; /* Swap pages needed to save object. PREPARE_SWAP return val */
+    int canceled; /* True if this command was canceled by blocking side of VM */
+    pthread_t thread; /* ID of the thread processing this entry */
+} iojob;
+}}}
+There are just three type of jobs that an I/O thread can perform (the type is specified by the `type` field of the structure):
+ * REDIS_IOJOB_LOAD: load the value associated to a given key from swap to memory. The object offset inside the swap file is `page`, the object type is `key->vtype`. The result of this operation will populate the `val` field of the structure.
+ * REDIS_IOJOB_PREPARE_SWAP: compute the number of pages needed in order to save the object pointed by `val` into the swap. The result of this operation will populate the `pages` field.
+ * REDIS_IOJOB_DO_SWAP: Transfer the object pointed by `val` to the swap file, at page offset `page`.
+The main thread delegates just the above three tasks. All the rest is handled by the main thread itself, for instance finding a suitable range of free pages in the swap file page table (that is a fast operation), deciding what object to swap, altering the storage field of a Redis object to reflect the current state of a value.
+==Non blocking VM as probabilistic enhancement of blocking VM==
+So now we have a way to request background jobs dealing with slow VM operations. How to add this to the mix of the rest of the work done by the main thread? While blocking VM was aware that an object was swapped out just when the object was looked up, this is too late for us: in C it is not trivial to start a background job in the middle of the command, leave the function, and re-enter in the same point the computation when the I/O thread finished what we requested (that is, no co-routines or continuations or alike).
+
+Fortunately there was a much, much simpler way to do this. And we love simple things: basically consider the VM implementation a blocking one, but add an optimization (using non the no blocking VM operations we are able to perform) to make the blocking *very* unlikely.
+
+This is what we do:
+ * Every time a client sends us a command, *before* the command is executed, we examine the argument vector of the command in search for swapped keys. After all we know for every command what arguments are keys, as the Redis command format is pretty simple.
+ * If we detect that at least a key in the requested command is swapped on disk, we block the client instead of really issuing the command. For every swapped value associated to a requested key, an I/O job is created, in order to bring the values back in memory. The main thread continues the execution of the event loop, without caring about the blocked client.
+ * In the meanwhile, I/O threads are loading values in memory. Every time an I/O thread finished loading a value, it sends a byte to the main thread using an UNIX pipe. The pipe file descriptor has a readable event associated in the main thread event loop, that is the function `vmThreadedIOCompletedJob`. If this function detects that all the values needed for a blocked client were loaded, the client is restarted and the original command called.
+
+So you can think at this as a blocked VM that almost always happen to have the right keys in memory, since we pause clients that are going to issue commands about swapped out values until this values are loaded.
+
+If the function checking what argument is a key fails in some way, there is no problem: the lookup function will see that a given key is associated to a swapped out value and will block loading it. So our non blocking VM reverts to a blocking one when it is not possible to anticipate what keys are touched.
+
+For instance in the case of the SORT command used together with the GET or BY options, it is not trivial to know beforehand what keys will be requested, so at least in the first implementation, SORT BY/GET resorts to the blocking VM implementation.
+==Blocking clients on swapped keys==
+How to block clients? To suspend a client in an event-loop based server is pretty trivial. All we do is cancelling its read handler. Sometimes we do something different (for instance for BLPOP) that is just marking the client as blocked, but not processing new data (just accumulating the new data into input buffers).
 ==Aborting I/O jobs==
+There is something hard to solve about the interactions between our blocking and non blocking VM, that is, what happens if a blocking operation starts about a key that is also "interested" by a non blocking operation at the same time?
+
+For instance while SORT BY is executed, a few keys are being loaded in a blocking manner by the sort command. At the same time, another client may request the same keys with a simple _GET key_ command, that will trigger the creation of an I/O job to load the key in background.
+
+The only simple way to deal with this problem is to be able to kill I/O jobs in the main thread, so that if a key that we want to load or swap in a blocking way is in the REDIS_VM_LOADING or REDIS_VM_SWAPPING state (that is, there is an I/O job about this key), we can just kill the I/O job about this key, and go ahead with the blocking operation we want to perform.
+
+This is not as trivial as it is. In a given moment an I/O job can be in one of the following three queues:
+ * server.io_newjobs: the job was already queued but no thread is handling it.
+ * server.io_processing: the job is being processed by an I/O thread.
+ * server.io_processed: the job was already processed.
+The function able to kill an I/O job is `vmCancelThreadedIOJob`, and this is what it does:
+ * If the job is in the newjobs queue, that's simple, removing the iojob structure from the queue is enough as no thread is still executing any operation.
+ * If the job is in the processing queue, a thread is messing with our job (and possibly with the associated object!). The only thing we can do is waiting for the item to move to the next queue in a *blocking way*. Fortunately this condition happens very rarely so it's not a performance problem.
+ * If the job is in the processed queue, we just mark it as _canceled_ marking setting the `canceled` field to 1 in the iojob structure. The function processing completed jobs will just ignored and free the job instead of really processing it.
+
+==Questions?==
+Something is not clear about this page? Please leave a comment and I'll try to address the issue possibly integrating the answer in this document.
