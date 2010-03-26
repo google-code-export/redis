@@ -22,6 +22,6 @@ A technical specification full of details about the [VirtualMemorySpecification 
 
 == Redis Event Library ==
 
-Read [EventLibrary event library] to understand what an event library does and why its needed.
+Read [EventLibray event library] to understand what an event library does and why its needed.
 
 [RedisEventLibrary Redis event library] documents the implementation details of the event library used by Redis 
