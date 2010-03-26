@@ -1,3 +1,5 @@
+#sidebar RedisInternals
+
 = Redis Event Library =
 
 Redis implements its own event library. The event library is implemented in *ae.c*.
