@@ -1,0 +1,77 @@
+﻿=SUBSCRIBE class_1 class_2 ... class_N=
+=UNSUBSCRIBE class_1 class_2 ... class_N =
+=UNSUBSCRIBE (unsubscribe from all classes)=
+=PUBLISH class message=
+
+_Time complexity: subscribe is O(1), unsubscribe is O(N) where N is the number of clients already subscribed to a class, publish is O(N) where N is the number of clients subscribed to a class.
+
+ SUBSCRIBE, UNSUBSCRIBE and PUBLISH commands implement the
+ [http://en.wikipedia.org/wiki/Publish/subscribe Publish/Subscribe messaging paradigm] where (citing Wikipedia) senders (publishers) are not programmed to send their messages to specific receivers (subscribers). Rather, published messages are characterized into classes, without knowledge of what (if any) subscribers there may be. Subscribers express interest in one or more classes, and only receive messages that are of interest, without knowledge of what (if any) publishers there are. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
+
+ For instance in order to subscribe to the classes foo and bar the client
+ will issue the SUBSCRIBE command followed by the names of the classes.
+{{{
+SUBSCRIBE foo bar
+}}}
+ All the messages sent by other clients to this classes will be pushed by
+ the Redis server to all the subscribed clients, in the form of a three
+ elements bulk reply, where the first element is the message type, the
+ second the originating class, and the third argument the message payload.
+
+ A client subscribed to 1 or more classes should NOT issue other commands
+ other than SUBSCRIBE and UNSUBSCRIBE, but can subscribe or unsubscribe
+ to other classes dynamically.
+
+ The reply of the SUBSCRIBE and UNSUBSCRIBE operations are sent in the form
+ of messages, so that the client can just read a coherent stream of messages
+ where the first element indicates the kind of message.
+==Format of pushed messages==
+ Messages are in the form of multi bulk replies with three elements.
+ The first element is the kind of message:
+ * "subscribe": means that we successfully subscribed to the class given as second element of the multi bulk reply. The third argument represents the number of classes we are currently subscribed to.
+ * "unsubscribe": means that we successfully unsubscribed from the class given as second element of the multi bulk reply. The third argument represents the number of classes we are currently subscribed to. If this latest argument is zero, we are no longer subscribed to any channel, and the client can issue any kind of Redis command as we are outside the Pub/sub state.
+ * "message": it is a message received as result of a PUBLISH command issued by another client. The second element is the name of the originating class, and the third the actual message payload.
+==Unsubscribing from all the classes at once==
+If the UNSUBSCRIBE command is issued without additional arguments, it is equivalent to unsubscribing to all the classes we are currently subscribed. A message for every unsubscribed class will be received.
+==Wire protocol example==
+{{{
+UBSCRIBE first second
+*3
+$9
+subscribe
+$5
+first
+:1
+*3
+$9
+subscribe
+$6
+second
+:2
+}}}
+at this point from another client we issue a PUBLISH operation against the class named "second". This is what the first client receives:
+{{{
+*3
+$7
+message
+$6
+second
+$5
+Hello
+}}}
+Now the client unsubscribes itself from all the classes using the UNSUBSCRIBE command without additional arguments:
+{{{
+UNSUBSCRIBE
+*3
+$11
+unsubscribe
+$6
+second
+:1
+*3
+$11
+unsubscribe
+$5
+first
+:0
+}}}

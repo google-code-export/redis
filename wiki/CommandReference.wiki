@@ -106,6 +106,10 @@ Every command name links to a specific wiki page describing the behavior of the 
 
  * [MultiExecCommand MULTI/EXEC/DISCARD] `Redis atomic transactions`
 
+== Public/Subscribe  ==
+
+ * [PublishSubscribe SUBSCRIBE/UNSUBSCRIBE/PUBLIC] `Redis Public/Subscribe messaging paradigm implementation`
+
 == Persistence control commands ==
 
  * [SaveCommand SAVE] `Synchronously save the DB on disk`
