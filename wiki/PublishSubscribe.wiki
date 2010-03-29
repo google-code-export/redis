@@ -35,7 +35,7 @@ SUBSCRIBE foo bar
 If the UNSUBSCRIBE command is issued without additional arguments, it is equivalent to unsubscribing to all the classes we are currently subscribed. A message for every unsubscribed class will be received.
 ==Wire protocol example==
 {{{
-UBSCRIBE first second
+SUBSCRIBE first second
 *3
 $9
 subscribe
