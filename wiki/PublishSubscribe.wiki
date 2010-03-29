@@ -75,3 +75,5 @@ $5
 first
 :0
 }}}
+==More details on the PUBLISH command==
+The Publish command is a bulk command where the first argument is the target class, and the second argument the data to send. It returns an Integer Reply representing the number of clients that received the message (that is, the number of clients that were listening for this class).
