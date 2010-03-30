@@ -12,9 +12,9 @@ Redis replication is a very simple to use and configure master-slave replication
 
 == How Redis replication works =
 
-In order to start the replication, or after the connection closes in order resynchronize with the master, the client connects to the master and issues the SYNC command.
+In order to start the replication, or after the connection closes in order resynchronize with the master, the slave connects to the master and issues the SYNC command.
 
-The master starts a background saving, and at the same time starts to collect all the new commands received that had the effect to modify the dataset. When the background saving completed the master starts the transfer of the database file to the slave, that saves it on disk, and then load it in memory. At this point the master starts to send all the accumulated commands, and all the new commands received from clients, that had the effect of a dataset modification.
+The master starts a background saving, and at the same time starts to collect all the new commands received that had the effect to modify the dataset. When the background saving completed the master starts the transfer of the database file to the slave, that saves it on disk, and then load it in memory. At this point the master starts to send all the accumulated commands, and all the new commands received from clients that had the effect of a dataset modification, to the slave, as a stream of commands, in the same format of the Redis protocol itself.
 
 You can try it yourself via telnet. Connect to the Redis port while the server is doing some work and issue the SYNC command. You'll see a bulk transfer and then every command received by the master will be re-issued in the telnet session.
 
