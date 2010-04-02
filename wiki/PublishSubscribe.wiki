@@ -77,3 +77,5 @@ first
 }}}
 ==More details on the PUBLISH command==
 The Publish command is a bulk command where the first argument is the target class, and the second argument the data to send. It returns an Integer Reply representing the number of clients that received the message (that is, the number of clients that were listening for this class).
+==Programming Example==
+Pieter Noordhuis provided a great example using Event-machine and Redis to create [http://chat.redis-db.com a multi user high performance web chat], with source code included of course!
