@@ -9,4 +9,4 @@ _Time complexity: O(1)_
 
 == Return value ==
 
-[ReplyTypes Integer reply] The new value of _field_ after the increment operation.
+[ReplyTypes Integer reply] The new value at _field_ after the increment operation.
