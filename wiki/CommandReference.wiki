@@ -91,8 +91,10 @@ Every command name links to a specific wiki page describing the behavior of the 
 
  * [HsetCommand HSET] _key_ _field_ _value_ `Set the hash field to the specified value. Creates the hash if needed.`
  * [HgetCommand HGET] _key_ _field_ `Retrieve the value of the specified hash field.`
- * [HdelCommand HDEL] _key_ _field_ `Remove the specified field from a hash`
+ * [HmsetCommand HMSET] _key_ _field1_ _value1_ ... _fieldN_ _valueN_ `Set the hash fields to their respective values.`
+ * [HincrbyCommand HINCRBY] _key_ _field_ _integer_ `Increment the integer value of the hash at _key_ on _field_ with _integer_.`
  * [HexistsCommand HEXISTS] _key_ _field_ `Test for existence of a specified field in a hash`
+ * [HdelCommand HDEL] _key_ _field_ `Remove the specified field from a hash`
  * [HlenCommand HLEN] _key_ `Return the number of items in a hash.`
  * [HgetallCommand HKEYS] _key_ `Return all the fields in a hash.`
  * [HgetallCommand HVALS] _key_ `Return all the values in a hash.`
