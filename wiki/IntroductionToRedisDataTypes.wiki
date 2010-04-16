@@ -65,7 +65,7 @@ To explain the List data type it's better to start with a little of theory, as t
 
 From a very general point of view a List is just a sequence of ordered elements: 10,20,1,2,3 is a list, but when a list of items is implemented using an Array and when instead a *Linked List* is used for the implementation, the properties change a lot.
 
-Redis lists are implemented via Linked Lists, this means that even if you have million of elements inside a list, the operation of adding a new element in the head or in the tail of the list is performed *in constant time*. Adding a new element with the [LpopCommand LPOP] command to the head of a ten elements list is the same speed as adding an element to the head of a 10 million elements list.
+Redis lists are implemented via Linked Lists, this means that even if you have million of elements inside a list, the operation of adding a new element in the head or in the tail of the list is performed *in constant time*. Adding a new element with the [LpushCommand LPUSH] command to the head of a ten elements list is the same speed as adding an element to the head of a 10 million elements list.
 
 What's the downside? That accessing an element *by index* is very fast in lists implemented with an Array and not so fast in lists implemented by linked lists.
 
