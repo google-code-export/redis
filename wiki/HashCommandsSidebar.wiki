@@ -2,6 +2,7 @@
 
  * [HsetCommand HSET]
  * [HgetCommand HGET]
+ * [HsetnxCommand HSETNX]
  * [HmsetCommand HMSET]
  * [HincrbyCommand HINCRBY]
  * [HexistsCommand HEXISTS]
