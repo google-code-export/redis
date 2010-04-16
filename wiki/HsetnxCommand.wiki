@@ -6,8 +6,8 @@ _Time complexity: O(1)_
  Set the specified hash _field_ to the specified _value_, if _field_ does not exist yet.
  If _key_ does not exist, a new key holding a hash is created.
 
- If _field_ already exists, this operation has no effect and returns 0.
- When _field_ didn't exist it is set to _value_ and returns 1.
+ If the field already exists, this operation has no effect and returns 0.
+ When the field didn't exist it is set to _value_ and returns 1.
 
 == Return value ==
 
