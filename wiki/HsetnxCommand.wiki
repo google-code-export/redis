@@ -7,7 +7,7 @@ _Time complexity: O(1)_
  If _key_ does not exist, a new key holding a hash is created.
 
  If the field already exists, this operation has no effect and returns 0.
- When the field didn't exist it is set to _value_ and returns 1.
+ Otherwise, the field is set to _value_ and the operation returns 1.
 
 == Return value ==
 
