@@ -1,6 +1,6 @@
 ﻿#sidebar HashCommandsSidebar
 
-= HEXISTS _key_ _field_ =
+= HEXISTS _key_ _field_ (Redis >= 1.3.10)=
 _Time complexity: O(1)_
 
  Return 1 if the hash stored at _key_ contains the specified _field_.
