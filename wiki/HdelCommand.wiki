@@ -1,6 +1,6 @@
 ﻿#sidebar HashCommandsSidebar
 
-= HDEL _key_ _field_ =
+= HDEL _key_ _field_ (Redis >= 1.3.10)=
 _Time complexity: O(1)_
 
  Remove the specified _field_ from an hash stored at _key_.
