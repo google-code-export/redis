@@ -1,6 +1,6 @@
 ﻿#sidebar HashCommandsSidebar
 
-= HGET _key_ _field_ =
+= HGET _key_ _field_ (Redis >= 1.3.10)=
 _Time complexity: O(1)_
 
  If _key_ holds a hash, retrieve the value associated to the specified _field_.
