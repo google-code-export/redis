@@ -5,6 +5,7 @@
  * [GetsetCommand GETSET]
  * [MgetCommand MGET]
  * [SetnxCommand SETNX]
+ * [SetexCommand SETEX]
  * [MsetCommand MSET]
  * [MsetCommand MSETNX]
  * [IncrCommand INCR]

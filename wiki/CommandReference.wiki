@@ -31,6 +31,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [GetsetCommand GETSET] _key_ _value_ `set a key to a string returning the old value of the key`
  * [MgetCommand MGET] _key1_ _key2_ ... _keyN_ `multi-get, return the strings values of the keys`
  * [SetnxCommand SETNX] _key_ _value_ `set a key to a string value if the key does not exist`
+ * [SetexCommand SETEX] _key_ _time_ _value_ `Set+Expire combo command`
  * [MsetCommand MSET] _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_ `set a multiple keys to multiple values in a single atomic operation`
  * [MsetCommand MSETNX] _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_ `set a multiple keys to multiple values in a single atomic operation if none of the keys already exist`
  * [IncrCommand INCR] _key_ `increment the integer value of key`
