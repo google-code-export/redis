@@ -1,0 +1,18 @@
+﻿#sidebar StringCommandsSidebar
+
+= SETEX _key_ _time_ _value_ =
+_Time complexity: O(1)_
+
+ The command is exactly equivalent to the following group of commands:
+{{{
+SET _key_ _value_
+EXPIRE _key_ _time_
+}}}
+ The operation is atomic, but a [SetCommand SET}+[ExpireCommand EXPIRE] 
+ operation was already provided
+ usigng [MultiExecCommand MULTI/EXEC]. SETEX is a faster alternative provided
+ since the operation is very common when Redis is used as a Cache.
+
+== Return value ==
+
+[ReplyTypes Status code reply]
