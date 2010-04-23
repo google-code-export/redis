@@ -8,7 +8,7 @@ _Time complexity: O(1)_
 SET _key_ _value_
 EXPIRE _key_ _time_
 }}}
- The operation is atomic, but a [SetCommand SET}+[ExpireCommand EXPIRE] 
+ The operation is atomic, but a [SetCommand SET]+[ExpireCommand EXPIRE] 
  operation was already provided
  usigng [MultiExecCommand MULTI/EXEC]. SETEX is a faster alternative provided
  since the operation is very common when Redis is used as a Cache.
