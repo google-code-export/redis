@@ -15,7 +15,6 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
  * [http://www.rediscookbook.org/ The Redis Cookbook] is a collaborative effort to provide some good recipe ;)
- * *[SponsorshipHowto How to donate]* to the project sponsoring features.
 
 = HOWTOs about selected features =
 
