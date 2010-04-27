@@ -10,6 +10,7 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages. You can also download the [http://go2.wordpress.com/?id=725X1342&site=masonoise.wordpress.com&url=http%3A%2F%2Fmasonoise.files.wordpress.com%2F2010%2F03%2Fredis-cheatsheet-v1.pdf Redis Commands Cheat-Sheet] provided by Mason Jones (btw some command may be missing, the primary source is the wiki).
  * [TwitterAlikeExample This is a tuturial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
  * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] explains how Redis data types work and the basic patterns of working with Redis.
+ * [http://simonwillison.net/static/2010/redis-tutorial/ the Simon Willison Redis Tutorial] is a *must read*, very good documentation where you will find a lot of real world ideas and use cases.
  * [Features The features page] (currently in draft) is a good start to understand the strength and limitations of Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
