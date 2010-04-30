@@ -39,7 +39,7 @@ Many other configuration options are able to change the behavior of VM. The rule
 
 ==The vm-max-memory setting==
 
-The *vm-max-memory* setting tells Redis VM subsystem how much memory Redis is free to use before starting swapping values on disk.
+The *vm-max-memory* setting specifies how much memory Redis is free to use before starting swapping values on disk.
 
 Basically if this memory limit is still not reached, no object will be swapped, Redis will work all in memory as usually. Once this limit is hit, enough objects are swapped out in order to return just under the limit.
 
