@@ -113,3 +113,34 @@ OK
 1: the timeout was set.
 0: the timeout was not set since the key already has an associated timeout, or the key does not exist.
 }}}
+
+== FAQ: please can you explain to me better why Redis deletes keys with an EXPIRE set on write operations? ==
+Ok let's start with the problem:
+{{{
+redis> set a 100
+OK
+redis> expire a 360
+(integer) 1
+redis> incr a
+(integer) 1
+}}}
+I set a key to the value of 100, then set an expire of 360 seconds, and then incremented the key (before the 360 timeout expired of course). The obvious result would be: 101, instead the key is set to the value of 1. Why?
+There is a very important reason involving the Append Only File and Replication. Let's rework a bit hour example adding the notion of time to the mix:
+{{{
+SET a 100
+EXPIRE a 5
+... wait 10 seconds ...
+INCR a
+}}}
+Imagine a Redis version that does not implement the "Delete keys with an expire set on write operation" semantic.
+Running the above example with the 10 seconds pause will lead to 'a' being set to the value of 1, as it no longer exists when INCR is called 10 seconds later.
+
+Instead if we drop the 10 seconds pause, the result is that 'a' is set to 101.
+
+And in the practice timing changes! For instance the client may wait 10 seconds before INCR, but the sequence written in the Append Only File (and later replayed-back as fast as possible when Redis is restarted) will not have the pause. Even if we add a timestamp in the AOF, when the time difference is smaller than our timer resolution, we have a race condition.
+
+The same happens with master-slave replication. Again, consider the example above: the client will use the same sequence of commands without the 10 seconds pause, but the replication link will slow down for a few seconds due to a network problem. Result? The master will contain 'a' set to 101, the slave 'a' set to 1.
+
+The only way to avoid this but at the same time have reliable non time dependent timeouts on keys is to destroy volatile keys when a write operation is attempted against it.
+
+After all Redis is one of the rare fully persistent databases that will give you EXPIRE. This comes to a cost :)
