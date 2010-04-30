@@ -128,7 +128,7 @@ $ ./redis-stat vmstat
 
 The above output is about a redis-server with VM enable, around 1 million of keys inside, and a lot of simulated load using the redis-load utility.
 
-As you can see from the output a number of load-in and swap-out operations are happening every second. Note that the first time is the actual value since the server was started, while the next lines are differences compared to 1 second ago.
+As you can see from the output a number of load-in and swap-out operations are happening every second. Note that the first line reports the actual values since the server was started, while the next lines are differences compared to the previous reading.
 
 If you assigned enough memory to hold your working set of data, probably you should see a lot less dramatic swapping happening, so redis-stat can be a really valuable tool in order to understand if you need to shop for RAM ;)
 
