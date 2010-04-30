@@ -38,6 +38,8 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [IncrCommand INCRBY] _key_ _integer_` increment the integer value of key by integer`
  * [IncrCommand DECR] _key_ `decrement the integer value of key`
  * [IncrCommand DECRBY] _key_ _integer_ `decrement the integer value of key by integer`
+ * [AppendCommand APPEND] _key_ _value_ `append the specified string to the string stored at key`
+ * [SubstrCommand SUBSTR] _key_ _start_ _end_ `return a substring out of a larger string`
 
 == Commands operating on lists ==
 

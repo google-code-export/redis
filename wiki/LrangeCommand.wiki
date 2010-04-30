@@ -1,7 +1,7 @@
 ﻿#sidebar ListCommandsSidebar
 
 = LRANGE _key_ _start_ _end_ =
-_Time complexity: O(n) (with n being the length of the range)_
+_Time complexity: O(start+n) (with n being the length of the range and start being the start offset)_
 
 Return the specified elements of the list stored at the specified
 key. Start and end are zero-based indexes. 0 is the first element
