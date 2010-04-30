@@ -23,6 +23,8 @@ An important concept to take in mind is that Redis *is not able to swap the keys
 
 Instead if a good amount of memory is used because values are pretty large (for example large strings, lists, sets or hashes with many elements), then VM can be a good idea.
 
+Sometimes you can turn your "many keys with small values" problem into a "less keys but with very large values" one just using Hashes in order to group related data into fields of a single key. For instance instead of having a key for every attribute of your object you have a single key per object where Hash fields represent the different attributes.
+
 =VM Configuration=
 
 Configuring the VM is not hard but requires some care to set the best parameters accordingly to the requirements.
