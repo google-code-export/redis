@@ -1,4 +1,4 @@
-﻿#sidebar RedisInternals
+﻿#sidebar RedisGuides
 
 =Virtual Memory User Guide=
 
@@ -16,8 +16,8 @@ When this values are requested, as a result of a command issued by a client, the
 ==When using Virtual Memory is a good idea==
 
 Before using VM you should ask yourself if you really need it. Redis is a disk backed, in memory database. The right way to use Redis is almost always to have enough RAM to fit all the data in memory. Still there are a scenarios where to hold all the data in memory is not possible:
-* Data access is very biased. Only a small percentage of keys (for instance related to active users in your web site) gets the vast majority of accesses. At the same time there is too much data per key to take everything in memory.
-* There is simply not enough memory available to hold all the data in memory, regardless of the data access pattern, and values are large. In this configuration Redis can be used as an on-disk DB where keys are in memory, so the key lookup is fast, but the access to the actual values require an access the (slower) disk.
+ * Data access is very biased. Only a small percentage of keys (for instance related to active users in your web site) gets the vast majority of accesses. At the same time there is too much data per key to take everything in memory.
+ * There is simply not enough memory available to hold all the data in memory, regardless of the data access pattern, and values are large. In this configuration Redis can be used as an on-disk DB where keys are in memory, so the key lookup is fast, but the access to the actual values require an access the (slower) disk.
 
 An important concept to take in mind is that Redis *is not able to swap the keys*, so if your memory problems are related to the fact you have too much keys with very small values, VM is not the solution.
 
@@ -57,8 +57,8 @@ The swap file is divided into "pages". A value can be swapped into one or multip
 
 There is no direct way to tell Redis how much swap it should used in bytes. Instead two different values are configured, that multiplied together will produce the total number of bytes used. This two values are the number of pages inside the swap file, and the page size. It is possible to configure this two parameters in redis.conf.
 
-* The *vm-pages* configuration directive is used to set the total number of pages in the swap file.
-* the *vm-page-size* configuration directive is used in order to set the page size in bytes.
+ * The *vm-pages* configuration directive is used to set the total number of pages in the swap file.
+ * the *vm-page-size* configuration directive is used in order to set the page size in bytes.
 
 So for instance if the page size is set to the value of 32 bytes, and the total number of pages is set to 10000000 (10 millions), the swap file can hold a total of 320 MB of data.
 

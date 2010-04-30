@@ -1,4 +1,5 @@
-﻿= Append Only File HOWTO =
+﻿#sidebar RedisGuides
+= Append Only File HOWTO =
 
 == General Information ==
 

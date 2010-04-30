@@ -1,3 +1,4 @@
+﻿#sidebar RedisGuides
 = Redis Replication Howto =
 
 == General Information ==

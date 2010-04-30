@@ -1,4 +1,4 @@
-= Redis Documentation =
+﻿= Redis Documentation =
 
 [http://pyha.ru/wiki/index.php?title=Redis:index Russian Translation]
 
@@ -20,6 +20,7 @@ Hello! The followings are pointers to different parts of the Redis Documentation
 
  * [ReplicationHowto The Redis Replication HOWTO] is what you need to read in order to understand how Redis master `<->` slave replication works.
  * [AppendOnlyFileHowto The Append Only File HOWTO] explains how the alternative Redis durability mode works. AOF is an alternative to snapshotting on disk from time to time (the default).
+ * [VirtualMemoryUserGuide Virutal Memory User Guide]. A simple to understand guide about using and configuring the Redis Virtual Memory.
 
 = Hacking =
  * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
