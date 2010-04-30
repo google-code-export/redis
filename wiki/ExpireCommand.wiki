@@ -114,7 +114,7 @@ OK
 0: the timeout was not set since the key already has an associated timeout, or the key does not exist.
 }}}
 
-== FAQ: please can you explain to me better why Redis deletes keys with an EXPIRE set on write operations? ==
+== FAQ: Can you explain better why Redis deletes keys with an EXPIRE on write operations? ==
 Ok let's start with the problem:
 {{{
 redis> set a 100
