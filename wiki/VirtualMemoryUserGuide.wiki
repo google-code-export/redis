@@ -57,7 +57,7 @@ Because the Redis swap file is used mostly in a random access fashion, to put th
 
 The swap file is divided into "pages". A value can be swapped into one or multiple pages, but a single page can't hold more than a value.
 
-There is no direct way to tell Redis how much swap it should used in bytes. Instead two different values are configured, that multiplied together will produce the total number of bytes used. This two values are the number of pages inside the swap file, and the page size. It is possible to configure this two parameters in redis.conf.
+There is no direct way to tell Redis how much bytes of swap file it should be using. Instead two different values are configured, that multiplied together will produce the total number of bytes used. This two values are the number of pages inside the swap file, and the page size. It is possible to configure this two parameters in redis.conf.
 
  * The *vm-pages* configuration directive is used to set the total number of pages in the swap file.
  * the *vm-page-size* configuration directive is used in order to set the page size in bytes.
