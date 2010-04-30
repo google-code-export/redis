@@ -99,7 +99,7 @@ Sparse files are files where a lot of the content happen to be empty. Advanced f
 
 The swap file is obviously pretty sparse, especially if the server is running since little time or it is much bigger compared to the amount of data swapped out. A file system not supporting sparse files can at some point block the Redis process while creating a very big file at once.
 
-For a list of file systems supporting spare file [http://en.wikipedia.org/wiki/Comparison_of_file_systems check this Wikipedia page comparing different files systems].
+For a list of file systems supporting spare files [http://en.wikipedia.org/wiki/Comparison_of_file_systems check this Wikipedia page comparing different files systems].
 
 ==Monitoring the VM==
 
