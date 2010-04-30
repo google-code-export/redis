@@ -102,6 +102,13 @@ SORT mylist BY weight_* STORE resultkey
 	at the same time, so some form of locking should be implemented
 	(for instance using [SetnxCommand SETNX]).
 
+== SORT and Hashes: BY and GET by hash field ==
+  It's possible to use BY and GET options against Hash fields using the following syntax:
+{{{
+SORT mylist BY weight_*->fieldname
+SORT mylist GET object_*->fieldname
+}}}
+  The two chars string -> is used in order to signal the name of the Hash field. The key is substituted as documented above with sort BY and GET against normal keys, and the Hash stored at the resulting key is accessed in order to retrieve the specified field.
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically a list of sorted elements.
