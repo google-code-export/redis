@@ -79,8 +79,8 @@ vm-max-threads 4
 This is the maximum number of threads used in order to perform I/O from/to the swap file. A good value is just to match the number of cores in your system.
 
 However the special value of "0" will enable blocking VM. When VM is configured to be blocking it performs the I/O in a synchronous blocking way. This is what you can expect from blocking VM:
-* Clients accessing swapped out keys will block other clients while reading from disk, so the latency experimented by clients can be larger, especially if the disk is slow or busy and/or if there are big values swapped on disk.
-* The blocking VM performances are *overall* better, as there is no time lost in synchronization, spawning of threads, resuming blocked clients waiting for values.
+ * Clients accessing swapped out keys will block other clients while reading from disk, so the latency experimented by clients can be larger, especially if the disk is slow or busy and/or if there are big values swapped on disk.
+ * The blocking VM performances are *overall* better, as there is no time lost in synchronization, spawning of threads, resuming blocked clients waiting for values.
 So if you are willing to accept an higher latency from time to time, blocking VM can be a good pick, especially if swapping happens rarely as your working set happen to fit in your memory well.
 
 If instead you have a lot of swap in and swap out operations and you have many cores that you want to exploit, and in general when you don't want that clients dealing with swapped values will block other clients for a few milliseconds (or more if the swapped value is very big), then it's better to use threaded VM.
