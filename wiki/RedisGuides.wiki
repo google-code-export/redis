@@ -1,6 +1,6 @@
 ﻿= Redis Guides and Howtos=
-* [QuickStart Redis Quick Start]
-* [VirtualMemoryUserGuide Virutal Memory User Guide]
-* [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types]
-* [ReplicationHowto The Redis Replication HOWTO]
-* [AppendOnlyFileHowto The Append Only File HOWTO]
+ * [QuickStart Redis Quick Start]
+ * [VirtualMemoryUserGuide Virutal Memory User Guide]
+ * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types]
+ * [ReplicationHowto The Redis Replication HOWTO]
+ * [AppendOnlyFileHowto The Append Only File HOWTO]
