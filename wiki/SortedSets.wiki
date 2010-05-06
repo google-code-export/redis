@@ -4,7 +4,7 @@
 
 Redis Sorted Sets are, similarly to [Sets], collections of [Strings Redis Strings]. The difference is that every member of a Sorted Set hash an *associated score* that is used in order to take this member in order.
 
-The [ZADD ZaddCommand] command is used to add a new member to a Sorted Set, specifying the score of the element. Calling ZADD against a member already present in the sorted set but using a different score will update the score for the element, moving it to the right position in order to preserve ordering.
+The [ZaddCommand ZADD] command is used to add a new member to a Sorted Set, specifying the score of the element. Calling ZADD against a member already present in the sorted set but using a different score will update the score for the element, moving it to the right position in order to preserve ordering.
 
 It's possible to get ranges of elements from Sorted Sets in a very similar way to what happens with [Lists] and the [LrangeCommnad LRANGE] command  using the Sorted Sets [ZrangeCommand ZRANGE] command.
 
