@@ -63,6 +63,16 @@ SORT mylist BY weight_*
     needed to get the actual objects sorted (object_1, ..., object_4 in the
     example). We can do it with the following command:
 
+== Not Sorting at all ==
+
+{{{
+SORT mylist BY nosort
+}}}
+
+    also the *BY* option can take a "nosort" specifier. This is useful if you 
+    want to retrieve a external key (using GET, read below) but you don't 
+    want the sorting overhead.
+
 == Retrieving external keys  ==
 
 {{{
