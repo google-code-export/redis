@@ -1,4 +1,4 @@
-#sidebar RedisInternals
+﻿#sidebar RedisInternals
 
 = Redis Event Library =
 
@@ -46,7 +46,7 @@ Next is 'ae.c:aeCreateTimeEvent`. But before that `initServer` call `anet.c:anet
   * clientData: Mostly NULL.
   * finalizerProc: Pointer to the function that has to be called before the timed event is removed from the list of timed events.
 
-`initServer calls `aeCreateTimeEvent` to add a timed event to `timeEventHead` field of `server.el`. `timeEventHead` is a pointer to a list of such timed events. The call to `aeCreateTimeEvent` from `redis.c:initServer` function is given below:
+`initServer` calls `aeCreateTimeEvent` to add a timed event to `timeEventHead` field of `server.el`. `timeEventHead` is a pointer to a list of such timed events. The call to `aeCreateTimeEvent` from `redis.c:initServer` function is given below:
 
 {{{
 aeCreateTimeEvent(server.el /*eventLoop*/, 1 /*milliseconds*/, serverCron /*proc*/, NULL /*clientData*/, NULL /*finalizerProc*/);

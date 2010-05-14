@@ -88,7 +88,7 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [ZscoreCommand ZSCORE] _key_ _element_ `Return the score associated with the specified element of the sorted set at key`
  * [ZremrangebyrankCommand ZREMRANGEBYRANK] _key_ _min_ _max_ `Remove all the elements with rank >= min and rank <= max from the sorted set`
  * [ZremrangebyscoreCommand ZREMRANGEBYSCORE] _key_ _min_ _max_ `Remove all the elements with score >= min and score <= max from the sorted set`
- * [ZunionCommand ZUNION / ZINTER] _dstkey_ _N_ _key1_ ... _keyN_ WEIGHTS _w1_ ... _wN_ AGGREGATE SUM|MIN|MAX `Perform a union or intersection over a number of sorted sets with optional weight and aggregate`
+ * [ZunionstoreCommand ZUNIONSTORE / ZINTERSTORE] _dstkey_ _N_ _key1_ ... _keyN_ WEIGHTS _w1_ ... _wN_ AGGREGATE SUM|MIN|MAX `Perform a union or intersection over a number of sorted sets with optional weight and aggregate`
 
 == Commands operating on hashes ==
 
