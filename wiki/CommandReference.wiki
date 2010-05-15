@@ -128,3 +128,4 @@ Every command name links to a specific wiki page describing the behavior of the 
  * [InfoCommand INFO] `Provide information and statistics about the server`
  * [MonitorCommand MONITOR] `Dump all the received requests in real time`
  * [SlaveofCommand SLAVEOF] `Change the replication settings`
+ * [ConfigCommand CONFIG] `Configure a Redis server at runtime`
