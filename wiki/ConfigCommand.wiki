@@ -70,9 +70,8 @@ OK
  The value of the configuration parameter is the same as the one of the
  same parameter in the Redis configuration file, with the following exceptions:
 
-* The `save` paramter is a list of space-separated integers. Every pair of integers specify the time and number of changes limit to trigger a save. For instance the command `CONFIG SET save "3600 10 60 10000"` will configure the server to issue a background saving of the RDB file every 3600 seconds if there are at least 10 changes in the dataset, and every 60 seconds if there are at least 10000 changes. To completely disable automatic snapshots just set the parameter as an empty string.
-
-* All the integer parameters representing memory are returned and accepted only using bytes as unit.
+ * The `save` paramter is a list of space-separated integers. Every pair of integers specify the time and number of changes limit to trigger a save. For instance the command `CONFIG SET save "3600 10 60 10000"` will configure the server to issue a background saving of the RDB file every 3600 seconds if there are at least 10 changes in the dataset, and every 60 seconds if there are at least 10000 changes. To completely disable automatic snapshots just set the parameter as an empty string.
+ * All the integer parameters representing memory are returned and accepted only using bytes as unit.
 
 ==See Also==
 
