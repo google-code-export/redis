@@ -15,7 +15,6 @@
  only accepts a single argument, that is glob style pattern. All the
  configuration parameters matching this parameter are reported as a
  list of key-value pairs. Example:
-
 {{{
 $ redis-cli config get '*'
 1. "dbfilename"
