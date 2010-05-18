@@ -12,5 +12,6 @@
  * [ZremrangebyscoreCommand ZREMRANGEBYSCORE] 
  * [ZcardCommand ZCARD]
  * [ZscoreCommand ZSCORE]
- * [ZunionstoreCommand ZUNION / ZINTER]
+ * [ZunionstoreCommand ZUNIONSTORE]
+ * [ZunionstoreCommand ZINTERSTORE]
  * [SortCommand SORT]
