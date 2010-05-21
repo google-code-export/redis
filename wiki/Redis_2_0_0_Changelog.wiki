@@ -1,6 +1,7 @@
 =What's new in Redis 2.0.0=
 
- * Redis transactions: MULTI/EXEC (antirez) * Blocking POP: BLPOP and BRPOP (antirez)
+ * Redis transactions: MULTI/EXEC (antirez)
+ * Blocking POP: BLPOP and BRPOP (antirez)
  * Virtual Memory (antirez with contributions from Pieter Noordhuis)
  * APPEND command (antirez)
  * WITHSCORES in ZRANGEBYSCORE thanks to Sam Hendley (antirez)
