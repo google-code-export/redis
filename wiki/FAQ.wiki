@@ -133,6 +133,8 @@ Redis background saving schema relies on the copy-on-write semantic of fork in m
 
 Setting `overcommit_memory` to 1 says Linux to relax and perform the fork in a more optimistic allocation fashion, and this is indeed what you want for Redis.
 
+A good source to understand how Linux Virtual Memory work and other alternatives for `overcommit_memory` and `overcommit_ratio` is this classic from Red Hat Magaize, "Understanding Virtual Memory": http://www.redhat.com/magazine/001nov04/features/vm/ 
+
 = Are Redis on disk snapshots atomic? =
 
 Yes, redis background saving process is always fork(2)ed when the server is outside of the execution of a command, so every command reported to be atomic in RAM is also atomic from the point of view of the disk snapshot.
