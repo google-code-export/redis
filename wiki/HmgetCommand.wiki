@@ -3,7 +3,7 @@
 = HMGET _key_ _field1_ ... _fieldN_ (Redis >= 1.3.10) =
 _Time complexity: O(N) (with N being the number of fields)_
 
- Get the respective fields returning the associated values.
+ Retrieve the values associated to the specified _fields_.
 
  If some of the specified _fields_ do not exist, nil values are returned.
  Non existing keys are considered like empty hashes.
