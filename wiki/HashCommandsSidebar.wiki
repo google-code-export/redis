@@ -4,6 +4,7 @@
  * [HgetCommand HGET]
  * [HsetnxCommand HSETNX]
  * [HmsetCommand HMSET]
+ * [HmgetCommand HMGET]
  * [HincrbyCommand HINCRBY]
  * [HexistsCommand HEXISTS]
  * [HdelCommand HDEL]
