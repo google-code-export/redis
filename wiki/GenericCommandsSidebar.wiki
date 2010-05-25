@@ -14,4 +14,4 @@
  * [MoveCommand MOVE]
  * [FlushdbCommand FLUSHDB]
  * [FlushallCommand FLUSHALL]
- * [MultiExecCommand MULTI/EXEC/DISCARD/WATCH/UNWATCH]
+ * [MultiExecCommand Redis Transactions]
