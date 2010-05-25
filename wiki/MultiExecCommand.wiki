@@ -111,7 +111,7 @@ Redis Transactions.
 
 WATCHed keys are monitored in order to detect changes against this keys.
 If at least a watched key will be modified before the EXEC call, the
-while transaction will abort, and EXEC will return a nil object
+whole transaction will abort, and EXEC will return a nil object
 (A Null Multi Bulk reply) to notify that the transaction failed.
 
 For example imagine we have the need to atomically increment the value
