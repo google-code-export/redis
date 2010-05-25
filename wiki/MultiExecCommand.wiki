@@ -123,7 +123,7 @@ val = GET mykey
 val = val + 1
 SET mykey $val
 }}}
-This will work only in a reliable way only if we have a single client.
+This will work reliably only if we have a single client performing the operation in a given time.
 If multiple clients will try to increment the key about at the same time
 there will be a race condition. For instance client A and B will read the
 old value, for instance, 10. The value will be incremented to 11 by both
