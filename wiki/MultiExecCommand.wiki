@@ -9,7 +9,7 @@
 = EXEC or DISCARD =
 
  MULTI, EXEC, DISCARD and WATCH commands are the fundation of Redis Transactions.
- A Redis Transaction allows to execute a group of Redis commands in a single
+ A Redis Transaction allows the execution of a group of Redis commands in a single
  step, with two important guarantees:
 
  * All the commands in a transaction are serialized and executed sequentially. It can never happen that a request issued by another client is served *in the middle* of the execution of a Redis transaction. This guarantees that the commands are executed as a single atomic operation.
