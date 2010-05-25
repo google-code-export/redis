@@ -1,12 +1,14 @@
 ﻿#sidebar GenericCommandsSidebar
 
+= WATCH key1 key2 ... keyN (Redis >= 2.1.0)=
+= UNWTACH =
 = MULTI =
 = COMMAND_1 ... =
 = COMMAND_2 ... =
 = COMMAND_N ... =
 = EXEC or DISCARD =
 
- MULTI, EXEC and DISCARD commands are the fundation of Redis Transactions.
+ MULTI, EXEC, DISCARD and WATCH commands are the fundation of Redis Transactions.
  A Redis Transaction allows to execute a group of Redis commands in a single
  step, with two important guarantees:
 
@@ -100,6 +102,89 @@ INCR a b c
 => "1"
 }}}
 
+== Check and Set (CAS) transactions using WATCH ==
+
+ WATCH is used in order to provide a CAS (Check and Set) behavior to
+ Redis Transactions.
+
+ WATCHed keys are monitored in order to detect changes against this keys.
+ If at least a watched key will be modified before the EXEC call, the
+ while transaction will abort, and EXEC will return a nil object
+ (A Null Multi Bulk reply) to notify that the transaction failed.
+
+ For example imagine we have the need to atomically increment the value
+ of a key by 1 (I know we have INCR, let's suppose we don't have it).
+
+ The first try may be the following:
+{{{
+val = GET mykey
+val = val + 1
+SET mykey $val
+}}}
+ This will work only in a reliable way only if we have a single client.
+ If multiple clients will try to increment the key about at the same time
+ there will be a race condition. For instance client A and B will read the
+ old value, for instance, 10. The value will be incremented to 11 by both
+ the clients, and finally SET as the value of the key. So the final value
+ will be "11" instead of "12".
+
+ Thanks to WATCH we area able to model the problem very well:
+{{{
+WATCH mykey
+val = GET mykey
+val = val + 1
+MULTI
+SET mykey $val
+EXEC
+}}}
+ Using the above code, if there are race conditions and another client
+ modified the result of _val_ in the time between our call to WATCH and
+ our call to EXEC, the transaction will fail.
+
+ We'll have just to re-iterate the operation hoping this time we'll not get
+ a new race. This form of locking is called *optimistic locking* and is
+ a very powerful form of locking as in many problems there are multiple
+ clients accessing a much bigger number of keys, so it's very unlikely that
+ there are collisions: usually operations don't need to be performed
+ multiple times.
+
+== WATCH explained ==
+
+ So what is WATCH really about? It is a command that will make the EXEC
+ conditional: we are asking Redis to perform the transaction only if all
+ the values WATCHed are still the same. Otherwise the transaction is not
+ entered at all.
+
+ WATCH can be called multiple times. Simply all the WATCH calls will
+ have the effects to watch for changes starting from the call, up to the
+ moment EXEC is called.
+
+ When EXEC is called, either if it will fail or succeed, all keys are
+ UNWATCHed. Also when a client connection is closed, everything gets
+ UNWATCHed.
+
+ It is also possible to use the UNWATCH command (without arguments) in order
+ to flush all the watched variables. Some times this is useful as we
+ optimistically lock a few keys, as maybe we need to perform a transaction
+ to alter those keys, but after reading the current content of the keys
+ we don't want to proceed. When this happens we just call UNWATCH so that
+ the connection can already be used freely for new transactions.
+
+== WATCH used to implement ZPOP ==
+
+ A good example to illustrate how WATCH can be used to create new atomic
+ operations otherwise not supported by Redis is to implement ZPOP, that is
+ a command that pops the element with the lower score from a sorted set
+ in an atomic way. This is the simplest implementation:
+{{{
+WATCH zset
+ele = ZRANGE zset 0 0
+MULTI
+ZREM zset ele
+EXEC
+}}}
+If EXEC fails (returns a nil value) we just re-iterate the operation.
+
 == Return value ==
 
 [ReplyTypes Multi bulk reply], specifically:
@@ -107,3 +192,5 @@ INCR a b c
 {{{
 The result of a MULTI/EXEC command is a multi bulk reply where every element is the return value of every command in the atomic transaction.
 }}}
+
+If a MULTI/EXEC transaction is aborted because of WATCH detected modified keys, a [ReplyTypes Null Multi Bulk reply] is returned.

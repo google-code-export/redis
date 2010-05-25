@@ -110,7 +110,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Transactions ==
 
- * [MultiExecCommand MULTI/EXEC/DISCARD] `Redis atomic transactions`
+ * [MultiExecCommand MULTI/EXEC/DISCARD/WATCH/UNWATCH] `Redis atomic transactions`
 
 == Publish/Subscribe  ==
 
