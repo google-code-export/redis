@@ -166,8 +166,8 @@ UNWATCHed. Also when a client connection is closed, everything gets
 UNWATCHed.
 
 It is also possible to use the UNWATCH command (without arguments) in order
-to flush all the watched variables. Some times this is useful as we
-optimistically lock a few keys, as maybe we need to perform a transaction
+to flush all the watched keys. Sometimes this is useful as we
+optimistically lock a few keys, since possibly we need to perform a transaction
 to alter those keys, but after reading the current content of the keys
 we don't want to proceed. When this happens we just call UNWATCH so that
 the connection can already be used freely for new transactions.
