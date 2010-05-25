@@ -1,7 +1,7 @@
 ﻿#sidebar GenericCommandsSidebar
 
 = WATCH key1 key2 ... keyN (Redis >= 2.1.0)=
-= UNWTACH =
+= UNWATCH =
 = MULTI =
 = COMMAND_1 ... =
 = COMMAND_2 ... =
