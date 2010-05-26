@@ -4,7 +4,7 @@
 _Time complexity: O(1)_
 
  Remove the specified keys. If a given key does not exist
- no operation is performed for this key. The commnad returns the number of
+ no operation is performed for this key. The command returns the number of
  keys removed.
 
 == Return value ==
