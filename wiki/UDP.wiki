@@ -95,7 +95,7 @@ A reply packet contains the reply of the processed command in the exact same for
 There are several reasons why a binary format is not used in order to encode replies:
  * The reply format used in the TCP protocol is well understood and trivial to implement (Redis replies can be nested arrays of elements, so encoding and decoding this elements in binary format can be error prone, complex and possibly not much faster).
  * Most of the overhead using the TCP protocol is not due to parsing the reply itself. The TCP reply format uses prefixed length in all the places, so there is no need to perform slow byte per byte processing or alike, like it happens in json or other not easy to parse formats.
- * One of the most common replies, the "Bulk Reply", can be parsed very efficiently when received inside an UDP packet, because we now the total length of the reply beforehand.
+ * One of the most common replies, the "Bulk Reply", can be parsed very efficiently when received inside an UDP packet, because we know the total length of the reply beforehand.
 
 The maximum length of a Reply Packet is 65507 bytes (including the header), while the maximum length of a Reply Packet payload (the actual reply) is 65499 bytes (that is, the maximum UDP packet size minus the reply packet 8 bytes header).
 
