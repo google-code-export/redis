@@ -62,6 +62,7 @@ The following is a description of every field:
  * *Flags* - optional flags used in order to signal some special information about this request to the Redis server. Will be discussed later.
  * *Payload length* - the total length in bytes, as a 16 bit unsigned integer in network byte order, of the "Request Data" section.
  * *Number of arguments* - the number of arguments contained in the "Request Data" section, as a 16 bit unsigned integer in network byte order.
+ * *Database ID* - the ID of the Redis database the command will be executed against.
  * *Request Data* - the request itself.
 
 The "Request Data" field is the request command itself, composed of the number of arguments specified in the "Number of arguments" field above. Every argument in the "Request Data" section is encoded as follows:
