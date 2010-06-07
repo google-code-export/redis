@@ -78,7 +78,7 @@ The "Request Data" field is the request command itself, composed of the number o
    |                                                               |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 }}}
-Multiple arguments are simply glued together one after the other.
+Multiple arguments are simply glued together one after the other. The Argument Length field is a 16 bit usigned integer in network by order. The Argument Payload is the argument itself, and is simply a binary string of the specified length.
 
 The following is a list of the supported request flags:
  * *NOREPLY* - If bit 7 (0x01) of the flags byte is set, the Redis server will process the request but will not generate a reply packet. This is useful in order to lower the network bandwidth and CPU usage when the client is not interested in the reply.
