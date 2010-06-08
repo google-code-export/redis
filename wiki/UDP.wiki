@@ -62,7 +62,7 @@ The following is a description of every field:
  * *Flags* - optional flags used in order to signal some special information about this request to the Redis server. Will be discussed later.
  * *Payload length* - the total length in bytes, as a 16 bit unsigned integer in network byte order, of the "Request Data" section.
  * *Number of arguments* - the number of arguments contained in the "Request Data" section, as a 16 bit unsigned integer in network byte order.
- * *Database ID* - the ID of the Redis database the command will be executed against.
+ * *Database ID* - the ID of the Redis database the command will be executed against, as unsigned 16 bit integer in network byte order.
  * *Request Data* - the request itself.
 
 The "Request Data" field is the request command itself, composed of the number of arguments specified in the "Number of arguments" field above. Every argument in the "Request Data" section is encoded as follows:
@@ -196,4 +196,47 @@ Note: Acknowledges work even if multiple clients with different IP addresses or 
 
 For this reason it is absolutely mandatory that an Ack request packet is sent using the same IP address and port as the original request packet.
 == Fast parsing of multi bulk replies ==
-... Work in progress ...
+Using the UDP protocol, complete replies are received with a single system call.
+There is also information about the length of the reply in the reply packet header. Also the first byte of a Redis reply is enough to understand the type of the reply (see the [ProtocolSpecification Protocol Specification] for more information). Thanks to this facts it is possible for clients to process common replies delivered via the UDP protocol in a very fast way.
+
+For instance a bulk reply will be received in one time as a binary string similar to the following:
+{{{
+"$5\r\nHello\r\n"
+}}}
+To obtain the bulk reply payload the client should just seek the first "\n" character in the string, and extracting the string starting from the next character up to two character less than the end of the string.
+
+This is the above concept translated into Ruby code:
+{{{
+?> reply = "$4\r\nHello\r\n"
+=> "$4\r\nHello\r\n"
+?> reply[(reply.index("\n")+1)..-3]
+=> "Hello"
+}}}
+
+The same technique can be used in order to parse integer replies:
+{{{
+>> reply = ":1000\r\n"
+=> ":1000\r\n"
+>> reply[1..-3]
+=> "1000"
+>> reply[1..-3].to_i
+=> 1000
+}}}
+
+The only reply type that needs proper parsing is the multi bulk reply. All the other replies can be processed just looking at the first byte and calling a straightforward function.
+== Example Packets ==
+An example request packet. The encoded command is `GET mykey`.
+The total packet length is 24 bytes. 12 bytes header, 12 bytes payload.
+{{{
+    0                   1                   2                   3   
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                   Request ID = 00 00 00 01                    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Opcode = 01  |  Flags = 00   |     Payload length = 00 0C    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Number of arguments = 00 02  |     Database ID = 00 00       |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   | Request Data = 00 03 G E T 00 05 m y k e y                    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+}}}
