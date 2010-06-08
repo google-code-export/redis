@@ -207,8 +207,8 @@ To obtain the bulk reply payload the client should just seek the first "\n" char
 
 This is the above concept translated into Ruby code:
 {{{
-?> reply = "$4\r\nHello\r\n"
-=> "$4\r\nHello\r\n"
+?> reply = "$5\r\nHello\r\n"
+=> "$5\r\nHello\r\n"
 ?> reply[(reply.index("\n")+1)..-3]
 => "Hello"
 }}}
