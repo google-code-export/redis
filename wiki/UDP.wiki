@@ -1,4 +1,4 @@
-﻿Revision 3, Salvatore Sanfilippo, 10 June 2010.
+﻿Revision 3.1, Salvatore Sanfilippo, 10 June 2010.
 
 =UDP Protocol=
 
@@ -238,7 +238,7 @@ When this happens Redis is not able to transfer a reply, so the reply is discard
 
 Another kind of congestion is due to the input buffer of the UDP socket to get full. When this happens the kernel will reply to the client with a "port unreachable" ICMP packet. This may happen under high traffic where requests are as big or bigger than replies, or when the requests are slow to process server side, so the server is not able to process the requests fast enough.
 
-As far as the author knows, there is no way to detect this condition with POSIX calls, so the client should handle this condition checking for ICMP errors creating a connected UDP socket and handling error reporting from the socket.
+As far as the author knows, there is no way to detect this condition with POSIX calls, so the client should handle this condition checking for ICMP errors creating a connected UDP socket and handling error reporting from the socket. This problem will be possibly addressed in revision 4 of the document after better investigating ways to detect if the input buffer is full.
 
 == Unreliable operations ==
 
