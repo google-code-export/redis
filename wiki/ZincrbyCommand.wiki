@@ -18,8 +18,8 @@ _Time complexity O(log(N)) with N being the number of elements in the sorted set
 
 == Return value ==
 
-[ReplyTypes Integer reply], specifically:
+[ReplyTypes Bulk reply]
 
 {{{
-The score of the member after the increment is performed.
+The new score (a double precision floating point number) represented as string.
 }}}
