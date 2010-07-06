@@ -18,12 +18,7 @@ EXEC
 
 = SET with expire =
 
-{{{
-MULTI
-SET foo bar
-EXPIRE foo 1
-EXEC
-}}}
+See [SetexCommand SETEX].
 
 = ZADDNX =
 
