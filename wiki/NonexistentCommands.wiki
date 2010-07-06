@@ -1,6 +1,6 @@
 #summary A list of commands that don't exist in Redis, but can be accomplished in a different way.
 
-This is a list of commands that don't exist in Redis, but can be accomplished in a different way, usually by means of `WATCH/MULTI/EXEC`.
+This is a list of commands that don't exist in Redis, but can be accomplished in a different way, usually by means of [MultiExecCommand WATCH/MULTI/EXEC].
 
 For better performance, you can pipeline multiple commands.
 
@@ -13,7 +13,9 @@ EXPIRE foo 1
 EXEC
 }}}
 
-= HGETSET - GETSET for Hashes =
+= HGETSET =
+
+[GetsetCommand GETSET] for Hashes.
 
 {{{
 WATCH foo
@@ -22,3 +24,18 @@ MULTI
 HSET foo field new_value
 EXEC
 }}}
+
+= ZADDNX =
+
+Add an element to a sorted set, only if the element doesn't already exist (by default, [ZaddCommand ZADD] would update the element's score if it already exists). [http://groups.google.com/group/redis-db/browse_thread/thread/fc4c79d72e5bd346/6cdc07ecc36b81e7 See thread].
+
+{{{
+WATCH foo
+score = ZSCORE foo bar
+IF score != NIL
+  MULTI
+  ZADD foo 1 bar
+  EXEC
+ENDIF
+}}}
+
