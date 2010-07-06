@@ -4,15 +4,6 @@ This is a list of commands that don't exist in Redis, but can be accomplished in
 
 For better performance, you can pipeline multiple commands.
 
-= SET with expire =
-
-{{{
-MULTI
-SET foo bar
-EXPIRE foo 1
-EXEC
-}}}
-
 = HGETSET =
 
 [GetsetCommand GETSET] for Hashes.
@@ -22,6 +13,15 @@ WATCH foo
 old_value = HGET foo field
 MULTI
 HSET foo field new_value
+EXEC
+}}}
+
+= SET with expire =
+
+{{{
+MULTI
+SET foo bar
+EXPIRE foo 1
 EXEC
 }}}
 
@@ -38,4 +38,3 @@ IF score != NIL
   EXEC
 ENDIF
 }}}
-
