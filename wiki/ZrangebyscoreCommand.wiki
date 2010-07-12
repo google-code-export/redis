@@ -35,6 +35,7 @@ Will return all the values with score *> 5 and < 10* (5 and 10 excluded).
 == Return value ==
 
 ZRANGEBYSCORE returns a [ReplyTypes Multi bulk reply] specifically a list of elements in the specified score range.
+
 ZCOUNT returns a [ReplyTypes Integer reply] specifically the number of elements matching the specified score range.
 == Examples ==
 {{{
