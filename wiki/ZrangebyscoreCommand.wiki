@@ -2,6 +2,7 @@
 
 = ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` (Redis >= 1.1) =
 = ZRANGEBYSCORE _key_ _min_ _max_ `[`LIMIT _offset_ _count_`]` `[`WITHSCORES`]` (Redis >= 1.3.4) =
+= ZCOUNT _key_ _min_ _max_ =
 _Time complexity: O(log(N))+O(M) with N being the number of elements in the sorted set and M the number of elements returned by the command, so if M is constant (for instance you always ask for the first ten elements with LIMIT) you can consider it O(log(N))_
 
  Return the all the elements in the sorted set at key with a score between
@@ -15,6 +16,10 @@ _Time complexity: O(log(N))+O(M) with N being the number of elements in the sort
  elements in an SQL-alike way. Note that if _offset_ is large the commands
  needs to traverse the list for _offset_ elements and this adds up to the
  O(M) figure.
+
+ The *ZCOUNT* command is similar to *ZRANGEBYSCORE* but instead of returning
+ the actual elements in the specified interval, it just returns the number
+ of matching elements.
 ==Exclusive intervals and infinity==
 _min_ and _max_ can be -inf and +inf, so that you are not required to know what's the greatest or smallest element in order to take, for instance, elements "up to a given value".
 
@@ -29,7 +34,8 @@ ZRANGEBYSCORE zset (5 (10
 Will return all the values with score *> 5 and < 10* (5 and 10 excluded).
 == Return value ==
 
-[ReplyTypes Multi bulk reply], specifically a list of elements in the specified score range.
+ZRANGEBYSCORE returns a [ReplyTypes Multi bulk reply] specifically a list of elements in the specified score range.
+ZCOUNT returns a [ReplyTypes Integer reply] specifically the number of elements matching the specified score range.
 == Examples ==
 {{{
 redis> zadd zset 1 foo
@@ -45,6 +51,8 @@ redis> zrangebyscore zset -inf +inf
 2. "bar"
 3. "biz"
 4. "foz"
+redis> zcount zset 1 2
+(integer) 2
 redis> zrangebyscore zset 1 2
 1. "foo"
 2. "bar"
