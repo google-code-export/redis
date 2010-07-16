@@ -8,22 +8,23 @@ Every command name links to a specific wiki page describing the behavior of the 
 || [QuitCommand QUIT] || - || `close the connection`||
 || [AuthCommand AUTH]  || - || `simple password authentication if enabled` ||
 
-== Commands operating on all the kind of values ==
+== Commands operating on all value types ==
 
- * [ExistsCommand EXISTS] _key_ `test if a key exists`
- * [DelCommand DEL] _key_ `delete a key`
- * [TypeCommand TYPE] _key_ `return the type of the value stored at key`
- * [KeysCommand KEYS] _pattern_ `return all the keys matching a given pattern`
- * [RandomkeyCommand RANDOMKEY] `return a random key from the key space`
- * [RenameCommand RENAME] _oldname_ _newname_ `rename the old key in the new one, destroing the newname key if it already exists`
- * [RenamenxCommand RENAMENX] _oldname_ _newname_ `rename the old key in the new one, if the newname key does not already exist`
- * [DbsizeCommand DBSIZE] `return the number of keys in the current db`
- * [ExpireCommand EXPIRE] `set a time to live in seconds on a key`
- * [TtlCommand TTL] `get the time to live in seconds of a key`
- * [SelectCommand SELECT] _index_ `Select the DB having the specified index`
- * [MoveCommand MOVE] _key_ _dbindex_ `Move the key from the currently selected DB to the DB having as index dbindex`
- * [FlushdbCommand FLUSHDB] `Remove all the keys of the currently selected DB`
- * [FlushallCommand FLUSHALL] `Remove all the keys from all the databases`
+|| *Command* || *Parameters* || *Description* ||
+|| [ExistsCommand EXISTS] || _key_ || `test if a key exists` ||
+|| [DelCommand DEL] || _key_ || `delete a key` ||
+|| [TypeCommand TYPE] || _key_ || `return the type of the value stored at key` ||
+|| [KeysCommand KEYS] || _pattern_ || `return all the keys matching a given pattern` ||
+|| [RandomkeyCommand RANDOMKEY] || - || `return a random key from the key space` ||
+|| [RenameCommand RENAME] _oldname_ _newname_ || `rename the old key in the new one, destroing the newname key if it already exists` ||
+|| [RenamenxCommand RENAMENX] || _oldname_ _newname_  || `rename the old key in the new one, if the newname key does not already exist` ||
+|| [DbsizeCommand DBSIZE] || - || `return the number of keys in the current db` ||
+|| [ExpireCommand EXPIRE] || - || `set a time to live in seconds on a key` ||
+|| [TtlCommand TTL] || - || `get the time to live in seconds of a key` ||
+|| [SelectCommand SELECT] || _index_ || `Select the DB having the specified index` ||
+|| [MoveCommand MOVE] || _key_ _dbindex_ || `Move the key from the currently selected DB to the DB having as index dbindex` ||
+|| [FlushdbCommand FLUSHDB] || - || `Remove all the keys of the currently selected DB` ||
+|| [FlushallCommand FLUSHALL]|| - || `Remove all the keys from all the databases` ||
 
 == Commands operating on string values ==
 
