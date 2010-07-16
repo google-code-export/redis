@@ -5,141 +5,141 @@ Every command name links to a specific wiki page describing the behavior of the 
 == Connection handling ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [QuitCommand QUIT] || - || `close the connection`||
-|| [AuthCommand AUTH]  || - || `simple password authentication if enabled` ||
+|| [QuitCommand QUIT] || - ||  close the connection ||
+|| [AuthCommand AUTH]  || - ||  simple password authentication if enabled  ||
 
 == Commands operating on all value types ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [ExistsCommand EXISTS] || _key_ || `test if a key exists` ||
-|| [DelCommand DEL] || _key_ || `delete a key` ||
-|| [TypeCommand TYPE] || _key_ || `return the type of the value stored at key` ||
-|| [KeysCommand KEYS] || _pattern_ || `return all the keys matching a given pattern` ||
-|| [RandomkeyCommand RANDOMKEY] || - || `return a random key from the key space` ||
-|| [RenameCommand RENAME] || _oldname_ _newname_ || `rename the old key in the new one, destroing the newname key if it already exists` ||
-|| [RenamenxCommand RENAMENX] || _oldname_ _newname_  || `rename the old key in the new one, if the newname key does not already exist` ||
-|| [DbsizeCommand DBSIZE] || - || `return the number of keys in the current db` ||
-|| [ExpireCommand EXPIRE] || - || `set a time to live in seconds on a key` ||
-|| [TtlCommand TTL] || - || `get the time to live in seconds of a key` ||
-|| [SelectCommand SELECT] || _index_ || `Select the DB having the specified index` ||
-|| [MoveCommand MOVE] || _key_ _dbindex_ || `Move the key from the currently selected DB to the DB having as index dbindex` ||
-|| [FlushdbCommand FLUSHDB] || - || `Remove all the keys of the currently selected DB` ||
-|| [FlushallCommand FLUSHALL]|| - || `Remove all the keys from all the databases` ||
+|| [ExistsCommand EXISTS] || _key_ ||  test if a key exists  ||
+|| [DelCommand DEL] || _key_ ||  delete a key  ||
+|| [TypeCommand TYPE] || _key_ ||  return the type of the value stored at key  ||
+|| [KeysCommand KEYS] || _pattern_ ||  return all the keys matching a given pattern  ||
+|| [RandomkeyCommand RANDOMKEY] || - ||  return a random key from the key space  ||
+|| [RenameCommand RENAME] || _oldname_ _newname_ ||  rename the old key in the new one, destroing the newname key if it already exists  ||
+|| [RenamenxCommand RENAMENX] || _oldname_ _newname_  ||  rename the old key in the new one, if the newname key does not already exist  ||
+|| [DbsizeCommand DBSIZE] || - ||  return the number of keys in the current db  ||
+|| [ExpireCommand EXPIRE] || - ||  set a time to live in seconds on a key  ||
+|| [TtlCommand TTL] || - ||  get the time to live in seconds of a key  ||
+|| [SelectCommand SELECT] || _index_ ||  Select the DB having the specified index  ||
+|| [MoveCommand MOVE] || _key_ _dbindex_ ||  Move the key from the currently selected DB to the DB having as index dbindex  ||
+|| [FlushdbCommand FLUSHDB] || - ||  Remove all the keys of the currently selected DB  ||
+|| [FlushallCommand FLUSHALL]|| - ||  Remove all the keys from all the databases  ||
 
 == Commands operating on string values ==
 
 || *Command* || *Parameters* || *Description* || 
-|| [SetCommand SET]  || _key_ _value_  || `set a key to a string value` ||
-|| [GetCommand GET]  || _key_  || `return the string value of the key` ||
-|| [GetsetCommand GETSET]  || _key_ _value_  || `set a key to a string returning the old value of the key` ||
-|| [MgetCommand MGET]  || _key1_ _key2_ ... _keyN_  || `multi-get, return the strings values of the keys` ||
-|| [SetnxCommand SETNX]  || _key_ _value_  || `set a key to a string value if the key does not exist` ||
-|| [SetexCommand SETEX]  || _key_ _time_ _value_  || `Set+Expire combo command` ||
-|| [MsetCommand MSET]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  || `set a multiple keys to multiple values in a single atomic operation`  ||
-|| [MsetCommand MSETNX]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  || `set a multiple keys to multiple values in a single atomic operation if none of the keys already exist` ||
-|| [IncrCommand INCR]  || _key_  || `increment the integer value of key` ||
-|| [IncrCommand INCRBY]  || _key_ _integer_  || `increment the integer value of key by integer` ||
-|| [IncrCommand DECR]  || _key_  || `decrement the integer value of key` ||
-|| [IncrCommand DECRBY]  || _key_ _integer_  || `decrement the integer value of key by integer` ||
-|| [AppendCommand APPEND]  || _key_ _value_  || `append the specified string to the string stored at key` ||
-|| [SubstrCommand SUBSTR]  || _key_ _start_ _end_  || `return a substring out of a larger string` ||
+|| [SetCommand SET]  || _key_ _value_  ||  set a key to a string value  ||
+|| [GetCommand GET]  || _key_  ||  return the string value of the key  ||
+|| [GetsetCommand GETSET]  || _key_ _value_  ||  set a key to a string returning the old value of the key  ||
+|| [MgetCommand MGET]  || _key1_ _key2_ ... _keyN_  ||  multi-get, return the strings values of the keys  ||
+|| [SetnxCommand SETNX]  || _key_ _value_  ||  set a key to a string value if the key does not exist  ||
+|| [SetexCommand SETEX]  || _key_ _time_ _value_  ||  Set+Expire combo command  ||
+|| [MsetCommand MSET]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  ||  set a multiple keys to multiple values in a single atomic operation   ||
+|| [MsetCommand MSETNX]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  ||  set a multiple keys to multiple values in a single atomic operation if none of the keys already exist  ||
+|| [IncrCommand INCR]  || _key_  ||  increment the integer value of key  ||
+|| [IncrCommand INCRBY]  || _key_ _integer_  ||  increment the integer value of key by integer  ||
+|| [IncrCommand DECR]  || _key_  ||  decrement the integer value of key  ||
+|| [IncrCommand DECRBY]  || _key_ _integer_  ||  decrement the integer value of key by integer  ||
+|| [AppendCommand APPEND]  || _key_ _value_  ||  append the specified string to the string stored at key  ||
+|| [SubstrCommand SUBSTR]  || _key_ _start_ _end_  ||  return a substring out of a larger string  ||
 
 == Commands operating on lists ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [RpushCommand RPUSH]  || _key_ _value_  || `Append an element to the tail of the List value at key` ||
-|| [RpushCommand LPUSH]  || _key_ _value_  || `Append an element to the head of the List value at key` ||
-|| [LlenCommand LLEN]  || _key_  || `Return the length of the List value at key` ||
-|| [LrangeCommand LRANGE]  || _key_ _start_ _end_  || `Return a range of elements from the List at key` ||
-|| [LtrimCommand LTRIM]  || _key_ _start_ _end_  || `Trim the list at key to the specified range of elements` ||
-|| [LindexCommand LINDEX]  || _key_ _index_  || `Return the element at index position from the List at key` ||
-|| [LsetCommand LSET]  || _key_ _index_ _value_  || `Set a new value as the element at index position of the List at key` ||
-|| [LremCommand LREM]  || _key_ _count_ _value_  || `Remove the first-N, last-N, or all the elements matching value from the List at key` ||
-|| [LpopCommand LPOP]  || _key_  || `Return and remove (atomically) the first element of the List at key` ||
-|| [LpopCommand RPOP]  || _key_  || `Return and remove (atomically) the last element of the List at key` ||
-|| [BlpopCommand BLPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  || `Blocking LPOP` ||
-|| [BlpopCommand BRPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  || `Blocking RPOP` ||
-|| [RpoplpushCommand RPOPLPUSH]  || _srckey_ _dstkey_  || `Return and remove (atomically) the last element of the source List stored at _srckey_ and push the same element to the destination List stored at _dstkey_` ||
+|| [RpushCommand RPUSH]  || _key_ _value_  ||  Append an element to the tail of the List value at key  ||
+|| [RpushCommand LPUSH]  || _key_ _value_  ||  Append an element to the head of the List value at key  ||
+|| [LlenCommand LLEN]  || _key_  ||  Return the length of the List value at key  ||
+|| [LrangeCommand LRANGE]  || _key_ _start_ _end_  ||  Return a range of elements from the List at key  ||
+|| [LtrimCommand LTRIM]  || _key_ _start_ _end_  ||  Trim the list at key to the specified range of elements  ||
+|| [LindexCommand LINDEX]  || _key_ _index_  ||  Return the element at index position from the List at key  ||
+|| [LsetCommand LSET]  || _key_ _index_ _value_  ||  Set a new value as the element at index position of the List at key  ||
+|| [LremCommand LREM]  || _key_ _count_ _value_  ||  Remove the first-N, last-N, or all the elements matching value from the List at key  ||
+|| [LpopCommand LPOP]  || _key_  ||  Return and remove (atomically) the first element of the List at key  ||
+|| [LpopCommand RPOP]  || _key_  ||  Return and remove (atomically) the last element of the List at key  ||
+|| [BlpopCommand BLPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  ||  Blocking LPOP  ||
+|| [BlpopCommand BRPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  ||  Blocking RPOP  ||
+|| [RpoplpushCommand RPOPLPUSH]  || _srckey_ _dstkey_  ||  Return and remove (atomically) the last element of the source List stored at _srckey_ and push the same element to the destination List stored at _dstkey_  ||
 
 == Commands operating on sets ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [SaddCommand SADD]  || _key_ _member_  || `Add the specified member to the Set value at key` ||
-|| [SremCommand SREM]  || _key_ _member_  || `Remove the specified member from the Set value at key` ||
-|| [SpopCommand SPOP]  || _key_  || `Remove and return (pop) a random element from the Set value at key` ||
-|| [SmoveCommand SMOVE]  || _srckey_ _dstkey_ _member_  || `Move the specified member from one Set to another atomically` ||
-|| [ScardCommand SCARD]  || _key_  || `Return the number of elements (the cardinality) of the Set at key` ||
-|| [SismemberCommand SISMEMBER]  || _key_ _member_  || `Test if the specified value is a member of the Set at key` ||
-|| [SinterCommand SINTER]  || _key1_ _key2_ ... _keyN_  || `Return the intersection between the Sets stored at key1, key2, ..., keyN` ||
-|| [SinterstoreCommand SINTERSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  || `Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey` ||
-|| [SunionCommand SUNION]  || _key1_ _key2_ ... _keyN_  || `Return the union between the Sets stored at key1, key2, ..., keyN` ||
-|| [SunionstoreCommand SUNIONSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  || `Compute the union between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey` ||
-|| [SdiffCommand SDIFF]  || _key1_ _key2_ ... _keyN_  || `Return the difference between the Set stored at key1 and all the Sets key2, ..., keyN` ||
-|| [SdiffstoreCommand SDIFFSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  || `Compute the difference between the Set key1 and all the Sets key2, ..., keyN, and store the resulting Set at dstkey` ||
-|| [SmembersCommand SMEMBERS]  || _key_  || `Return all the members of the Set value at key` ||
-|| [SrandmemberCommand SRANDMEMBER]  || _key_  || `Return a random member of the Set value at key` ||
+|| [SaddCommand SADD]  || _key_ _member_  ||  Add the specified member to the Set value at key  ||
+|| [SremCommand SREM]  || _key_ _member_  ||  Remove the specified member from the Set value at key  ||
+|| [SpopCommand SPOP]  || _key_  ||  Remove and return (pop) a random element from the Set value at key  ||
+|| [SmoveCommand SMOVE]  || _srckey_ _dstkey_ _member_  ||  Move the specified member from one Set to another atomically  ||
+|| [ScardCommand SCARD]  || _key_  ||  Return the number of elements (the cardinality) of the Set at key  ||
+|| [SismemberCommand SISMEMBER]  || _key_ _member_  ||  Test if the specified value is a member of the Set at key  ||
+|| [SinterCommand SINTER]  || _key1_ _key2_ ... _keyN_  ||  Return the intersection between the Sets stored at key1, key2, ..., keyN  ||
+|| [SinterstoreCommand SINTERSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  ||  Compute the intersection between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey  ||
+|| [SunionCommand SUNION]  || _key1_ _key2_ ... _keyN_  ||  Return the union between the Sets stored at key1, key2, ..., keyN  ||
+|| [SunionstoreCommand SUNIONSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  ||  Compute the union between the Sets stored at key1, key2, ..., keyN, and store the resulting Set at dstkey  ||
+|| [SdiffCommand SDIFF]  || _key1_ _key2_ ... _keyN_  ||  Return the difference between the Set stored at key1 and all the Sets key2, ..., keyN  ||
+|| [SdiffstoreCommand SDIFFSTORE]  || _dstkey_ _key1_ _key2_ ... _keyN_  ||  Compute the difference between the Set key1 and all the Sets key2, ..., keyN, and store the resulting Set at dstkey  ||
+|| [SmembersCommand SMEMBERS]  || _key_  ||  Return all the members of the Set value at key  ||
+|| [SrandmemberCommand SRANDMEMBER]  || _key_  ||  Return a random member of the Set value at key  ||
 
 == Commands operating on sorted zsets (sorted sets) ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [ZaddCommand ZADD]  || _key_ _score_ _member_  || `Add the specified member to the Sorted Set value at key or update the score if it already exist` ||
-|| [ZremCommand ZREM]  || _key_ _member_  || `Remove the specified member from the Sorted Set value at key` ||
-|| [ZincrbyCommand ZINCRBY]  || _key_ _increment_ _member_  || `If the member already exists increment its score by _increment_, otherwise add the member setting _increment_ as score` ||
-|| [ZrankCommand ZRANK]  || _key_ _member_  || `Return the rank (or index) or _member_ in the sorted set at _key_, with scores being ordered from low to high` ||
-|| [ZrankCommand ZREVRANK]  || _key_ _member_  || `Return the rank (or index) or _member_ in the sorted set at _key_, with scores being ordered from high to low` ||
-|| [ZrangeCommand ZRANGE]  || _key_ _start_ _end_  || `Return a range of elements from the sorted set at key` ||
-|| [ZrangeCommand ZREVRANGE]  || _key_ _start_ _end_  || `Return a range of elements from the sorted set at key, exactly like ZRANGE, but the sorted set is ordered in traversed in reverse order, from the greatest to the smallest score` ||
-|| [ZrangebyscoreCommand ZRANGEBYSCORE]  || _key_ _min_ _max_  || `Return all the elements with score >= min and score <= max (a range query) from the sorted set` ||
-|| [ZrangebyscoreCommand ZCOUNT]  || _key_ _min_ _max_  || `Return the number of elements with score >= min and score <= max in the sorted set` ||
-|| [ZcardCommand ZCARD]  || _key_  || `Return the cardinality (number of elements) of the sorted set at key` ||
-|| [ZscoreCommand ZSCORE]  || _key_ _element_  || `Return the score associated with the specified element of the sorted set at key` ||
-|| [ZremrangebyrankCommand ZREMRANGEBYRANK]  || _key_ _min_ _max_  || `Remove all the elements with rank >= min and rank <= max from the sorted set` ||
-|| [ZremrangebyscoreCommand ZREMRANGEBYSCORE]  || _key_ _min_ _max_  || `Remove all the elements with score >= min and score <= max from the sorted set` ||
-|| [ZunionstoreCommand ZUNIONSTORE / ZINTERSTORE]  || _dstkey_ _N_ _key1_ ... _keyN_ WEIGHTS _w1_ ... _wN_ AGGREGATE SUM|MIN|MAX  || `Perform a union or intersection over a number of sorted sets with optional weight and aggregate` ||
+|| [ZaddCommand ZADD]  || _key_ _score_ _member_  ||  Add the specified member to the Sorted Set value at key or update the score if it already exist  ||
+|| [ZremCommand ZREM]  || _key_ _member_  ||  Remove the specified member from the Sorted Set value at key  ||
+|| [ZincrbyCommand ZINCRBY]  || _key_ _increment_ _member_  ||  If the member already exists increment its score by _increment_, otherwise add the member setting _increment_ as score  ||
+|| [ZrankCommand ZRANK]  || _key_ _member_  ||  Return the rank (or index) or _member_ in the sorted set at _key_, with scores being ordered from low to high  ||
+|| [ZrankCommand ZREVRANK]  || _key_ _member_  ||  Return the rank (or index) or _member_ in the sorted set at _key_, with scores being ordered from high to low  ||
+|| [ZrangeCommand ZRANGE]  || _key_ _start_ _end_  ||  Return a range of elements from the sorted set at key  ||
+|| [ZrangeCommand ZREVRANGE]  || _key_ _start_ _end_  ||  Return a range of elements from the sorted set at key, exactly like ZRANGE, but the sorted set is ordered in traversed in reverse order, from the greatest to the smallest score  ||
+|| [ZrangebyscoreCommand ZRANGEBYSCORE]  || _key_ _min_ _max_  ||  Return all the elements with score >= min and score <= max (a range query) from the sorted set  ||
+|| [ZrangebyscoreCommand ZCOUNT]  || _key_ _min_ _max_  ||  Return the number of elements with score >= min and score <= max in the sorted set  ||
+|| [ZcardCommand ZCARD]  || _key_  ||  Return the cardinality (number of elements) of the sorted set at key  ||
+|| [ZscoreCommand ZSCORE]  || _key_ _element_  ||  Return the score associated with the specified element of the sorted set at key  ||
+|| [ZremrangebyrankCommand ZREMRANGEBYRANK]  || _key_ _min_ _max_  ||  Remove all the elements with rank >= min and rank <= max from the sorted set  ||
+|| [ZremrangebyscoreCommand ZREMRANGEBYSCORE]  || _key_ _min_ _max_  ||  Remove all the elements with score >= min and score <= max from the sorted set  ||
+|| [ZunionstoreCommand ZUNIONSTORE / ZINTERSTORE]  || _dstkey_ _N_ _key1_ ... _keyN_ WEIGHTS _w1_ ... _wN_ AGGREGATE SUM|MIN|MAX  ||  Perform a union or intersection over a number of sorted sets with optional weight and aggregate  ||
 
 == Commands operating on hashes ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [HsetCommand HSET]  || _key_ _field_ _value_  || `Set the hash field to the specified value. Creates the hash if needed.` ||
-|| [HgetCommand HGET]  || _key_ _field_  || `Retrieve the value of the specified hash field.` ||
-|| [HmgetCommand HMGET]  || _key_ _field1_ ... _fieldN_  || `Get the hash values assoicated to the specified fields.` ||
-|| [HmsetCommand HMSET]  || _key_ _field1_ _value1_ ... _fieldN_ _valueN_  || `Set the hash fields to their respective values.` ||
-|| [HincrbyCommand HINCRBY] ||  _key_ _field_ _integer_  || `Increment the integer value of the hash at _key_ on _field_ with _integer_.` ||
-|| [HexistsCommand HEXISTS]  || _key_ _field_  || `Test for existence of a specified field in a hash` ||
-|| [HdelCommand HDEL]  || _key_ _field_  || `Remove the specified field from a hash` ||
-|| [HlenCommand HLEN]  || _key_ ||  `Return the number of items in a hash.` ||
-|| [HgetallCommand HKEYS]  || _key_ || `Return all the fields in a hash.` ||
-|| [HgetallCommand HVALS]  || _key_  ||`Return all the values in a hash.` ||
-|| [HgetallCommand HGETALL] || _key_  ||`Return all the fields and associated values in a hash.` ||
+|| [HsetCommand HSET]  || _key_ _field_ _value_  ||  Set the hash field to the specified value. Creates the hash if needed.  ||
+|| [HgetCommand HGET]  || _key_ _field_  ||  Retrieve the value of the specified hash field.  ||
+|| [HmgetCommand HMGET]  || _key_ _field1_ ... _fieldN_  ||  Get the hash values assoicated to the specified fields.  ||
+|| [HmsetCommand HMSET]  || _key_ _field1_ _value1_ ... _fieldN_ _valueN_  ||  Set the hash fields to their respective values.  ||
+|| [HincrbyCommand HINCRBY] ||  _key_ _field_ _integer_  ||  Increment the integer value of the hash at _key_ on _field_ with _integer_.  ||
+|| [HexistsCommand HEXISTS]  || _key_ _field_  ||  Test for existence of a specified field in a hash  ||
+|| [HdelCommand HDEL]  || _key_ _field_  ||  Remove the specified field from a hash  ||
+|| [HlenCommand HLEN]  || _key_ ||   Return the number of items in a hash.  ||
+|| [HgetallCommand HKEYS]  || _key_ ||  Return all the fields in a hash.  ||
+|| [HgetallCommand HVALS]  || _key_  || Return all the values in a hash.  ||
+|| [HgetallCommand HGETALL] || _key_  || Return all the fields and associated values in a hash.  ||
 
 == Sorting ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [SortCommand SORT]  || _key_ BY _pattern_ LIMIT _start_ _end_ GET _pattern_ ASC|DESC ALPHA  || `Sort a Set or a List accordingly to the specified parameters` ||
+|| [SortCommand SORT]  || _key_ BY _pattern_ LIMIT _start_ _end_ GET _pattern_ ASC|DESC ALPHA  ||  Sort a Set or a List accordingly to the specified parameters  ||
 
 == Transactions ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [MultiExecCommand MULTI/EXEC/DISCARD/WATCH/UNWATCH] || - || `Redis atomic transactions` ||
+|| [MultiExecCommand MULTI/EXEC/DISCARD/WATCH/UNWATCH] || - ||  Redis atomic transactions  ||
 
 == Publish/Subscribe  ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [PublishSubscribe SUBSCRIBE/UNSUBSCRIBE/PUBLISH] || -  || `Redis Public/Subscribe messaging paradigm implementation` ||
+|| [PublishSubscribe SUBSCRIBE/UNSUBSCRIBE/PUBLISH] || -  ||  Redis Public/Subscribe messaging paradigm implementation  ||
 
 == Persistence control commands ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [SaveCommand SAVE] || -  || `Synchronously save the DB on disk` ||
-|| [BgsaveCommand BGSAVE] || -  || `Asynchronously save the DB on disk` ||
-|| [LastsaveCommand LASTSAVE] || -  || `Return the UNIX time stamp of the last successfully saving of the dataset on disk` ||
-|| [ShutdownCommand SHUTDOWN] || -  || `Synchronously save the DB on disk, then shutdown the server` ||
-|| [BgrewriteaofCommand BGREWRITEAOF] || -  || `Rewrite the append only file in background when it gets too big` ||
+|| [SaveCommand SAVE] || -  ||  Synchronously save the DB on disk  ||
+|| [BgsaveCommand BGSAVE] || -  ||  Asynchronously save the DB on disk  ||
+|| [LastsaveCommand LASTSAVE] || -  ||  Return the UNIX time stamp of the last successfully saving of the dataset on disk  ||
+|| [ShutdownCommand SHUTDOWN] || -  ||  Synchronously save the DB on disk, then shutdown the server  ||
+|| [BgrewriteaofCommand BGREWRITEAOF] || -  ||  Rewrite the append only file in background when it gets too big  ||
 
 == Remote server control commands ==
 
 || *Command* || *Parameters* || *Description* ||
-|| [InfoCommand INFO] || -  || `Provide information and statistics about the server` ||
-|| [MonitorCommand MONITOR] || -  || `Dump all the received requests in real time` ||
-|| [SlaveofCommand SLAVEOF] || -  || `Change the replication settings` ||
-|| [ConfigCommand CONFIG] || -  || `Configure a Redis server at runtime` ||
+|| [InfoCommand INFO] || -  ||  Provide information and statistics about the server  ||
+|| [MonitorCommand MONITOR] || -  ||  Dump all the received requests in real time  ||
+|| [SlaveofCommand SLAVEOF] || -  ||  Change the replication settings  ||
+|| [ConfigCommand CONFIG] || -  ||  Configure a Redis server at runtime  ||
