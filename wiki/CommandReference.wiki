@@ -1,6 +1,6 @@
 ﻿= Redis Command Reference =
 
-Every command name links to a specific wiki page describing the behavior of the command. ( [CommandReference#Alphabetized-Command-List AlphabetizedVersion])
+Every command name links to a specific wiki page describing the behavior of the command. ( [CommandReference#Alphabetized_Command_List AlphabetizedVersion])
 
 == Categorized Command List ==
 
