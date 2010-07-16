@@ -4,8 +4,10 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 == Connection handling ==
 
- * [QuitCommand QUIT] `close the connection`
- * [AuthCommand AUTH] `simple password authentication if enabled`
+ * [QuitCommand QUIT] 
+`close the connection`
+ * [AuthCommand AUTH] 
+`simple password authentication if enabled`
 
 == Commands operating on all the kind of values ==
 
