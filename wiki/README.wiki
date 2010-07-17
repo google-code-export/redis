@@ -1,6 +1,6 @@
 ﻿= Introduction =
 
-Redis is an extremely fast and powerful key-value store database and server implemented in ANSI C.  Redis offers many different ways to do one straightforward thing: store a value ("antirez", ) to a key ("redis").  While the format of keys must always be simple strings, the power is with the values, which support the following data types:
+Redis is an extremely fast and powerful key-value store database and server implemented in ANSI C.  Redis offers many different ways to do one straightforward thing: store a value ("antirez") to a key ("redis").  While the format of keys must always be simple strings, the power is with the values, which support the following data types:
 
   * [Strings]
   * [Lists]
@@ -8,7 +8,15 @@ Redis is an extremely fast and powerful key-value store database and server impl
   * [SortedSets Sorted Sets (zsets)]
   * [Hashes Hashes]
 
-The type of a value determines what operations (called commands) are available for the value itself. 
+Each value type has an associated list of commands which can operate on them, and the [CommandReference The Redis Command Reference] contains an up to date list of these commands, organized primarily by data type.  The Redis source also includes a [RedisCLI Redis command line interface] which allows you to interact directly with the server, and is the means by which this introduction will introduce concepts.  Once you walk through the [QuickStart Redis Quick Start Guide] to get your instance of Redis running, you can follow along.  
+
+One of the most powerful aspects of Redis are the means by which commands are optimized to work with specific individual data value types.  Taking the [Lists List] type as an example:
+
+{{{
+redis> 
+
+}}}
+
 For example you can append elements to a list stored at the key "mylist" using the LPUSH or RPUSH command in O(1). Later you'll be able to get a range of elements with LRANGE or trim the list with LTRIM. Sets are very flexible too, it is possible to add and remove elements from Sets (unsorted collections of strings), and then ask for server-side intersection, union, difference of Sets. Each command is performed through server-side atomic operations.
 Please refer to the [CommandReference Command Reference] to see the full list of operations associated to these data types.
 
