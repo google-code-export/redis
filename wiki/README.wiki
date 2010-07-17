@@ -6,7 +6,8 @@ What makes Redis different from many other key-value stores, is that every singl
   * [Strings]
   * [Lists]
   * [Sets]
-  * [SortedSets Sorted Set] (since version 1.1)
+  * [SortedSets Sorted Sets (zsets)]
+  * [Hashes Hashes]
 
 The type of a value determines what operations (called commands) are available for the value itself. 
 For example you can append elements to a list stored at the key "mylist" using the LPUSH or RPUSH command in O(1). Later you'll be able to get a range of elements with LRANGE or trim the list with LTRIM. Sets are very flexible too, it is possible to add and remove elements from Sets (unsorted collections of strings), and then ask for server-side intersection, union, difference of Sets. Each command is performed through server-side atomic operations.
