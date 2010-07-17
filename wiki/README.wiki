@@ -1,7 +1,6 @@
 ﻿= Introduction =
 
-Redis is a database. To be specific, Redis is a database implementing a dictionary, where every key is associated with a value. For example I can set the key "surname_1992" to the string "Smith".
-What makes Redis different from many other key-value stores, is that every single value has a type. The following types are supported:
+Redis is an extremely fast and powerful key-value store database and server implemented in ANSI C.  Redis offers many different ways to do one straightforward thing: store a value ("antirez", ) to a key ("redis").  While the format of keys must always be simple strings, the power is with the values, which support the following data types:
 
   * [Strings]
   * [Lists]
