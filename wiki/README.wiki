@@ -12,7 +12,7 @@ Each value type has an associated list of commands which can operate on them, an
 
 One of the most powerful aspects of Redis are the means by which commands are optimized to work with specific individual data value types.  Taking the [Lists List] type as an example, you can append elements to a list stored with the key "mylist" using the [RpushCommand LPUSH] or [RpushCommand RPUSH] commands, and know that these operations will always be O(1).
 
-Later you'll be able to get a range of elements with LRANGE or trim the list with LTRIM. Sets are very flexible too, it is possible to add and remove elements from Sets (unsorted collections of strings), and then ask for server-side intersection, union, difference of Sets. Each command is performed through server-side atomic operations.
+More complex operations are available for each data type as well.  Continuing with lists, in addition to pushing and pulling, you can get a range of elements with LRANGE or trim the list with LTRIM. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. Each command is performed through server-side atomic operations.
 
 In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
