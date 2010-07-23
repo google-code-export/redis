@@ -23,7 +23,7 @@ redis> rpop 'programming_languages'
 'Python'
 redis> lpop 'programming_languages'
 'Ruby'
-}}}}
+}}}
 
 More complex operations are available for each data type as well.  Continuing with lists, in addition to pushing and pulling, you can get a range of elements with LRANGE or trim the list with LTRIM. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. 
 
