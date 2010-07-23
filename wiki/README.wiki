@@ -54,7 +54,7 @@ redis> lpop cities
 
 You can also add and remove elements from a set, and perform intersections, unions, and differences. 
 
-In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
+Redis can also be looked at as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving them from the responsibility of implementing concrete data structures and algorithms -- indeed both algorithms and data structures in Redis are properly chosen in order to obtain the best performance.
 
 = All data in memory, but saved on disk =
 
