@@ -13,19 +13,25 @@ Each value type has an associated list of commands which can operate on them, an
 One of the most powerful aspects of Redis is the wide range of commands which are optimized to work with specific data value types and executed as atomic server-side operations.  The [Lists List] type is a great example - Redis implements O(1) operations such as [RpushCommand LPUSH] or [RpushCommand RPUSH], which have accompanying [LpopCommand LPOP] and [LpopCommand RPOP] methods:
 
 {{{
-redis> lpush 'programming_languages' 'C'
+redis> lpush programming_languages C
 OK
-redis> lpush 'programming_languages' 'Ruby'
+redis> lpush programming_languages Ruby
 OK
-redis> rpush 'programming_languages' 'Python'
+redis> rpush programming_languages Python
 OK
-redis> rpop 'programming_languages'
-'Python'
-redis> lpop 'programming_languages'
-'Ruby'
+redis> rpop programming_languages
+Python
+redis> lpop programming_languages
+Ruby
 }}}
 
-More complex operations are available for each data type as well.  Continuing with lists, in addition to pushing and pulling, you can get a range of elements with LRANGE or trim the list with LTRIM. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. 
+More complex operations are available for each data type as well.  Continuing with lists, you can get a range of elements with [LrangeCommand LRANGE] or trim the list with [LtrimCommand LTRIM]:
+
+{{{
+
+}}}
+
+. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. 
 
 In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
