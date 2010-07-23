@@ -10,7 +10,7 @@ Redis is an extremely fast and powerful key-value store database and server impl
 
 Each value type has an associated list of commands which can operate on them, and the [CommandReference The Redis Command Reference] contains an up to date list of these commands, organized primarily by data type.  The Redis source also includes a [RedisCLI Redis command line interface] which allows you to interact directly with the server, and is the means by which this introduction will provide examples.  Once you walk through the [QuickStart Redis Quick Start Guide] to get your instance of Redis running, you can follow along.  
 
-One of the most powerful aspects of Redis is the wide range of commands which are optimized to work with specific data value types and executed as atomic server-side operations.  The [Lists List] type is a great example - Redis implements O(1) operations such as [RpushCommand LPUSH] or [RpushCommand RPUSH], which have accompanying LPOP and RPOP methods:
+One of the most powerful aspects of Redis is the wide range of commands which are optimized to work with specific data value types and executed as atomic server-side operations.  The [Lists List] type is a great example - Redis implements O(1) operations such as [RpushCommand LPUSH] or [RpushCommand RPUSH], which have accompanying [LpopCommand LPOP] and [LpopCommand RPOP] methods:
 
 {{{
 redis> lpush 'programming_languages' 'C'
