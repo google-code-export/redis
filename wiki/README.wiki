@@ -25,13 +25,34 @@ redis> lpop programming_languages
 Ruby
 }}}
 
-More complex operations are available for each data type as well.  Continuing with lists, you can get a range of elements with [LrangeCommand LRANGE] or trim the list with [LtrimCommand LTRIM]:
+More complex operations are available for each data type as well.  Continuing with lists, you can get a range of elements with [LrangeCommand LRANGE] (O(start+n)) or trim the list with [LtrimCommand LTRIM] (O(n)):
 
 {{{
-
+redis> lpush cities NYC
+OK
+redis> lpush cities SF
+OK
+redis> lpush cities Tokyo
+OK
+redis> lpush cities London
+OK
+redis> lpush cities Paris
+OK
+redis> lrange cities 0 2
+1. Paris
+2. London
+3. Tokyo
+redis> ltrim cities 0 1
+OK
+redis> lpop cities
+Paris
+redis> lpop cities
+London
+redis> lpop cities
+(nil)
 }}}
 
-. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. 
+You can also add and remove elements from a set, and perform intersections, unions, and differences. 
 
 In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
