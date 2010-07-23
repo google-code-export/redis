@@ -10,9 +10,22 @@ Redis is an extremely fast and powerful key-value store database and server impl
 
 Each value type has an associated list of commands which can operate on them, and the [CommandReference The Redis Command Reference] contains an up to date list of these commands, organized primarily by data type.  The Redis source also includes a [RedisCLI Redis command line interface] which allows you to interact directly with the server, and is the means by which this introduction will provide examples.  Once you walk through the [QuickStart Redis Quick Start Guide] to get your instance of Redis running, you can follow along.  
 
-One of the most powerful aspects of Redis are the means by which commands are optimized to work with specific individual data value types.  Taking the [Lists List] type as an example, you can append elements to a list stored with the key "mylist" using the [RpushCommand LPUSH] or [RpushCommand RPUSH] commands, and know that these operations will always be O(1).
+One of the most powerful aspects of Redis is the wide range of commands which are optimized to work with specific data value types and executed as atomic server-side operations.  The [Lists List] type is a great example - Redis implements O(1) operations such as [RpushCommand LPUSH] or [RpushCommand RPUSH], which have accompanying LPOP and RPOP methods:
 
-More complex operations are available for each data type as well.  Continuing with lists, in addition to pushing and pulling, you can get a range of elements with LRANGE or trim the list with LTRIM. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. Each command is performed through server-side atomic operations.
+{{{
+redis> lpush 'programming_languages' 'C'
+OK
+redis> lpush 'programming_languages' 'Ruby'
+OK
+redis> rpush 'programming_languages' 'Python'
+OK
+redis> rpop 'programming_languages'
+'Python'
+redis> lpop 'programming_languages'
+'Ruby'
+}}}}
+
+More complex operations are available for each data type as well.  Continuing with lists, in addition to pushing and pulling, you can get a range of elements with LRANGE or trim the list with LTRIM. You can also add and remove elements from a set, and the server can perform intersection, union, and differences. 
 
 In other words, you can look at Redis as a data structures server. A Redis user is virtually provided with an interface to  [http://en.wikipedia.org/wiki/Abstract_data_type Abstract Data Types], saving her from the responsibility to implement concrete data structures and algorithms. Indeed both algorithms and data structures in Redis are properly choosed in order to obtain the best performance.
 
