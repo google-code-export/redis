@@ -60,7 +60,7 @@ Redis can also be looked at as a data structures server. A Redis user is virtual
 
 Redis loads and mantains the whole dataset into memory, but the dataset is persistent, since at the same time it is saved on disk, so that when the server is restarted data can be loaded back in memory.
 
-There are two kind of persistence supported: the first one is called snapshotting. In this mode Redis, from time to time, writes a dump on disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
+There are two kinds of persistence supported: the first one is called snapshotting. In this mode Redis periodically writes to disk asynchronously. The dataset is loaded from the dump every time the server is (re)started.
 
 Redis can be configured to save the dataset when a certain number of changes is reached and after a given number of seconds elapses. For example, you can configure Redis to save after 1000 changes and at most 60 seconds since the last save. You can specify any combination for these numbers.
 
