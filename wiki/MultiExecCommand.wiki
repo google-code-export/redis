@@ -130,7 +130,7 @@ old value, for instance, 10. The value will be incremented to 11 by both
 the clients, and finally SET as the value of the key. So the final value
 will be "11" instead of "12".
 
-Thanks to WATCH we area able to model the problem very well:
+Thanks to WATCH we are able to model the problem very well:
 {{{
 WATCH mykey
 val = GET mykey
