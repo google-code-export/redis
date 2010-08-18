@@ -38,7 +38,7 @@ _Time complexity: O(1)_
  returning a nil special value if the specified amount of seconds passed
  without a push operation against at least one of the specified keys.
 
- A timeout of zero means instead to block forever.
+The timeout argument is interpreted as an integer value. A timeout of zero means instead to block forever.
 
 == Multiple clients blocking for the same keys ==
 
