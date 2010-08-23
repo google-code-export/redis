@@ -8,7 +8,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 
 || *Command* || *Parameters* || *Description* ||
 || [QuitCommand QUIT] || - ||  close the connection ||
-|| [AuthCommand AUTH]  || - ||  simple password authentication if enabled  ||
+|| [AuthCommand AUTH]  || _password_ ||  simple password authentication if enabled  ||
 
 == Commands operating on all value types ==
 
