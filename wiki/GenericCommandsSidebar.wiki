@@ -9,7 +9,7 @@
  * [RenamenxCommand RENAMENX]
  * [DbsizeCommand DBSIZE]
  * [ExpireCommand EXPIRE]
- * [PersistCommand PERSIST]
+ * [ExpireCommand PERSIST]
  * [TtlCommand TTL]
  * [SelectCommand SELECT]
  * [MoveCommand MOVE]

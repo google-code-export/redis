@@ -22,7 +22,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 || [RenamenxCommand RENAMENX] || _oldname_ _newname_  ||  rename the _oldname_ key to _newname_, if the _newname_ key does not already exist  ||
 || [DbsizeCommand DBSIZE] || - ||  return the number of keys in the current db  ||
 || [ExpireCommand EXPIRE] || - ||  set a time to live in seconds on a key  ||
-|| [PersistCommand PERSIST] || - ||  remove the expire from a key  ||
+|| [ExpireCommand PERSIST] || - ||  remove the expire from a key  ||
 || [TtlCommand TTL] || - ||  get the time to live in seconds of a key  ||
 || [SelectCommand SELECT] || _index_ ||  Select the DB with the specified index  ||
 || [MoveCommand MOVE] || _key_ _dbindex_ ||  Move the key from the currently selected DB to the _dbindex_ DB   ||
