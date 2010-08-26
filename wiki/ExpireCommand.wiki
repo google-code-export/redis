@@ -11,9 +11,9 @@ _Time complexity: O(1)_
 
  Voltile keys are stored on disk like the other keys, the timeout is persistent
  too like all the other aspects of the dataset. Saving a dataset containing
- the dataset and stopping the server does not stop the flow of time as Redis
- registers on disk when the key will no longer be available as Unix time, and
- not the remaining seconds.
+ expires and stopping the server does not stop the flow of time as Redis
+ stores on disk the time when the key will no longer be available as Unix
+ time, and not the remaining seconds.
 
  EXPIREAT works exctly like EXPIRE but instead to get the number of seconds
  representing the Time To Live of the key as a second argument (that is a
