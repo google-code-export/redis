@@ -20,8 +20,8 @@ _Time complexity: O(1)_
  relative way of specifing the TTL), it takes an absolute one in the form of
  a UNIX timestamp (Number of seconds elapsed since 1 Gen 1970).
 
- EXPIREAT was introduced in order to implement [Persistence append only 
- saving mode] so that EXPIRE commands are automatically translated into 
+ EXPIREAT was introduced in order to implement [AppendOnlyFileHowto the Append Only File persistence mode]
+ so that EXPIRE commands are automatically translated into 
  EXPIREAT commands for the append only file. Of course EXPIREAT can also
  used by programmers that need a way to simply specify that a given key 
  should expire at a given time in the future.
