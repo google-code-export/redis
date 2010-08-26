@@ -132,7 +132,7 @@ desync in your dataset.
 0: the timeout was not set since the key already has an associated timeout (this may happen only in Redis versions < 2.1.3, Redis >= 2.1.3 will happily update the timeout), or the key does not exist.
 }}}
 
-== FAQ: Can you explain better why Redis deletes keys with an EXPIRE on write operations? ==
+== FAQ: Can you explain better why Redis < 2.1.3 deletes keys with an EXPIRE on write operations? ==
 Ok let's start with the problem:
 {{{
 redis> set a 100
