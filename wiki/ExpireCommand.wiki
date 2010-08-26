@@ -37,7 +37,7 @@ _Time complexity: O(1)_
 
 == Restrictions with write operations against volatile keys ==
 
- *IMPORTANT*: Since Redis 2.1.3 or greater, there are no restrictions about
+ IMPORTANT: Since Redis 2.1.3 or greater, there are no restrictions about
  the operations you can perform against volatile keys, however older versions
  of Redis, including the current stable version 2.0.0, has the following
  limitations:
