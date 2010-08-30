@@ -46,6 +46,12 @@ The timeout argument is interpreted as an integer value. A timeout of zero means
  a queue, so the first to be served will be the one that started to wait
  earlier, in a first-blpopping first-served fashion.
 
+== blocking POP inside a MULTI/EXEC transaction ==
+
+BLPOP and BRPOP can be used with pipelining (sending multiple commands and reading the replies in batch), but it does not make sense to use BLPOP or BRPOP inside a MULTI/EXEC block (a Redis transaction).
+
+The behavior of BLPOP inside MULTI/EXEC when the list is empty is to return a multi-bulk nil reply, exactly what happens when the timeout is reached. If you like science fiction, think at it like if inside MULTI/EXEC the time will flow at infinite speed :) 
+
 == Return value ==
 
  BLPOP returns a two-elements array via a multi bulk reply in order to return
