@@ -48,7 +48,7 @@ More on virtual memory:
  * http://code.google.com/p/redis/wiki/VirtualMemoryUserGuide
  * http://antirez.com/post/redis-virtual-memory-story.html
 
-==Contributors==
+===Contributors===
 
  * Salvatore Sanfilippo
  * Pieter Noordhuis
