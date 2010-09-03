@@ -64,3 +64,6 @@ More on virtual memory:
  * Konstantin Merenkov
  * Michel Martens
  * Sam Hendley
+
+===Special Thanks===
+Thanks to VMware sponsoring the work of Salvatore and Pieter, and the Redis community of users and client library developers. Redis 2.0.0 was possible only thanks to your support.
