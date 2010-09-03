@@ -54,6 +54,7 @@ More on virtual memory:
  * Damian Janowski
  * Bruno Deferrari
  * Ashley Martens
+ * Derek Collison
  * Damian Janowski
  * Jeremy Zawodny
  * Konstantin Merenkov
