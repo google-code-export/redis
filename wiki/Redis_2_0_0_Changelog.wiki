@@ -67,3 +67,8 @@ More on virtual memory:
 
 ===Special Thanks===
 Thanks to VMware sponsoring the work of Salvatore and Pieter, and the Redis community of users and client library developers. Redis 2.0.0 was possible only thanks to your support.
+
+===DOWNLOAD===
+You can grab Redis 2.0.0 from [http://code.google.com/p/redis/downloads/list Google Code].
+
+It is also tagged on Git.
