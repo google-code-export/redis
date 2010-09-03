@@ -1,6 +1,8 @@
 =Redis 2.0: What's new?=
 
-The release of Redis 2.0 marks a major milestone in Redis development. Apart from an endless list of new features, there are some major ones that deserve to be highlighted. It's worth to mention that while Redis 2.0.0 just reached its first stable release, Redis 2.2.0 is near to reach feature freeze, so ... be prepared for new exiting things in very short time!
+The release of Redis 2.0 marks a major milestone in Redis development. Apart from an endless list of new features, there are some major ones that deserve to be highlighted.
+
+It's worth to mention that while Redis 2.0.0 just reached its first stable release, Redis 2.2.0 is near to reach feature freeze, so ... be prepared for new exiting things in very short time!
 
 ===MULTI/EXEC===
 The MULTI/EXEC family of commands were added to fulfill the need to execute multiple commands as a single atomic block.
