@@ -1,44 +1,62 @@
-=What's new in Redis 2.0.0=
+=Redis 2.0: What's new?=
 
- * Redis transactions: MULTI/EXEC (antirez)
- * Blocking POP: BLPOP and BRPOP (antirez)
- * Virtual Memory (antirez with contributions from Pieter Noordhuis)
- * APPEND command (antirez)
- * WITHSCORES in ZRANGEBYSCORE thanks to Sam Hendley (antirez)
- * Much faster .rdb loading/saving times (antirez)
- * Add DISCARD command to discard queued MULTI commands. (djanowski, antirez)
- * Interactive mode to redis-cli. (Michel Martens & Damian Janowski)
- * Countless improvements to skip list implementation (Pieter Noordhuis)
- * ZINTERSTORE, ZUNIONSTORE commands (Pieter Noordhuis)
- * ZRANK command (Pieter Noordhuis)
- * SUBSTR command (antirez)
- * Now list push commands return the length of the new list (Gustavo Picon, antirez)
- * ZREMBYRANK command (Pieter Noordhuis)
- * Hash data type with all the associated commands (antirez & Pieter Noordhuis)
- * Added ZREVRANK (Pieter Noordhuis)
- * Fixed hard to track replication bug (Jeremy Zawodny)
- * Tool to check rdb files for unprocessable opcodes (Pieter Noordhuis)
- * Random internals refactoring / cleanups (antirez & Pieter Noordhuis)
- * Fixed issues 193, 194, 191 (Antonio Ognio)
- * Support for include directive in config parser (Jeremy Zawodny)
- * Fix authentication for redis-cli on non-interactive mode. (Michel Martens)
- * Added linenoise.c for zero deps line editing support. (antirez)
- * Use linenoise for line editing on redis-cli. (Michel Martens)
- * More incremental expiration of keys. (antirez)
- * CONFIG command (antirez)
- * Publis/Subscribe and associated commands (antirez)
- * New form of shared object, sharing all the small integers (antirez)
- * Validate numeric inputs. (Alex McHale)
- * Non blocking hash table resize, thanks to Derek Collison and Pieter Noordhuis for design ideas and help. (antirez)
- * Enable hash dereference in SORT on BY and GET (Pieter Noordhuis)
- * Now all commands support binary safe keys (antirez)
- * SETEX (Set + EXPIRE) implemented (antirez & Pieter Noordhuis)
- * redis-cli now accepts and outputs quoted strings in interactive mode (antirez)
- * New MONITOR output format with timestamp, 1 command per line. (antirez)
- * Tool to check if AOF is valid, and fix it if needed (Pieter Noordhuis)
- * Major speedup to AOF with fsync always, thanks to Derek Collison for the algorithm (antirez)
- * Append only filename configurable (Pieter Noordhuis)
- * Add SIGTERM shutdown handling. (Ashley Martens)
- * Many improvements in Redis test suite (Pieter Noordhuis)
- * Add git commit information to INFO listing (Pieter Noordhuis & antirez)
- * Many more minor things mainly from me and Pieter Noordhuis, but this changelog is already too big ;)
+The release of Redis 2.0 marks a major milestone in Redis development. Apart from an endless list of new features, there are some major ones that deserve to be highlighted.
+
+===MULTI/EXEC===
+The MULTI/EXEC family of commands were added to fulfill the need to execute multiple commands as a single atomic block.
+Because all commands inside a MULTI/EXEC block are serialized and executed sequentially, it is not possible that another
+client request is served in the middle of executing this block. All commands are executed one after the other when
+EXEC is called, which makes sure either *all* or *no* commands are executed, independent of the state of the client connection.
+
+More on MULTI/EXEC:
+ * http://code.google.com/p/redis/wiki/MultiExecCommand
+
+===Blocking pop===
+The commands BLPOP and BRPOP were added to support popping from a list in a blocking fashion. This means the client
+connection will be blocked for a certain amount of time until another client pushes an item on a list. These commands
+are frequently used in producer/consumer scenarios.
+
+More on blocking pop:
+ * http://code.google.com/p/redis/wiki/BlpopCommand
+
+===Publish/subscribe===
+The family of publish/subscribe commands let clients publish messages onto channels and subscribe to receive all messages
+that are published on channels. Also included are commands to receive all messages for which the channel matches a given pattern.
+
+More on publish/subscribe:
+ * http://code.google.com/p/redis/wiki/PublishSubscribe
+ * http://antirez.com/post/redis-weekly-update-3-publish-submit.html
+ * http://rediscookbook.org/pubsub_for_asynchronous_communication.html
+
+===Hashes===
+This new datatype allows to store multiple key/value pairs on a single key. Together with the list of regular commands you
+would expect for such a datatype (HSET, HGET, HDEL, HLEN, HKEYS, ...), it is also possible to use the values _inside_ a hash
+for any SORT operation.
+
+More on hashes:
+ * http://code.google.com/p/redis/wiki/HsetCommand
+ * http://antirez.com/post/redis-weekly-update-1.html
+
+===Virtual Memory===
+Redis Virtual Memory allows users to grow their dataset beyond the limits of their RAM.
+
+More on virtual memory:
+ * http://code.google.com/p/redis/wiki/VirtualMemoryUserGuide
+ * http://antirez.com/post/redis-virtual-memory-story.html
+
+==Contributors==
+
+ * Salvatore Sanfilippo
+ * Pieter Noordhuis
+ * Antonio Ognio
+ * Alex McHale
+ * Michel Martens
+ * Damian Janowski
+ * Bruno Deferrari
+ * Ashley Martens
+ * Derek Collison
+ * Damian Janowski
+ * Jeremy Zawodny
+ * Konstantin Merenkov
+ * Michel Martens
+ * Sam Hendley
