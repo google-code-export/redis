@@ -1,6 +1,6 @@
 =Redis 2.0: What's new?=
 
-The release of Redis 2.0 marks a major milestone in Redis development. Apart from an endless list of new features, there are some major ones that deserve to be highlighted.
+The release of Redis 2.0 marks a major milestone in Redis development. Apart from an endless list of new features, there are some major ones that deserve to be highlighted. It's worth to mention that while Redis 2.0.0 just reached its first stable release, Redis 2.2.0 is near to reach feature freeze, so ... be prepared for new exiting things in very short time!
 
 ===MULTI/EXEC===
 The MULTI/EXEC family of commands were added to fulfill the need to execute multiple commands as a single atomic block.
@@ -10,6 +10,8 @@ EXEC is called, which makes sure either *all* or *no* commands are executed, ind
 
 More on MULTI/EXEC:
  * http://code.google.com/p/redis/wiki/MultiExecCommand
+
+Note that WATCH, a CAS (check and set) variant of MULTI/EXEC will be available on 2.2.0 and is not part of 2.0.0.
 
 ===Blocking pop===
 The commands BLPOP and BRPOP were added to support popping from a list in a blocking fashion. This means the client
