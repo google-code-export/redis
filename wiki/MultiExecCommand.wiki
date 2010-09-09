@@ -88,9 +88,7 @@ at all.
 
 == The DISCARD command ==
 
-DISCARD can be used in order to abort a transaction. No command will be
-executed, and the state of the client is again the normal one, outside
- of a transaction. Example using the Ruby client:
+DISCARD can be used in order to abort a transaction. No command will be executed, and the state of the client is again the normal one, outside of a transaction. Example using the Ruby client:
 {{{
 ?> r.set("foo",1)
 => true
