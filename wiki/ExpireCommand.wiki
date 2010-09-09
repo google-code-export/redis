@@ -6,7 +6,7 @@
 _Time complexity: O(1)_
 
  Set a timeout on the specified key. After the timeout the key will be
- automatically delete by the server. A key with an associated timeout is
+ automatically deleted by the server. A key with an associated timeout is
  said to be _volatile_ in Redis terminology.
 
  Voltile keys are stored on disk like the other keys, the timeout is persistent
