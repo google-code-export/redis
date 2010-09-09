@@ -8,6 +8,8 @@
 
 _Time complexity: subscribe is O(1), unsubscribe is O(N) where N is the number of clients already subscribed to a channel, publish is O(N+M) where N is the number of clients subscribed to the receiving channel, and M is the total number of subscribed patterns (by any client). Psubscribe is O(N) where N is the number of patterns the Psubscribing client is already subscribed to. Punsubscribe is O(N+M) where N is the number of patterns the Punsubscribing client is already subscribed and M is the number of total patterns subscribed in the system (by any client).
 
+*Note*: this commands are available starting form Redis 2.0.0
+
  SUBSCRIBE, UNSUBSCRIBE and PUBLISH commands implement the
  [http://en.wikipedia.org/wiki/Publish/subscribe Publish/Subscribe messaging paradigm] where (citing Wikipedia) senders (publishers) are not programmed to send their messages to specific receivers (subscribers). Rather, published messages are characterized into channels, without knowledge of what (if any) subscribers there may be. Subscribers express interest in one or more channels, and only receive messages that are of interest, without knowledge of what (if any) publishers there are. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
 
