@@ -47,9 +47,9 @@ transaction, in the same order the commands were queued.
 When a Redis connection is in the context of a MULTI request, all the commands
 will reply with a simple string "QUEUED" if they are correct from the
 point of view of the syntax and arity (number of arguments) of the commaand.
-Some command is still allowed to fail during execution time.
+Some commands are still allowed to fail during execution time.
 
-This is more clear if at protocol level: in the following example one command
+This is more clear on the protocol level; In the following example one command
 will fail when executed even if the syntax is right:
 {{{
 Trying 127.0.0.1...
@@ -67,7 +67,7 @@ EXEC
 +OK
 -ERR Operation against a key holding the wrong kind of value
 }}}
-MULTI returned a two elements bulk reply in witch one of this is a +OK
+MULTI returned a two elements bulk reply where one is an +OK
 code and one is a -ERR reply. It's up to the client lib to find a sensible
 way to provide the error to the user.
 
