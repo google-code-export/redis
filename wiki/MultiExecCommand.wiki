@@ -21,7 +21,7 @@ Since Redis 2.1.0, it's also possible to add a further guarantee to the above tw
 
 A Redis transaction is entered using the MULTI command. The command always
 replies with OK. At this point the user can issue multiple commands. Instead
-to execute this commands Redis will "queue" them. All the commands are
+of executing these commands, Redis will "queue" them. All the commands are
 executed once EXEC is called.
 
 Calling DISCARD instead will flush the transaction queue and will exit
