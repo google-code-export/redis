@@ -8,7 +8,7 @@
 = COMMAND_N ... =
 = EXEC or DISCARD =
 
-MULTI, EXEC, DISCARD and WATCH commands are the fundation of Redis Transactions.
+MULTI, EXEC, DISCARD and WATCH commands are the foundation of Redis Transactions.
 A Redis Transaction allows the execution of a group of Redis commands in a single
 step, with two important guarantees:
 
