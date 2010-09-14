@@ -41,3 +41,12 @@ Check redis.conf, you can configure how many times Redis will fsync() data on di
  * Never fsync(), just put your data in the hands of the Operating System. The faster and unsafer method.
 
 The suggested (and default) policy is "everysec". It is both very fast and pretty safe. The "always" policy is very slow in practice, even if it was improved in Redis 2.0.0 there is no way to make fsync() faster than it is.
+
+== What should I do if my Append Only File gets corrupted? ==
+
+It is possible that the server crashes while writing the AOF file (this still should never lead to inconsistencies) corrupting the file in a way that is no longer loadable by Redis. When this happens you can fix this problem using the following procedure:
+
+ * Make a backup copy of your AOF file.
+ * Fix the original file with: ./redis-check-dump --fix <filename>
+ * Optionally use diff -u to check what is the difference between two files.
+ * Restart the server with the fixed file.
