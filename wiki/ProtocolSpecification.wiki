@@ -4,18 +4,18 @@ The Redis protocol is a compromise between the following things:
 
  * Simple to implement.
  * Fast to parse by a computer.
- * Easy enough to parse by an human.
+ * Easy enough to parse by a human.
 
 == Networking layer ==
 
 A client connects to a Redis server creating a TCP connection to the port 6379.
-Every redis command or data transmitted by the client and the server is
+Every Redis command or data transmitted by the client and the server is
 terminated by "\r\n" (CRLF).
 
 = Requests =
 
 Redis accepts commands composed of different arguments.
-Once a command is received, it is processed, and a reply is sent back to the client.
+Once a command is received, it is processed and a reply is sent back to the client.
 
 == The new unified request protocol ==
 
@@ -57,7 +57,7 @@ Bulk Replies prefixed by a `*<argc>\r\n` string where `<argc>` is the number of 
 
 = Replies =
 
-Redis will reply to commands with different kind of replies. It is possible to check the kind of reply from the first byte sent by the server:
+Redis will reply to commands with different kinds of replies. It is possible to check the kind of reply from the first byte sent by the server:
 
  * With a single line reply the first byte of the reply will be "+"
  * With an error message the first byte of the reply will be "-"
@@ -148,14 +148,14 @@ S: $5
 S: World
 }}}
 
-As you can see the multi bulk reply are exactly the same format used in order
+As you can see the multi bulk reply is exactly the same format used in order
 to send commands to the Redis server unsing the unified protocol.
 
 The first line the server sent is "*4\r\n" in order to specify that four bulk
 replies will follow. Then every bulk write is transmitted.
 
-If the specified key does not exist instead of the number of elements in the
-list, the special value -1 is sent as count. Example:
+If the specified key does not exist, instead of the number of elements in the
+list the special value -1 is sent as count. Example:
 
 {{{
 C: LRANGE nokey 0 1
