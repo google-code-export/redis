@@ -47,6 +47,6 @@ The suggested (and default) policy is "everysec". It is both very fast and prett
 It is possible that the server crashes while writing the AOF file (this still should never lead to inconsistencies) corrupting the file in a way that is no longer loadable by Redis. When this happens you can fix this problem using the following procedure:
 
  * Make a backup copy of your AOF file.
- * Fix the original file with: ./redis-check-dump --fix `<filename>
+ * Fix the original file with: ./redis-check-dump --fix `<filename>`
  * Optionally use diff -u to check what is the difference between two files.
  * Restart the server with the fixed file.
