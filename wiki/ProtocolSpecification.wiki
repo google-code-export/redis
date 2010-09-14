@@ -28,7 +28,8 @@ In the unified protocol all the arguments sent to the Redis server are binary sa
 $<number of bytes of argument 1> CR LF
 <argument data> CR LF
 ...
-$<nubmer of bytes of argument N> CR LF
+$<number of bytes of argument N> CR LF
+<argument data> CR LF
 }}}
 
 See the following example:
