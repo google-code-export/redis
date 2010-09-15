@@ -8,8 +8,9 @@ _Time complexity: O(log(N))_
 
 == Return value ==
 
-[ReplyTypes Bulk reply], specifically:
+[ReplyTypes Integer reply] or a nil [ReplyTypes bulk reply], specifically:
 
 {{{
-the rank (an integer number) represented as an string.
+the rank of the element as an integer reply if the element exists.
+A nil bulk reply if there is no such element.
 }}}
