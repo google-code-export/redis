@@ -105,7 +105,7 @@ For a list of file systems supporting spare files [http://en.wikipedia.org/wiki/
 
 Once you have a Redis system with VM enabled up and running, you may be very interested in knowing how it's working: how many objects are swapped in total, the number of objects swapped and loaded every second, and so forth.
 
-There is an utility that is very handy in checking how the VM is working, that is part of [http://code.google.com/p/redis-tools Redis Tools]. This tool is called redis-stat, and using it is pretty straightforward:
+There is an utility that is very handy in checking how the VM is working, that is part of [http://github.com/antirez/redis-tools Redis Tools]. This tool is called redis-stat, and using it is pretty straightforward:
 
 {{{
 $ ./redis-stat vmstat
