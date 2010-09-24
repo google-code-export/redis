@@ -145,7 +145,7 @@ redis> incr a
 (integer) 1
 }}}
 I set a key to the value of 100, then set an expire of 360 seconds, and then incremented the key (before the 360 timeout expired of course). The obvious result would be: 101, instead the key is set to the value of 1. Why?
-There is a very important reason involving the Append Only File and Replication. Let's rework a bit hour example adding the notion of time to the mix:
+There is a very important reason involving the Append Only File and Replication. Let's rework a bit our example adding the notion of time to the mix:
 {{{
 SET a 100
 EXPIRE a 5
