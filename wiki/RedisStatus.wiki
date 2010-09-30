@@ -15,6 +15,24 @@ This is the status of the different Redis versions currently available:
 = How stable an alpha preview is? =
 Well it is surely ok for development, but it is not recommended for production. Still there are many users that trust Redis development process so much to use alpha releases in production, but this is up to you, we don't give any guarantee ;)
 
+= How to obtain a 2.2-alpha preview =
+
+Simply using git:
+{{{
+$ git clone git://github.com/antirez/redis.git
+Initialized empty Git repository in /tmp/redis/.git/
+...
+}}}
+Then you can list all the branches matching 2.1-alpha with:
+{{{
+cd redis
+$ git tag | grep 2.2-alpha
+2.2-alpha0
+2.2-alpha1
+2.2-alpha2
+}}}
+At this point you can just use *git checkout _tagname_*, substituting _tagname_ with 2.2-alphaX where X is the greater progressive number you see in the listing.
+
 = ETA for Redis 2.2? =
 Redis 2.2 is planned to enter the release candidate stage before the end of the 2010.
 
