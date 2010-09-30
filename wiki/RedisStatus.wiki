@@ -12,7 +12,7 @@ This is the status of the different Redis versions currently available:
 
  * 2.1 is the current *unstable release*, and there are no tar.gz for this release, you need to download it from git. *Warning:* the master branch in git may work most of the time but is NOT what you should use. What's better instead is to use the 2.2-alpha tags: every time Redis 2.1.x is stable enough and the new features merged passed all the tests for a couple of weeks, and we didn't received severe bug reports from users, we tag master as 2.2-alpha _number_, where _number_ is simply a progressive number. Just pick this number.
 
-= How stable an alpha preview is? =
+= How stable are the alpha previewss? =
 Well it is surely ok for development, but it is not recommended for production. Still there are many users that trust Redis development process so much to use alpha releases in production, but this is up to you, we don't give any guarantee ;)
 
 = How to obtain a 2.2-alpha preview =
@@ -36,7 +36,7 @@ At this point you can just use *git checkout _tagname_*, substituting _tagname_ 
 = ETA for Redis 2.2? =
 Redis 2.2 is planned to enter the release candidate stage before the end of the 2010.
 
-= When we'll be able to see a working version of Redis Cluster? =
+= When will we be able to see a working version of Redis Cluster? =
 I'm already working at it, I mean not just designing, but writing code. In three months we should have some kind of experimental version, while in six months we should have the first release candidate.
 
 Probably the first *stable* release of Redis with working cluster will be called 3.0, but I'll try to merge it into 2.2 as an experimental support if we'll be sure there is no impact in the stability of the system when clustering is not used.
