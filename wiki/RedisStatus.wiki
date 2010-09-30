@@ -8,7 +8,7 @@ This is the status of the different Redis versions currently available:
 
  * 1.2 is the *legacy redis stable release*, now it is completely obsoleted by Redis 2.0. Redis 2.0 is almost completely back compatible with 1.2 so upgrading is usually not a problem. Still 1.2 is believed to be a very stable release that works well, so if you are using it in production with code that probably will not modified to use more advanced Redis features available in 2.0, it makes sense to take 1.2 running. For everything new, it's better to start with 2.0.
 
- * 2.0 is the current *stable release*. It is better than 1.2 in more or less all the ways: more features, more mature, better replication, better persistence, and so forth. It is currently what most users want to use, unless they really need features that are only available into an *unstable* release.
+ * 2.0 is the current *stable release*. It is better than 1.2 in more or less everything: more features, more mature code, better replication, better persistence, and so forth. It is currently what most users want to use, unless they really need features that are only available into an *unstable* release.
 
  * 2.1 is the current *unstable release*, and there are no tar.gz for this release, you need to download it from git. *Warning:* the master branch in git may work most of the time but is NOT what you should use. What's better instead is to use the 2.2-alpha tags: every time Redis 2.1.x is stable enough and the new features merged passed all the tests for a couple of weeks, and we didn't received severe bug reports from users, we tag master as 2.2-alpha _number_, where _number_ is simply a progressive number. Just pick this number.
 
