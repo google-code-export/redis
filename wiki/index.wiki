@@ -29,5 +29,5 @@ Hello! The followings are pointers to different parts of the Redis Documentation
 
 = Videos =
 
- * [http://mwrc2009.confreaks.com/13-mar-2009-19-24-redis-key-value-nirvana-ezra-zygmuntowicz.html watch the Ezra Zygmuntowicz talk about Redis] to know the most important Redis ideas in few minutes.
+ * [http://confreaks.net/videos/62-mwrc2009-redis-key-value-nirvana Ezra Zygmuntowicz about Redis at the Mountain West Ruby Conference 2009] to know the most important Redis ideas in few minutes.
  * [http://www.ustream.tv/recorded/7855635 Salvatore Sanfilippo and Pieter Noordhuis at the SF Redis Meetup]
