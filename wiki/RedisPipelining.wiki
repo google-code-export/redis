@@ -1,0 +1,15 @@
+=What is pipelining=
+Redis is a client-server TCP server using what is called a *Request/Response* protocol.
+
+This means that usually a request is accomplished with the following steps:
+ * The client sends a query to the server, and reads from the socket, usually in a blocking way, for the server response.
+ * The server processes the command and sends the response back to the server.
+So for instance a four commands sequence is something like this:
+ * Client: INCR X
+ * Server: 1
+ * Client: INCR X
+ * Server: 2
+ * Client INCR X
+ * Server: 3
+ * Client: INCR X
+ * Server: 4
