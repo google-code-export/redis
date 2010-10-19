@@ -32,5 +32,9 @@ $ (echo -en "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379
 +PONG
 +PONG
 }}}
+This time we are not paying the cost of RTT for every call, but just one time for the three commands.
+
+*IMPORTANT NOTE*: while the client sends commands using pipelining, the server will be forced to queue the replies, using memory. So if you need to send many many commands with pipelining it's better to send this commands up to a given reasonable number, for instance 10k commands, read the replies, and send again other 10k commands and so forth. The speed will be nearly the same, but the additional memory used will be at max the amount needed to queue the replies for this 10k commands.
+=Some benchmark=
 
 WORK IN PROGRESS -- please don't edit!
