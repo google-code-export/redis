@@ -80,4 +80,4 @@ As you can see using pipelining we improved the transfer by a factor of five.
 Often we get requests about adding new commands performing multiple operations in a single pass.
 For instance there is no command to add multiple elements in a set. You need calling many times SADD.
 
-With pipelining you can have performances near to an MSADD command, but at the same time we'll avoid bloating the Redis command set with too many commands, and the version written with just SADD will be ready for a distributed environment (for instance Redis Cluster, that is in the process of being developed) just dropping the pipelining code.
+With pipelining you can have performances near to an MSADD command, but at the same time we'll avoid bloating the Redis command set with too many commands. An additional advantage is that the version written using just SADD will be ready for a distributed environment (for instance Redis Cluster, that is in the process of being developed) just dropping the pipelining code.
