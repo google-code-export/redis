@@ -23,6 +23,7 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [VirtualMemoryUserGuide Virtual Memory User Guide]. A simple to understand guide about using and configuring the Redis Virtual Memory.
  * [RedisPipelining Redis Pipelining Guide].
  * Memory optimization: Full of keys, a [http://antirez.com/post/redis-weekly-update-7.html blog post at antirez.com] showing how to use Redis 2.0 and hashes to create a setup where you can store 5 times more data in your Redis instance.
+ * [http://antirez.com/post/autocomplete-with-redis.html Implementing auto complete with Redis].
 
 = Hacking =
  * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
