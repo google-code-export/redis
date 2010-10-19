@@ -11,10 +11,11 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [TwitterAlikeExample This is a tutorial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
  * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] explains how Redis data types work and the basic patterns of working with Redis.
  * [http://simonwillison.net/static/2010/redis-tutorial/ the Simon Willison Redis Tutorial] is a *must read*, very good documentation where you will find a lot of real world ideas and use cases.
+ * [http://blog.mjrusso.com/2010/10/17/redis-from-the-ground-up.html Redis from the ground up] is an impressive article to know more about Redis if you are a newcomer.
  * [Features The features page] (currently in draft) is a good start to understand the strength and limitations of Redis.
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
  * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
- * [http://www.rediscookbook.org/ The Redis Cookbook] is a collaborative effort to provide some good recipe ;)
+ * [http://www.rediscookbook.org/ The Redis Cookbook] is a collaborative effort to provide some good recipe.
 
 = HOWTOs about selected features =
 
