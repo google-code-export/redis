@@ -28,6 +28,10 @@ Hello! The followings are pointers to different parts of the Redis Documentation
 
  * Look at [RedisInternals Redis Internals] if you are interested in the implementation details of the Redis server.
 
+= Getting started with your preferred language =
+
+ * [http://playnice.ly/blog/2010/10/19/getting-started-redis-python/ Getting started with Redis and Python]
+
 = Videos =
 
  * [http://confreaks.net/videos/62-mwrc2009-redis-key-value-nirvana Ezra Zygmuntowicz at the Mountain West Ruby Conference 2009] to know the most important Redis ideas in few minutes.
