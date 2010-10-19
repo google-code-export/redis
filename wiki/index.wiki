@@ -4,18 +4,28 @@
 
 Hello! The followings are pointers to different parts of the Redis Documentation.
 
+= Getting started =
+
  * New! You can now [http://try.redis-db.com Try Redis directly in your browser!].
- * [README The README] is the best starting point to know more about the project.
+ * [README The README] is a good starting point to know more about the project.
  * [QuickStart This short Quick Start] provides a five minutes step-by-step istructions on how to download, compile, run and test the basic workings of a Redis server.
  * [CommandReference The command reference] is a description of all the Redis commands with links to command specific pages. You can also download the [http://go2.wordpress.com/?id=725X1342&site=masonoise.wordpress.com&url=http%3A%2F%2Fmasonoise.files.wordpress.com%2F2010%2F03%2Fredis-cheatsheet-v1.pdf Redis Commands Cheat-Sheet] provided by Mason Jones (btw some command may be missing, the primary source is the wiki).
- * [TwitterAlikeExample This is a tutorial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
  * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] explains how Redis data types work and the basic patterns of working with Redis.
  * [http://simonwillison.net/static/2010/redis-tutorial/ the Simon Willison Redis Tutorial] is a *must read*, very good documentation where you will find a lot of real world ideas and use cases.
  * [http://blog.mjrusso.com/2010/10/17/redis-from-the-ground-up.html Redis from the ground up] is an impressive article to know more about Redis if you are a newcomer.
- * [Features The features page] (currently in draft) is a good start to understand the strength and limitations of Redis.
+
+= Getting started with your preferred language =
+
+ * [http://playnice.ly/blog/2010/10/19/getting-started-redis-python/ Getting started with Redis and Python]
+
+= Full programming examples =
+
+ * [TwitterAlikeExample This is a tutorial about creating a Twitter clone using *only* Redis as database, no relational DB at all is used], it is a good start to understand the key-value database paradigm.
+
+= FAQs and benchmarks =
+
  * [Benchmarks The benchmark page] is about the speed performances of Redis.
- * [FAQ Our FAQ] contains of course some answers to common questions about Redis.
- * [http://www.rediscookbook.org/ The Redis Cookbook] is a collaborative effort to provide some good recipe.
+ * [FAQ Our FAQ] contains of course some answers to common questions about Redis. Not very up-to-date.
 
 = HOWTOs about selected features =
 
@@ -30,11 +40,11 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
  * Look at [RedisInternals Redis Internals] if you are interested in the implementation details of the Redis server.
 
-= Getting started with your preferred language =
-
- * [http://playnice.ly/blog/2010/10/19/getting-started-redis-python/ Getting started with Redis and Python]
-
 = Videos =
 
  * [http://confreaks.net/videos/62-mwrc2009-redis-key-value-nirvana Ezra Zygmuntowicz at the Mountain West Ruby Conference 2009] to know the most important Redis ideas in few minutes.
  * [http://www.ustream.tv/recorded/7855635 Salvatore Sanfilippo and Pieter Noordhuis at the SF Redis Meetup]
+
+= Other documentation =
+
+ * [http://www.rediscookbook.org/ The Redis Cookbook] is a collaborative effort to provide some good recipe.
