@@ -25,4 +25,12 @@ A Request/Response server can be implemented so that it is able to process new r
 
 This is called pipelining, and is a technique widely in use since many decades. For instance many POP3 protocol implementations already supported this feature, dramatically speeding up the process of downloading new emails from the server.
 
+Redis supports pipelining since the very early days, so whatever version you are running, you can use pipelining with Redis. This is an example using the raw netcat utility:
+{{{
+$ (echo -en "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379
++PONG
++PONG
++PONG
+}}}
+
 WORK IN PROGRESS -- please don't edit!
