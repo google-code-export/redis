@@ -36,5 +36,48 @@ This time we are not paying the cost of RTT for every call, but just one time fo
 
 *IMPORTANT NOTE*: while the client sends commands using pipelining, the server will be forced to queue the replies, using memory. So if you need to send many many commands with pipelining it's better to send this commands up to a given reasonable number, for instance 10k commands, read the replies, and send again other 10k commands and so forth. The speed will be nearly the same, but the additional memory used will be at max the amount needed to queue the replies for this 10k commands.
 =Some benchmark=
+In the following benchmark we'll use the Redis Ruby client, supporting pipelining, to test the speed improvement due to pipelining:
+{{{
+require 'rubygems'
+require 'redis'
 
-WORK IN PROGRESS -- please don't edit!
+def bench(descr)
+    start = Time.now
+    yield
+    puts "#{descr} #{Time.now-start} seconds"
+end
+
+def without_pipelining
+    r = Redis.new
+    10000.times {
+        r.ping
+    }
+end
+
+def with_pipelining
+    r = Redis.new
+    r.pipelined {
+        10000.times {
+            r.ping
+        }
+    }
+end
+
+bench("without pipelining") {
+    without_pipelining
+}
+bench("with pipelining") {
+    with_pipelining
+}
+}}}
+Running the above simple script will provide this figures in my Mac OS X system, running over the loopback interface, where pipelining will provide the smallest improvement as the RTT is already pretty low:
+{{{
+without pipelining 1.185238 seconds
+with pipelining 0.250783 seconds
+}}}
+As you can see using pipelining we improved the transfer by a factor of five.
+=Pipelining VS other multi-commands=
+Often we get requests about adding new commands performing multiple operations in a single pass.
+For instance there is no command to add multiple elements in a set. You need calling many times SADD.
+
+With pipelining you can have performances near to an MSADD command, but at the same time we'll avoid bloating the Redis command set with too many commands, and the version written with just SADD will be ready for a distributed environment (for instance Redis Cluster, that is in the process of being developed) just dropping the pipelining code.
