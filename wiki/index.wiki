@@ -13,9 +13,6 @@ Hello! The followings are pointers to different parts of the Redis Documentation
  * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types] explains how Redis data types work and the basic patterns of working with Redis.
  * [http://simonwillison.net/static/2010/redis-tutorial/ the Simon Willison Redis Tutorial] is a *must read*, very good documentation where you will find a lot of real world ideas and use cases.
  * [http://blog.mjrusso.com/2010/10/17/redis-from-the-ground-up.html Redis from the ground up] is an impressive article to know more about Redis if you are a newcomer.
-
-= Getting started with your preferred language =
-
  * [http://playnice.ly/blog/2010/10/19/getting-started-redis-python/ Getting started with Redis and Python]
 
 = Full programming examples =
