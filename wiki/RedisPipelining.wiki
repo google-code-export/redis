@@ -14,4 +14,4 @@ So for instance a four commands sequence is something like this:
  * *Client:* INCR X
  * *Server:* 4
 
-WORK IN PROGRESS
+WORK IN PROGRESS -- please don't edit!
