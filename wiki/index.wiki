@@ -25,7 +25,6 @@ Hello! The followings are pointers to different parts of the Redis Documentation
 
 = Hacking =
  * [ProtocolSpecification The Protocol Specification] is all you need in order to implement a Redis client library for a missing language. PHP, Python, Ruby and Erlang are already supported.
-
  * Look at [RedisInternals Redis Internals] if you are interested in the implementation details of the Redis server.
 
 = Getting started with your preferred language =
