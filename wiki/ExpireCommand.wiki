@@ -2,7 +2,7 @@
 
 =EXPIRE _key_ _seconds_=
 =EXPIREAT _key_ _unixtime_ (Redis >= 1.1)=
-=PERSIST _key_=
+=PERSIST _key_ (Redis >= 2.1.3) =
 _Time complexity: O(1)_
 
  Set a timeout on the specified key. After the timeout the key will be
