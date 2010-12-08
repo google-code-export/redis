@@ -3,7 +3,7 @@
 = HKEYS _key_ (Redis >= 1.3.10)=
 = HVALS _key_ (Redis >= 1.3.10)=
 = HGETALL _key_ (Redis >= 1.3.10)=
-_Time complexity: O(N), where N is the total number of entries_
+_Time complexity: O(N), where N is the total number of fields in the hash_
 
  HKEYS returns all the fields names contained into a hash, HVALS all the associated values, while HGETALL returns both the fields and values in the form of _field1_, _value1_, _field2_, _value2_, ..., _fieldN_, _valueN_.
 
