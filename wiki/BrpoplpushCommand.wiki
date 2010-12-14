@@ -1,4 +1,15 @@
 #sidebar ListCommandsSidebar
 
-= BRPOPLPUSH _srckey_ _dstkey_ (Redis >= 2.1.8) =
+= BRPOPLPUSH _key1_ _key2_ ... _keyN_ _dstkey_ _timeout_ (Redis >= 2.1.8) =
 _Time complexity: O(1)_
+
+ Blocking version of the RPOPLPUSH command. Atomically removes and returns
+ the last element (tail) of the first non-empty source list (with the same order as the
+ arguments are given). When every source list is empty, the client blocks until
+ another client pushes against one of the source lists. The element that is pushed is
+ handled by the blocked client and is pushed to _dstkey_ and returned to the
+ previously blocked client.
+
+== Return value ==
+
+[ReplyTypes Bulk reply]
