@@ -1,0 +1,4 @@
+#sidebar ListCommandsSidebar
+
+= BRPOPLPUSH _srckey_ _dstkey_ (Redis >= 2.1.8) =
+_Time complexity: O(1)_
