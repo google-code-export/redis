@@ -1,6 +1,6 @@
 #sidebar ListCommandsSidebar
 
-= BRPOPLPUSH _key1_ _key2_ ... _keyN_ _dstkey_ _timeout_ (Redis >= 2.1.8) =
+= BRPOPLPUSH _key1_ ... _keyN_ _dstkey_ _timeout_ (Redis >= 2.1.8) =
 _Time complexity: O(1)_
 
  Blocking version of the RPOPLPUSH command. Atomically removes and returns
