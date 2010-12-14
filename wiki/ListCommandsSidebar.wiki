@@ -13,4 +13,5 @@
  * [BlpopCommand BLPOP]
  * [BlpopCommand BRPOP]
  * [RpoplpushCommand RPOPLPUSH]
+ * [BrpoplpushCommand BRPOPLPUSH]
  * [SortCommand SORT]
