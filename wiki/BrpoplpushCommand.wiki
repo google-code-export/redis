@@ -12,7 +12,7 @@ Note that the command returns an error if the target key already exists but is n
 
 The timeout value can be 0 or a positive integer value. When it is zero the command will block forever, until something is pushed against _srckey_. Otherwise the command will wait the specified number of seconds at max, returning an nil value when the timeout expires.
 
-The source and destination of the list can be the same, having the effect of rotating the list.
+The source and destination of the list can be the same, having the effect of rotating the list. Please check [RpoplpushCommand RPOPLPUSH] for more information.
 
 == Return value ==
 
