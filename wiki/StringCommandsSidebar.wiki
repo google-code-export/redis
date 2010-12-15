@@ -6,7 +6,7 @@
  * [SetnxCommand SETNX]
  * [SetexCommand SETEX]
  * [SetbitCommand SETBIT]
- * [GetbitCommand SETBIT]
+ * [GetbitCommand GETBIT]
  * [MsetCommand MSET]
  * [MsetCommand MSETNX]
  * [MgetCommand MGET]
