@@ -1,7 +1,10 @@
 ﻿#sidebar StringCommandsSidebar
 
 = SUBSTR _key_ _start_ _end_ =
+= GETRANGE _key_ _start_ _end_ =
 _Time complexity: O(start+n) (with start being the start index and n the total length of the requested range). Note that the lookup part of this command is O(1) so for small strings this is actually an O(1) command._
+
+*Warning:* this command was renamed into GETRANGE. SUBSTR will be taken as an alias until the next major release of Redis.
 
   Return a subset of the string from offset _start_ to offset _end_
   (both offsets are inclusive).

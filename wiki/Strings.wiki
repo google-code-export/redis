@@ -4,7 +4,7 @@
 
 Strings are the most basic Redis kind of values. Redis Strings are binary safe, this means a Redis string can contain any kind of data, for instance a JPEG image or a serialized Ruby object, and so forth.
 
-A String value can be at max 1 Gigabyte in length.
+A String value can be at max 512 Megabytes in length.
 
 Strings are treated as integer values by the [IncrCommand INCR] commands family, in this respect the value of an intger is limited to a singed 64 bit value.
 
