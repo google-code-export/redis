@@ -2,6 +2,7 @@
 
  * [SetCommand SET]
  * [GetCommand GET]
+ * [StrlenCommand STRLEN]
  * [GetsetCommand GETSET]
  * [SetnxCommand SETNX]
  * [SetexCommand SETEX]

@@ -1,0 +1,10 @@
+﻿#sidebar StringCommandsSidebar
+
+= STRLEN _key_ (Redis >= 2.1.8) =
+_Time complexity: O(1)_
+
+ Returns the length of the string stored at the specified _key_.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically: the length of the string.
