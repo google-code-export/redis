@@ -1,0 +1,12 @@
+#sidebar StringCommandsSidebar
+
+= GETBIT _key_ _offset_ (Redis >= 2.1.8) =
+_Time complexity: O(1)_
+
+ Returns the bit value at _offset_ in the string value stored at _key_.
+
+When _offset_ is beyond the string length, the string is assumed to be a contiguous space of 0 bits and 0 is returned. When _key_ does not exist and empty string is assumed and 0 is returned.
+
+== Return value ==
+
+[ReplyTypes Integer reply], specifically: the bit value stored at _offset_.
