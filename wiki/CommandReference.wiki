@@ -35,11 +35,13 @@ Every command name links to a specific wiki page describing the behavior of the 
 || [SetCommand SET]  || _key_ _value_  ||  Set a _key_ to a string _value_  ||
 || [GetCommand GET]  || _key_  ||  Return the string value of the _key_  ||
 || [GetsetCommand GETSET]  || _key_ _value_  ||  Set a key to a string returning the old value of the key  ||
-|| [MgetCommand MGET]  || _key1_ _key2_ ... _keyN_  ||  Multi-get, return the strings values of the keys  ||
 || [SetnxCommand SETNX]  || _key_ _value_  ||  Set a key to a string value if the key does not exist  ||
 || [SetexCommand SETEX]  || _key_ _time_ _value_  ||  Set+Expire combo command  ||
+|| [SetbitCommand SETBIT]  || _key_ _offset_ _value_  ||  Set bit at _offset_ to _value_  ||
+|| [GetbitCommand GETBIT]  || _key_ _offset_ ||  Return bit value at _offset_  ||
 || [MsetCommand MSET]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  ||  Set multiple keys to multiple values in a single atomic operation   ||
 || [MsetCommand MSETNX]  || _key1_ _value1_ _key2_ _value2_ ... _keyN_ _valueN_  ||  Set multiple keys to multiple values in a single atomic operation if none of the keys already exist  ||
+|| [MgetCommand MGET]  || _key1_ _key2_ ... _keyN_  ||  Multi-get, return the strings values of the keys  ||
 || [IncrCommand INCR]  || _key_  ||  Increment the integer value of key  ||
 || [IncrCommand INCRBY]  || _key_ _integer_  ||  Increment the integer value of _key_ by _integer_  ||
 || [IncrCommand DECR]  || _key_  ||  Decrement the integer value of key  ||
