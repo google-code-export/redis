@@ -63,6 +63,7 @@ Every command name links to a specific wiki page describing the behavior of the 
 || [BlpopCommand BLPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  ||  Blocking LPOP  ||
 || [BlpopCommand BRPOP]  || _key1_ _key2_ ... _keyN_ _timeout_  ||  Blocking RPOP  ||
 || [RpoplpushCommand RPOPLPUSH]  || _srckey_ _dstkey_  ||  Return and remove (atomically) the last element of the source List stored at _srckey_ and push the same element to the destination List stored at _dstkey_  ||
+"" [BrpoplpushCommand BRPOPLPUSH] || _srckey_ _dstkey_ || Like RPOPLPUSH but blocking of source key is empty ||
 
 == Commands operating on sets ==
 
