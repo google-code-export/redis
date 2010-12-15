@@ -15,5 +15,5 @@
  * [IncrCommand DECR]
  * [IncrCommand DECRBY]
  * [AppendCommand APPEND]
- * [SubstrCommand SETRANGE]
+ * [SetrangeCommand SETRANGE]
  * [SubstrCommand GETRANGE (or SUBSTR)]
