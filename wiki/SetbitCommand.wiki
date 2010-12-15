@@ -1,6 +1,6 @@
 #sidebar StringCommandsSidebar
 
-= SETBIT _key_ _offset_ _value_ =
+= SETBIT _key_ _offset_ _value_ (Redis >= 2.1.8) =
 _Time complexity: O(1)_
 
  Sets or clears the bit at _offset_ in the string value stored at _key_.
