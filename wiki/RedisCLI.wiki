@@ -1,3 +1,3 @@
-#summary Redis Command Line Interface
+= We moved to Redis.io! =
 
-= Redis CLI =
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

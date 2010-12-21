@@ -1,15 +1,3 @@
-﻿#sidebar SetCommandsSidebar
+= We moved to Redis.io! =
 
-= SCARD _key_ =
-_Time complexity O(1)_
-
- Return the set cardinality (number of elements). If the _key_ does not
- exist 0 is returned, like for empty sets.
-
-== Return value ==
-
-[ReplyTypes Integer reply], specifically:
-
-{{{
-the cardinality (number of elements) of the set as an integer.
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

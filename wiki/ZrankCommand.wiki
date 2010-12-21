@@ -1,16 +1,3 @@
-#sidebar SortedSetCommandsSidebar
+= We moved to Redis.io! =
 
-= ZRANK _key_ _member_ (Redis >= 1.3.4) =
-= ZREVRANK _key_ _member_ (Redis >= 1.3.4) =
-_Time complexity: O(log(N))_
-
- ZRANK returns the rank of the member in the sorted set, with scores ordered from low to high. ZREVRANK returns the rank with scores ordered from high to low. When the given member does not exist in the sorted set, the special value 'nil' is returned. The returned rank (or index) of the member is 0-based for both commands.
-
-== Return value ==
-
-[ReplyTypes Integer reply] or a nil [ReplyTypes bulk reply], specifically:
-
-{{{
-the rank of the element as an integer reply if the element exists.
-A nil bulk reply if there is no such element.
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

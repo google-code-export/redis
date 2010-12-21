@@ -1,8 +1,3 @@
-﻿#sidebar GenericCommandsSidebar
+= We moved to Redis.io! =
 
-= FLUSHDB =
- Delete all the keys of the currently selected DB. This command never fails.
-
-== Return value ==
-
-[ReplyTypes Status code reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

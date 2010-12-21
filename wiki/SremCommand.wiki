@@ -1,17 +1,3 @@
-﻿#sidebar SetCommandsSidebar
+= We moved to Redis.io! =
 
-= SREM _key_ _member_ =
-_Time complexity O(1)_
-
- Remove the specified _member_ from the set value stored at _key_. If
- _member_ was not a member of the set no operation is performed. If _key_
- does not hold a set value an error is returned.
-
-== Return value ==
-
-[ReplyTypes Integer reply], specifically:
-
-{{{
-1 if the new element was removed
-0 if the new element was not a member of the set
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

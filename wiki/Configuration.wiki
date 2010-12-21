@@ -1,7 +1,3 @@
-The `redis.conf` file included in the source code distribution is a starting point, you should be able to modify it in order do adapt it to your needs without troubles reading the comments inside the file.
+= We moved to Redis.io! =
 
-In order to start Redis using a configuration file just pass the file name as the sole argument when starting the server:
-
-{{{
-$ ./redis-server redis.conf
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

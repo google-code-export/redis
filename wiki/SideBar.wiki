@@ -1,12 +1,3 @@
-DRAFT
+= We moved to Redis.io! =
 
-  * [Features]
-  * [QuickStart Quick Start]
-  * [DataTypes Data Types]
-  * [SupportedLanguages Supported Languages]
-  * [ObjectHashMappers Object Hash Mappers]
-  * [ProgrammingExamples Programming Examples]
-  * [RoadMap Road Map]
-  * [Speed]
-  * [FromSqlToDataStructures]
-  
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

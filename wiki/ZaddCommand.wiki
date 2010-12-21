@@ -1,25 +1,3 @@
-﻿#sidebar SortedSetCommandsSidebar
+= We moved to Redis.io! =
 
-= ZADD _key_ _score_ _member_ (Redis >= 1.1) =
-_Time complexity O(log(N)) with N being the number of elements in the sorted set_
-
- Add the specified _member_ having the specifeid _score_ to the sorted
- set stored at _key_. If _member_ is already a member of the sorted set
- the score is updated, and the element reinserted in the right position to
- ensure sorting. If _key_ does not exist a new sorted set with the specified
- _member_ as sole member is crated. If the key exists but does not hold a
- sorted set value an error is returned.
-
- The score value can be the string representation of a double precision floating
- point number.
-
- For an introduction to sorted sets check the [IntroductionToRedisDataTypes Introduction to Redis data types] page.
-
-== Return value ==
-
-[ReplyTypes Integer reply], specifically:
-
-{{{
-1 if the new element was added
-0 if the element was already a member of the sorted set and the score was updated
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

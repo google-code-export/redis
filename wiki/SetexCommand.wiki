@@ -1,18 +1,3 @@
-﻿#sidebar StringCommandsSidebar
+= We moved to Redis.io! =
 
-= SETEX _key_ _time_ _value_ =
-_Time complexity: O(1)_
-
- The command is exactly equivalent to the following group of commands:
-{{{
-SET _key_ _value_
-EXPIRE _key_ _time_
-}}}
- The operation is atomic. An atomic [SetCommand SET]+[ExpireCommand EXPIRE] 
- operation was already provided
- using [MultiExecCommand MULTI/EXEC], but SETEX is a faster alternative provided
- because this operation is very common when Redis is used as a Cache.
-
-== Return value ==
-
-[ReplyTypes Status code reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

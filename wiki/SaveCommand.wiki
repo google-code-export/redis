@@ -1,12 +1,3 @@
-﻿#sidebar ControlCommandsSidebar
+= We moved to Redis.io! =
 
-=== SAVE ===
- Save the whole dataset on disk (this means that all the databases are saved, as well as keys with an EXPIRE set (the expire is preserved). The server hangs while the saving is not
- completed, no connection is served in the meanwhile. An OK code
- is returned when the DB was fully stored in disk.
-
- The background variant of this command is [BgsaveCommand BGSAVE] that is able to perform the saving in the background while the server continues serving other clients.
-
-== Return value ==
-
-[ReplyTypes Status code reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

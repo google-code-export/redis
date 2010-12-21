@@ -1,15 +1,3 @@
-﻿#sidebar GenericCommandsSidebar
+= We moved to Redis.io! =
 
-= RENAMENX _oldkey_ _newkey_ =
-_Time complexity: O(1)_
-
- Rename _oldkey_ into _newkey_ but fails if the destination key _newkey_ already exists.
-
-== Return value ==
-
-[ReplyTypes Integer reply], specifically:
-
-{{{
-1 if the key was renamed
-0 if the target key already exist
-}}}
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

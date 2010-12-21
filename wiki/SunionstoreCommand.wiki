@@ -1,10 +1,3 @@
-﻿#sidebar SetCommandsSidebar
+= We moved to Redis.io! =
 
-= SUNIONSTORE _dstkey_ _key1_ _key2_ ... _keyN_ =
-_Time complexity O(N) where N is the total number of elements in all the provided sets_
-
- This command works exactly like SUNION but instead of being returned the resulting set is stored as _dstkey_. Any existing value in _dstkey_ will be over-written.
-
-== Return value ==
-
-[ReplyTypes Status code reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

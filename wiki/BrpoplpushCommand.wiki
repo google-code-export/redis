@@ -1,19 +1,3 @@
-#sidebar ListCommandsSidebar
+= We moved to Redis.io! =
 
-= BRPOPLPUSH _srckey_ _dstkey_ _timeout_ (Redis >= 2.1.8) =
-_Time complexity: O(1)_
-
- Blocking version of the [RpoplpushCommand RPOPLPUSH] command. Atomically removes and returns
- the last element (tail) of the source list at _srckey_, and as a side effect pushes the returned element in the head of the list at _dstkey_.
-
-If the source list is empty, the client blocks until another client pushes against the source list. Of course in such a case the push operation against the destination list will be performed after the command unblocks detecting a push against the source list.
-
-Note that the command returns an error if the target key already exists but is not a list. The error is delayed at the time the push operation is attempted, that is, immediately if the source list is not empty, or when the first push against the source list happens in the case the command would block.
-
-The timeout value can be 0 or a positive integer value. When it is zero the command will block forever, until something is pushed against _srckey_. Otherwise the command will wait the specified number of seconds at max, returning an nil value when the timeout expires.
-
-The source and destination of the list can be the same, having the effect of rotating the list. Please check [RpoplpushCommand RPOPLPUSH] for more information.
-
-== Return value ==
-
-[ReplyTypes Bulk reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

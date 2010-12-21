@@ -1,12 +1,3 @@
-﻿#sidebar HashCommandsSidebar
+= We moved to Redis.io! =
 
-= HEXISTS _key_ _field_ (Redis >= 1.3.10)=
-_Time complexity: O(1)_
-
- Return 1 if the hash stored at _key_ contains the specified _field_.
-
- Return 0 if the _key_ is not found or the _field_ is not present.
-
-== Return value ==
-
-[ReplyTypes Integer reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

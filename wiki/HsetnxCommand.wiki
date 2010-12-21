@@ -1,15 +1,3 @@
-#sidebar HashCommandsSidebar
+= We moved to Redis.io! =
 
-= HSETNX _key_ _field_ _value_ (Redis >= 1.3.10)=
-_Time complexity: O(1)_
-
- Set the specified hash _field_ to the specified _value_, if _field_ does not exist yet.
-
- If _key_ does not exist, a new key holding a hash is created.
-
- If the field already exists, this operation has no effect and returns 0.
- Otherwise, the field is set to _value_ and the operation returns 1.
-
-== Return value ==
-
-[ReplyTypes Integer reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

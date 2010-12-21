@@ -1,18 +1,3 @@
-﻿== Sorted Set Commands ==
+= We moved to Redis.io! =
 
- * [ZaddCommand ZADD]
- * [ZremCommand ZREM]
- * [ZincrbyCommand ZINCRBY]
- * [ZrankCommand ZRANK]
- * [ZrankCommand ZREVRANK]
- * [ZrangeCommand ZRANGE]
- * [ZrangeCommand ZREVRANGE]
- * [ZrangebyscoreCommand ZRANGEBYSCORE]
- * [ZrangebyscoreCommand ZCOUNT]
- * [ZremrangebyrankCommand ZREMRANGEBYRANK]
- * [ZremrangebyscoreCommand ZREMRANGEBYSCORE] 
- * [ZcardCommand ZCARD]
- * [ZscoreCommand ZSCORE]
- * [ZunionstoreCommand ZUNIONSTORE]
- * [ZunionstoreCommand ZINTERSTORE]
- * [SortCommand SORT]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

@@ -1,17 +1,3 @@
-﻿== Set Commands ==
+= We moved to Redis.io! =
 
- * [SaddCommand SADD]
- * [SremCommand SREM]
- * [SpopCommand SPOP]
- * [SmoveCommand SMOVE]
- * [ScardCommand SCARD]
- * [SismemberCommand SISMEMBER]
- * [SinterCommand SINTER]
- * [SinterstoreCommand SINTERSTORE]
- * [SunionCommand SUNION]
- * [SunionstoreCommand SUNIONSTORE]
- * [SdiffCommand SDIFF]
- * [SdiffstoreCommand SDIFFSTORE]
- * [SmembersCommand SMEMBERS]
- * [SrandmemberCommand SRANDMEMBER]
- * [SortCommand SORT]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

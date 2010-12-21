@@ -1,18 +1,3 @@
-﻿== Generic Commands ==
+= We moved to Redis.io! =
 
- * [ExistsCommand EXISTS]
- * [DelCommand DEL]
- * [TypeCommand TYPE]
- * [KeysCommand KEYS]
- * [RandomkeyCommand RANDOMKEY]
- * [RenameCommand RENAME]
- * [RenamenxCommand RENAMENX]
- * [DbsizeCommand DBSIZE]
- * [ExpireCommand EXPIRE]
- * [ExpireCommand PERSIST]
- * [TtlCommand TTL]
- * [SelectCommand SELECT]
- * [MoveCommand MOVE]
- * [FlushdbCommand FLUSHDB]
- * [FlushallCommand FLUSHALL]
- * [MultiExecCommand Redis Transactions]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

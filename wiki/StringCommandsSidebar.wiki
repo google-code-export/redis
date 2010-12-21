@@ -1,20 +1,3 @@
-﻿== String Commands ==
+= We moved to Redis.io! =
 
- * [SetCommand SET]
- * [GetCommand GET]
- * [StrlenCommand STRLEN]
- * [GetsetCommand GETSET]
- * [SetnxCommand SETNX]
- * [SetexCommand SETEX]
- * [SetbitCommand SETBIT]
- * [GetbitCommand GETBIT]
- * [MsetCommand MSET]
- * [MsetCommand MSETNX]
- * [MgetCommand MGET]
- * [IncrCommand INCR]
- * [IncrCommand INCRBY]
- * [IncrCommand DECR]
- * [IncrCommand DECRBY]
- * [AppendCommand APPEND]
- * [SetrangeCommand SETRANGE]
- * [SubstrCommand GETRANGE (or SUBSTR)]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

@@ -1,18 +1,3 @@
-#sidebar SideBar
+= We moved to Redis.io! =
 
-= Road Map (ROUGH DRAFT) =
-
-The up to date, raw Road Map for Redis is part of the source code, you can find it here: [http://github.com/antirez/redis/raw/master/TODO]
-
-== Features added in past versions ==
-
-== 1.1 / 1.2 ==
-
-  * [DataTypes Ordered Set (ZSET)]
-  * [MultiBulkCommands Multibulk Commands]
-  * In memory integer encoding of [DataTypes integers]. Memory saving of 20% or more with datasets using high number of integer IDs. 
-  * Enhanced [ExpireCommand EXPIRE] algorithm.
-
-== 0.x / 1.0 ==
-
-  * TODO: Add 1.0 Features. This is important for clarity in SupportedLanguages
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

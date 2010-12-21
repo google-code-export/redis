@@ -1,12 +1,3 @@
-﻿#sidebar GenericCommandsSidebar
+= We moved to Redis.io! =
 
-= RENAME _oldkey_ _newkey_ =
-_Time complexity: O(1)_
-
- Atomically renames the key _oldkey_ to _newkey_. If the source and
- destination name are the same an error is returned. If _newkey_
- already exists it is overwritten.
-
-== Return value ==
-
-[ReplyTypes Status code repy]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

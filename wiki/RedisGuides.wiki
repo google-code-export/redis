@@ -1,6 +1,3 @@
-﻿= Redis Guides and Howtos=
- * [QuickStart Redis Quick Start]
- * [VirtualMemoryUserGuide Virutal Memory User Guide]
- * [IntroductionToRedisDataTypes A Fifteen Minutes Introduction to the Redis Data Types]
- * [ReplicationHowto The Redis Replication HOWTO]
- * [AppendOnlyFileHowto The Append Only File HOWTO]
+= We moved to Redis.io! =
+
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

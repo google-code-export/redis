@@ -1,19 +1,3 @@
-#sidebar SideBar
+= We moved to Redis.io! =
 
-= Speed (ROUGH DRAFT)=
-
-== TODO ==
-
-  * Written in ANSI C
-  * Pipelining
-  * MultiBulkCommands
-  * epoll >= 1.1
-  * Benchmarks
-
-Redis takes the whole dataset in memory and [Persistence writes asynchronously to disk] in order to be very fast, you have the best of both worlds: hyper-speed and [Persistence persistence] for your data.
-
-Establishing a new connection to a Redis Server is _simple_ and _fast_ nothing more that a TCP three way handshake. There is no authentication or other handshake involved ([http://groups.google.com/group/redis-db/browse_thread/thread/1adb93f0b6a1460a Google Group: Can we use connection pool in Redis?]) You can read more about the way Redis clients communicate with servers in the [ProtocolSpecification Protocol Specification].
-
-On most commodity hardware it takes about 45 seconds to restore a 2 GB database, without fancy RAID. This can give you some kind of feeling about the order of magnitude of the time needed to load data when you restart the server, so restarting a server is fast too.
-
-Also [Replication] is fast, benchamarks will give you the the same order of magnitude a restart does ([http://groups.google.com/group/redis-db/browse_thread/thread/3ab1c8b2126f1b8/29bdb6c5973f0388?lnk=gst&q=replication+#29bdb6c5973f0388 Google Group: Replication speed benchmak])
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

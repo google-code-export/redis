@@ -1,9 +1,3 @@
-﻿#sidebar GenericCommandsSidebar
+= We moved to Redis.io! =
 
-= DBSIZE =
-
- Return the number of keys in the currently selected database.
-
-== Return value ==
-
-[ReplyTypes Integer reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

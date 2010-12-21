@@ -1,14 +1,3 @@
-﻿== Hash Commands ==
+= We moved to Redis.io! =
 
- * [HsetCommand HSET]
- * [HgetCommand HGET]
- * [HsetnxCommand HSETNX]
- * [HmsetCommand HMSET]
- * [HmgetCommand HMGET]
- * [HincrbyCommand HINCRBY]
- * [HexistsCommand HEXISTS]
- * [HdelCommand HDEL]
- * [HlenCommand HLEN]
- * [HgetallCommand HKEYS]
- * [HgetallCommand HVALS]
- * [HgetallCommand HGETALL]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

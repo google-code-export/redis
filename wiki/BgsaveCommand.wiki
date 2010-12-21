@@ -1,11 +1,3 @@
-﻿#sidebar ControlCommandsSidebar
+= We moved to Redis.io! =
 
-= BGSAVE =
- Save the DB in background. The OK code is immediately returned.
- Redis forks, the parent continues to server the clients, the child
- saves the DB on disk then exit. A client my be able to check if the
- operation succeeded using the [LastsaveCommand LASTSAVE] command.
-
-== Return value ==
-
-[ReplyTypes Status code reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

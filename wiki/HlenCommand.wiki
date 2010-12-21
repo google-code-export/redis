@@ -1,10 +1,3 @@
-﻿#sidebar HashCommandsSidebar
+= We moved to Redis.io! =
 
-= HLEN _key_ (Redis >= 1.3.10)=
-_Time complexity: O(1)_
-
- Return the number of entries (fields) contained in the hash stored at _key_. If the specified _key_ does not exist, 0 is returned assuming an empty hash. 
-
-== Return value ==
-
-[ReplyTypes Integer reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

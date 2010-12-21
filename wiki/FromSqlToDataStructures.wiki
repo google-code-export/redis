@@ -1,35 +1,3 @@
-#sidebar Sidebar
+= We moved to Redis.io! =
 
-= Introduction (IDEA MORE THAN A DRAFT)=
-
-*¿Coming from SQLand?* _¿Who doesn't?_ Redis is simple, _primitive_ when comapred to the world you are used to in the world of Relational Database Managers (RDBMS) and Structure Query Language (SQL), here you will find insight to build bridges between both worlds to model real life problems.
-
-== Data Structures ==
-
-When I was young, happy and single ;) I studied *Data Structures* at the university, actually I learnt Data Structures and Algorithms _before_ learning anything about Databases, and particularly RDBMS and SQL. This is natural because you need to know about Data Structures and Algorithms to understand a Database.
-
-Redis can be seen as a *Data Structures Server*, a very simple interface to a extremly fast and efficient 
-
-== Dude where is my SELECT statement?  ==
-
-
-
-== LISTs ==
-
-In SQL there is no such thing as a "natural" order, a SELECT statement without a ORDER BY clause will return data in a undefined order. In Redis LISTs address the problem of natural ordering, ...
-
-== SETs ==
-
-So you have a bunch of unordered data, 
-
-== SORT to the rescue ==
-
-But sometimes we _need_ to actually sort a LIST in a order different from its natural or take a SET and have it ordered, there is where the _fast_ SORT commands comes handy... 
-
-=== SORT BY ===
-
-Just SORTing keys would be kind of boring, sometimes useless right? Well, you can SORT...
-
-== HASHEs ==
-
-Umm, sorry you will have to wait for a [RoadMap upcoming version of Redis] to have Hashes, but here are Idioms you should house to manage Dictionary like data...
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

@@ -1,14 +1,3 @@
-﻿#sidebar SetCommandsSidebar
+= We moved to Redis.io! =
 
-= SRANDMEMBER _key_ =
-_Time complexity O(1)_
-
- Return a random element from a Set, without removing the element. 
- If the Set is empty or the key does not exist, a nil object is returned.
-
- The [SpopCommand SPOP] command does a similar work but the returned element
- is popped (removed) from the Set.
-
-== Return value ==
-
-[ReplyTypes Bulk reply]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

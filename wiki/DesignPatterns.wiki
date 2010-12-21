@@ -1,1 +1,3 @@
-Use random keys instead of incremental keys in order to avoid a single-key that gets incremented by many servers. This can can't be distributed among servers.
+= We moved to Redis.io! =
+
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*

@@ -1,10 +1,3 @@
-﻿== Control Commands ==
+= We moved to Redis.io! =
 
- * [SaveCommand SAVE]
- * [BgsaveCommand BGSAVE]
- * [BgrewriteaofCommand BGREWRITEAOF]
- * [LastsaveCommand LASTSAVE]
- * [ShutdownCommand SHUTDOWN]
- * [InfoCommand INFO]
- * [MonitorCommand MONITOR]
- * [SlaveofCommand SLAVEOF]
+*Redis home moved to [http://redis.io], please visit [http://redis.io our new home].*
